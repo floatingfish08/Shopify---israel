@@ -300,6 +300,47 @@
 .nova-catalog-map__items span { color: rgba(var(--color-foreground), 0.62); font-size: 1.25rem; }
 .nova-systems__disclaimer { max-width: 90rem; margin: 4rem 0 0; padding-left: 1.5rem; border-left: 2px solid #d61f2c; color: rgba(var(--color-foreground), 0.65); font-size: 1.2rem; }
 
+.nova-quality { padding: clamp(6rem, 9vw, 11rem) 0; }
+
+.nova-quality__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(42rem, 1.1fr);
+  gap: 3rem clamp(5rem, 8vw, 11rem);
+  align-items: start;
+}
+
+.nova-quality__intro h2 { max-width: 66rem; margin: 1rem 0 2rem; letter-spacing: -0.035em; }
+.nova-quality__intro .rte { max-width: 59rem; font-size: 1.7rem; }
+.nova-quality__actions { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 3rem; }
+.nova-quality__steps { display: grid; margin: 0; padding: 0; border-top: 1px solid rgba(var(--color-foreground), 0.16); list-style: none; }
+.nova-quality__steps li { display: grid; grid-template-columns: 5rem 1fr; gap: 2rem; padding: 2.6rem 0; border-bottom: 1px solid rgba(var(--color-foreground), 0.16); }
+.nova-quality__step-number { color: #d61f2c; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.12em; }
+.nova-quality__steps strong { font-size: 1.8rem; }
+.nova-quality__steps p { max-width: 50rem; margin: 0.6rem 0 0; color: rgba(var(--color-foreground), 0.66); font-size: 1.4rem; line-height: 1.55; }
+
+.nova-quality__certificate {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 6.4rem 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2.6rem 3rem;
+  border: 1px solid rgba(var(--color-foreground), 0.14);
+  border-radius: 1rem;
+  background: rgb(var(--color-background));
+}
+
+.nova-quality__seal { width: 5.4rem; color: #d61f2c; }
+.nova-quality__certificate > div:last-child { display: grid; gap: 0.25rem; }
+.nova-quality__certificate span { color: rgba(var(--color-foreground), 0.62); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.nova-quality__certificate strong { font-size: 2.2rem; }
+.nova-quality__certificate p { margin: 0; font-size: 1.3rem; }
+.nova-quality__notice { grid-column: 1 / -1; max-width: 94rem; margin: 0; padding-left: 1.5rem; border-left: 2px solid #d61f2c; color: rgba(var(--color-foreground), 0.68); font-size: 1.25rem; }
+
+.nova-solution-card:focus-visible,
+.nova-system-card__link:focus-visible,
+.nova-resources__links a:focus-visible { outline: 0.2rem solid #d61f2c; outline-offset: 0.4rem; }
+
 @media screen and (max-width: 989px) {
   .nova-hero__grid { min-height: auto; grid-template-columns: 1fr; gap: 2rem; }
   .nova-hero__visual { min-height: 44rem; }
@@ -309,6 +350,7 @@
   .nova-solutions__grid { grid-template-columns: repeat(2, 1fr); }
   .nova-systems__cards { grid-template-columns: 1fr; }
   .nova-catalog-map { grid-template-columns: 1fr; }
+  .nova-quality__layout { grid-template-columns: 1fr; gap: 4rem; }
 }
 
 @media screen and (max-width: 749px) {
@@ -326,6 +368,10 @@
   .nova-catalog-map__items a:nth-child(odd) { border-right: 0; }
   .nova-solution-card { min-height: 18rem; padding: 2.2rem; }
   .nova-resource-action { position: static; margin-top: 1rem; transform: none; }
+  .nova-quality__actions { display: grid; }
+  .nova-quality__actions .button { width: 100%; }
+  .nova-quality__certificate { grid-template-columns: 4.8rem 1fr; padding: 2.2rem; }
+  .nova-quality__seal { width: 4.2rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

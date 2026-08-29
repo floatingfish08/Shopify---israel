@@ -3,11 +3,11 @@
     "nova_hero": {
       "type": "nova-medical-hero",
       "settings": {
-        "eyebrow": "Precision implant systems for dental professionals",
+        "eyebrow": "Precision implant systems for trained clinicians",
         "heading": "Clinical confidence, engineered into every connection.",
         "text": "<p>Explore internal-hex implant systems, restorative components and surgical solutions manufactured under an ISO 13485 quality system.</p>",
-        "primary_label": "Shop implant systems",
-        "primary_link": "shopify://collections/all",
+        "primary_label": "Explore implant systems",
+        "primary_link": "#NovaSystems",
         "secondary_label": "View clinical resources",
         "secondary_link": "",
         "color_scheme": "scheme-3"
@@ -17,9 +17,9 @@
       "type": "nova-trust-bar",
       "blocks": {
         "quality": { "type": "trust_item", "settings": { "icon": "certificate", "heading": "ISO 13485:2016", "text": "Certified quality system" } },
-        "conformity": { "type": "trust_item", "settings": { "icon": "shield", "heading": "CE marked", "text": "Documented conformity" } },
+        "conformity": { "type": "trust_item", "settings": { "icon": "shield", "heading": "Controlled IFU", "text": "Safety information available" } },
         "sterility": { "type": "trust_item", "settings": { "icon": "sterile", "heading": "Gamma sterilized", "text": "Implants supplied sterile" } },
-        "delivery": { "type": "trust_item", "settings": { "icon": "shipping", "heading": "U.S. delivery", "text": "Tracked international service" } }
+        "delivery": { "type": "trust_item", "settings": { "icon": "shipping", "heading": "Tracked delivery", "text": "International service from Israel" } }
       },
       "block_order": ["quality", "conformity", "sterility", "delivery"],
       "settings": { "color_scheme": "scheme-1" }
@@ -52,52 +52,15 @@
         "color_scheme": "scheme-1"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "nova_quality": {
+      "type": "nova-quality-story",
       "settings": {
-        "title": "Featured clinical solutions",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "outline",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": true,
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": true,
-        "show_rating": false,
-        "quick_add": "standard",
-        "columns_mobile": "2",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
-    "manufacturing": {
-      "type": "rich-text",
-      "blocks": {
-        "caption": { "type": "caption", "settings": { "caption": "NOVA IMPLANTS · ESTABLISHED IN ISRAEL", "text_style": "caption-with-letter-spacing", "text_size": "medium" } },
-        "heading": { "type": "heading", "settings": { "heading": "Designed around precision. Built around clinical workflows.", "heading_size": "h1" } },
-        "text": { "type": "text", "settings": { "text": "<p>Nova develops dental implant, restorative and surgical components for trained clinicians. Product information is presented with catalog references and documentation to support informed ordering.</p>" } }
-      },
-      "block_order": ["caption", "heading", "text"],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "padding_top": 84,
-        "padding_bottom": 84
+        "catalog_url": "#NovaResources",
+        "contact_url": "/pages/contact",
+        "color_scheme": "scheme-2"
       }
     },
     "nova_resources": { "type": "nova-resources", "settings": { "catalog_url": "", "ifu_url": "", "certificate_url": "", "color_scheme": "scheme-3" } }
   },
-  "order": ["nova_hero", "nova_trust", "nova_solutions", "nova_systems", "featured_collection", "manufacturing", "nova_resources"]
+  "order": ["nova_hero", "nova_trust", "nova_solutions", "nova_systems", "nova_quality", "nova_resources"]
 }

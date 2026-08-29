@@ -1,0 +1,60 @@
+{{ 'section-nova-medical.css' | asset_url | stylesheet_tag }}
+
+<section class="nova-quality color-{{ section.settings.color_scheme }} gradient" aria-labelledby="NovaQuality-{{ section.id }}">
+  <div class="page-width nova-quality__layout">
+    <div class="nova-quality__intro">
+      <span class="nova-kicker">A clearer path to the right component</span>
+      <h2 id="NovaQuality-{{ section.id }}" class="h1">Order by system, dimensions and catalog number.</h2>
+      <div class="rte">
+        <p>Nova’s catalog is organized for precise product identification. Confirm the implant family first, then match platform, diameter, length and restorative workflow before ordering.</p>
+      </div>
+      <div class="nova-quality__actions">
+        <a class="button button--primary" href="{{ section.settings.catalog_url | default: '#NovaResources' }}">Review the product catalog</a>
+        <a class="button button--secondary" href="{{ section.settings.contact_url | default: routes.root_url }}">Ask about compatibility</a>
+      </div>
+    </div>
+
+    <ol class="nova-quality__steps" role="list">
+      <li>
+        <span class="nova-quality__step-number">01</span>
+        <div><strong>Choose the implant system</strong><p>Compare PSI tapered-body and PCI straight-wall geometries.</p></div>
+      </li>
+      <li>
+        <span class="nova-quality__step-number">02</span>
+        <div><strong>Confirm the exact variant</strong><p>Use diameter, length, connection and catalog number—not the product image alone.</p></div>
+      </li>
+      <li>
+        <span class="nova-quality__step-number">03</span>
+        <div><strong>Match the clinical workflow</strong><p>Verify restorative, impression, digital and surgical component compatibility.</p></div>
+      </li>
+    </ol>
+
+    <aside class="nova-quality__certificate" aria-label="Quality management certificate summary">
+      <div class="nova-quality__seal" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="28" stroke="currentColor"/><path d="m19 33 8 8 18-20" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <span>Quality management system</span>
+        <strong>ISO 13485:2016</strong>
+        <p>Registration IL-99180 · issued 16 Sep 2024 · expires 21 Aug 2027</p>
+      </div>
+    </aside>
+
+    <p class="nova-quality__notice"><strong>Professional-use notice:</strong> Product selection and clinical use require appropriate training. Always consult the current product label and applicable Instructions for Use.</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nova ordering and quality",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "url", "id": "catalog_url", "label": "Catalog link" },
+    { "type": "url", "id": "contact_url", "label": "Compatibility contact link" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-2" }
+  ],
+  "presets": [{ "name": "Nova ordering and quality" }]
+}
+{% endschema %}
