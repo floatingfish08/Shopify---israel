@@ -10,6 +10,14 @@
     </div>
     <div class="nova-resources__links">
       <a
+        {% if section.settings.catalog_url != blank %}href="{{ section.settings.catalog_url }}" target="_blank" rel="noopener"{% else %}role="link" aria-disabled="true"{% endif %}
+      >
+        <span class="nova-resource-type">PDF · Product catalog</span>
+        <strong>Nova Product Catalog</strong>
+        <span>Implants, restorative components and surgical tools</span>
+        <span class="nova-resource-action">{% if section.settings.catalog_url != blank %}Open catalog ↗{% else %}Upload pending{% endif %}</span>
+      </a>
+      <a
         {% if section.settings.ifu_url != blank %}href="{{ section.settings.ifu_url }}" target="_blank" rel="noopener"{% else %}role="link" aria-disabled="true"{% endif %}
       >
         <span class="nova-resource-type">PDF · Instructions</span>
@@ -36,6 +44,7 @@
   "class": "section",
   "disabled_on": { "groups": ["header", "footer"] },
   "settings": [
+    { "type": "url", "id": "catalog_url", "label": "Product catalog URL", "info": "Upload the current catalog to Shopify Files, then select it here." },
     { "type": "url", "id": "ifu_url", "label": "IFU file URL", "info": "Upload the controlled PDF to Shopify Files, then select it here." },
     { "type": "url", "id": "certificate_url", "label": "ISO certificate file URL", "info": "Upload the certificate to Shopify Files, then select it here." },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-3" }

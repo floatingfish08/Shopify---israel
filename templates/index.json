@@ -44,6 +44,14 @@
         "padding_bottom": 80
       }
     },
+    "nova_systems": {
+      "type": "nova-implant-systems",
+      "settings": {
+        "psi_link": "/collections/psi-implant-system",
+        "pci_link": "/collections/pci-implant-system",
+        "color_scheme": "scheme-1"
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -89,7 +97,7 @@
         "padding_bottom": 84
       }
     },
-    "nova_resources": { "type": "nova-resources", "settings": { "ifu_url": "", "certificate_url": "", "color_scheme": "scheme-3" } }
+    "nova_resources": { "type": "nova-resources", "settings": { "catalog_url": "", "ifu_url": "", "certificate_url": "", "color_scheme": "scheme-3" } }
   },
-  "order": ["nova_hero", "nova_trust", "nova_solutions", "featured_collection", "manufacturing", "nova_resources"]
+  "order": ["nova_hero", "nova_trust", "nova_solutions", "nova_systems", "featured_collection", "manufacturing", "nova_resources"]
 }
