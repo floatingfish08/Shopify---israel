@@ -1,0 +1,36 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "company": {
+          "type": "text",
+          "settings": {
+            "heading": "Nova Implants",
+            "subtext": "<p>Precision dental implant systems and restorative components for trained clinicians.</p><p>5 Yoni Netanyahu St.<br>Or Yehuda 6037603, Israel</p>"
+          }
+        },
+        "shop": { "type": "link_list", "settings": { "heading": "Clinical solutions", "menu": "main-menu" } },
+        "support": { "type": "link_list", "settings": { "heading": "Support", "menu": "footer" } }
+      },
+      "block_order": ["company", "shop", "support"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "newsletter_enable": true,
+        "newsletter_heading": "Clinical updates and product news",
+        "enable_follow_on_shop": false,
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 64,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": ["footer"]
+}

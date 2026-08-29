@@ -1,0 +1,45 @@
+{{ 'section-nova-medical.css' | asset_url | stylesheet_tag }}
+
+<section id="NovaResources" class="nova-resources color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width nova-resources__inner">
+    <div class="nova-resources__intro">
+      <span class="nova-kicker">Clinical documentation</span>
+      <h2 class="h1">Evidence where you need it.</h2>
+      <p>Review current product instructions and quality-system documentation before ordering or clinical use.</p>
+      <p class="nova-resources__note">For licensed dental professionals. Always consult the product label and applicable Instructions for Use.</p>
+    </div>
+    <div class="nova-resources__links">
+      <a
+        {% if section.settings.ifu_url != blank %}href="{{ section.settings.ifu_url }}" target="_blank" rel="noopener"{% else %}role="link" aria-disabled="true"{% endif %}
+      >
+        <span class="nova-resource-type">PDF · Instructions</span>
+        <strong>Dental Implant System IFU</strong>
+        <span>Document TF-1008 · Revision 8</span>
+        <span class="nova-resource-action">{% if section.settings.ifu_url != blank %}Open document ↗{% else %}Upload pending{% endif %}</span>
+      </a>
+      <a
+        {% if section.settings.certificate_url != blank %}href="{{ section.settings.certificate_url }}" target="_blank" rel="noopener"{% else %}role="link" aria-disabled="true"{% endif %}
+      >
+        <span class="nova-resource-type">PDF · Certificate</span>
+        <strong>ISO 13485:2016</strong>
+        <span>Registration IL-99180 · Expires 21 Aug 2027</span>
+        <span class="nova-resource-action">{% if section.settings.certificate_url != blank %}Open certificate ↗{% else %}Upload pending{% endif %}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nova clinical resources",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "url", "id": "ifu_url", "label": "IFU file URL", "info": "Upload the controlled PDF to Shopify Files, then select it here." },
+    { "type": "url", "id": "certificate_url", "label": "ISO certificate file URL", "info": "Upload the certificate to Shopify Files, then select it here." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-3" }
+  ],
+  "presets": [{ "name": "Nova clinical resources" }]
+}
+{% endschema %}
