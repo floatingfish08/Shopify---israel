@@ -22,8 +22,8 @@
       >
         <span class="nova-resource-type">PDF · Instructions</span>
         <strong>Dental Implant System IFU</strong>
-        <span>Document TF-1008 · Revision 8</span>
-        <span class="nova-resource-action">{% if section.settings.ifu_url != blank %}Open document ↗{% else %}Upload pending{% endif %}</span>
+        <span>{% if section.settings.ifu_url != blank %}Current controlled document{% else %}Controlled copy under review{% endif %}</span>
+        <span class="nova-resource-action">{% if section.settings.ifu_url != blank %}Open document ↗{% else %}Verification pending{% endif %}</span>
       </a>
       <a
         {% if section.settings.certificate_url != blank %}href="{{ section.settings.certificate_url }}" target="_blank" rel="noopener"{% else %}role="link" aria-disabled="true"{% endif %}

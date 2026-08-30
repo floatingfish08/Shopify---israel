@@ -17,7 +17,7 @@
       "type": "nova-trust-bar",
       "blocks": {
         "quality": { "type": "trust_item", "settings": { "icon": "certificate", "heading": "ISO 13485:2016", "text": "Certified quality system" } },
-        "conformity": { "type": "trust_item", "settings": { "icon": "shield", "heading": "Controlled IFU", "text": "Safety information available" } },
+        "conformity": { "type": "trust_item", "settings": { "icon": "shield", "heading": "Clinical documentation", "text": "Confirm before use" } },
         "sterility": { "type": "trust_item", "settings": { "icon": "sterile", "heading": "Gamma sterilized", "text": "Implants supplied sterile" } },
         "delivery": { "type": "trust_item", "settings": { "icon": "shipping", "heading": "Tracked delivery", "text": "International service from Israel" } }
       },
