@@ -47,8 +47,8 @@
     "nova_systems": {
       "type": "nova-implant-systems",
       "settings": {
-        "psi_link": "/collections/psi-implant-system",
-        "pci_link": "/collections/pci-implant-system",
+        "psi_link": "#NovaResources",
+        "pci_link": "#NovaResources",
         "color_scheme": "scheme-1"
       }
     },
@@ -60,7 +60,7 @@
         "color_scheme": "scheme-2"
       }
     },
-    "nova_resources": { "type": "nova-resources", "settings": { "catalog_url": "", "ifu_url": "", "certificate_url": "", "color_scheme": "scheme-3" } }
+    "nova_resources": { "type": "nova-resources", "settings": { "catalog_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-product-catalog-2024.pdf?v=1788096139", "ifu_url": "", "certificate_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-iso-13485-certificate-2024.pdf?v=1788096136", "color_scheme": "scheme-3" } }
   },
   "order": ["nova_hero", "nova_trust", "nova_solutions", "nova_systems", "nova_quality", "nova_resources"]
 }
