@@ -27,12 +27,12 @@
     "nova_solutions": {
       "type": "nova-solutions",
       "blocks": {
-        "implants": { "type": "solution", "settings": { "heading": "Implant systems", "text": "PSI and PCI internal-hex implants", "link": "/collections/dental-implants" } },
-        "healing": { "type": "solution", "settings": { "heading": "Healing components", "text": "Titanium healing abutments", "link": "/collections/healing-abutments" } },
-        "restorative": { "type": "solution", "settings": { "heading": "Restorative solutions", "text": "Straight, angled and temporary abutments", "link": "/collections/restorative-components" } },
-        "digital": { "type": "solution", "settings": { "heading": "Digital workflow", "text": "CAD/CAM bases, scan bodies and blanks", "link": "/collections/digital-solutions" } },
-        "multiunit": { "type": "solution", "settings": { "heading": "Multi-unit solutions", "text": "Multi Click components and kits", "link": "/collections/multi-unit-solutions" } },
-        "surgical": { "type": "solution", "settings": { "heading": "Surgical instruments", "text": "Kits, drills, drivers and tools", "link": "/collections/surgical-tools" } }
+        "implants": { "type": "solution", "settings": { "heading": "Implant systems", "text": "PSI and PCI internal-hex implants", "link": "#NovaSystems" } },
+        "healing": { "type": "solution", "settings": { "heading": "Healing components", "text": "Titanium healing abutments", "link": "#NovaResources" } },
+        "restorative": { "type": "solution", "settings": { "heading": "Restorative solutions", "text": "Straight, angled and temporary abutments", "link": "#NovaResources" } },
+        "digital": { "type": "solution", "settings": { "heading": "Digital workflow", "text": "CAD/CAM bases, scan bodies and blanks", "link": "#NovaResources" } },
+        "multiunit": { "type": "solution", "settings": { "heading": "Multi-unit solutions", "text": "Multi Click components and kits", "link": "#NovaResources" } },
+        "surgical": { "type": "solution", "settings": { "heading": "Surgical instruments", "text": "Kits, drills, drivers and tools", "link": "#NovaResources" } }
       },
       "block_order": ["implants", "healing", "restorative", "digital", "multiunit", "surgical"],
       "settings": {
