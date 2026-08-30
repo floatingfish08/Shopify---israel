@@ -36,3 +36,5 @@ The supplied IFU is headed **TF-1008, revision 8**, but its final footer reads *
 - PCI Shopify product ID: `7527979352149`
 
 The approved product catalog and ISO 13485 certificate are hosted in Shopify Files and linked from the unpublished review theme. The IFU remains unlinked pending controlled-copy confirmation.
+
+The remaining visible catalog tables have been transcribed into `nova-complete-catalog-drafts.csv`. On August 30, 2026, the file was imported into the actual Shopify store as 50 additional draft products with 172 variants. Together with PSI and PCI, the store now contains 52 draft products and 228 cataloged variants. Source discrepancies and exclusions are documented in `catalog-source-review.md`.
