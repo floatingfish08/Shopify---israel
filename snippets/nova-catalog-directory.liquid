@@ -1,0 +1,145 @@
+{{ 'section-nova-medical.css' | asset_url | stylesheet_tag }}
+
+{%- assign catalog_url = 'https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-product-catalog-2024.pdf?v=1788096139' -%}
+{%- assign certificate_url = 'https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-iso-13485-certificate-2024.pdf?v=1788096136' -%}
+
+{%- capture implant_items -%}
+PSI Implant System|28|Diameters 3.3–6.0 mm||PCI Implant System|28|Diameters 3.3–6.0 mm
+{%- endcapture -%}
+{%- capture healing_items -%}
+Titanium Healing Abutment — 3 mm|4|HCN-3030 – HCN-3070||Titanium Healing Abutment — 5 mm|4|HCN-3050 – HCW-6050||Concave Titanium Healing Abutment|2|HAC-SV-RP30 – HAC-SV-RP50
+{%- endcapture -%}
+{%- capture restorative_items -%}
+Temporary Titanium Abutment|2|TTA-SV-RP – TTA-SV-RPR||PEEK Straight Abutment|4|PA-SV-RP10 – PA-SV-RP40||PEEK Anatomic Angled Abutment — 15°|3|PAA-SV-RP1510 – PAA-SV-RP1530||PEEK Anatomic Angled Abutment — 25°|3|PAA-SV-RP2510 – PAA-SV-RP2530||Straight Abutment — Ø 4.5 mm|5|SA-SV-RP5 – ST-1315||Straight Abutment — Wide Ø 5.5 mm|2|SA-SV-RP9W – SA-SV-RP12W||Straight Slim Abutment|3|SSA-SV-RP5 – STN-3811||Angled Abutment — 15°|3|ANS-1115 – ASM-1315||Angled Abutment — 25°|3|ANS-1125 – ASM-1325||Angled Abutment — 35° / 45°|2|ASM-1135 – ASM-1145||Straight Abutment with Shoulder|4|TSTA-4710 – STA-4714||Anatomic Straight Abutment|4|SLM-3810 – SLM-3840||Concave Anatomic Straight Abutment|3|SCM-3010 – SCM-3030||Anatomic Angled Abutment — 15°|4|ANG-1115-10 – ANG-1415-40||Concave Anatomic Angled Abutment — 15°|4|ANT-1115-10 – ANT-1415-40||Anatomic Angled Abutment — 25°|4|ANG-1125-10 – ANG-1425-40||Concave Anatomic Angled Abutment — 25°|4|ANT-1125-10 – ANT-1425-40||Plastic Abutment for Casting|2|PIS-0013 – PIS-0012
+{%- endcapture -%}
+{%- capture impression_items -%}
+Closed Tray Impression Coping — Narrow Ø 4 mm|2|CT-SV-RPSN – CT-SV-RPLN||Straight Transfer Abutment|2|TMC-0910 – TMC-0930||Angled Transfer Abutment — 15°|3|TAP-SV-RP1510 – TAP-SV-RP1530||Angled Transfer Abutment — 25°|3|TAP-SV-RP2510 – TAP-SV-RP2530||Open Tray Impression Coping|1|TRO-1310
+{%- endcapture -%}
+{%- capture multi_items -%}
+Straight Titanium Pop-Clicq Mini Kit|7|LOCW-SV-RP05K – LOCW-SV-RP60K||Angled Titanium Pop-Clicq — 18°|4|LOCW-SV-RP1805K – LOCW-SV-RP1830K||Angled Titanium Pop-Clicq — 30°|4|LOCW-SV-RP3005K – LOCW-SV-RP3030K||Multi Clicq Bar On4 Kit|2|MUL-SV-BK4 – MUL-SV-BK4D||Multi Clicq Bar On6 Kit|2|MUL-SV-BK6 – MUL-SV-BK6D||Multi Clicq Straight Abutment|5|SU-0031 – SU-0035||One-Piece Angled Abutment Mini Kit — 17°|3|MS-1702 – MS-1704||One-Piece Angled Abutment Mini Kit — 30°|3|MS-3003 – MS-3005||Multi Clicq Components|6|MUL-KS-TSSV – MS-5001||Ball Attachment|6|BAT-0010 – BAT-0060||Ball Attachment Components|3|SIL-0001 – HUS-0000
+{%- endcapture -%}
+{%- capture digital_items -%}
+Zircocam Straight Anatomic Abutment|3|ZAA-SV-RP10 – ZAA-SV-RP30||Zircotec Angled Anatomic Abutment — 15°|1|ZAAU-SV-RP15||Zircocam Angled Anatomic Abutment — 15°|3|ZAA-SV-RP1510 – ZAA-SV-RP1530||Zircocam Angled Anatomic Abutment — 25°|3|ZAA-SV-RP2510 – ZAA-SV-RP2530||Chrome Cobalt Abutment / UCLA|2|ABZ-SV-RPCC – ABZ-SV-RPCCR||Titanium Base|2|ABZ-SV-RPTI – ABZ-SV-RPTIR||Titanium Base — Sirona CEREC Compatible|2|TBC-SV-RP05 – TBC-SV-RP05R||PEEK Scan Body|2|SB-SV-RP – SB-TBC||Pre-Milled Titanium Blank|4|PMAM-SV-RP – PMZZ-SV-RP||Abutment Gauge Kit|1|AG-SV-RPK||Abutment Gauge|3|AG-SV-RP00 – AG-SV-RP3000
+{%- endcapture -%}
+{%- capture surgical_items -%}
+Nova Surgical Kit Components|19|DR-5019 – MC-0001||Surgical Hand Tools|2|AR 2040 – LABK 1010
+{%- endcapture -%}
+
+{%- assign group_names = 'Implant systems||Healing abutments||Restorative components||Impression components||Multi-unit & overdenture||Digital, CAD/CAM & casting||Surgical instruments' | split: '||' -%}
+{%- assign group_slugs = 'implants||healing||restorative||impression||multi-unit||digital||surgical' | split: '||' -%}
+
+<section class="nova-directory" data-nova-catalog>
+  <div class="nova-directory__hero">
+    <div class="page-width nova-directory__hero-grid">
+      <div>
+        <p class="nova-eyebrow">NOVA clinical product range</p>
+        <h1>NOVA Product Catalog</h1>
+        <p class="nova-directory__lede">Browse 52 cataloged product families and 228 configurations for implant, restorative, digital and surgical workflows.</p>
+        <div class="nova-directory__actions">
+          <a class="button button--primary" href="{{ catalog_url }}" target="_blank" rel="noopener">Open complete PDF catalog</a>
+          <a class="button button--secondary" href="/pages/contact">Request product information</a>
+        </div>
+      </div>
+      <aside class="nova-directory__status" aria-label="Catalog status">
+        <span>Catalog reference</span>
+        <strong>2024 edition</strong>
+        <p>Ordering and availability are confirmed directly by NOVA. Online checkout is not enabled for these clinical products.</p>
+      </aside>
+    </div>
+  </div>
+
+  <div class="page-width nova-directory__body">
+    <div class="nova-directory__toolbar">
+      <label class="nova-directory__search">
+        <span class="visually-hidden">Search the product catalog</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+        <input type="search" placeholder="Search a product family or catalog number" data-nova-catalog-search>
+      </label>
+      <p data-nova-catalog-count>52 product families</p>
+    </div>
+
+    <nav class="nova-directory__nav" aria-label="Catalog categories">
+      {%- for group_name in group_names -%}
+        <a href="#catalog-{{ group_slugs[forloop.index0] }}">{{ group_name }}</a>
+      {%- endfor -%}
+    </nav>
+
+    <div class="nova-directory__groups">
+      {%- for group_name in group_names -%}
+        {%- case forloop.index0 -%}
+          {%- when 0 -%}{%- assign group_items = implant_items -%}
+          {%- when 1 -%}{%- assign group_items = healing_items -%}
+          {%- when 2 -%}{%- assign group_items = restorative_items -%}
+          {%- when 3 -%}{%- assign group_items = impression_items -%}
+          {%- when 4 -%}{%- assign group_items = multi_items -%}
+          {%- when 5 -%}{%- assign group_items = digital_items -%}
+          {%- when 6 -%}{%- assign group_items = surgical_items -%}
+        {%- endcase -%}
+        {%- assign items = group_items | strip | split: '||' -%}
+        <section class="nova-directory__group" id="catalog-{{ group_slugs[forloop.index0] }}" data-nova-catalog-group>
+          <div class="nova-directory__group-heading">
+            <span>{{ forloop.index | prepend: '0' }}</span>
+            <div>
+              <h2>{{ group_name }}</h2>
+              <p>{{ items.size }} product {% if items.size == 1 %}family{% else %}families{% endif %}</p>
+            </div>
+          </div>
+          <div class="nova-directory__grid">
+            {%- for raw_item in items -%}
+              {%- assign item = raw_item | split: '|' -%}
+              <article class="nova-directory__card" data-nova-catalog-item data-search="{{ item[0] | append: ' ' | append: item[2] | downcase | escape }}">
+                <div class="nova-directory__card-mark" aria-hidden="true">{{ item[0] | slice: 0 }}</div>
+                <div>
+                  <h3>{{ item[0] }}</h3>
+                  <p>{{ item[2] }}</p>
+                </div>
+                <span class="nova-directory__variants">{{ item[1] }} {% if item[1] == '1' %}configuration{% else %}configurations{% endif %}</span>
+              </article>
+            {%- endfor -%}
+          </div>
+        </section>
+      {%- endfor -%}
+    </div>
+
+    <p class="nova-directory__empty" data-nova-catalog-empty hidden>No catalog families match that search. Try a product name or catalog number.</p>
+
+    <footer class="nova-directory__footer">
+      <div>
+        <p class="nova-eyebrow">Clinical documentation</p>
+        <h2>Review specifications before use.</h2>
+        <p>Product names and catalog numbers are transcribed from the supplied NOVA catalog. Trained professionals should confirm compatibility, current labeling and the applicable Instructions for Use.</p>
+      </div>
+      <div class="nova-directory__footer-actions">
+        <a href="{{ catalog_url }}" target="_blank" rel="noopener">Product catalog <span aria-hidden="true">↗</span></a>
+        <a href="{{ certificate_url }}" target="_blank" rel="noopener">ISO 13485 certificate <span aria-hidden="true">↗</span></a>
+      </div>
+    </footer>
+  </div>
+</section>
+
+<script>
+  (() => {
+    const catalog = document.querySelector('[data-nova-catalog]');
+    if (!catalog) return;
+    const search = catalog.querySelector('[data-nova-catalog-search]');
+    const cards = [...catalog.querySelectorAll('[data-nova-catalog-item]')];
+    const groups = [...catalog.querySelectorAll('[data-nova-catalog-group]')];
+    const count = catalog.querySelector('[data-nova-catalog-count]');
+    const empty = catalog.querySelector('[data-nova-catalog-empty]');
+
+    search.addEventListener('input', () => {
+      const query = search.value.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach((card) => {
+        const match = !query || card.dataset.search.includes(query);
+        card.hidden = !match;
+        if (match) visible += 1;
+      });
+      groups.forEach((group) => {
+        group.hidden = !group.querySelector('[data-nova-catalog-item]:not([hidden])');
+      });
+      count.textContent = `${visible} product ${visible === 1 ? 'family' : 'families'}`;
+      empty.hidden = visible !== 0;
+    });
+  })();
+</script>
