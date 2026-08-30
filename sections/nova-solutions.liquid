@@ -13,12 +13,24 @@
     <div class="nova-solutions__grid">
       {%- for block in section.blocks -%}
         <a class="nova-solution-card" href="{{ block.settings.link | default: routes.all_products_collection_url }}" {{ block.shopify_attributes }}>
-          <span class="nova-solution-card__number">0{{ forloop.index }}</span>
+          <div class="nova-solution-card__top">
+            <span class="nova-solution-card__number">0{{ forloop.index }}</span>
+            <span class="nova-solution-card__icon" aria-hidden="true">
+              {%- case forloop.index -%}
+                {%- when 1 -%}<svg viewBox="0 0 48 48" fill="none"><path d="M18 4h12l3 8-3 27-6 5-6-5-3-27 3-8Z"/><path d="m17 14 15 4M16 20l15 4M17 27l13 4M19 34l9 3"/></svg>
+                {%- when 2 -%}<svg viewBox="0 0 48 48" fill="none"><path d="M18 7h12v10l4 5v18H14V22l4-5V7Z"/><path d="M18 14h12M15 26h18M15 32h18"/></svg>
+                {%- when 3 -%}<svg viewBox="0 0 48 48" fill="none"><path d="m19 5 13 6-4 10 5 19H15l5-19-1-16Z"/><path d="M20 21h8M17 32h14"/></svg>
+                {%- when 4 -%}<svg viewBox="0 0 48 48" fill="none"><rect x="7" y="10" width="34" height="25" rx="3"/><path d="M15 42h18M24 35v7M14 18h8v8h-8zM27 18h7M27 23h7M14 30h20"/></svg>
+                {%- when 5 -%}<svg viewBox="0 0 48 48" fill="none"><path d="M10 38h28M14 38V21l10-11 10 11v17M20 38V26h8v12"/><circle cx="24" cy="10" r="4"/></svg>
+                {%- else -%}<svg viewBox="0 0 48 48" fill="none"><path d="m13 6 7 7-4 4 19 19-5 5-19-19-4 4-2-2 8-8-7-7 7-3Z"/><path d="m28 29 7-7 7 7-7 7"/></svg>
+              {%- endcase -%}
+            </span>
+          </div>
           <div>
             <h3>{{ block.settings.heading | escape }}</h3>
             <p>{{ block.settings.text | escape }}</p>
           </div>
-          <span class="nova-solution-card__arrow" aria-hidden="true">→</span>
+          <span class="nova-solution-card__cta">Explore category <span aria-hidden="true">→</span></span>
         </a>
       {%- endfor -%}
     </div>

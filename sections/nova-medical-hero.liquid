@@ -1,6 +1,29 @@
 {{ 'section-nova-medical.css' | asset_url | stylesheet_tag }}
 
 <section class="nova-hero color-{{ section.settings.color_scheme }} gradient" aria-labelledby="NovaHero-{{ section.id }}">
+  {%- if section.settings.image != blank -%}
+    {{
+      section.settings.image
+      | image_url: width: 2400
+      | image_tag:
+        widths: '750, 1100, 1500, 2000, 2400',
+        sizes: '100vw',
+        loading: 'eager',
+        fetchpriority: 'high',
+        class: 'nova-hero__backdrop',
+        alt: section.settings.image.alt
+    }}
+  {%- else -%}
+    <img
+      class="nova-hero__backdrop"
+      src="{{ 'nova-implant-hero-v2.webp' | asset_url }}"
+      width="1536"
+      height="1024"
+      loading="eager"
+      fetchpriority="high"
+      alt="Precision-machined dental implant components in a studio setting"
+    >
+  {%- endif -%}
   <div class="nova-hero__grid page-width">
     <div class="nova-hero__content">
       <div class="nova-hero__eyebrow">
@@ -30,36 +53,16 @@
       </ul>
     </div>
 
-    <div class="nova-hero__visual" aria-label="Nova dental implant system">
-      <div class="nova-hero__halo" aria-hidden="true"></div>
-      {%- if section.settings.image != blank -%}
-        {{
-          section.settings.image
-          | image_url: width: 1200
-          | image_tag:
-            widths: '480, 720, 960, 1200',
-            sizes: '(min-width: 990px) 42vw, 90vw',
-            loading: 'eager',
-            fetchpriority: 'high',
-            class: 'nova-hero__image',
-            alt: section.settings.image.alt
-        }}
-      {%- else -%}
-        <img
-          class="nova-hero__image nova-hero__image--fallback"
-          src="{{ 'nova-implant-hero.jpg' | asset_url }}"
-          width="444"
-          height="640"
-          loading="eager"
-          fetchpriority="high"
-          alt="Nova dental implant and abutment components"
-        >
-      {%- endif -%}
-      <div class="nova-hero__card">
-        <span class="nova-hero__card-label">Quality system</span>
-        <strong>ISO 13485:2016</strong>
-        <span>Registration IL-99180 · valid through Aug 2027</span>
-      </div>
+    <div class="nova-hero__card">
+      <span class="nova-hero__card-label">Quality system</span>
+      <strong>ISO 13485:2016</strong>
+      <span>Registration IL-99180 · valid through Aug 2027</span>
+    </div>
+
+    <div class="nova-hero__stats" aria-label="Catalog overview">
+      <div><strong>52</strong><span>Product families</span></div>
+      <div><strong>228</strong><span>Configurations</span></div>
+      <div><strong>7</strong><span>Clinical categories</span></div>
     </div>
   </div>
 </section>

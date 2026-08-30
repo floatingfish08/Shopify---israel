@@ -4,12 +4,12 @@
       "type": "nova-medical-hero",
       "settings": {
         "eyebrow": "Precision implant systems for trained clinicians",
-        "heading": "Clinical confidence, engineered into every connection.",
-        "text": "<p>Explore internal-hex implant systems, restorative components and surgical solutions manufactured under an ISO 13485 quality system.</p>",
-        "primary_label": "Explore implant systems",
-        "primary_link": "#NovaSystems",
-        "secondary_label": "View clinical resources",
-        "secondary_link": "",
+        "heading": "Precision that becomes part of the patient.",
+        "text": "<p>A complete internal-hex ecosystem for implant placement, restoration and digital workflows—organized for confident product selection.</p>",
+        "primary_label": "Explore the catalog",
+        "primary_link": "/collections/all",
+        "secondary_label": "View implant systems",
+        "secondary_link": "#NovaSystems",
         "color_scheme": "scheme-3"
       }
     },
@@ -27,18 +27,18 @@
     "nova_solutions": {
       "type": "nova-solutions",
       "blocks": {
-        "implants": { "type": "solution", "settings": { "heading": "Implant systems", "text": "PSI and PCI internal-hex implants", "link": "#NovaSystems" } },
-        "healing": { "type": "solution", "settings": { "heading": "Healing components", "text": "Titanium healing abutments", "link": "#NovaResources" } },
-        "restorative": { "type": "solution", "settings": { "heading": "Restorative solutions", "text": "Straight, angled and temporary abutments", "link": "#NovaResources" } },
-        "digital": { "type": "solution", "settings": { "heading": "Digital workflow", "text": "CAD/CAM bases, scan bodies and blanks", "link": "#NovaResources" } },
-        "multiunit": { "type": "solution", "settings": { "heading": "Multi-unit solutions", "text": "Multi Click components and kits", "link": "#NovaResources" } },
-        "surgical": { "type": "solution", "settings": { "heading": "Surgical instruments", "text": "Kits, drills, drivers and tools", "link": "#NovaResources" } }
+        "implants": { "type": "solution", "settings": { "heading": "Implant systems", "text": "PSI and PCI internal-hex implants", "link": "/collections/all#catalog-implants" } },
+        "healing": { "type": "solution", "settings": { "heading": "Healing components", "text": "Titanium healing abutments", "link": "/collections/all#catalog-healing" } },
+        "restorative": { "type": "solution", "settings": { "heading": "Restorative solutions", "text": "Straight, angled and temporary abutments", "link": "/collections/all#catalog-restorative" } },
+        "digital": { "type": "solution", "settings": { "heading": "Digital workflow", "text": "CAD/CAM bases, scan bodies and blanks", "link": "/collections/all#catalog-digital" } },
+        "multiunit": { "type": "solution", "settings": { "heading": "Multi-unit solutions", "text": "Multi Clicq components and kits", "link": "/collections/all#catalog-multi-unit" } },
+        "surgical": { "type": "solution", "settings": { "heading": "Surgical instruments", "text": "Kits, drills, drivers and tools", "link": "/collections/all#catalog-surgical" } }
       },
       "block_order": ["implants", "healing", "restorative", "digital", "multiunit", "surgical"],
       "settings": {
-        "eyebrow": "Shop by clinical workflow",
-        "heading": "A complete internal-hex system",
-        "text": "<p>Move from placement to final restoration with components organized around the way clinicians work.</p>",
+        "eyebrow": "Browse the ecosystem",
+        "heading": "Find the right component faster.",
+        "text": "<p>Seven focused categories take clinicians from placement through restoration, laboratory and digital workflows.</p>",
         "color_scheme": "scheme-2",
         "padding_top": 80,
         "padding_bottom": 80
@@ -47,15 +47,15 @@
     "nova_systems": {
       "type": "nova-implant-systems",
       "settings": {
-        "psi_link": "#NovaResources",
-        "pci_link": "#NovaResources",
+        "psi_link": "/collections/all#catalog-implants",
+        "pci_link": "/collections/all#catalog-implants",
         "color_scheme": "scheme-1"
       }
     },
     "nova_quality": {
       "type": "nova-quality-story",
       "settings": {
-        "catalog_url": "#NovaResources",
+        "catalog_url": "/collections/all",
         "contact_url": "/pages/contact",
         "color_scheme": "scheme-2"
       }
