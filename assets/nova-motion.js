@@ -3,6 +3,7 @@
 
   const revealGroups = [
     { selector: '.nova-marketplace__grid', effect: 'scale' },
+    { selector: '.nova-trust__header > *', effect: 'left' },
     { selector: '.nova-trust__item', effect: 'rise' },
     { selector: '.nova-commerce__heading', effect: 'left' },
     { selector: '.nova-category-card', effect: 'scale' },
