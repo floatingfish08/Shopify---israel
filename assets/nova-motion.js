@@ -9,6 +9,7 @@
     { selector: '.nova-category-card', effect: 'scale' },
     { selector: '.nova-featured__heading', effect: 'right' },
     { selector: '.nova-product-card', effect: 'rise' },
+    { selector: '.nova-commerce__assist', effect: 'scale' },
     { selector: '.nova-shop__heading', effect: 'left' },
     { selector: '.nova-shop-card', effect: 'rise' },
     { selector: '.nova-shop__shipping span', effect: 'rise' },
@@ -21,6 +22,7 @@
     { selector: '.nova-catalog-map', effect: 'rise' },
     { selector: '.nova-quality__intro', effect: 'left' },
     { selector: '.nova-quality__steps li', effect: 'right' },
+    { selector: '.nova-quality__actions .button', effect: 'rise' },
     { selector: '.nova-quality__certificate', effect: 'scale' },
     { selector: '.nova-resources__intro', effect: 'left' },
     { selector: '.nova-resources__links a', effect: 'right' },
@@ -29,6 +31,8 @@
     { selector: '.footer__blocks-wrapper > *', effect: 'rise' },
     { selector: '.footer-block--newsletter', effect: 'right' },
     { selector: '.nova-collection-hero__inner > *', effect: 'rise' },
+    { selector: '.nova-collection-switcher a', effect: 'rise' },
+    { selector: "main[data-template='collection'] .facets-container", effect: 'scale' },
     { selector: '.nova-directory__hero-grid > *', effect: 'rise' },
     { selector: '.nova-directory__group-heading', effect: 'left' },
     { selector: '.nova-directory__card', effect: 'rise' },
@@ -110,6 +114,7 @@
 
     const progressBar = document.querySelector('.nova-scroll-progress');
     const depthElements = Array.from(document.querySelectorAll('[data-nova-depth]'));
+    const collectionHero = document.querySelector('[data-nova-collection-hero]');
     let scrollFrame = 0;
 
     const updateScrollEffects = () => {
@@ -117,6 +122,12 @@
       const scrollRange = document.documentElement.scrollHeight - window.innerHeight;
       const progress = scrollRange > 0 ? Math.min(window.scrollY / scrollRange, 1) : 0;
       if (progressBar) progressBar.style.transform = `scaleX(${progress})`;
+      document.documentElement.classList.toggle('nova-page-scrolled', window.scrollY > 72);
+
+      if (collectionHero) {
+        const heroShift = Math.min(window.scrollY * 0.075, 34);
+        collectionHero.style.setProperty('--nova-collection-shift', `${heroShift.toFixed(2)}px`);
+      }
 
       depthElements.forEach((element) => {
         const rect = element.getBoundingClientRect();

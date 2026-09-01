@@ -48,7 +48,7 @@
   endif
 -%}
 
-<section class="nova-collection-hero nova-collection-hero--{{ collection.handle | handle }}" style="--nova-collection-art: url('{{ hero_art | asset_url }}');">
+<section class="nova-collection-hero nova-collection-hero--{{ collection.handle | handle }}" style="--nova-collection-art: url('{{ hero_art | asset_url }}');" data-nova-collection-hero>
   <div class="nova-collection-hero__inner page-width">
     <div class="nova-collection-hero__copy">
       <nav class="nova-collection-hero__breadcrumb" aria-label="Breadcrumb"><a href="{{ routes.root_url }}">Home</a><span>→</span><a href="{{ routes.all_products_collection_url }}">Catalog</a></nav>
@@ -62,6 +62,7 @@
         <input id="NovaCatalogSearch-{{ section.id }}" type="search" name="q" placeholder="Search product or catalog number">
         <button class="button button--primary" type="submit">Search catalog</button>
       </form>
+      <a class="nova-scroll-cue nova-scroll-cue--collection" href="#ProductGridContainer"><span>Browse products</span><i aria-hidden="true">↓</i></a>
     </div>
     <aside class="nova-collection-hero__summary">
       <span class="nova-collection-hero__index">01 / Catalog</span>
