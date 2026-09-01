@@ -748,3 +748,144 @@ main[data-template='product'] .accordion__title { font-size: 1.35rem; font-weigh
   main[data-template='product'] .product__title h1 { font-size: 2.7rem; }
   .nova-footer-hero h2 { font-size: 3.6rem; }
 }
+
+/* Clear product-card actions and buyer-friendly quality verification panel. */
+.nova-product-card__body a {
+  display: flex;
+  min-height: 4.4rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.6rem;
+  padding: 1rem 1.4rem;
+  border: 1px solid var(--nova-friendly-teal);
+  border-radius: .65rem;
+  background: var(--nova-friendly-teal);
+  color: #fff !important;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+}
+.nova-product-card__body a span { color: inherit; font-size: 1.5rem; }
+.nova-product-card__body a:hover {
+  border-color: var(--nova-friendly-teal-dark);
+  background: var(--nova-friendly-teal-dark);
+  color: #fff !important;
+  transform: none;
+}
+.nova-product-card__body a:focus-visible {
+  outline: .2rem solid #d51f2c;
+  outline-offset: .3rem;
+}
+
+.nova-quality {
+  padding: 6.5rem 0;
+  background: #fff;
+}
+.nova-quality__layout {
+  grid-template-columns: minmax(0,.88fr) minmax(42rem,1.12fr);
+  gap: 1.6rem;
+}
+.nova-quality__intro {
+  padding: 4rem;
+  border: 1px solid #cfe0e3;
+  border-radius: 1.2rem;
+  background: var(--nova-friendly-pale);
+}
+.nova-quality__intro h2 {
+  max-width: 53rem;
+  margin: 1rem 0 1.6rem;
+  font-size: clamp(3.2rem,3.4vw,4.4rem);
+  line-height: 1.08;
+}
+.nova-quality__intro .rte { max-width: 55rem; }
+.nova-quality__metric {
+  display: inline-flex;
+  gap: 1.2rem;
+  width: auto;
+  margin-top: 2.4rem;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid #cadbdd;
+  border-radius: .8rem;
+  background: rgba(255,255,255,.78);
+}
+.nova-quality__metric strong { font-size: 3.4rem; }
+.nova-quality__metric span { font-size: .95rem; letter-spacing: .06em; }
+.nova-quality__actions { gap: 1rem; margin-top: 2.4rem; }
+.nova-quality__actions .button {
+  min-height: 4.6rem;
+  padding-inline: 1.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.nova-quality__actions .button--secondary {
+  border: 1px solid #b9cfd3;
+  background: #fff;
+  color: var(--nova-friendly-teal);
+}
+.nova-quality__steps {
+  display: grid;
+  gap: 1rem;
+  border: 0;
+}
+.nova-quality__steps li {
+  grid-template-columns: 4.6rem 1fr;
+  gap: 1.6rem;
+  min-height: 0;
+  padding: 2.2rem;
+  border: 1px solid var(--nova-friendly-line);
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 .7rem 2rem rgba(31,69,78,.045);
+}
+.nova-quality__step-number {
+  display: grid;
+  width: 4rem;
+  height: 4rem;
+  place-items: center;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--nova-friendly-pale);
+  color: var(--nova-friendly-teal);
+  font-size: 1rem;
+}
+.nova-quality__steps strong { font-size: 1.7rem; }
+.nova-quality__steps p { max-width: 48rem; margin-top: .5rem; color: var(--nova-friendly-muted); }
+.nova-quality__certificate {
+  margin-top: 0;
+  padding: 2.6rem 3rem;
+  border: 0;
+  border-radius: 1rem;
+  background: var(--nova-friendly-teal);
+  color: #fff;
+  box-shadow: none;
+}
+.nova-quality__certificate .nova-quality__seal { color: #fff; }
+.nova-quality__certificate span { color: rgba(255,255,255,.72); }
+.nova-quality__certificate strong { color: #fff; font-size: 2rem; font-weight: 600; }
+.nova-quality__certificate p { color: rgba(255,255,255,.72); }
+.nova-quality__notice {
+  margin-top: .2rem;
+  padding: 1.3rem 1.5rem;
+  border: 1px solid #e2e8e9;
+  border-left: .3rem solid #d51f2c;
+  border-radius: .6rem;
+  background: #fafbfb;
+}
+
+@media screen and (max-width: 989px) {
+  .nova-quality__layout { grid-template-columns: 1fr; }
+  .nova-quality__steps { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .nova-quality__steps li { grid-template-columns: 1fr; }
+}
+
+@media screen and (max-width: 749px) {
+  .nova-quality { padding: 5rem 0; }
+  .nova-quality__intro { padding: 2.6rem 2.2rem; }
+  .nova-quality__intro h2 { font-size: 3.1rem; }
+  .nova-quality__actions { display: grid; }
+  .nova-quality__actions .button { width: 100%; }
+  .nova-quality__steps { grid-template-columns: 1fr; }
+  .nova-quality__steps li { grid-template-columns: 4.2rem 1fr; padding: 1.8rem; }
+  .nova-quality__certificate { grid-template-columns: 4.5rem 1fr; padding: 2.2rem; }
+}
