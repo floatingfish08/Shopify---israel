@@ -1,59 +1,37 @@
 {
   "sections": {
-    "nova_hero": {
-      "type": "nova-medical-hero",
-      "settings": {
-        "eyebrow": "Precision implant systems for trained clinicians",
-        "heading": "Precision that becomes part of the patient.",
-        "text": "<p>A complete internal-hex ecosystem for implant placement, restoration and digital workflows—organized for confident product selection.</p>",
-        "primary_label": "Explore the catalog",
-        "primary_link": "/collections/all",
-        "secondary_label": "View implant systems",
-        "secondary_link": "#NovaSystems",
-        "color_scheme": "scheme-3"
-      }
-    },
+    "nova_slider": { "type": "nova-home-slider", "settings": {} },
     "nova_trust": {
       "type": "nova-trust-bar",
       "blocks": {
-        "quality": { "type": "trust_item", "settings": { "icon": "certificate", "heading": "ISO 13485:2016", "text": "Certified quality system" } },
-        "conformity": { "type": "trust_item", "settings": { "icon": "shield", "heading": "Clinical documentation", "text": "Confirm before use" } },
-        "sterility": { "type": "trust_item", "settings": { "icon": "sterile", "heading": "Gamma sterilized", "text": "Implants supplied sterile" } },
-        "delivery": { "type": "trust_item", "settings": { "icon": "shipping", "heading": "Tracked delivery", "text": "International service from Israel" } }
+        "quality": { "type": "trust_item", "settings": { "icon": "shield", "heading": "FDA 510(k) cleared", "text": "K150363 implant system" } },
+        "conformity": { "type": "trust_item", "settings": { "icon": "certificate", "heading": "ISO 13485:2016", "text": "Certified quality system" } },
+        "sterility": { "type": "trust_item", "settings": { "icon": "certificate", "heading": "CE marked", "text": "Applicable product lines" } },
+        "delivery": { "type": "trust_item", "settings": { "icon": "shipping", "heading": "Free U.S. shipping", "text": "Same-day eligible dispatch" } }
       },
       "block_order": ["quality", "conformity", "sterility", "delivery"],
       "settings": { "color_scheme": "scheme-1" }
     },
-    "nova_commerce": {
-      "type": "nova-commerce-showcase",
-      "settings": { "color_scheme": "scheme-1" }
-    },
+    "nova_shop": { "type": "nova-shop-products", "settings": { "color_scheme": "scheme-1" } },
+    "nova_regulatory": { "type": "nova-regulatory-focus", "settings": { "color_scheme": "scheme-3" } },
     "nova_solutions": {
       "type": "nova-solutions",
       "blocks": {
-        "implants": { "type": "solution", "settings": { "heading": "Implant systems", "text": "PSI and PCI internal-hex implants", "link": "/collections/all#catalog-implants" } },
-        "healing": { "type": "solution", "settings": { "heading": "Healing components", "text": "Titanium healing abutments", "link": "/collections/all#catalog-healing" } },
-        "restorative": { "type": "solution", "settings": { "heading": "Restorative solutions", "text": "Straight, angled and temporary abutments", "link": "/collections/all#catalog-restorative" } },
-        "digital": { "type": "solution", "settings": { "heading": "Digital workflow", "text": "CAD/CAM bases, scan bodies and blanks", "link": "/collections/all#catalog-digital" } },
-        "multiunit": { "type": "solution", "settings": { "heading": "Multi-unit solutions", "text": "Multi Clicq components and kits", "link": "/collections/all#catalog-multi-unit" } },
-        "surgical": { "type": "solution", "settings": { "heading": "Surgical instruments", "text": "Kits, drills, drivers and tools", "link": "/collections/all#catalog-surgical" } }
+        "implants": { "type": "solution", "settings": { "heading": "PSI system", "text": "NOVA internal-hex implant ecosystem", "link": "/collections/all" } },
+        "healing": { "type": "solution", "settings": { "heading": "Healing components", "text": "Slim titanium healing abutments", "link": "/products/slim-titanium-healing-abutment" } },
+        "restorative": { "type": "solution", "settings": { "heading": "Restorative solutions", "text": "Castable, chrome-cobalt and UCLA", "link": "/collections/all" } },
+        "digital": { "type": "solution", "settings": { "heading": "CAD/CAM & casting", "text": "Laboratory restorative workflows", "link": "/products/chrome-cobalt-abutment-ucla" } },
+        "multiunit": { "type": "solution", "settings": { "heading": "Multi-unit solutions", "text": "Angled Pop-Clicq and overdenture", "link": "/products/angled-titanium-pop-clicq-18" } },
+        "surgical": { "type": "solution", "settings": { "heading": "Surgical instruments", "text": "Clinical and laboratory hand tools", "link": "/products/surgical-hand-tools" } }
       },
       "block_order": ["implants", "healing", "restorative", "digital", "multiunit", "surgical"],
       "settings": {
-        "eyebrow": "Browse the ecosystem",
-        "heading": "Find the right component faster.",
-        "text": "<p>Seven focused categories take clinicians from placement through restoration, laboratory and digital workflows.</p>",
+        "eyebrow": "Shop by workflow",
+        "heading": "Everything organized for faster ordering.",
+        "text": "<p>Move from healing through restoration, laboratory and full-arch workflows using clear product families and selectable configurations.</p>",
         "color_scheme": "scheme-2",
         "padding_top": 80,
         "padding_bottom": 80
-      }
-    },
-    "nova_systems": {
-      "type": "nova-implant-systems",
-      "settings": {
-        "psi_link": "/collections/all#catalog-implants",
-        "pci_link": "/collections/all#catalog-implants",
-        "color_scheme": "scheme-1"
       }
     },
     "nova_quality": {
@@ -66,5 +44,5 @@
     },
     "nova_resources": { "type": "nova-resources", "settings": { "catalog_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-product-catalog-2024.pdf?v=1788096139", "ifu_url": "", "certificate_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-iso-13485-certificate-2024.pdf?v=1788096136", "color_scheme": "scheme-3" } }
   },
-  "order": ["nova_hero", "nova_trust", "nova_commerce", "nova_solutions", "nova_systems", "nova_quality", "nova_resources"]
+  "order": ["nova_slider", "nova_trust", "nova_shop", "nova_regulatory", "nova_solutions", "nova_quality", "nova_resources"]
 }

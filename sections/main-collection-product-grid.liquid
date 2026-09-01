@@ -36,9 +36,6 @@
   }
 {%- endstyle -%}
 
-{%- if collection.handle == 'all' -%}
-  {% render 'nova-catalog-directory' %}
-{%- else -%}
 <collection-component
   view-event-payload="{{ collection | standard_event_data: 'view' | escape }}"
   data-collection-id="{{ collection.id }}"
@@ -203,7 +200,6 @@
     {%- endif -%}
   </div>
 </collection-component>
-{%- endif -%}
 
 {% schema %}
 {

@@ -17,7 +17,7 @@
         "announcement-quality": {
           "type": "announcement",
           "settings": {
-            "text": "Manufactured under an ISO 13485:2016 quality system",
+            "text": "FDA 510(k) cleared system · ISO 13485:2016 · CE marked",
             "text_alignment": "center",
             "color_scheme": "scheme-3",
             "link": ""
@@ -26,7 +26,7 @@
         "announcement-professional": {
           "type": "announcement",
           "settings": {
-            "text": "For licensed dental professionals · Documentation available",
+            "text": "Free U.S. shipping · Same-day dispatch on eligible in-stock orders",
             "text_alignment": "center",
             "color_scheme": "scheme-3",
             "link": ""

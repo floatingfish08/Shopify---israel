@@ -17,7 +17,7 @@
         "clinical_assurance": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class='nova-product-assurance'><strong>Professional-use product</strong><span>Confirm compatibility and review the current product label and applicable Instructions for Use before clinical use. Controlled documents are available from the Clinical Resources area.</span></div>"
+            "custom_liquid": "<div class='nova-product-assurance'><strong>Professional ordering</strong><div><span>✓ Free U.S. shipping</span><span>✓ Same-day eligible dispatch</span><span>✓ FDA 510(k) cleared implant system</span></div><small>Confirm compatibility and review the current label and applicable Instructions for Use before clinical use.</small></div>"
           }
         },
         "description": { "type": "description" },
@@ -35,7 +35,7 @@
           "settings": {
             "heading": "Shipping to the United States",
             "icon": "truck",
-            "content": "<p>Orders dispatch from Israel using a tracked international service. The checkout rate and delivery estimate depend on destination, package weight and selected service. Delays outside the carrier's control may occur.</p>",
+            "content": "<p>Free standard shipping is offered to U.S. destinations. Eligible in-stock orders received during fulfillment hours are dispatched the same business day. Carrier transit times begin after dispatch.</p>",
             "page": ""
           }
         },

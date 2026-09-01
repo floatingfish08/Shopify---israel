@@ -3,40 +3,40 @@
 <section class="nova-quality color-{{ section.settings.color_scheme }} gradient" aria-labelledby="NovaQuality-{{ section.id }}">
   <div class="page-width nova-quality__layout">
     <div class="nova-quality__intro">
-      <span class="nova-kicker">A clearer path to the right component</span>
-      <h2 id="NovaQuality-{{ section.id }}" class="h1">Order by system, dimensions and catalog number.</h2>
+      <span class="nova-kicker">Verified quality and traceability</span>
+      <h2 id="NovaQuality-{{ section.id }}" class="h1">Confidence backed by documented controls.</h2>
       <div class="rte">
-        <p>Nova’s catalog is organized for precise product identification. Confirm the implant family first, then match platform, diameter, length and restorative workflow before ordering.</p>
+        <p>NOVA combines an FDA 510(k)-cleared dental implant system with ISO 13485-certified manufacturing controls and CE-marked product lines. Exact applicability is confirmed on each product label and current Instructions for Use.</p>
       </div>
       <div class="nova-quality__actions">
-        <a class="button button--primary" href="{{ section.settings.catalog_url | default: '#NovaResources' }}">Review the product catalog</a>
-        <a class="button button--secondary" href="{{ section.settings.contact_url | default: routes.root_url }}">Ask about compatibility</a>
+        <a class="button button--primary" href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K150363" target="_blank" rel="noopener">Verify FDA clearance</a>
+        <a class="button button--secondary" href="{{ section.settings.catalog_url | default: '#NovaResources' }}">Review the product catalog</a>
       </div>
     </div>
 
     <ol class="nova-quality__steps" role="list">
       <li>
         <span class="nova-quality__step-number">01</span>
-        <div><strong>Choose the implant system</strong><p>Compare PSI tapered-body and PCI straight-wall geometries.</p></div>
+        <div><strong>FDA 510(k) K150363</strong><p>The NOVA Dental Implants System received a substantially equivalent decision on June 29, 2015.</p></div>
       </li>
       <li>
         <span class="nova-quality__step-number">02</span>
-        <div><strong>Confirm the exact variant</strong><p>Use diameter, length, connection and catalog number—not the product image alone.</p></div>
+        <div><strong>ISO 13485:2016</strong><p>The supplied certificate documents NOVA’s medical-device quality management system.</p></div>
       </li>
       <li>
         <span class="nova-quality__step-number">03</span>
-        <div><strong>Match the clinical workflow</strong><p>Verify restorative, impression, digital and surgical component compatibility.</p></div>
+        <div><strong>CE-marked product lines</strong><p>Verify the current CE marking, catalog number and applicable IFU for the exact item ordered.</p></div>
       </li>
     </ol>
 
-    <aside class="nova-quality__certificate" aria-label="Quality management certificate summary">
+    <aside class="nova-quality__certificate" aria-label="FDA clearance summary">
       <div class="nova-quality__seal" aria-hidden="true">
         <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="28" stroke="currentColor"/><path d="m19 33 8 8 18-20" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <span>Quality management system</span>
-        <strong>ISO 13485:2016</strong>
-        <p>Registration IL-99180 · issued 16 Sep 2024 · expires 21 Aug 2027</p>
+        <span>U.S. medical-device clearance</span>
+        <strong>FDA 510(k) K150363</strong>
+        <p>NOVA Dental Implants System · Class II · DZE / NHA</p>
       </div>
     </aside>
 

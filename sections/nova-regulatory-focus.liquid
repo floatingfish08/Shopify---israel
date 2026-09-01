@@ -1,0 +1,31 @@
+{{ 'section-nova-medical.css' | asset_url | stylesheet_tag }}
+
+<section id="NovaRegulatory" class="nova-regulatory color-{{ section.settings.color_scheme }} gradient" aria-labelledby="NovaRegulatoryHeading-{{ section.id }}">
+  <div class="page-width nova-regulatory__layout">
+    <div class="nova-regulatory__lead">
+      <span class="nova-regulatory__label">U.S. market clearance</span>
+      <strong class="nova-regulatory__mark">FDA</strong>
+      <h2 id="NovaRegulatoryHeading-{{ section.id }}">NOVA Dental Implants System — 510(k) cleared.</h2>
+      <p>FDA record K150363 identifies the NOVA Dental Implants System as a Class II endosseous dental implant and abutment system and records a substantially equivalent decision dated June 29, 2015.</p>
+      <a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K150363" target="_blank" rel="noopener">Verify FDA record K150363 <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="nova-regulatory__cards">
+      <article><span>01</span><strong>FDA 510(k)</strong><p>K150363 · Class II<br>Cleared for the stated indications for use.</p></article>
+      <article><span>02</span><strong>ISO 13485:2016</strong><p>Certified quality management system.<br>Registration IL-99180.</p></article>
+      <article><span>03</span><strong>CE marked</strong><p>CE-marked NOVA product lines.<br>Confirm current marking on product labeling.</p></article>
+      <article><span>04</span><strong>Professional use</strong><p>Products are intended for appropriately trained and licensed dental professionals.</p></article>
+    </div>
+  </div>
+  <p class="page-width nova-regulatory__note">“FDA cleared” refers to the NOVA Dental Implants System covered by K150363; it does not mean FDA approval of every NOVA product. Always verify the label and applicable Instructions for Use for the exact item ordered.</p>
+</section>
+
+{% schema %}
+{
+  "name": "NOVA regulatory focus",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [{ "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-3" }],
+  "presets": [{ "name": "NOVA regulatory focus" }]
+}
+{% endschema %}

@@ -1,0 +1,77 @@
+{{ 'section-nova-medical.css' | asset_url | stylesheet_tag }}
+
+<section class="nova-slider" data-nova-slider aria-label="NOVA Implants USA featured products">
+  <div class="nova-slider__track">
+    <article class="nova-slider__slide is-active" data-nova-slide aria-hidden="false">
+      <img src="{{ 'nova-implant-hero-v2.webp' | asset_url }}" width="1536" height="1024" loading="eager" fetchpriority="high" alt="NOVA precision dental implant components">
+      <span class="nova-slider__overlay" aria-hidden="true"></span>
+      <div class="page-width nova-slider__content">
+        <span class="nova-slider__eyebrow">NOVA Implants USA</span>
+        <h1>Professional implant components, ready to order.</h1>
+        <p>Internal-hex restorative, healing and surgical solutions for licensed dental professionals and laboratories.</p>
+        <div class="nova-slider__actions"><a class="button button--primary" href="{{ routes.all_products_collection_url }}">Shop products</a><a class="button button--secondary" href="#NovaRegulatory">FDA &amp; quality</a></div>
+      </div>
+    </article>
+    <article class="nova-slider__slide" data-nova-slide aria-hidden="true">
+      <img src="{{ 'nova-slide-psi.webp' | asset_url }}" width="1800" height="600" loading="eager" alt="NOVA PSI dental implant system in 6 mm lengths">
+      <span class="nova-slider__overlay" aria-hidden="true"></span>
+      <div class="page-width nova-slider__content nova-slider__content--compact">
+        <span class="nova-slider__eyebrow">PSI implant system</span>
+        <h2>One proven internal-hex ecosystem.</h2>
+        <p>Explore the PSI system and its matching restorative workflow.</p>
+        <a class="button button--primary" href="{{ routes.all_products_collection_url }}">Explore components</a>
+      </div>
+    </article>
+    <article class="nova-slider__slide" data-nova-slide aria-hidden="true">
+      <img src="{{ 'nova-slide-multi-unit.webp' | asset_url }}" width="1800" height="600" loading="eager" alt="NOVA Multi-Unit abutment solutions">
+      <span class="nova-slider__overlay" aria-hidden="true"></span>
+      <div class="page-width nova-slider__content nova-slider__content--compact">
+        <span class="nova-slider__eyebrow">Full-arch workflow</span>
+        <h2>Multi-unit solutions made precise and simple.</h2>
+        <p>Straight and angled components for secure screw-retained restorations.</p>
+        <a class="button button--primary" href="{{ routes.all_products_collection_url }}?filter.p.product_type=Multi-Unit+Solutions">Shop multi-unit</a>
+      </div>
+    </article>
+  </div>
+  <div class="nova-slider__controls page-width">
+    <button type="button" data-nova-slider-prev aria-label="Previous slide">←</button>
+    <div class="nova-slider__dots" role="tablist" aria-label="Select featured slide">
+      <button class="is-active" type="button" data-nova-slider-dot="0" aria-label="Show slide 1" aria-selected="true"></button>
+      <button type="button" data-nova-slider-dot="1" aria-label="Show slide 2" aria-selected="false"></button>
+      <button type="button" data-nova-slider-dot="2" aria-label="Show slide 3" aria-selected="false"></button>
+    </div>
+    <button type="button" data-nova-slider-next aria-label="Next slide">→</button>
+  </div>
+</section>
+
+<script>
+  (() => {
+    const root = document.querySelector('[data-nova-slider]');
+    if (!root || root.dataset.ready) return;
+    root.dataset.ready = 'true';
+    const slides = [...root.querySelectorAll('[data-nova-slide]')];
+    const dots = [...root.querySelectorAll('[data-nova-slider-dot]')];
+    let current = 0;
+    let timer;
+    const show = (next) => {
+      current = (next + slides.length) % slides.length;
+      slides.forEach((slide, index) => { const active = index === current; slide.classList.toggle('is-active', active); slide.setAttribute('aria-hidden', String(!active)); });
+      dots.forEach((dot, index) => { const active = index === current; dot.classList.toggle('is-active', active); dot.setAttribute('aria-selected', String(active)); });
+    };
+    const restart = () => { clearInterval(timer); timer = setInterval(() => show(current + 1), 7000); };
+    root.querySelector('[data-nova-slider-prev]').addEventListener('click', () => { show(current - 1); restart(); });
+    root.querySelector('[data-nova-slider-next]').addEventListener('click', () => { show(current + 1); restart(); });
+    dots.forEach((dot, index) => dot.addEventListener('click', () => { show(index); restart(); }));
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) restart();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "NOVA homepage slider",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "presets": [{ "name": "NOVA homepage slider" }]
+}
+{% endschema %}
