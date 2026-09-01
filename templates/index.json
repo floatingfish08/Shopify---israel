@@ -18,11 +18,11 @@
       "type": "nova-solutions",
       "blocks": {
         "implants": { "type": "solution", "settings": { "heading": "PSI system", "text": "NOVA internal-hex implant ecosystem", "link": "/collections/all" } },
-        "healing": { "type": "solution", "settings": { "heading": "Healing components", "text": "Slim titanium healing abutments", "link": "/products/slim-titanium-healing-abutment" } },
+        "healing": { "type": "solution", "settings": { "heading": "Healing components", "text": "Slim titanium healing abutments", "link": "/products/nova-slim-titanium-healing-abutment" } },
         "restorative": { "type": "solution", "settings": { "heading": "Restorative solutions", "text": "Castable, chrome-cobalt and UCLA", "link": "/collections/all" } },
-        "digital": { "type": "solution", "settings": { "heading": "CAD/CAM & casting", "text": "Laboratory restorative workflows", "link": "/products/chrome-cobalt-abutment-ucla" } },
-        "multiunit": { "type": "solution", "settings": { "heading": "Multi-unit solutions", "text": "Angled Pop-Clicq and overdenture", "link": "/products/angled-titanium-pop-clicq-18" } },
-        "surgical": { "type": "solution", "settings": { "heading": "Surgical instruments", "text": "Clinical and laboratory hand tools", "link": "/products/surgical-hand-tools" } }
+        "digital": { "type": "solution", "settings": { "heading": "CAD/CAM & casting", "text": "Laboratory restorative workflows", "link": "/products/nova-chrome-cobalt-abutment-ucla" } },
+        "multiunit": { "type": "solution", "settings": { "heading": "Multi-unit solutions", "text": "Angled Pop-Clicq and overdenture", "link": "/products/nova-angled-titanium-pop-clicq-18" } },
+        "surgical": { "type": "solution", "settings": { "heading": "Surgical instruments", "text": "Clinical and laboratory hand tools", "link": "/products/nova-surgical-hand-tools" } }
       },
       "block_order": ["implants", "healing", "restorative", "digital", "multiunit", "surgical"],
       "settings": {
@@ -42,7 +42,7 @@
         "color_scheme": "scheme-2"
       }
     },
-    "nova_resources": { "type": "nova-resources", "settings": { "catalog_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-product-catalog-2024.pdf?v=1788096139", "ifu_url": "", "certificate_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-iso-13485-certificate-2024.pdf?v=1788096136", "color_scheme": "scheme-3" } }
+    "nova_resources": { "type": "nova-resources", "settings": { "catalog_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709", "ifu_url": "", "certificate_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-iso-13485-certificate-2024.pdf?v=1788096136", "color_scheme": "scheme-3" } }
   },
   "order": ["nova_slider", "nova_trust", "nova_shop", "nova_regulatory", "nova_solutions", "nova_quality", "nova_resources"]
 }
