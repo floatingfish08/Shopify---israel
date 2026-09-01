@@ -7,12 +7,18 @@
         <span class="nova-kicker">{{ section.settings.eyebrow | escape }}</span>
         <h2 class="h1">{{ section.settings.heading | escape }}</h2>
       </div>
-      <div class="rte">{{ section.settings.text }}</div>
+      <div>
+        <div class="rte">{{ section.settings.text }}</div>
+        <span class="nova-section-heading__stat"><strong data-nova-count="53">53</strong> products online</span>
+      </div>
     </div>
 
     <div class="nova-solutions__grid">
+      {%- assign solution_images = 'nova-category-implants.webp||nova-category-healing.webp||nova-category-restorative.webp||nova-category-digital.webp||nova-category-multi-unit.webp||nova-category-surgical.webp' | split: '||' -%}
       {%- for block in section.blocks -%}
         <a class="nova-solution-card" href="{{ block.settings.link | default: routes.all_products_collection_url }}" {{ block.shopify_attributes }}>
+          <span class="nova-solution-card__media" data-nova-depth><img src="{{ solution_images[forloop.index0] | asset_url }}" alt="" width="900" height="650" loading="lazy"></span>
+          <span class="nova-solution-card__shade" aria-hidden="true"></span>
           <div class="nova-solution-card__top">
             <span class="nova-solution-card__number">0{{ forloop.index }}</span>
             <span class="nova-solution-card__icon" aria-hidden="true">

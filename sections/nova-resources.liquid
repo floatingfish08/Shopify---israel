@@ -4,7 +4,7 @@
   <div class="page-width nova-resources__inner">
     <div class="nova-resources__intro">
       <span class="nova-kicker">Clinical documentation</span>
-      <h2 class="h1">Product documentation, close at hand.</h2>
+      <h2 class="h1">Clinical documents, ready when you need them.</h2>
       <p>Review supplied product information, instructions and quality-system documentation before ordering or clinical use.</p>
       <p class="nova-resources__note">For licensed dental professionals. Always consult the product label and applicable Instructions for Use.</p>
     </div>
@@ -12,6 +12,7 @@
       <a
         {% if section.settings.catalog_url != blank %}href="{{ section.settings.catalog_url }}" target="_blank" rel="noopener"{% else %}role="link" aria-disabled="true"{% endif %}
       >
+        <span class="nova-resource-index">01</span>
         <span class="nova-resource-type">PDF · Product catalog</span>
         <strong>Nova Product Catalog</strong>
         <span>Implants, restorative components and surgical tools</span>
@@ -20,6 +21,7 @@
       <a
         {% if section.settings.ifu_url != blank %}href="{{ section.settings.ifu_url }}" target="_blank" rel="noopener"{% else %}role="link" aria-disabled="true"{% endif %}
       >
+        <span class="nova-resource-index">02</span>
         <span class="nova-resource-type">PDF · Supplied instructions copy</span>
         <strong>Dental Implant System IFU</strong>
         <span>{% if section.settings.ifu_url != blank %}Revision 8 supplied copy · confirm current controlled reference{% else %}Controlled copy under review{% endif %}</span>
@@ -28,12 +30,17 @@
       <a
         {% if section.settings.certificate_url != blank %}href="{{ section.settings.certificate_url }}" target="_blank" rel="noopener"{% else %}role="link" aria-disabled="true"{% endif %}
       >
+        <span class="nova-resource-index">03</span>
         <span class="nova-resource-type">PDF · Certificate</span>
         <strong>ISO 13485:2016</strong>
         <span>Registration IL-99180 · Expires 21 Aug 2027</span>
         <span class="nova-resource-action">{% if section.settings.certificate_url != blank %}Open certificate ↗{% else %}Upload pending{% endif %}</span>
       </a>
     </div>
+    <a class="nova-resources__support" href="/pages/contact">
+      <span>Need product or compatibility support?</span>
+      <strong>Talk to the NOVA team <span aria-hidden="true">↗</span></strong>
+    </a>
   </div>
 </section>
 

@@ -6,7 +6,7 @@
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: var(--nova-display); font-feature-settings: 'ss01' 1, 'ss02' 1; }
+body { overflow-x: clip; font-family: var(--nova-display); font-feature-settings: 'ss01' 1, 'ss02' 1; }
 h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5 { font-family: var(--font-heading-family); font-weight: 650; letter-spacing: -.035em; }
 
 main[data-template='index'] > .section + .section,
@@ -129,16 +129,25 @@ main[data-template='collection'] .quick-add__submit:hover { background: var(--no
   transform: translate3d(0, 2.8rem, 0);
   transition:
     opacity .7s cubic-bezier(.2, .7, .2, 1),
-    transform .7s cubic-bezier(.2, .7, .2, 1);
+    transform .7s cubic-bezier(.2, .7, .2, 1),
+    clip-path .8s cubic-bezier(.2, .7, .2, 1);
   transition-delay: calc(var(--nova-reveal-order, 0) * 65ms);
   will-change: opacity, transform;
 }
+
+.nova-motion-ready .nova-reveal--left { transform: translate3d(-4.5rem, 0, 0); }
+.nova-motion-ready .nova-reveal--right { transform: translate3d(4.5rem, 0, 0); }
+.nova-motion-ready .nova-reveal--scale { transform: translate3d(0, 2rem, 0) scale(.955); }
 
 .nova-motion-ready .nova-reveal.is-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   will-change: auto;
 }
+
+.nova-scroll-progress, .nova-scroll-progress:empty { display: block; position: fixed; z-index: 10000; top: 0; right: 0; left: 0; height: .3rem; background: linear-gradient(90deg, #d51f2c, #ff5360); pointer-events: none; transform: scaleX(0); transform-origin: left center; will-change: transform; }
+[data-nova-depth] { --nova-depth-offset: 0px; }
+[data-nova-depth] > img { transform: translate3d(0, var(--nova-depth-offset), 0) scale(1.06); will-change: transform; }
 
 .button,
 .nova-commerce__text-link,
@@ -182,6 +191,9 @@ main[data-template='collection'] .quick-add__submit:hover { background: var(--no
     transform: none;
     transition: none;
   }
+
+  .nova-scroll-progress, .nova-scroll-progress:empty { display: none; }
+  [data-nova-depth] > img { transform: none; will-change: auto; }
 
   .nova-motion-ready .nova-slider__slide.is-active > img { animation: none; }
 
