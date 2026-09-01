@@ -58,6 +58,10 @@
 
   const init = () => {
     const elements = revealGroups.flatMap((group) => prepareGroup(group.selector, group.effect));
+    document.querySelectorAll('.nova-category-nav a.is-active, .nova-collection-switcher a.is-active').forEach((link) => {
+      const scroller = link.parentElement;
+      scroller.scrollLeft = link.offsetLeft - (scroller.clientWidth - link.clientWidth) / 2;
+    });
 
     if (reducedMotion.matches || !('IntersectionObserver' in window)) {
       revealImmediately(elements);

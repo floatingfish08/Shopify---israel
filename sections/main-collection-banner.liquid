@@ -9,64 +9,79 @@
   }
 {%- endstyle -%}
 
-{%- if collection.handle == 'all' -%}
-  <section class="nova-collection-hero">
-    <div class="nova-collection-hero__inner page-width">
-      <div>
-        <span>Professional-use catalog</span>
-        <h1>Dental implant components, organized for faster ordering.</h1>
-        <p>Search by product name, workflow or catalog number. Select the exact configuration on each product page.</p>
-        <form action="{{ routes.search_url }}" method="get" role="search">
-          <input type="hidden" name="options[prefix]" value="last">
-          <label class="visually-hidden" for="NovaCatalogSearch">Search products</label>
-          <input id="NovaCatalogSearch" type="search" name="q" placeholder="Search product or SKU">
-          <button class="button button--primary" type="submit">Search catalog</button>
-        </form>
-      </div>
-      <aside>
-        <strong>{{ collection.all_products_count }}</strong>
-        <span>Products online</span>
-        <p>PSI implant, healing, restorative, impression, multi-unit, digital and surgical workflows.</p>
-      </aside>
-    </div>
-  </section>
-{%- else -%}
-<div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
-  <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    <div class="collection-hero__text-wrapper">
-      <h1 class="collection-hero__title">
-        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
-        {{- collection.title | escape -}}
-      </h1>
+{%- liquid
+  assign hero_title = collection.title
+  assign hero_text = collection.description | strip_html
+  assign hero_kicker = 'Connected clinical workflow'
+  assign hero_art = 'nova-implant-hero-v2.webp'
 
-      {%- if section.settings.show_collection_description -%}
-        <div class="collection-hero__description rte">{{ collection.description }}</div>
-      {%- endif -%}
-    </div>
+  case collection.handle
+    when 'all'
+      assign hero_title = 'Dental implant components, organized for faster ordering.'
+      assign hero_text = 'Search by product name, workflow or catalog number. Select the exact configuration on each product page.'
+      assign hero_kicker = 'Professional-use catalog'
+    when 'implant-systems'
+      assign hero_text = 'Explore NOVA PSI implant configurations across the available diameter and length matrix, then choose the exact catalog reference.'
+      assign hero_art = 'nova-product-psi.webp'
+    when 'healing-abutments'
+      assign hero_text = 'Standard, slim and concave titanium healing components organized for efficient soft-tissue workflow selection.'
+      assign hero_art = 'nova-category-healing.webp'
+    when 'restorative-components'
+      assign hero_text = 'Straight, angled, anatomic, temporary and PEEK restorative solutions for the NOVA internal-hex connection.'
+      assign hero_art = 'nova-category-restorative.webp'
+    when 'impression-components'
+      assign hero_text = 'Open-tray, closed-tray and transfer components for precise conventional impression workflows.'
+      assign hero_art = 'nova-category-impression.webp'
+    when 'multi-unit-overdenture'
+      assign hero_text = 'Multi-unit, Pop-Clicq and overdenture component families for removable and full-arch restorative workflows.'
+      assign hero_art = 'nova-category-multi-unit.webp'
+    when 'digital-cad-cam-casting'
+      assign hero_text = 'Scan bodies, titanium bases, zirconia solutions and casting components for connected digital and laboratory workflows.'
+      assign hero_art = 'nova-category-digital.webp'
+    when 'surgical-instruments'
+      assign hero_text = 'Surgical kits, drivers and hand instruments organized for predictable placement and restorative procedures.'
+      assign hero_art = 'nova-category-surgical.webp'
+  endcase
 
-    {%- if section.settings.show_collection_image and collection.image -%}
-      <div class="collection-hero__image-container media gradient">
-        <img
-          srcset="
-            {%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
-            {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
-            {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
-            {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
-            {%- if collection.image.width >= 1070 -%}{{ collection.image | image_url: width: 1070 }} 1070w,{%- endif -%}
-            {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
-            {{ collection.image | image_url }} {{ collection.image.width }}w
-          "
-          src="{{ collection.image | image_url: width: 750 }}"
-          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
-          alt="{{ collection.image.alt | escape }}"
-          width="{{ collection.image.width }}"
-          height="{{ collection.image.height }}"
-        >
-      </div>
-    {%- endif -%}
+  if hero_text == blank
+    assign hero_text = 'Browse NOVA professional-use components and select the exact configuration required for the clinical workflow.'
+  endif
+-%}
+
+<section class="nova-collection-hero nova-collection-hero--{{ collection.handle | handle }}" style="--nova-collection-art: url('{{ hero_art | asset_url }}');">
+  <div class="nova-collection-hero__inner page-width">
+    <div class="nova-collection-hero__copy">
+      <nav class="nova-collection-hero__breadcrumb" aria-label="Breadcrumb"><a href="{{ routes.root_url }}">Home</a><span>→</span><a href="{{ routes.all_products_collection_url }}">Catalog</a></nav>
+      <span class="nova-collection-hero__kicker">{{ hero_kicker }}</span>
+      <h1>{{ hero_title | escape }}</h1>
+      <p>{{ hero_text | escape }}</p>
+      <form action="{{ routes.search_url }}" method="get" role="search">
+        <input type="hidden" name="options[prefix]" value="last">
+        <input type="hidden" name="type" value="product">
+        <label class="visually-hidden" for="NovaCatalogSearch-{{ section.id }}">Search products</label>
+        <input id="NovaCatalogSearch-{{ section.id }}" type="search" name="q" placeholder="Search product or catalog number">
+        <button class="button button--primary" type="submit">Search catalog</button>
+      </form>
+    </div>
+    <aside class="nova-collection-hero__summary">
+      <span class="nova-collection-hero__index">01 / Catalog</span>
+      <strong data-nova-count="{{ collection.all_products_count }}">{{ collection.all_products_count }}</strong>
+      <span>Products in this collection</span>
+      <p>Professional use only. Confirm platform, dimensions, labeling and current IFU before ordering.</p>
+      <a href="https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709" target="_blank" rel="noopener">Open 2026 PDF catalog <span aria-hidden="true">↗</span></a>
+    </aside>
   </div>
-</div>
-{%- endif -%}
+  <nav class="nova-collection-switcher page-width" aria-label="Browse catalog collections">
+    <a href="{{ routes.all_products_collection_url }}"{% if collection.handle == 'all' %} class="is-active" aria-current="page"{% endif %}>All products</a>
+    <a href="{{ routes.collections_url }}/implant-systems"{% if collection.handle == 'implant-systems' %} class="is-active" aria-current="page"{% endif %}>Implants</a>
+    <a href="{{ routes.collections_url }}/healing-abutments"{% if collection.handle == 'healing-abutments' %} class="is-active" aria-current="page"{% endif %}>Healing</a>
+    <a href="{{ routes.collections_url }}/restorative-components"{% if collection.handle == 'restorative-components' %} class="is-active" aria-current="page"{% endif %}>Restorative</a>
+    <a href="{{ routes.collections_url }}/impression-components"{% if collection.handle == 'impression-components' %} class="is-active" aria-current="page"{% endif %}>Impression</a>
+    <a href="{{ routes.collections_url }}/multi-unit-overdenture"{% if collection.handle == 'multi-unit-overdenture' %} class="is-active" aria-current="page"{% endif %}>Multi-unit</a>
+    <a href="{{ routes.collections_url }}/digital-cad-cam-casting"{% if collection.handle == 'digital-cad-cam-casting' %} class="is-active" aria-current="page"{% endif %}>Digital &amp; CAD/CAM</a>
+    <a href="{{ routes.collections_url }}/surgical-instruments"{% if collection.handle == 'surgical-instruments' %} class="is-active" aria-current="page"{% endif %}>Surgical</a>
+  </nav>
+</section>
 
 {% schema %}
 {
