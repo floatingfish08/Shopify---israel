@@ -42,7 +42,7 @@
         "color_scheme": "scheme-2"
       }
     },
-    "nova_resources": { "type": "nova-resources", "settings": { "catalog_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709", "ifu_url": "", "certificate_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-iso-13485-certificate-2024.pdf?v=1788096136", "color_scheme": "scheme-3" } }
+    "nova_resources": { "type": "nova-resources", "settings": { "catalog_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709", "ifu_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/TF-1008_NOVA_Instructios_for_Use_ver._08_1.pdf?v=1788247491", "certificate_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-iso-13485-certificate-2024.pdf?v=1788096136", "color_scheme": "scheme-3" } }
   },
   "order": ["nova_slider", "nova_trust", "nova_shop", "nova_regulatory", "nova_solutions", "nova_quality", "nova_resources"]
 }
