@@ -18,12 +18,12 @@
     "nova_solutions": {
       "type": "nova-solutions",
       "blocks": {
-        "implants": { "type": "solution", "settings": { "heading": "PSI system", "text": "NOVA internal-hex implant ecosystem", "link": "/collections/all" } },
-        "healing": { "type": "solution", "settings": { "heading": "Healing components", "text": "Slim titanium healing abutments", "link": "/products/nova-slim-titanium-healing-abutment" } },
-        "restorative": { "type": "solution", "settings": { "heading": "Restorative solutions", "text": "Castable, chrome-cobalt and UCLA", "link": "/collections/all" } },
-        "digital": { "type": "solution", "settings": { "heading": "CAD/CAM & casting", "text": "Laboratory restorative workflows", "link": "/products/nova-chrome-cobalt-abutment-ucla" } },
-        "multiunit": { "type": "solution", "settings": { "heading": "Multi-unit solutions", "text": "Angled Pop-Clicq and overdenture", "link": "/products/nova-angled-titanium-pop-clicq-18" } },
-        "surgical": { "type": "solution", "settings": { "heading": "Surgical instruments", "text": "Clinical and laboratory hand tools", "link": "/products/nova-surgical-hand-tools" } }
+        "implants": { "type": "solution", "settings": { "heading": "PSI system", "text": "NOVA internal-hex implant ecosystem", "link": "/collections/implant-systems" } },
+        "healing": { "type": "solution", "settings": { "heading": "Healing components", "text": "Slim titanium healing abutments", "link": "/collections/healing-abutments" } },
+        "restorative": { "type": "solution", "settings": { "heading": "Restorative solutions", "text": "Castable, chrome-cobalt and UCLA", "link": "/collections/restorative-components" } },
+        "digital": { "type": "solution", "settings": { "heading": "CAD/CAM & casting", "text": "Laboratory restorative workflows", "link": "/collections/digital-cad-cam-casting" } },
+        "multiunit": { "type": "solution", "settings": { "heading": "Multi-unit solutions", "text": "Angled Pop-Clicq and overdenture", "link": "/collections/multi-unit-overdenture" } },
+        "surgical": { "type": "solution", "settings": { "heading": "Surgical instruments", "text": "Clinical and laboratory hand tools", "link": "/collections/surgical-instruments" } }
       },
       "block_order": ["implants", "healing", "restorative", "digital", "multiunit", "surgical"],
       "settings": {
