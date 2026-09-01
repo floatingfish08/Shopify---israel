@@ -67,13 +67,13 @@ Nova Surgical Kit Components|19|DR-5019 – MC-0001||Surgical Hand Tools|2|AR 20
     <div class="nova-directory__groups">
       {%- for group_name in group_names -%}
         {%- case forloop.index0 -%}
-          {%- when 0 -%}{%- assign group_items = implant_items -%}
-          {%- when 1 -%}{%- assign group_items = healing_items -%}
-          {%- when 2 -%}{%- assign group_items = restorative_items -%}
-          {%- when 3 -%}{%- assign group_items = impression_items -%}
-          {%- when 4 -%}{%- assign group_items = multi_items -%}
-          {%- when 5 -%}{%- assign group_items = digital_items -%}
-          {%- when 6 -%}{%- assign group_items = surgical_items -%}
+          {%- when 0 -%}{%- assign group_items = implant_items -%}{%- assign group_image = 'nova-category-implants.webp' -%}
+          {%- when 1 -%}{%- assign group_items = healing_items -%}{%- assign group_image = 'nova-category-healing.webp' -%}
+          {%- when 2 -%}{%- assign group_items = restorative_items -%}{%- assign group_image = 'nova-category-restorative.webp' -%}
+          {%- when 3 -%}{%- assign group_items = impression_items -%}{%- assign group_image = 'nova-category-impression.webp' -%}
+          {%- when 4 -%}{%- assign group_items = multi_items -%}{%- assign group_image = 'nova-category-multi-unit.webp' -%}
+          {%- when 5 -%}{%- assign group_items = digital_items -%}{%- assign group_image = 'nova-category-digital.webp' -%}
+          {%- when 6 -%}{%- assign group_items = surgical_items -%}{%- assign group_image = 'nova-category-surgical.webp' -%}
         {%- endcase -%}
         {%- assign items = group_items | strip | split: '||' -%}
         <section class="nova-directory__group" id="catalog-{{ group_slugs[forloop.index0] }}" data-nova-catalog-group>
@@ -83,6 +83,9 @@ Nova Surgical Kit Components|19|DR-5019 – MC-0001||Surgical Hand Tools|2|AR 20
               <h2>{{ group_name }}</h2>
               <p>{{ items.size }} product {% if items.size == 1 %}family{% else %}families{% endif %}</p>
             </div>
+            <div class="nova-directory__group-art">
+              <img src="{{ group_image | asset_url }}" alt="{{ group_name | escape }} from the NOVA catalog" width="900" height="650" loading="lazy">
+            </div>
           </div>
           <div class="nova-directory__grid">
             {%- for raw_item in items -%}
@@ -90,6 +93,7 @@ Nova Surgical Kit Components|19|DR-5019 – MC-0001||Surgical Hand Tools|2|AR 20
               <article class="nova-directory__card" data-nova-catalog-item data-search="{{ item[0] | append: ' ' | append: item[2] | downcase | escape }}">
                 <div class="nova-directory__card-mark" aria-hidden="true">{{ item[0] | slice: 0 }}</div>
                 <div>
+                  <span class="nova-directory__card-type">Catalog family</span>
                   <h3>{{ item[0] }}</h3>
                   <p>{{ item[2] }}</p>
                 </div>

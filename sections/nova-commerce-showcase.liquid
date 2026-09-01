@@ -1,0 +1,118 @@
+{{ 'section-nova-medical.css' | asset_url | stylesheet_tag }}
+
+{%- assign catalog_link = routes.all_products_collection_url -%}
+
+<section class="nova-commerce color-{{ section.settings.color_scheme }} gradient" aria-labelledby="NovaCommerceHeading-{{ section.id }}">
+  <div class="page-width">
+    <header class="nova-commerce__heading">
+      <div>
+        <span class="nova-kicker">Professional catalog</span>
+        <h2 id="NovaCommerceHeading-{{ section.id }}" class="h1">Shop the NOVA ecosystem.</h2>
+      </div>
+      <div>
+        <p>Browse implant systems, prosthetic components and surgical solutions by clinical workflow. Use the product family and catalog number when requesting availability.</p>
+        <a href="{{ catalog_link }}" class="nova-commerce__text-link">View all 52 product families <span aria-hidden="true">→</span></a>
+      </div>
+    </header>
+
+    <div class="nova-commerce__categories" aria-label="Product categories">
+      <a class="nova-category-card nova-category-card--wide" href="{{ catalog_link }}#catalog-implants">
+        <img src="{{ 'nova-category-implants.webp' | asset_url }}" alt="NOVA PSI and PCI dental implant systems" width="1100" height="650" loading="lazy">
+        <span class="nova-category-card__shade" aria-hidden="true"></span>
+        <span class="nova-category-card__content">
+          <span class="nova-category-card__number">01</span>
+          <strong>Implant systems</strong>
+          <small>PSI &amp; PCI · 56 configurations</small>
+        </span>
+      </a>
+      <a class="nova-category-card" href="{{ catalog_link }}#catalog-healing">
+        <img src="{{ 'nova-category-healing.webp' | asset_url }}" alt="NOVA titanium healing abutments" width="900" height="650" loading="lazy">
+        <span class="nova-category-card__shade" aria-hidden="true"></span>
+        <span class="nova-category-card__content"><span class="nova-category-card__number">02</span><strong>Healing</strong><small>3 product families</small></span>
+      </a>
+      <a class="nova-category-card" href="{{ catalog_link }}#catalog-restorative">
+        <img src="{{ 'nova-category-restorative.webp' | asset_url }}" alt="NOVA restorative abutments" width="900" height="650" loading="lazy">
+        <span class="nova-category-card__shade" aria-hidden="true"></span>
+        <span class="nova-category-card__content"><span class="nova-category-card__number">03</span><strong>Restorative</strong><small>18 product families</small></span>
+      </a>
+      <a class="nova-category-card" href="{{ catalog_link }}#catalog-impression">
+        <img src="{{ 'nova-category-impression.webp' | asset_url }}" alt="NOVA impression components" width="900" height="650" loading="lazy">
+        <span class="nova-category-card__shade" aria-hidden="true"></span>
+        <span class="nova-category-card__content"><span class="nova-category-card__number">04</span><strong>Impression</strong><small>5 product families</small></span>
+      </a>
+      <a class="nova-category-card" href="{{ catalog_link }}#catalog-multi-unit">
+        <img src="{{ 'nova-category-multi-unit.webp' | asset_url }}" alt="NOVA Multi Clicq and overdenture components" width="900" height="650" loading="lazy">
+        <span class="nova-category-card__shade" aria-hidden="true"></span>
+        <span class="nova-category-card__content"><span class="nova-category-card__number">05</span><strong>Multi-unit</strong><small>11 product families</small></span>
+      </a>
+      <a class="nova-category-card" href="{{ catalog_link }}#catalog-digital">
+        <img src="{{ 'nova-category-digital.webp' | asset_url }}" alt="NOVA digital and CAD CAM components" width="900" height="650" loading="lazy">
+        <span class="nova-category-card__shade" aria-hidden="true"></span>
+        <span class="nova-category-card__content"><span class="nova-category-card__number">06</span><strong>Digital &amp; CAD/CAM</strong><small>11 product families</small></span>
+      </a>
+      <a class="nova-category-card" href="{{ catalog_link }}#catalog-surgical">
+        <img src="{{ 'nova-category-surgical.webp' | asset_url }}" alt="NOVA surgical kit and instruments" width="900" height="650" loading="lazy">
+        <span class="nova-category-card__shade" aria-hidden="true"></span>
+        <span class="nova-category-card__content"><span class="nova-category-card__number">07</span><strong>Surgical</strong><small>21 configurations</small></span>
+      </a>
+    </div>
+
+    <div class="nova-featured">
+      <div class="nova-featured__heading">
+        <div>
+          <span class="nova-kicker">Featured product families</span>
+          <h3>Start with the core systems.</h3>
+        </div>
+        <p>Every family links to the searchable NOVA catalog directory. Pricing and availability are confirmed directly before an order is placed.</p>
+      </div>
+      <div class="nova-featured__grid">
+        <article class="nova-product-card">
+          <a class="nova-product-card__media" href="{{ catalog_link }}#catalog-implants" aria-label="Review PSI Implant System">
+            <span class="nova-product-card__badge">PSI system</span>
+            <img src="{{ 'nova-product-psi.webp' | asset_url }}" alt="NOVA PSI tapered implant" width="740" height="720" loading="lazy">
+          </a>
+          <div class="nova-product-card__body"><span>Implant systems</span><h4>PSI Implant System</h4><p>Tapered, self-tapping Ti-6Al-4V ELI implant family.</p><strong>28 configurations</strong><a href="{{ catalog_link }}#catalog-implants">Review family <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="nova-product-card">
+          <a class="nova-product-card__media" href="{{ catalog_link }}#catalog-implants" aria-label="Review PCI Implant System">
+            <span class="nova-product-card__badge">PCI system</span>
+            <img src="{{ 'nova-product-pci.webp' | asset_url }}" alt="NOVA PCI straight-wall implant" width="740" height="720" loading="lazy">
+          </a>
+          <div class="nova-product-card__body"><span>Implant systems</span><h4>PCI Implant System</h4><p>Straight-wall implant with a 2.5 mm internal-hex connection.</p><strong>28 configurations</strong><a href="{{ catalog_link }}#catalog-implants">Review family <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="nova-product-card">
+          <a class="nova-product-card__media" href="{{ catalog_link }}#catalog-healing" aria-label="Review healing abutments">
+            <span class="nova-product-card__badge">Healing</span>
+            <img src="{{ 'nova-category-healing.webp' | asset_url }}" alt="NOVA titanium healing abutment range" width="900" height="650" loading="lazy">
+          </a>
+          <div class="nova-product-card__body"><span>Healing components</span><h4>Titanium Healing Abutments</h4><p>Standard and concave profiles in multiple gingival heights.</p><strong>10 configurations</strong><a href="{{ catalog_link }}#catalog-healing">Review family <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="nova-product-card">
+          <a class="nova-product-card__media" href="{{ catalog_link }}#catalog-multi-unit" aria-label="Review Multi Clicq solutions">
+            <span class="nova-product-card__badge">Full-arch</span>
+            <img src="{{ 'nova-category-multi-unit.webp' | asset_url }}" alt="NOVA Multi Clicq full-arch components" width="900" height="650" loading="lazy">
+          </a>
+          <div class="nova-product-card__body"><span>Multi-unit workflow</span><h4>Multi Clicq Solutions</h4><p>Straight, angled and bar components for On4 and On6 workflows.</p><strong>11 product families</strong><a href="{{ catalog_link }}#catalog-multi-unit">Review families <span aria-hidden="true">→</span></a></div>
+        </article>
+      </div>
+    </div>
+
+    <aside class="nova-commerce__assist">
+      <div><span class="nova-kicker">Professional ordering support</span><h3>Have a catalog number?</h3><p>Send the reference, platform and required dimensions. NOVA can confirm compatibility, availability and commercial terms.</p></div>
+      <a class="button button--primary" href="/pages/contact">Request product information</a>
+    </aside>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NOVA commerce showcase",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
+  ],
+  "presets": [{ "name": "NOVA commerce showcase" }]
+}
+{% endschema %}

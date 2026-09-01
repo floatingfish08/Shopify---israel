@@ -293,6 +293,18 @@
 
 .nova-system-card--pci .nova-system-card__topline { color: #174b72; }
 
+.nova-system-card__media {
+  position: relative;
+  overflow: hidden;
+  height: clamp(22rem, 30vw, 34rem);
+  margin: 0 -1rem;
+  border-radius: .7rem;
+  background: #f7f8f9;
+}
+
+.nova-system-card__media img { width: 100%; height: 100%; object-fit: contain; transition: transform .45s ease; }
+.nova-system-card:hover .nova-system-card__media img { transform: scale(1.035); }
+
 .nova-system-card__body {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
@@ -379,6 +391,49 @@
 .nova-system-card__link:focus-visible,
 .nova-resources__links a:focus-visible { outline: 0.2rem solid #d61f2c; outline-offset: 0.4rem; }
 
+/* Commerce showcase */
+.nova-commerce { padding: clamp(7rem, 9vw, 11rem) 0; }
+.nova-commerce__heading { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(34rem, .65fr); gap: 4rem clamp(6rem, 10vw, 14rem); align-items: end; margin-bottom: 4rem; }
+.nova-commerce__heading h2 { max-width: 70rem; margin: 1rem 0 0; font-size: clamp(4rem, 6vw, 7rem); letter-spacing: -.045em; line-height: 1; }
+.nova-commerce__heading p { margin: 0 0 1.6rem; color: rgba(var(--color-foreground), .66); font-size: 1.5rem; line-height: 1.65; }
+.nova-commerce__text-link { display: inline-flex; gap: 1.2rem; align-items: center; color: rgb(var(--color-foreground)); font-size: 1.35rem; font-weight: 700; text-decoration: none; }
+.nova-commerce__text-link:hover { color: #d61f2c; }
+
+.nova-commerce__categories { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: minmax(25rem, 31rem); gap: 1.2rem; }
+.nova-category-card { position: relative; overflow: hidden; min-width: 0; border-radius: .8rem; background: #eef0f1; color: #fff; text-decoration: none; isolation: isolate; }
+.nova-category-card--wide { grid-column: span 2; }
+.nova-category-card img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.2,.75,.25,1); }
+.nova-category-card__shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(9,11,15,.9), rgba(9,11,15,.08) 70%); transition: background .3s; }
+.nova-category-card__content { position: absolute; inset: auto 0 0; display: grid; gap: .4rem; padding: 2.2rem; }
+.nova-category-card__number { margin-bottom: .6rem; color: #ef3643; font-size: 1rem; font-weight: 700; letter-spacing: .14em; }
+.nova-category-card strong { color: #fff; font-size: clamp(1.9rem, 2vw, 2.6rem); line-height: 1.15; }
+.nova-category-card small { color: rgba(255,255,255,.65); font-size: 1.15rem; }
+.nova-category-card:hover img { transform: scale(1.05); }
+.nova-category-card:hover .nova-category-card__shade { background: linear-gradient(0deg, rgba(9,11,15,.94), rgba(9,11,15,.02) 78%); }
+
+.nova-featured { margin-top: clamp(7rem, 9vw, 11rem); }
+.nova-featured__heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(30rem, .55fr); gap: 3rem 8rem; align-items: end; margin-bottom: 3rem; }
+.nova-featured__heading h3 { margin: .8rem 0 0; font-size: clamp(3rem, 4.5vw, 5rem); letter-spacing: -.04em; }
+.nova-featured__heading p { margin: 0; color: rgba(var(--color-foreground), .62); font-size: 1.35rem; line-height: 1.6; }
+.nova-featured__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
+.nova-product-card { display: flex; min-width: 0; flex-direction: column; border: 1px solid rgba(var(--color-foreground), .14); border-radius: .8rem; background: rgb(var(--color-background)); transition: border-color .2s, box-shadow .2s, transform .2s; }
+.nova-product-card:hover { border-color: rgba(var(--color-foreground), .28); box-shadow: 0 1.5rem 3.5rem rgba(13,17,23,.08); transform: translateY(-.4rem); }
+.nova-product-card__media { position: relative; display: block; overflow: hidden; aspect-ratio: 1 / .92; border-radius: .7rem .7rem 0 0; background: #f5f6f7; }
+.nova-product-card__media img { width: 100%; height: 100%; object-fit: contain; transition: transform .4s; }
+.nova-product-card:hover .nova-product-card__media img { transform: scale(1.04); }
+.nova-product-card__badge { position: absolute; z-index: 1; top: 1.4rem; left: 1.4rem; padding: .6rem .9rem; border-radius: 10rem; background: #fff; color: #111318; box-shadow: 0 .4rem 1.2rem rgba(0,0,0,.08); font-size: .95rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.nova-product-card__body { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 2rem; }
+.nova-product-card__body > span { color: #d61f2c; font-size: 1rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.nova-product-card__body h4 { margin: .8rem 0; font-size: 1.9rem; line-height: 1.25; }
+.nova-product-card__body p { margin: 0; color: rgba(var(--color-foreground), .61); font-size: 1.25rem; line-height: 1.55; }
+.nova-product-card__body strong { margin-top: 1.8rem; font-size: 1.15rem; }
+.nova-product-card__body a { display: flex; width: 100%; justify-content: space-between; margin-top: 1.8rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--color-foreground), .13); color: inherit; font-size: 1.2rem; font-weight: 700; text-decoration: none; }
+.nova-product-card__body a:hover { color: #d61f2c; }
+
+.nova-commerce__assist { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4rem; align-items: center; margin-top: 7rem; padding: clamp(3rem, 5vw, 5rem); border-left: .4rem solid #d61f2c; background: #17191d; color: #fff; }
+.nova-commerce__assist h3 { margin: .7rem 0 .8rem; color: #fff; font-size: clamp(2.8rem, 4vw, 4.2rem); }
+.nova-commerce__assist p { max-width: 72rem; margin: 0; color: rgba(255,255,255,.65); font-size: 1.35rem; line-height: 1.6; }
+
 @media screen and (max-width: 989px) {
   .nova-hero, .nova-hero__grid { min-height: 76rem; }
   .nova-hero__grid { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 13rem; }
@@ -392,6 +447,9 @@
   .nova-systems__cards { grid-template-columns: 1fr; }
   .nova-catalog-map { grid-template-columns: 1fr; }
   .nova-quality__layout { grid-template-columns: 1fr; gap: 4rem; }
+  .nova-commerce__heading, .nova-featured__heading { grid-template-columns: 1fr; gap: 2rem; }
+  .nova-commerce__categories { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nova-featured__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media screen and (max-width: 749px) {
@@ -422,10 +480,19 @@
   .nova-quality__actions .button { width: 100%; }
   .nova-quality__certificate { grid-template-columns: 4.8rem 1fr; padding: 2.2rem; }
   .nova-quality__seal { width: 4.2rem; }
+  .nova-commerce__categories { grid-template-columns: 1fr; grid-auto-rows: 26rem; }
+  .nova-category-card--wide { grid-column: auto; }
+  .nova-featured__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+  .nova-product-card__body { padding: 1.5rem; }
+  .nova-product-card__body h4 { font-size: 1.6rem; }
+  .nova-product-card__body p { display: none; }
+  .nova-product-card__badge { top: .9rem; left: .9rem; font-size: .8rem; }
+  .nova-commerce__assist { grid-template-columns: 1fr; gap: 2.5rem; }
+  .nova-commerce__assist .button { width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nova-solution-card { transition: none; }
+  .nova-solution-card, .nova-product-card, .nova-category-card img, .nova-system-card__media img { transition: none; }
 }
 
 /* Public catalog directory */
@@ -453,13 +520,17 @@
 .nova-directory__nav a { flex: none; padding: .8rem 1.3rem; border: 1px solid rgba(var(--color-foreground), .16); border-radius: 10rem; color: inherit; font-size: 1.2rem; text-decoration: none; transition: border-color .2s, background .2s; }
 .nova-directory__nav a:hover { border-color: #d61f2c; background: #fff; }
 .nova-directory__group { padding: 6rem 0 1rem; scroll-margin-top: 10rem; }
-.nova-directory__group-heading { display: grid; grid-template-columns: 4rem 1fr; gap: 1.8rem; align-items: start; margin-bottom: 2.5rem; }
+.nova-directory__group-heading { display: grid; grid-template-columns: 4rem minmax(0, 1fr) minmax(24rem, .65fr); gap: 1.8rem; align-items: center; margin-bottom: 2.5rem; }
 .nova-directory__group-heading > span { padding-top: .8rem; color: #d61f2c; font-size: 1.1rem; font-weight: 700; letter-spacing: .12em; }
 .nova-directory__group-heading h2 { margin: 0; font-size: clamp(2.8rem, 4vw, 4.2rem); letter-spacing: -.035em; }
 .nova-directory__group-heading p { margin: .5rem 0 0; color: rgba(var(--color-foreground), .55); font-size: 1.25rem; }
+.nova-directory__group-art { overflow: hidden; height: 16rem; border-radius: .6rem; background: #fff; }
+.nova-directory__group-art img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.nova-directory__group:hover .nova-directory__group-art img { transform: scale(1.035); }
 .nova-directory__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; border: 1px solid rgba(var(--color-foreground), .13); background: rgba(var(--color-foreground), .13); }
 .nova-directory__card { display: grid; grid-template-columns: 4.4rem 1fr; gap: 1.5rem; min-height: 15rem; padding: 2.2rem; background: #fff; }
 .nova-directory__card-mark { display: grid; width: 4.4rem; height: 4.4rem; place-items: center; border-radius: 50%; background: #f2f2ef; color: #d61f2c; font-weight: 700; }
+.nova-directory__card-type { color: #d61f2c; font-size: .85rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .nova-directory__card h3 { margin: .2rem 0 .8rem; font-size: 1.65rem; line-height: 1.28; }
 .nova-directory__card p { margin: 0; color: rgba(var(--color-foreground), .55); font-size: 1.15rem; line-height: 1.45; }
 .nova-directory__variants { grid-column: 2; align-self: end; color: rgba(var(--color-foreground), .55); font-size: 1.1rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
@@ -477,6 +548,8 @@
   .nova-directory__hero-grid, .nova-directory__footer { grid-template-columns: 1fr; }
   .nova-directory__status { max-width: 55rem; }
   .nova-directory__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nova-directory__group-heading { grid-template-columns: 4rem 1fr; }
+  .nova-directory__group-art { grid-column: 2; max-width: 52rem; }
 }
 
 @media screen and (max-width: 749px) {
@@ -488,6 +561,8 @@
   .nova-directory__toolbar > p { text-align: right; }
   .nova-directory__grid { grid-template-columns: 1fr; }
   .nova-directory__group { padding-top: 4rem; }
+  .nova-directory__group-heading { grid-template-columns: 3rem 1fr; }
+  .nova-directory__group-art { grid-column: 1 / -1; height: 13rem; }
   .nova-directory__card { min-height: 13rem; }
   .nova-directory__footer { margin-top: 5rem; padding: 3rem 2rem; }
 }
