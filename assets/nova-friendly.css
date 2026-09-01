@@ -889,3 +889,54 @@ main[data-template='product'] .accordion__title { font-size: 1.35rem; font-weigh
   .nova-quality__steps li { grid-template-columns: 4.2rem 1fr; padding: 1.8rem; }
   .nova-quality__certificate { grid-template-columns: 4.5rem 1fr; padding: 2.2rem; }
 }
+
+/* Unified action palette: teal primary, neutral secondary, red reserved for brand accents. */
+.button--primary,
+.nova-marketplace .button--primary,
+.nova-commerce__assist .button--primary,
+.nova-quality__actions .button--primary,
+.nova-collection-hero .button--primary,
+main[data-template='product'] .product-form__submit {
+  border-color: var(--nova-friendly-teal) !important;
+  background: var(--nova-friendly-teal) !important;
+  color: #fff !important;
+}
+.button--primary::after,
+.nova-marketplace .button--primary::after,
+.nova-commerce__assist .button--primary::after,
+.nova-quality__actions .button--primary::after,
+.nova-collection-hero .button--primary::after,
+main[data-template='product'] .product-form__submit::after {
+  box-shadow: 0 0 0 1px var(--nova-friendly-teal) !important;
+}
+.button--primary:hover,
+.nova-marketplace .button--primary:hover,
+.nova-commerce__assist .button--primary:hover,
+.nova-quality__actions .button--primary:hover,
+.nova-collection-hero .button--primary:hover,
+main[data-template='product'] .product-form__submit:hover {
+  border-color: var(--nova-friendly-teal-dark) !important;
+  background: var(--nova-friendly-teal-dark) !important;
+  color: #fff !important;
+}
+.button--secondary,
+.nova-marketplace .button--secondary,
+.nova-quality__actions .button--secondary {
+  border: 1px solid #bfcacc !important;
+  background: #fff !important;
+  color: var(--nova-friendly-ink) !important;
+}
+.button--secondary::after,
+.nova-marketplace .button--secondary::after,
+.nova-quality__actions .button--secondary::after {
+  box-shadow: 0 0 0 1px #bfcacc !important;
+}
+.button--secondary:hover,
+.nova-marketplace .button--secondary:hover,
+.nova-quality__actions .button--secondary:hover {
+  border-color: #89999e !important;
+  background: #f7f9f9 !important;
+  color: var(--nova-friendly-ink) !important;
+}
+.nova-quality__notice { border-left-color: var(--nova-friendly-teal); }
+.nova-product-card__body a:focus-visible { outline-color: var(--nova-friendly-teal); }
