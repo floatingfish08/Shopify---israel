@@ -32,6 +32,21 @@ main[data-template='collection'] > .section + .section { margin-top: 0; }
 .header__icon { border-radius: 50%; transition: background .2s ease, color .2s ease; }
 .header__icon:hover { background: #f2f2ef; color: var(--nova-red); }
 
+.nova-header-search { display: none; }
+
+@media screen and (min-width: 990px) {
+  .header--middle-left { grid-template-areas: 'heading navigation icons'; grid-template-columns: auto minmax(38rem, 1fr) auto; column-gap: clamp(2.5rem, 4vw, 6rem); }
+  .header--middle-left .header__inline-menu { display: none; }
+  .nova-header-search { grid-area: navigation; display: grid; grid-template-columns: auto 1fr 5rem; align-items: center; width: min(72rem, 100%); justify-self: center; overflow: hidden; min-height: 5rem; border: 1px solid rgba(17,19,24,.18); border-radius: .7rem; background: #f7f8f8; transition: border-color .2s, box-shadow .2s, background .2s; }
+  .nova-header-search:focus-within { border-color: var(--nova-red); background: #fff; box-shadow: 0 0 0 .2rem rgba(213,31,44,.08); }
+  .nova-header-search__category { display: flex; height: 100%; align-items: center; padding: 0 1.8rem; border-right: 1px solid rgba(17,19,24,.12); color: #383b41; font-size: 1.2rem; font-weight: 750; }
+  .nova-header-search input { width: 100%; height: 100%; padding: 0 1.7rem; border: 0; outline: 0; background: transparent; color: #16181c; font: inherit; font-size: 1.35rem; }
+  .nova-header-search input::placeholder { color: #777b82; opacity: 1; }
+  .nova-header-search button { display: grid; width: 5rem; height: 5rem; place-items: center; border: 0; background: transparent; color: #20242a; cursor: pointer; }
+  .nova-header-search button:hover { color: var(--nova-red); }
+  .nova-header-search svg { width: 2.2rem; height: 2.2rem; }
+}
+
 .nova-category-nav { border-top: 1px solid rgba(17, 19, 24, .08); background: #fff; }
 .nova-category-nav__inner { display: flex; align-items: stretch; overflow-x: auto; padding-top: 0; padding-bottom: 0; scrollbar-width: none; }
 .nova-category-nav__inner::-webkit-scrollbar { display: none; }
@@ -48,4 +63,40 @@ main[data-template='collection'] > .section + .section { margin-top: 0; }
   .nova-category-nav__inner { padding-left: 1.5rem; padding-right: 1.5rem; }
   .nova-category-nav__all { padding-left: 1.2rem !important; }
   .nova-category-nav__document { margin-left: 0; }
+}
+
+.nova-collection-hero { position: relative; overflow: hidden; padding: clamp(6rem, 8vw, 10rem) 0; background: #0c1822; color: #fff; }
+.nova-collection-hero::before { content: ''; position: absolute; inset: 0; opacity: .28; background: radial-gradient(circle at 78% 28%, rgba(213,31,44,.45), transparent 25%), linear-gradient(135deg, transparent 45%, rgba(255,255,255,.055) 45%, rgba(255,255,255,.055) 46%, transparent 46%); background-size: auto, 6rem 6rem; }
+.nova-collection-hero__inner { position: relative; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(28rem, .45fr); gap: clamp(4rem, 8vw, 12rem); align-items: end; }
+.nova-collection-hero__inner > div > span { color: #ff4a58; font-size: 1.05rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.nova-collection-hero h1 { max-width: 82rem; margin: 1.2rem 0 2rem; color: #fff; font-size: clamp(4rem, 6vw, 7.4rem); letter-spacing: -.05em; line-height: .98; }
+.nova-collection-hero p { max-width: 70rem; color: rgba(255,255,255,.68); font-size: 1.5rem; line-height: 1.65; }
+.nova-collection-hero form { display: grid; grid-template-columns: 1fr auto; gap: 1rem; max-width: 68rem; margin-top: 3rem; padding: .7rem; border-radius: .8rem; background: #fff; }
+.nova-collection-hero input { min-width: 0; padding: 0 1.5rem; border: 0; outline: 0; background: transparent; font: inherit; font-size: 1.4rem; }
+.nova-collection-hero aside { padding: 3rem; border: 1px solid rgba(255,255,255,.18); border-top: .4rem solid #e52735; border-radius: .6rem; background: rgba(255,255,255,.06); backdrop-filter: blur(12px); }
+.nova-collection-hero aside strong { display: block; color: #fff; font-size: 6rem; line-height: 1; }
+.nova-collection-hero aside > span { display: block; margin-top: .8rem; color: #ff4a58; font-size: 1.1rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.nova-collection-hero aside p { margin: 2rem 0 0; font-size: 1.2rem; }
+
+main[data-template='collection'] .product-grid .card-wrapper { height: 100%; }
+main[data-template='collection'] .product-grid .card { overflow: hidden; height: 100%; border: 1px solid rgba(17,19,24,.12); border-radius: .9rem; background: #fff; transition: transform .2s, box-shadow .2s, border-color .2s; }
+main[data-template='collection'] .product-grid .card:hover { border-color: rgba(17,19,24,.26); box-shadow: 0 1.7rem 4rem rgba(17,28,38,.1); transform: translateY(-.35rem); }
+main[data-template='collection'] .product-grid .card__media { background: #f5f7f8; }
+main[data-template='collection'] .product-grid .card__information { padding: 1.8rem; }
+main[data-template='collection'] .product-grid .card__heading { font-size: 1.6rem; line-height: 1.3; }
+main[data-template='collection'] .product-grid .price { margin-top: 1rem; font-weight: 750; }
+main[data-template='collection'] .quick-add { margin: 1.4rem 1.8rem 1.8rem; }
+main[data-template='collection'] .quick-add__submit { min-height: 4.5rem; }
+
+@media screen and (max-width: 749px) {
+  .nova-collection-hero { padding: 5rem 0; }
+  .nova-collection-hero__inner { grid-template-columns: 1fr; gap: 3rem; }
+  .nova-collection-hero form { grid-template-columns: 1fr; background: transparent; padding: 0; }
+  .nova-collection-hero input { min-height: 5rem; border-radius: .5rem; background: #fff; }
+  .nova-collection-hero .button { width: 100%; }
+  .nova-collection-hero aside { display: grid; grid-template-columns: auto 1fr; gap: 0 1.5rem; align-items: end; }
+  .nova-collection-hero aside strong { font-size: 4.5rem; }
+  .nova-collection-hero aside p { grid-column: 1 / -1; }
+  main[data-template='collection'] .product-grid .card__information { padding: 1.3rem; }
+  main[data-template='collection'] .quick-add { margin: 1rem 1.2rem 1.4rem; }
 }

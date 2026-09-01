@@ -4,8 +4,8 @@
   <div class="page-width nova-resources__inner">
     <div class="nova-resources__intro">
       <span class="nova-kicker">Clinical documentation</span>
-      <h2 class="h1">Controlled documentation, close at hand.</h2>
-      <p>Review product information, current instructions and quality-system documentation before ordering or clinical use.</p>
+      <h2 class="h1">Product documentation, close at hand.</h2>
+      <p>Review supplied product information, instructions and quality-system documentation before ordering or clinical use.</p>
       <p class="nova-resources__note">For licensed dental professionals. Always consult the product label and applicable Instructions for Use.</p>
     </div>
     <div class="nova-resources__links">
@@ -20,10 +20,10 @@
       <a
         {% if section.settings.ifu_url != blank %}href="{{ section.settings.ifu_url }}" target="_blank" rel="noopener"{% else %}role="link" aria-disabled="true"{% endif %}
       >
-        <span class="nova-resource-type">PDF · Instructions</span>
+        <span class="nova-resource-type">PDF · Supplied instructions copy</span>
         <strong>Dental Implant System IFU</strong>
-        <span>{% if section.settings.ifu_url != blank %}Current controlled document{% else %}Controlled copy under review{% endif %}</span>
-        <span class="nova-resource-action">{% if section.settings.ifu_url != blank %}Open document ↗{% else %}Verification pending{% endif %}</span>
+        <span>{% if section.settings.ifu_url != blank %}Revision 8 supplied copy · confirm current controlled reference{% else %}Controlled copy under review{% endif %}</span>
+        <span class="nova-resource-action">{% if section.settings.ifu_url != blank %}Review supplied copy ↗{% else %}Verification pending{% endif %}</span>
       </a>
       <a
         {% if section.settings.certificate_url != blank %}href="{{ section.settings.certificate_url }}" target="_blank" rel="noopener"{% else %}role="link" aria-disabled="true"{% endif %}

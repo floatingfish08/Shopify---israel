@@ -9,8 +9,8 @@
 <section class="nova-shop color-{{ section.settings.color_scheme }} gradient" aria-labelledby="NovaShopHeading-{{ section.id }}">
   <div class="page-width">
     <header class="nova-shop__heading">
-      <div><span class="nova-kicker">Shop dental components</span><h2 id="NovaShopHeading-{{ section.id }}" class="h1">Start with eight essential families.</h2></div>
-      <div><p>Real NOVA product imagery and catalog-based specifications make selection faster. Choose a family, then select the exact configuration on its product page.</p><a href="{{ routes.all_products_collection_url }}">View all products <span aria-hidden="true">→</span></a></div>
+      <div><span class="nova-kicker">Popular dental components</span><h2 id="NovaShopHeading-{{ section.id }}" class="h1">The products clinicians reach for first.</h2></div>
+      <div><p>Shop eight highlighted families with real NOVA imagery, then browse the expanded catalog for the complete restorative and surgical workflow.</p><a href="{{ routes.all_products_collection_url }}">View 50+ products <span aria-hidden="true">→</span></a></div>
     </header>
     <div class="nova-shop__grid">
       {%- for handle in product_handles -%}
@@ -32,7 +32,7 @@
         </article>
       {%- endfor -%}
     </div>
-    <div class="nova-shop__shipping"><span>Free U.S. shipping</span><span>Same-day dispatch on eligible in-stock orders</span><span>500 units entered per product option</span></div>
+    <div class="nova-shop__shipping"><span>Free U.S. shipping</span><span>Same-day dispatch on eligible in-stock orders</span><span>Live inventory by configuration</span></div>
   </div>
 </section>
 

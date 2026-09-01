@@ -230,6 +230,16 @@
       endif
     %}
 
+    <form class="nova-header-search" action="{{ routes.search_url }}" method="get" role="search">
+      <input type="hidden" name="options[prefix]" value="last">
+      <span class="nova-header-search__category">Products</span>
+      <label class="visually-hidden" for="NovaHeaderSearch">Search the NOVA catalog</label>
+      <input id="NovaHeaderSearch" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search product, SKU or catalog number" autocomplete="off">
+      <button type="submit" aria-label="Search">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </form>
+
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
@@ -335,13 +345,14 @@
     <div class="nova-category-nav__inner page-width">
       <a class="nova-category-nav__all" href="{{ routes.all_products_collection_url }}">
         <span>Shop all</span>
-        <small>8 families</small>
+        <small>50+ products</small>
       </a>
-      <a href="{{ routes.all_products_collection_url }}?filter.p.product_type=Restorative+Components"><span>Restorative</span></a>
-      <a href="{{ routes.all_products_collection_url }}?filter.p.product_type=CAD%2FCAM+%26+Casting+Components"><span>CAD/CAM &amp; casting</span></a>
-      <a href="{{ routes.all_products_collection_url }}?filter.p.product_type=Overdenture+Components"><span>Overdenture</span></a>
-      <a href="{{ routes.all_products_collection_url }}?filter.p.product_type=Multi-Unit+Solutions"><span>Multi-unit</span></a>
+      <a href="{{ routes.all_products_collection_url }}?filter.p.product_type=Dental+Implants"><span>Implant systems</span></a>
       <a href="{{ routes.all_products_collection_url }}?filter.p.product_type=Healing+Abutments"><span>Healing</span></a>
+      <a href="{{ routes.all_products_collection_url }}?filter.p.product_type=Restorative+Components"><span>Restorative</span></a>
+      <a href="{{ routes.all_products_collection_url }}?filter.p.product_type=Impression+Components"><span>Impression</span></a>
+      <a href="{{ routes.all_products_collection_url }}?filter.p.product_type=Multi-Unit+Solutions"><span>Multi-unit</span></a>
+      <a href="{{ routes.all_products_collection_url }}?filter.p.product_type=Digital+%26+Casting+Components"><span>Digital &amp; CAD/CAM</span></a>
       <a href="{{ routes.all_products_collection_url }}?filter.p.product_type=Surgical+Instruments"><span>Surgical tools</span></a>
       <a class="nova-category-nav__document" href="https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709" target="_blank" rel="noopener">
         PDF catalog <span aria-hidden="true">↗</span>

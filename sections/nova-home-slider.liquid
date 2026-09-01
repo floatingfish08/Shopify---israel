@@ -1,15 +1,17 @@
 {{ 'section-nova-medical.css' | asset_url | stylesheet_tag }}
 
-<section class="nova-slider" data-nova-slider aria-label="NOVA Implants USA featured products">
+<section class="nova-marketplace" aria-label="NOVA Implants USA featured products">
+  <div class="nova-marketplace__grid page-width">
+<div class="nova-slider" data-nova-slider>
   <div class="nova-slider__track">
     <article class="nova-slider__slide is-active" data-nova-slide aria-hidden="false">
       <img src="{{ 'nova-implant-hero-v2.webp' | asset_url }}" width="1536" height="1024" loading="eager" fetchpriority="high" alt="NOVA precision dental implant components">
       <span class="nova-slider__overlay" aria-hidden="true"></span>
       <div class="page-width nova-slider__content">
         <span class="nova-slider__eyebrow">NOVA Implants USA</span>
-        <h1>Professional implant components, ready to order.</h1>
-        <p>Internal-hex restorative, healing and surgical solutions for licensed dental professionals and laboratories.</p>
-        <div class="nova-slider__actions"><a class="button button--primary" href="{{ routes.all_products_collection_url }}">Shop products</a><a class="button button--secondary" href="#NovaRegulatory">FDA &amp; quality</a></div>
+        <h1>Precision for every connection.</h1>
+        <p>Shop a complete internal-hex workflow—from implant placement and healing to restorative, digital and full-arch solutions.</p>
+        <div class="nova-slider__actions"><a class="button button--primary" href="{{ routes.all_products_collection_url }}">Shop the catalog</a><a class="button button--secondary" href="#NovaRegulatory">FDA &amp; quality</a></div>
       </div>
     </article>
     <article class="nova-slider__slide" data-nova-slide aria-hidden="true">
@@ -17,8 +19,8 @@
       <span class="nova-slider__overlay" aria-hidden="true"></span>
       <div class="page-width nova-slider__content nova-slider__content--compact">
         <span class="nova-slider__eyebrow">PSI implant system</span>
-        <h2>One proven internal-hex ecosystem.</h2>
-        <p>Explore the PSI system and its matching restorative workflow.</p>
+        <h2>PSI implants. One connected ecosystem.</h2>
+        <p>Select implant dimensions, then move confidently through the matching restorative workflow.</p>
         <a class="button button--primary" href="{{ routes.all_products_collection_url }}">Explore components</a>
       </div>
     </article>
@@ -27,7 +29,7 @@
       <span class="nova-slider__overlay" aria-hidden="true"></span>
       <div class="page-width nova-slider__content nova-slider__content--compact">
         <span class="nova-slider__eyebrow">Full-arch workflow</span>
-        <h2>Multi-unit solutions made precise and simple.</h2>
+        <h2>Full-arch solutions made precise and simple.</h2>
         <p>Straight and angled components for secure screw-retained restorations.</p>
         <a class="button button--primary" href="{{ routes.all_products_collection_url }}?filter.p.product_type=Multi-Unit+Solutions">Shop multi-unit</a>
       </div>
@@ -41,6 +43,19 @@
       <button type="button" data-nova-slider-dot="2" aria-label="Show slide 3" aria-selected="false"></button>
     </div>
     <button type="button" data-nova-slider-next aria-label="Next slide">→</button>
+  </div>
+</div>
+    <aside class="nova-marketplace__promos" aria-label="Catalog promotions">
+      <a class="nova-promo nova-promo--catalog" href="https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709" target="_blank" rel="noopener">
+        <img src="{{ 'nova-category-multi-unit.webp' | asset_url }}" alt="NOVA multi-unit restorative components" width="900" height="650" loading="eager">
+        <span class="nova-promo__shade" aria-hidden="true"></span>
+        <span class="nova-promo__content"><small>2026 product catalog</small><strong>Every clinical workflow, organized.</strong><span>Open catalog ↗</span></span>
+      </a>
+      <a class="nova-promo nova-promo--fda" href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K150363" target="_blank" rel="noopener">
+        <img src="{{ 'nova-product-psi.webp' | asset_url }}" alt="NOVA PSI dental implant" width="740" height="720" loading="eager">
+        <span class="nova-promo__content"><small>U.S. market clearance</small><strong>FDA 510(k) cleared</strong><span>K150363 · Verify record ↗</span></span>
+      </a>
+    </aside>
   </div>
 </section>
 

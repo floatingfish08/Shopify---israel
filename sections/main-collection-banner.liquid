@@ -9,7 +9,28 @@
   }
 {%- endstyle -%}
 
-{%- unless collection.handle == 'all' -%}
+{%- if collection.handle == 'all' -%}
+  <section class="nova-collection-hero">
+    <div class="nova-collection-hero__inner page-width">
+      <div>
+        <span>Professional-use catalog</span>
+        <h1>Dental implant components, organized for faster ordering.</h1>
+        <p>Search by product name, workflow or catalog number. Select the exact configuration on each product page.</p>
+        <form action="{{ routes.search_url }}" method="get" role="search">
+          <input type="hidden" name="options[prefix]" value="last">
+          <label class="visually-hidden" for="NovaCatalogSearch">Search products</label>
+          <input id="NovaCatalogSearch" type="search" name="q" placeholder="Search product or SKU">
+          <button class="button button--primary" type="submit">Search catalog</button>
+        </form>
+      </div>
+      <aside>
+        <strong>{{ collection.all_products_count }}</strong>
+        <span>Products online</span>
+        <p>PSI implant, healing, restorative, impression, multi-unit, digital and surgical workflows.</p>
+      </aside>
+    </div>
+  </section>
+{%- else -%}
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     <div class="collection-hero__text-wrapper">
@@ -45,7 +66,7 @@
     {%- endif -%}
   </div>
 </div>
-{%- endunless -%}
+{%- endif -%}
 
 {% schema %}
 {
