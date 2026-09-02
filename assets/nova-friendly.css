@@ -1133,3 +1133,210 @@ main[data-template='collection'] .quick-add__submit:hover {
   main[data-template='collection'] .product-grid .card__media img { transition: none; }
   main[data-template='collection'] .product-grid .card__inner::after { display: none; }
 }
+
+/* High-contrast catalog references and a softer, modern commerce action system. */
+main .product__sku {
+  display: inline-flex;
+  min-height: 3.2rem;
+  align-items: center;
+  gap: .8rem;
+  width: fit-content;
+  margin: 0 0 1.2rem;
+  padding: .65rem 1rem;
+  border: 1px solid #c9dcdf;
+  border-radius: .8rem;
+  background: #eef6f7;
+  color: #173f47 !important;
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: .02em;
+  line-height: 1;
+}
+main .product__sku::before {
+  content: 'Catalog no.';
+  color: #5b7077;
+  font-size: .92rem;
+  font-weight: 650;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+main .product__sku.visibility-hidden { display: none; }
+
+.nova-card-catalog {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  width: fit-content;
+  margin: .8rem 0 .9rem;
+  padding: .48rem .7rem;
+  border: 1px solid #d2e1e3;
+  border-radius: .65rem;
+  background: #eef6f7;
+  color: #173f47;
+  line-height: 1;
+}
+.nova-card-catalog span {
+  color: #64777d;
+  font-size: .84rem;
+  font-weight: 650;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.nova-card-catalog strong {
+  color: #173f47;
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: .015em;
+}
+
+.button:not(.button--tertiary),
+.shopify-challenge__button,
+.customer button,
+main[data-template='collection'] .quick-add__submit,
+main[data-template='product'] .product-form__submit,
+main[data-template='product'] .shopify-payment-button__button,
+.nova-product-card__body a {
+  min-height: 4.8rem;
+  border-radius: 1.1rem !important;
+  font-size: 1.22rem;
+  font-weight: 650;
+  letter-spacing: .005em;
+  box-shadow: 0 .45rem 1.2rem rgba(25,67,74,.12), inset 0 1px rgba(255,255,255,.18);
+  transition: color .2s ease, background .2s ease, border-color .2s ease, box-shadow .22s ease, transform .22s ease;
+}
+.button:not(.button--tertiary)::after,
+.shopify-challenge__button::after,
+.customer button::after,
+main[data-template='collection'] .quick-add__submit::after,
+main[data-template='product'] .product-form__submit::after,
+.nova-product-card__body a::after {
+  border-radius: 1.1rem !important;
+}
+
+.button--primary,
+.nova-marketplace .button--primary,
+.nova-commerce__assist .button--primary,
+.nova-quality__actions .button--primary,
+.nova-collection-hero .button--primary,
+main[data-template='collection'] .quick-add__submit,
+main[data-template='product'] .product-form__submit,
+.nova-product-card__body a {
+  border-color: var(--nova-friendly-teal) !important;
+  background: linear-gradient(180deg,#117887 0%,var(--nova-friendly-teal) 100%) !important;
+  color: #fff !important;
+}
+.button--primary:hover,
+.nova-marketplace .button--primary:hover,
+.nova-commerce__assist .button--primary:hover,
+.nova-quality__actions .button--primary:hover,
+.nova-collection-hero .button--primary:hover,
+main[data-template='collection'] .quick-add__submit:hover,
+main[data-template='product'] .product-form__submit:hover,
+.nova-product-card__body a:hover {
+  border-color: var(--nova-friendly-teal-dark) !important;
+  background: linear-gradient(180deg,#0d6976 0%,var(--nova-friendly-teal-dark) 100%) !important;
+  box-shadow: 0 .75rem 1.8rem rgba(25,67,74,.18), inset 0 1px rgba(255,255,255,.14);
+  color: #fff !important;
+  transform: translateY(-.16rem);
+}
+.button:not(.button--tertiary):active,
+.shopify-challenge__button:active,
+.customer button:active,
+main[data-template='collection'] .quick-add__submit:active,
+main[data-template='product'] .product-form__submit:active,
+.nova-product-card__body a:active {
+  box-shadow: 0 .2rem .5rem rgba(25,67,74,.14), inset 0 1px .3rem rgba(10,60,68,.16);
+  transform: translateY(0);
+}
+.button:not(.button--tertiary):focus-visible,
+.shopify-challenge__button:focus-visible,
+.customer button:focus-visible,
+main[data-template='collection'] .quick-add__submit:focus-visible,
+main[data-template='product'] .product-form__submit:focus-visible,
+.nova-product-card__body a:focus-visible {
+  outline: .25rem solid rgba(11,105,119,.25) !important;
+  outline-offset: .3rem;
+}
+
+.button--secondary,
+.nova-marketplace .button--secondary,
+.nova-quality__actions .button--secondary {
+  border-color: #c4d1d4 !important;
+  background: linear-gradient(180deg,#fff 0%,#f7f9f9 100%) !important;
+  color: #173f47 !important;
+  box-shadow: 0 .35rem 1rem rgba(25,67,74,.075), inset 0 1px #fff;
+}
+.button--secondary:hover,
+.nova-marketplace .button--secondary:hover,
+.nova-quality__actions .button--secondary:hover {
+  border-color: #9db7bc !important;
+  background: #fff !important;
+  color: var(--nova-friendly-teal-dark) !important;
+}
+
+main[data-template='collection'] .quick-add__submit,
+main[data-template='product'] .product-form__submit {
+  position: relative;
+  padding-right: 5.4rem !important;
+}
+main[data-template='collection'] .quick-add__submit::before,
+main[data-template='product'] .product-form__submit::before {
+  content: '\2192';
+  position: absolute;
+  z-index: 1;
+  inset: 50% .75rem auto auto;
+  display: grid;
+  width: 3.3rem;
+  height: 3.3rem;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.32);
+  border-radius: .8rem;
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  font-size: 1.35rem;
+  line-height: 1;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: transform .2s ease, background-color .2s ease;
+}
+main[data-template='collection'] .quick-add__submit:hover::before,
+main[data-template='product'] .product-form__submit:hover::before {
+  background: rgba(255,255,255,.18);
+  transform: translate(.15rem,-50%);
+}
+
+main[data-template='product'] .product-form__input input[type='radio'] + label {
+  border-radius: .9rem;
+  box-shadow: 0 .2rem .6rem rgba(25,67,74,.045);
+  transition: color .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+main[data-template='product'] .product-form__input input[type='radio'] + label:hover {
+  border-color: #8fb2b8;
+  background: #f5fafb;
+  color: var(--nova-friendly-teal-dark);
+  transform: translateY(-.1rem);
+}
+main[data-template='product'] .product-form__input input[type='radio']:checked + label {
+  box-shadow: 0 .45rem 1.1rem rgba(11,105,119,.18), inset 0 1px rgba(255,255,255,.18);
+}
+
+@media screen and (max-width: 749px) {
+  .button:not(.button--tertiary),
+  main[data-template='collection'] .quick-add__submit,
+  main[data-template='product'] .product-form__submit,
+  .nova-product-card__body a { min-height: 4.6rem; border-radius: .95rem !important; }
+  main[data-template='collection'] .quick-add__submit,
+  main[data-template='product'] .product-form__submit { padding-right: 4.8rem !important; }
+  main[data-template='collection'] .quick-add__submit::before,
+  main[data-template='product'] .product-form__submit::before { right: .6rem; width: 3rem; height: 3rem; border-radius: .7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button:not(.button--tertiary),
+  .shopify-challenge__button,
+  .customer button,
+  main[data-template='collection'] .quick-add__submit,
+  main[data-template='product'] .product-form__submit,
+  .nova-product-card__body a,
+  main[data-template='product'] .product-form__input input[type='radio'] + label { transition: none; }
+}
