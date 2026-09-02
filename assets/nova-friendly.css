@@ -1353,12 +1353,16 @@ button,
 input,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-feature-settings: normal;
+  font-variant: normal;
 }
 h1, h2, h3, h4, h5, h6,
 .h0, .h1, .h2, .h3, .h4, .h5 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   font-weight: 600;
+  font-feature-settings: normal;
+  font-variant: normal;
 }
 
 .header-wrapper,
@@ -1669,4 +1673,49 @@ main .product__sku::before,
 
 @media (prefers-reduced-motion: reduce) {
   .nova-motion-ready .nova-marketplace .nova-slider__slide.is-active > img { animation: none; }
+}
+
+/* Cross-platform type safety and an always-visible collection count. */
+.button,
+.nova-category-nav,
+.nova-collection-hero,
+.nova-collection-switcher,
+.facets-container,
+.product-grid,
+main[data-template='product'] {
+  font-feature-settings: normal;
+  font-variant: normal;
+}
+.button,
+.nova-category-nav a,
+.nova-collection-hero__breadcrumb,
+.nova-collection-hero__kicker,
+.nova-collection-hero__summary,
+.nova-collection-switcher a,
+.nova-card-catalog,
+.nova-scroll-cue {
+  text-transform: none !important;
+}
+.nova-collection-hero__summary strong,
+.nova-collection-hero__summary [data-nova-count] {
+  display: inline-flex;
+  min-width: 6.4rem;
+  min-height: 6.4rem;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: .5rem .9rem;
+  border: 1px solid #c5dadd;
+  border-radius: .6rem;
+  background: #e9f4f5 !important;
+  color: var(--nova-friendly-teal) !important;
+  -webkit-text-fill-color: var(--nova-friendly-teal);
+  opacity: 1 !important;
+  text-shadow: none;
+}
+.nova-collection-hero__summary > span:not(.nova-collection-hero__index) {
+  color: var(--nova-friendly-teal-dark) !important;
+  font-weight: 600;
+  letter-spacing: .015em;
+  text-transform: none !important;
 }
