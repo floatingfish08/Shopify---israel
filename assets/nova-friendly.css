@@ -1353,14 +1353,14 @@ button,
 input,
 select,
 textarea {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-family: "Work Sans", var(--font-body-family), Arial, sans-serif;
   font-feature-settings: normal;
   font-variant: normal;
 }
 h1, h2, h3, h4, h5, h6,
 .h0, .h1, .h2, .h3, .h4, .h5 {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  font-weight: 600;
+  font-family: "Work Sans", var(--font-heading-family), Arial, sans-serif;
+  font-weight: 700;
   font-feature-settings: normal;
   font-variant: normal;
 }
@@ -1718,4 +1718,215 @@ main[data-template='product'] {
   font-weight: 600;
   letter-spacing: .015em;
   text-transform: none !important;
+}
+
+/* Collection commerce typography and controls. */
+main[data-template='collection'] .facets-container,
+main[data-template='collection'] .product-grid,
+main[data-template='collection'] .product-grid button,
+main[data-template='collection'] .product-grid select {
+  font-family: "Work Sans", var(--font-body-family), Arial, sans-serif;
+  font-feature-settings: normal;
+  font-variant: normal;
+}
+
+main[data-template='collection'] .facets-container {
+  padding: 1.5rem 1.8rem;
+  background: #fff;
+}
+main[data-template='collection'] .facets__form {
+  align-items: center;
+  gap: 1.2rem 2.2rem;
+  margin: 0;
+}
+main[data-template='collection'] .facets__wrapper {
+  gap: .8rem;
+  align-items: center;
+}
+main[data-template='collection'] .facets__heading {
+  margin: 0 .4rem 0 0;
+  color: #566b71;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: .045em;
+  line-height: 1;
+  text-transform: none;
+}
+main[data-template='collection'] .facets__disclosure {
+  margin: 0;
+}
+main[data-template='collection'] .facets__summary {
+  min-width: 13.6rem;
+  min-height: 4.5rem;
+  margin: 0;
+  padding: 0 4.2rem 0 1.5rem;
+  border: 1px solid #cad8db;
+  border-radius: .7rem;
+  background: #fff;
+  color: #213a41;
+  font-size: 1.3rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  text-transform: none;
+}
+main[data-template='collection'] .facets__summary > div {
+  width: 100%;
+}
+main[data-template='collection'] .facets__summary .svg-wrapper {
+  right: 1.4rem;
+}
+main[data-template='collection'] .facets__summary:hover,
+main[data-template='collection'] .facets__disclosure[open] .facets__summary {
+  border-color: var(--nova-friendly-teal);
+  background: #f7fbfb;
+  color: var(--nova-friendly-teal-dark);
+}
+main[data-template='collection'] .facet-filters {
+  align-items: center;
+  padding: 0;
+}
+main[data-template='collection'] .facet-filters__field,
+main[data-template='collection'] .facet-filters__field:hover {
+  gap: .8rem;
+  border: 0;
+  background: transparent;
+}
+main[data-template='collection'] .facet-filters__label {
+  margin: 0;
+  color: #697d82;
+  font-size: 1.1rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+main[data-template='collection'] .facet-filters__field .select {
+  min-width: 18.5rem;
+}
+main[data-template='collection'] .facet-filters__sort {
+  width: 100%;
+  min-height: 4.5rem;
+  padding: 0 4rem 0 1.4rem;
+  border: 1px solid #cad8db;
+  border-radius: .7rem;
+  background: #fff;
+  color: #213a41;
+  font-size: 1.25rem;
+  font-weight: 650;
+}
+main[data-template='collection'] .facet-filters__sort:hover,
+main[data-template='collection'] .facet-filters__sort:focus-visible {
+  border-color: var(--nova-friendly-teal);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(11,105,119,.1);
+}
+main[data-template='collection'] .facet-filters__sort + .icon-caret {
+  right: 1.35rem;
+}
+main[data-template='collection'] .product-count {
+  align-self: center;
+  min-width: 7.6rem;
+}
+main[data-template='collection'] .product-count__text {
+  color: #60747a;
+  font-size: 1.15rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+main[data-template='collection'] .product-grid .card {
+  overflow: hidden;
+  background: #fff;
+}
+main[data-template='collection'] .product-grid > .grid__item {
+  display: flex;
+  align-self: stretch;
+}
+main[data-template='collection'] .product-grid .card-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100% !important;
+}
+main[data-template='collection'] .product-grid .card-wrapper > .card {
+  width: 100%;
+}
+main[data-template='collection'] .product-grid .card > .card__content {
+  padding: 0 1.7rem 1.7rem;
+}
+main[data-template='collection'] .product-grid .card__information {
+  padding: 1.8rem 0 1.4rem;
+}
+main[data-template='collection'] .product-grid .card__heading,
+main[data-template='collection'] .product-grid .card__heading.h5 {
+  min-height: 4.8rem;
+  margin: 0;
+  color: #152e35;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -.025em;
+  line-height: 1.28;
+  text-transform: none;
+}
+main[data-template='collection'] .nova-card-catalog {
+  margin: .8rem 0 1rem;
+  font-size: 1.08rem;
+  letter-spacing: .01em;
+}
+main[data-template='collection'] .nova-card-catalog span {
+  font-weight: 500;
+  text-transform: none;
+}
+main[data-template='collection'] .nova-card-catalog strong {
+  font-weight: 700;
+}
+main[data-template='collection'] .product-grid .price {
+  margin-top: .4rem;
+  color: #172f36;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+main[data-template='collection'] .card--card .quick-add,
+main[data-template='collection'] .quick-add {
+  margin: 0;
+}
+main[data-template='collection'] .quick-add__submit {
+  min-height: 4.8rem;
+  border: 1px solid var(--nova-friendly-teal) !important;
+  border-radius: .7rem !important;
+  background: var(--nova-friendly-teal) !important;
+  color: #fff !important;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: .005em;
+  text-transform: none !important;
+}
+main[data-template='collection'] .quick-add__submit:hover {
+  border-color: var(--nova-friendly-teal-dark) !important;
+  background: var(--nova-friendly-teal-dark) !important;
+  color: #fff !important;
+}
+
+@media screen and (max-width: 989px) {
+  main[data-template='collection'] .facets-container {
+    padding: 1.2rem 1.4rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  main[data-template='collection'] .product-grid .card > .card__content {
+    padding: 0 1.2rem 1.2rem;
+  }
+  main[data-template='collection'] .product-grid .card__information {
+    padding: 1.4rem 0 1.1rem;
+  }
+  main[data-template='collection'] .product-grid .card__heading,
+  main[data-template='collection'] .product-grid .card__heading.h5 {
+    min-height: 0;
+    font-size: 1.5rem;
+  }
+  main[data-template='collection'] .quick-add__submit {
+    min-height: 4.5rem;
+    padding-inline: 1rem !important;
+    font-size: 1.2rem;
+    white-space: nowrap;
+  }
 }
