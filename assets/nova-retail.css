@@ -170,6 +170,11 @@ main[data-template='index'] .nova-marketplace .nova-slider__proof > span {
   min-height: 5.8rem;
   padding: 1.1rem 1.4rem;
 }
+main[data-template='index'] .nova-marketplace .nova-scroll-cue--hero {
+  right: auto;
+  bottom: 2rem;
+  left: 5rem;
+}
 
 main[data-template='index'] .nova-trust {
   padding: 3.5rem 0;
@@ -568,6 +573,7 @@ main[data-template='product'] .nova-product-assurance {
 .footer__content-bottom { border-top-color: #d8e4e5 !important; }
 
 @media screen and (max-width: 989px) {
+  main[data-template='index'] .nova-marketplace .nova-scroll-cue--hero { left: 3rem; }
   main[data-template='index'] .nova-commerce__categories { grid-template-columns: repeat(2,minmax(0,1fr)); }
   main[data-template='index'] .nova-category-card--wide { grid-column: span 2; }
   main[data-template='collection'] .nova-collection-hero__inner {
