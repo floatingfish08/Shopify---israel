@@ -1584,3 +1584,89 @@ main[data-template='product'] .quantity { border-radius: .5rem; }
   .nova-featured { border-radius: .6rem; }
   .nova-marketplace .nova-slider { border-radius: 0; border-right: 0; border-left: 0; }
 }
+
+/* Friendly homepage image flow and consistent U.S. sentence case. */
+.announcement-bar__message,
+.nova-slider__eyebrow,
+.nova-kicker,
+.nova-regulatory__label,
+.nova-resource-type,
+.nova-collection-hero__kicker,
+.nova-product-card__badge,
+.nova-shop-card__type,
+.nova-card-catalog span,
+main .product__sku::before,
+.nova-slider__proof > span {
+  letter-spacing: .035em;
+  text-transform: none;
+}
+.announcement-bar__message { letter-spacing: .025em; }
+
+.nova-marketplace .nova-slider__slide:not(:first-child) { display: block !important; }
+.nova-marketplace .nova-scroll-cue--hero { right: 15rem; bottom: 2rem; }
+.nova-marketplace .nova-slider__controls {
+  right: 2rem;
+  bottom: 2rem;
+  left: auto;
+  display: flex !important;
+  width: auto;
+  padding: .45rem;
+  border: 1px solid #cbdadd;
+  border-radius: .6rem;
+  background: rgba(255,255,255,.94);
+  box-shadow: 0 .4rem 1.4rem rgba(28,61,68,.08);
+  backdrop-filter: blur(10px);
+}
+.nova-marketplace .nova-slider__controls > button {
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 0;
+  border-radius: .4rem;
+  background: transparent;
+  color: var(--nova-friendly-teal);
+}
+.nova-marketplace .nova-slider__controls > button:hover {
+  background: var(--nova-friendly-pale);
+  color: var(--nova-friendly-teal-dark);
+}
+.nova-marketplace .nova-slider__dots { gap: .55rem; padding: 0 .45rem; }
+.nova-marketplace .nova-slider__dots button {
+  width: .65rem;
+  height: .65rem;
+  border: 0;
+  border-radius: 99rem;
+  background: #b9cacc;
+}
+.nova-marketplace .nova-slider__dots button.is-active {
+  width: 2.2rem;
+  background: var(--nova-friendly-teal);
+}
+.nova-marketplace .nova-slider__slide {
+  transition: opacity .8s cubic-bezier(.22,.7,.2,1), visibility .8s;
+}
+.nova-marketplace .nova-slider__slide > img {
+  transform: scale(1.025);
+  transform-origin: center right;
+}
+.nova-motion-ready .nova-marketplace .nova-slider__slide.is-active > img {
+  animation: nova-friendly-hero-flow 7.2s ease-out both;
+}
+@keyframes nova-friendly-hero-flow {
+  from { transform: scale(1.025) translateX(.25%); }
+  to { transform: scale(1.055) translateX(-.35%); }
+}
+.nova-marketplace .nova-slider__slide:nth-child(2) > img,
+.nova-marketplace .nova-slider__slide:nth-child(3) > img { object-position: center; }
+
+@media screen and (max-width: 749px) {
+  .nova-marketplace .nova-scroll-cue--hero { display: none; }
+  .nova-marketplace .nova-slider__controls { right: 1.2rem; bottom: 1.2rem; }
+  .nova-marketplace .nova-slider__controls > button { width: 3.2rem; height: 3.2rem; }
+  .nova-marketplace .nova-slider__slide:nth-child(2) > img,
+  .nova-marketplace .nova-slider__slide:nth-child(3) > img { object-position: 68% center; }
+  .nova-marketplace .nova-slider__content--compact { padding-bottom: 9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nova-motion-ready .nova-marketplace .nova-slider__slide.is-active > img { animation: none; }
+}

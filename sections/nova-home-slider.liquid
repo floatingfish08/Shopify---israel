@@ -2,7 +2,7 @@
 
 <section class="nova-marketplace" aria-label="NOVA Implants USA featured products">
   <div class="nova-marketplace__grid page-width">
-<div class="nova-slider">
+<div class="nova-slider" data-nova-slider>
   <div class="nova-slider__track">
     <article class="nova-slider__slide is-active" data-nova-slide aria-hidden="false">
       <img src="{{ 'nova-hero-friendly-v1.webp' | asset_url }}" width="1536" height="1024" loading="eager" fetchpriority="high" alt="NOVA precision dental implant components on a clean clinical background">
@@ -21,25 +21,25 @@
       </div>
     </article>
     <article class="nova-slider__slide" data-nova-slide aria-hidden="true">
-      <img src="{{ 'nova-slide-psi.webp' | asset_url }}" width="1800" height="600" loading="eager" alt="NOVA PSI dental implant system in 6 mm lengths">
+      <img src="{{ 'nova-flow-psi-v2.webp' | asset_url }}" width="1672" height="941" loading="lazy" alt="A coordinated family of precision titanium dental implants">
       <span class="nova-slider__overlay" aria-hidden="true"></span>
       <div class="page-width nova-slider__content nova-slider__content--compact">
         <span class="nova-slider__eyebrow">PSI implant system</span>
-        <h2>PSI implants. One connected ecosystem.</h2>
-        <p>Select implant dimensions, then move confidently through the matching restorative workflow.</p>
-        <a class="button button--primary" href="{{ routes.all_products_collection_url }}">Explore components</a>
-        <div class="nova-slider__proof"><span><strong>5</strong> diameters</span><span><strong>6</strong> lengths</span><span><strong>1</strong> connected system</span></div>
+        <h2>A complete implant system, made simple.</h2>
+        <p>Choose the required diameter and length, then continue through a connected restorative workflow.</p>
+        <a class="button button--primary" href="{{ routes.collections_url }}/implant-systems">Explore PSI implants</a>
+        <div class="nova-slider__proof"><span><strong>5</strong> available diameters</span><span><strong>6</strong> available lengths</span><span><strong>1</strong> connected system</span></div>
       </div>
     </article>
     <article class="nova-slider__slide" data-nova-slide aria-hidden="true">
-      <img src="{{ 'nova-slide-multi-unit.webp' | asset_url }}" width="1800" height="600" loading="eager" alt="NOVA Multi-Unit abutment solutions">
+      <img src="{{ 'nova-flow-full-arch-v2.webp' | asset_url }}" width="1774" height="887" loading="lazy" alt="Gold and titanium full-arch restorative components arranged on a clean clinical surface">
       <span class="nova-slider__overlay" aria-hidden="true"></span>
       <div class="page-width nova-slider__content nova-slider__content--compact">
         <span class="nova-slider__eyebrow">Full-arch workflow</span>
-        <h2>Full-arch solutions made precise and simple.</h2>
-        <p>Straight and angled components for secure screw-retained restorations.</p>
-        <a class="button button--primary" href="{{ routes.collections_url }}/multi-unit-overdenture">Shop multi-unit</a>
-        <div class="nova-slider__proof"><span><strong>18°</strong> angled family</span><span><strong>30°</strong> angled family</span><span><strong>Full</strong> arch workflow</span></div>
+        <h2>Full-arch components, clearly organized.</h2>
+        <p>Compare straight and angled components for predictable screw-retained restorative workflows.</p>
+        <a class="button button--primary" href="{{ routes.collections_url }}/multi-unit-overdenture">Shop full-arch components</a>
+        <div class="nova-slider__proof"><span><strong>18°</strong> angled options</span><span><strong>30°</strong> angled options</span><span><strong>Full</strong> restorative workflow</span></div>
       </div>
     </article>
   </div>
@@ -80,14 +80,31 @@
     let timer;
     const show = (next) => {
       current = (next + slides.length) % slides.length;
-      slides.forEach((slide, index) => { const active = index === current; slide.classList.toggle('is-active', active); slide.setAttribute('aria-hidden', String(!active)); });
+      slides.forEach((slide, index) => {
+        const active = index === current;
+        slide.classList.toggle('is-active', active);
+        slide.setAttribute('aria-hidden', String(!active));
+        slide.toggleAttribute('inert', !active);
+      });
       dots.forEach((dot, index) => { const active = index === current; dot.classList.toggle('is-active', active); dot.setAttribute('aria-selected', String(active)); });
     };
-    const restart = () => { clearInterval(timer); timer = setInterval(() => show(current + 1), 7000); };
+    const stop = () => clearInterval(timer);
+    const restart = () => {
+      stop();
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && !document.hidden) {
+        timer = setInterval(() => show(current + 1), 6500);
+      }
+    };
     root.querySelector('[data-nova-slider-prev]').addEventListener('click', () => { show(current - 1); restart(); });
     root.querySelector('[data-nova-slider-next]').addEventListener('click', () => { show(current + 1); restart(); });
     dots.forEach((dot, index) => dot.addEventListener('click', () => { show(index); restart(); }));
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) restart();
+    root.addEventListener('pointerenter', stop);
+    root.addEventListener('pointerleave', restart);
+    root.addEventListener('focusin', stop);
+    root.addEventListener('focusout', (event) => { if (!root.contains(event.relatedTarget)) restart(); });
+    document.addEventListener('visibilitychange', () => document.hidden ? stop() : restart());
+    show(0);
+    restart();
   })();
 </script>
 
