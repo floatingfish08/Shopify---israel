@@ -15,35 +15,7 @@
     "nova_commerce": { "type": "nova-commerce-showcase", "settings": { "color_scheme": "scheme-1" } },
     "nova_shop": { "type": "nova-shop-products", "settings": { "color_scheme": "scheme-1" } },
     "nova_regulatory": { "type": "nova-regulatory-focus", "settings": { "color_scheme": "scheme-3" } },
-    "nova_solutions": {
-      "type": "nova-solutions",
-      "blocks": {
-        "implants": { "type": "solution", "settings": { "heading": "PSI system", "text": "NOVA internal-hex implant ecosystem", "link": "/collections/implant-systems" } },
-        "healing": { "type": "solution", "settings": { "heading": "Healing components", "text": "Slim titanium healing abutments", "link": "/collections/healing-abutments" } },
-        "restorative": { "type": "solution", "settings": { "heading": "Restorative solutions", "text": "Castable, chrome-cobalt and UCLA", "link": "/collections/restorative-components" } },
-        "digital": { "type": "solution", "settings": { "heading": "CAD/CAM & casting", "text": "Laboratory restorative workflows", "link": "/collections/digital-cad-cam-casting" } },
-        "multiunit": { "type": "solution", "settings": { "heading": "Multi-unit solutions", "text": "Angled Pop-Clicq and overdenture", "link": "/collections/multi-unit-overdenture" } },
-        "surgical": { "type": "solution", "settings": { "heading": "Surgical instruments", "text": "Clinical and laboratory hand tools", "link": "/collections/surgical-instruments" } }
-      },
-      "block_order": ["implants", "healing", "restorative", "digital", "multiunit", "surgical"],
-      "settings": {
-        "eyebrow": "Shop by workflow",
-        "heading": "Everything organized for faster ordering.",
-        "text": "<p>Move from healing through restoration, laboratory and full-arch workflows using clear product families and selectable configurations.</p>",
-        "color_scheme": "scheme-2",
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
-    },
-    "nova_quality": {
-      "type": "nova-quality-story",
-      "settings": {
-        "catalog_url": "/collections/all",
-        "contact_url": "/pages/contact",
-        "color_scheme": "scheme-2"
-      }
-    },
     "nova_resources": { "type": "nova-resources", "settings": { "catalog_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709", "ifu_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/TF-1008_NOVA_Instructios_for_Use_ver._08_1.pdf?v=1788247491", "certificate_url": "https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-iso-13485-certificate-2024.pdf?v=1788096136", "color_scheme": "scheme-3" } }
   },
-  "order": ["nova_slider", "nova_trust", "nova_commerce", "nova_shop", "nova_regulatory", "nova_solutions", "nova_quality", "nova_resources"]
+  "order": ["nova_slider", "nova_trust", "nova_commerce", "nova_shop", "nova_regulatory", "nova_resources"]
 }
