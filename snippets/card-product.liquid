@@ -163,12 +163,17 @@
               </a>
             </h3>
             <div class="card-information">
-              {%- if card_product.selected_or_first_available_variant.sku != blank -%}
-                <div class="nova-card-catalog" aria-label="Catalog number {{ card_product.selected_or_first_available_variant.sku | escape }}">
-                  <span>Catalog no.</span>
-                  <strong>{{ card_product.selected_or_first_available_variant.sku | escape }}</strong>
-                </div>
-              {%- endif -%}
+              <div
+                class="nova-card-catalog{% if card_product.selected_or_first_available_variant.sku == blank %} nova-card-catalog--empty{% endif %}"
+                {% if card_product.selected_or_first_available_variant.sku != blank %}
+                  aria-label="Catalog number {{ card_product.selected_or_first_available_variant.sku | escape }}"
+                {% else %}
+                  aria-label="Catalog number not yet assigned"
+                {% endif %}
+              >
+                <span>Catalog no.</span>
+                <strong>{{ card_product.selected_or_first_available_variant.sku | default: '—' | escape }}</strong>
+              </div>
               {%- if show_vendor -%}
                 <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
                 <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
