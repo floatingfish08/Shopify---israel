@@ -43,16 +43,19 @@
     endif
   -%}
   <div class="nova-footer-hero page-width">
-    <div>
+    <div class="nova-footer-hero__intro">
       <span>NOVA Implants USA</span>
-      <h2>Precision for every<br>connection.</h2>
-    </div>
-    <div>
-      <p>A complete professional catalog for implant, restorative, digital and surgical workflows.</p>
+      <h2>Order every component with confidence.</h2>
+      <p>Explore a connected professional catalog for implant, restorative, digital and surgical workflows—with clear references and support when you need it.</p>
       <div class="nova-footer-hero__actions">
-        <a href="{{ routes.all_products_collection_url }}">Shop the catalog <span aria-hidden="true">→</span></a>
-        <a href="/pages/contact">Contact NOVA <span aria-hidden="true">↗</span></a>
+        <a class="button button--primary" href="{{ routes.all_products_collection_url }}">Shop all products</a>
+        <a class="button button--secondary" href="/pages/contact">Ask a product specialist</a>
       </div>
+    </div>
+    <div class="nova-footer-hero__proof" aria-label="Ordering benefits">
+      <article><span aria-hidden="true">✓</span><div><strong>Free U.S. shipping</strong><small>On every eligible order</small></div></article>
+      <article><span aria-hidden="true">✓</span><div><strong>Same-day dispatch</strong><small>For eligible in-stock orders</small></div></article>
+      <article><span aria-hidden="true">✓</span><div><strong>Professional support</strong><small>Compatibility help before ordering</small></div></article>
     </div>
   </div>
   {%- if section.blocks.size > 0

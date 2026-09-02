@@ -48,7 +48,7 @@
   endif
 -%}
 
-<section class="nova-collection-hero nova-collection-hero--{{ collection.handle | handle }}" style="--nova-collection-art: url('{{ hero_art | asset_url }}');" data-nova-collection-hero>
+<section class="nova-collection-hero nova-collection-hero--{{ collection.handle | handle }}" data-nova-collection-hero>
   <div class="nova-collection-hero__inner page-width">
     <div class="nova-collection-hero__copy">
       <nav class="nova-collection-hero__breadcrumb" aria-label="Breadcrumb"><a href="{{ routes.root_url }}">Home</a><span>→</span><a href="{{ routes.all_products_collection_url }}">Catalog</a></nav>
@@ -65,11 +65,18 @@
       <a class="nova-scroll-cue nova-scroll-cue--collection" href="#ProductGridContainer"><span>Browse products</span><i aria-hidden="true">↓</i></a>
     </div>
     <aside class="nova-collection-hero__summary">
-      <span class="nova-collection-hero__index">01 / Catalog</span>
-      <strong data-nova-count="{{ collection.all_products_count }}">{{ collection.all_products_count }}</strong>
-      <span>Products in this collection</span>
-      <p>Professional use only. Confirm platform, dimensions, labeling and current IFU before ordering.</p>
-      <a href="https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709" target="_blank" rel="noopener">Open 2026 PDF catalog <span aria-hidden="true">↗</span></a>
+      <div class="nova-collection-hero__media">
+        <img src="{{ hero_art | asset_url }}" alt="{{ hero_title | escape }} product overview" width="900" height="650" loading="eager">
+        <span class="nova-collection-hero__count">
+          <strong data-nova-count="{{ collection.all_products_count }}">{{ collection.all_products_count }}</strong>
+          <small>products</small>
+        </span>
+      </div>
+      <div class="nova-collection-hero__summary-copy">
+        <span class="nova-collection-hero__index">NOVA professional catalog</span>
+        <p>Confirm platform, dimensions, labeling and the current IFU before ordering.</p>
+        <a href="https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709" target="_blank" rel="noopener">Open 2026 PDF catalog <span aria-hidden="true">↗</span></a>
+      </div>
     </aside>
   </div>
 </section>
