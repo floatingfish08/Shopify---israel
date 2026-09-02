@@ -115,6 +115,10 @@
                             </a>
                           </li>
                         {%- endfor -%}
+                        {%- if block.settings.heading == 'Support' -%}
+                          <li><a href="/pages/shipping-delivery" class="link link--text list-menu__item list-menu__item--link">Shipping &amp; Delivery</a></li>
+                          <li><a href="{{ routes.collections_url }}/special-offers" class="link link--text list-menu__item list-menu__item--link">Special offers</a></li>
+                        {%- endif -%}
                       </ul>
                     {%- endif -%}
                   {%- when 'brand_information' -%}

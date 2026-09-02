@@ -1,0 +1,68 @@
+<section class="nova-delivery" aria-labelledby="NovaDeliveryTitle-{{ section.id }}">
+  <div class="nova-delivery__hero">
+    <div class="page-width nova-delivery__hero-inner">
+      <div>
+        <span class="nova-kicker">Shipping &amp; delivery</span>
+        <h1 id="NovaDeliveryTitle-{{ section.id }}">Fast, clear delivery for every order.</h1>
+        <p>NOVA keeps fulfillment simple with free U.S. shipping, same-day shipping for eligible in-stock orders, and tracking details as soon as your shipment is on its way.</p>
+        <a class="button button--primary" href="{{ routes.all_products_collection_url }}">Shop the catalog</a>
+      </div>
+      <div class="nova-delivery__highlights" aria-label="Delivery highlights">
+        <article><span>01</span><strong>Free U.S. shipping</strong><p>Available on eligible orders shipped within the United States.</p></article>
+        <article><span>02</span><strong>Same-day shipping</strong><p>Eligible in-stock orders are prepared for carrier pickup the same business day.</p></article>
+        <article><span>03</span><strong>Shipment tracking</strong><p>Tracking information is shared when your carrier scan becomes available.</p></article>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-width nova-delivery__content">
+    <header class="nova-delivery__section-heading">
+      <div><span class="nova-kicker">From cart to clinic</span><h2>What happens after you order</h2></div>
+      <p>Accurate account and delivery details help the NOVA team process your order without unnecessary delays.</p>
+    </header>
+
+    <ol class="nova-delivery__steps">
+      <li><span>1</span><div><strong>Order confirmation</strong><p>You receive confirmation after checkout with the products, configurations and shipping address submitted.</p></div></li>
+      <li><span>2</span><div><strong>Inventory verification</strong><p>Our team checks availability and will contact you if an item requires clarification or additional processing time.</p></div></li>
+      <li><span>3</span><div><strong>Dispatch and tracking</strong><p>Eligible orders are dispatched the same business day. Tracking is sent when it becomes available from the carrier.</p></div></li>
+    </ol>
+
+    <div class="nova-delivery__details">
+      <article>
+        <span class="nova-kicker">Before checkout</span>
+        <h2>Help us deliver without delay</h2>
+        <ul>
+          <li>Confirm the complete shipping address, email address and contact number.</li>
+          <li>Review product compatibility, dimensions and catalog numbers before submitting the order.</li>
+          <li>Contact NOVA promptly if an address or product selection needs correction.</li>
+          <li>Delivery timing can vary by destination, carrier conditions and product availability.</li>
+        </ul>
+      </article>
+      <aside>
+        <span class="nova-kicker">Need assistance?</span>
+        <h2>Questions about an order?</h2>
+        <p>Send the NOVA team your order number and the email address used at checkout. We’ll help confirm the current order or shipment status.</p>
+        <a class="button button--secondary" href="/pages/contact">Contact NOVA support</a>
+      </aside>
+    </div>
+
+    <div class="nova-delivery__faq">
+      <header><span class="nova-kicker">Delivery FAQ</span><h2>Helpful answers</h2></header>
+      <div>
+        <details open><summary>How do I track my order?</summary><p>Use the tracking link sent after dispatch. Carrier updates may take a short time to appear after the first scan.</p></details>
+        <details><summary>Which orders qualify for same-day dispatch?</summary><p>Same-day dispatch applies to eligible in-stock orders. Orders that need availability, address or compatibility clarification may require additional processing time.</p></details>
+        <details><summary>Can I change my delivery address?</summary><p>Contact NOVA as quickly as possible. An address cannot always be changed after the shipment has been transferred to the carrier.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NOVA delivery page",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [{ "name": "NOVA delivery page" }]
+}
+{% endschema %}

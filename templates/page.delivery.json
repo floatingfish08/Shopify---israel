@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "nova-delivery-page",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}
