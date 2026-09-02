@@ -56,7 +56,10 @@
             {%- if filter_type == 'horizontal' and results.filters != empty -%}
               <h2 class="facets__heading caption-large text-body" id="verticalTitle" tabindex="-1">
                 <span class="svg-wrapper" aria-hidden="true">{{- 'icon-filter.svg' | inline_asset_content -}}</span>
-                <span>Filter products</span>
+                <span class="facets__heading-copy">
+                  <strong>Refine products</strong>
+                  <small>Filter this collection</small>
+                </span>
               </h2>
             {%- endif -%}
             {% comment %} Pills are right below the title for filter type vertical {% endcomment %}
@@ -424,6 +427,7 @@
             </div>
           {%- endif -%}
           <div class="product-count light" role="status">
+            <span class="product-count__label">Showing</span>
             <h2 class="product-count__text text-body">
               <span id="ProductCountDesktop">
                 {%- if results.results_count -%}
