@@ -70,7 +70,7 @@
       const next = slider.querySelector('[data-nova-hero-next]');
       const pause = slider.querySelector('[data-nova-hero-pause]');
       const status = slider.querySelector('[data-nova-hero-status]');
-      const delay = Number(slider.dataset.autoplayDelay) || 7000;
+      const delay = Number(slider.dataset.autoplayDelay) || 5000;
       let activeIndex = 0;
       let timer;
       let manuallyPaused = false;
