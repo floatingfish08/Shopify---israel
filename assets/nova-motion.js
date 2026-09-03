@@ -60,7 +60,115 @@
     return elements;
   };
 
+  const initHeroSliders = (scope = document) => {
+    scope.querySelectorAll('[data-nova-hero-slider]').forEach((slider) => {
+      if (slider.dataset.novaSliderReady === 'true') return;
+
+      const slides = Array.from(slider.querySelectorAll('[data-nova-hero-slide]'));
+      const dots = Array.from(slider.querySelectorAll('[data-nova-hero-dot]'));
+      const previous = slider.querySelector('[data-nova-hero-prev]');
+      const next = slider.querySelector('[data-nova-hero-next]');
+      const pause = slider.querySelector('[data-nova-hero-pause]');
+      const status = slider.querySelector('[data-nova-hero-status]');
+      const delay = Number(slider.dataset.autoplayDelay) || 7000;
+      let activeIndex = 0;
+      let timer;
+      let manuallyPaused = false;
+      let pointerWithin = false;
+      let focusWithin = false;
+
+      if (slides.length < 2) return;
+      slider.dataset.novaSliderReady = 'true';
+
+      const updatePauseControl = () => {
+        if (!pause) return;
+        pause.setAttribute('aria-pressed', String(manuallyPaused));
+        pause.setAttribute('aria-label', manuallyPaused ? 'Play automatic slides' : 'Pause automatic slides');
+        pause.querySelector('[aria-hidden]')?.replaceChildren(document.createTextNode(manuallyPaused ? '▶' : 'Ⅱ'));
+      };
+
+      const showSlide = (requestedIndex, announce = true) => {
+        activeIndex = (requestedIndex + slides.length) % slides.length;
+
+        slides.forEach((slide, index) => {
+          const isActive = index === activeIndex;
+          slide.classList.toggle('is-active', isActive);
+          slide.setAttribute('aria-hidden', String(!isActive));
+          slide.toggleAttribute('inert', !isActive);
+        });
+
+        dots.forEach((dot, index) => {
+          const isActive = index === activeIndex;
+          dot.classList.toggle('is-active', isActive);
+          dot.setAttribute('aria-current', String(isActive));
+        });
+
+        if (announce && status) {
+          const heading = slides[activeIndex].querySelector('h1, h2')?.textContent?.trim();
+          status.textContent = `Slide ${activeIndex + 1} of ${slides.length}${heading ? `: ${heading}` : ''}`;
+        }
+      };
+
+      const stopAutoplay = () => {
+        window.clearInterval(timer);
+        timer = undefined;
+      };
+
+      const startAutoplay = () => {
+        stopAutoplay();
+        if (reducedMotion.matches || manuallyPaused || pointerWithin || focusWithin || document.hidden) return;
+        timer = window.setInterval(() => showSlide(activeIndex + 1, false), delay);
+      };
+
+      const selectSlide = (index) => {
+        showSlide(index);
+        startAutoplay();
+      };
+
+      previous?.addEventListener('click', () => selectSlide(activeIndex - 1));
+      next?.addEventListener('click', () => selectSlide(activeIndex + 1));
+      dots.forEach((dot) => dot.addEventListener('click', () => selectSlide(Number(dot.dataset.slideIndex))));
+
+      pause?.addEventListener('click', () => {
+        manuallyPaused = !manuallyPaused;
+        updatePauseControl();
+        startAutoplay();
+      });
+
+      slider.addEventListener('pointerenter', () => {
+        pointerWithin = true;
+        stopAutoplay();
+      });
+      slider.addEventListener('pointerleave', () => {
+        pointerWithin = false;
+        startAutoplay();
+      });
+      slider.addEventListener('focusin', () => {
+        focusWithin = true;
+        stopAutoplay();
+      });
+      slider.addEventListener('focusout', () => {
+        window.setTimeout(() => {
+          focusWithin = slider.contains(document.activeElement);
+          startAutoplay();
+        });
+      });
+      slider.addEventListener('keydown', (event) => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        event.preventDefault();
+        selectSlide(activeIndex + (event.key === 'ArrowRight' ? 1 : -1));
+      });
+      document.addEventListener('visibilitychange', startAutoplay);
+      reducedMotion.addEventListener?.('change', startAutoplay);
+
+      updatePauseControl();
+      showSlide(0, false);
+      startAutoplay();
+    });
+  };
+
   const init = () => {
+    initHeroSliders();
     const elements = revealGroups.flatMap((group) => prepareGroup(group.selector, group.effect));
     document.querySelectorAll('.nova-category-nav a.is-active, .nova-collection-switcher a.is-active').forEach((link) => {
       const scroller = link.parentElement;
@@ -164,4 +272,6 @@
   } else {
     init();
   }
+
+  document.addEventListener('shopify:section:load', (event) => initHeroSliders(event.target));
 })();

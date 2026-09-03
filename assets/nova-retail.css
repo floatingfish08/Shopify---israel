@@ -1258,3 +1258,114 @@ main[data-template='index'] .nova-marketplace .nova-slider__content h1 {
   .nova-brand-story__content h2 { font-size: 3.4rem; }
   .nova-brand-story__content p { font-size: 1.45rem; }
 }
+
+/* Premium homepage hero flow. */
+main[data-template='index'] .nova-marketplace .nova-slider__content h1,
+main[data-template='index'] .nova-marketplace .nova-slider__content h2 {
+  max-width: 58rem;
+  margin: 0;
+  color: #112b32;
+  font-size: clamp(4.7rem,4vw,5.5rem);
+  font-weight: 700;
+  letter-spacing: -.045em;
+  line-height: 1.04;
+}
+main[data-template='index'] .nova-marketplace .nova-slider__slide {
+  transition: opacity .9s cubic-bezier(.22,.7,.2,1), visibility .9s;
+}
+main[data-template='index'] .nova-marketplace .nova-slider__slide > img {
+  transform: scale(1.015);
+  transform-origin: center right;
+}
+main[data-template='index'] .nova-marketplace .nova-slider__slide.is-active > img {
+  animation: nova-retail-hero-flow 7s ease-out both;
+}
+main[data-template='index'] .nova-marketplace .nova-slider__slide.is-active .nova-slider__content > * {
+  animation: nova-retail-hero-copy .65s cubic-bezier(.2,.7,.2,1) both;
+}
+main[data-template='index'] .nova-marketplace .nova-slider__slide.is-active .nova-slider__content > :nth-child(2) { animation-delay: .07s; }
+main[data-template='index'] .nova-marketplace .nova-slider__slide.is-active .nova-slider__content > :nth-child(3) { animation-delay: .14s; }
+main[data-template='index'] .nova-marketplace .nova-slider__slide.is-active .nova-slider__content > :nth-child(4) { animation-delay: .21s; }
+main[data-template='index'] .nova-marketplace .nova-slider__controls {
+  right: 3rem;
+  bottom: 2.6rem;
+  left: auto;
+  display: flex !important;
+  width: auto;
+  gap: .35rem;
+  padding: .5rem;
+  border: 1px solid rgba(26,75,84,.18);
+  border-radius: 999px;
+  background: rgba(255,255,255,.94);
+  box-shadow: 0 .8rem 2.4rem rgba(28,61,68,.12);
+  backdrop-filter: blur(12px);
+}
+main[data-template='index'] .nova-marketplace .nova-slider__controls > button {
+  display: grid;
+  width: 3.8rem;
+  height: 3.8rem;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--nova-retail-teal-dark);
+  font: inherit;
+  cursor: pointer;
+}
+main[data-template='index'] .nova-marketplace .nova-slider__controls > button:hover,
+main[data-template='index'] .nova-marketplace .nova-slider__controls > button:focus-visible {
+  background: #e7f3f2;
+  outline: none;
+}
+main[data-template='index'] .nova-marketplace .nova-slider__dots {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  padding: 0 .55rem;
+}
+main[data-template='index'] .nova-marketplace .nova-slider__dots button {
+  width: .7rem;
+  height: .7rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #afc3c6;
+  transition: width .25s ease, background .25s ease;
+}
+main[data-template='index'] .nova-marketplace .nova-slider__dots button.is-active {
+  width: 2.4rem;
+  background: var(--nova-retail-teal);
+}
+main[data-template='index'] .nova-marketplace .nova-slider__pause {
+  margin-left: .25rem;
+  border-left: 1px solid #d5e0e1 !important;
+  border-radius: 0 999px 999px 0 !important;
+  font-size: 1.1rem !important;
+}
+
+@keyframes nova-retail-hero-flow {
+  from { transform: scale(1.015) translateX(.15%); }
+  to { transform: scale(1.05) translateX(-.3%); }
+}
+@keyframes nova-retail-hero-copy {
+  from { opacity: 0; transform: translateY(1.4rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 749px) {
+  main[data-template='index'] .nova-marketplace .nova-slider__content h1,
+  main[data-template='index'] .nova-marketplace .nova-slider__content h2 { max-width: 34rem; font-size: 4rem; }
+  main[data-template='index'] .nova-marketplace .nova-slider__slide > img { object-position: 68% center; opacity: .48; }
+  main[data-template='index'] .nova-marketplace .nova-slider__controls { right: 1.4rem; bottom: 1.4rem; }
+  main[data-template='index'] .nova-marketplace .nova-slider__controls > button { width: 3.4rem; height: 3.4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main[data-template='index'] .nova-marketplace .nova-slider__slide,
+  main[data-template='index'] .nova-marketplace .nova-slider__slide.is-active > img,
+  main[data-template='index'] .nova-marketplace .nova-slider__slide.is-active .nova-slider__content > * {
+    animation: none;
+    transition: none;
+  }
+}
