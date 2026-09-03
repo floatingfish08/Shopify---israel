@@ -1171,9 +1171,9 @@ main[data-template='collection'] .product-grid .card > .card__content { min-heig
   .nova-category-nav__inner { justify-content: flex-start; }
   .nova-category-nav a {
     min-height: 5.2rem;
-    padding: 0 2rem;
+    padding: 0 .75rem;
     border-radius: 0;
-    font-size: 1.18rem;
+    font-size: 1.12rem;
     letter-spacing: .005em;
     text-transform: uppercase;
   }
