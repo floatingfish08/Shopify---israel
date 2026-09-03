@@ -1369,3 +1369,97 @@ main[data-template='index'] .nova-marketplace .nova-slider__pause {
     transition: none;
   }
 }
+
+/* Larger, presentation-led homepage typography. */
+main[data-template='index'] .nova-slider__eyebrow,
+main[data-template='index'] .nova-kicker,
+main[data-template='index'] .nova-regulatory__label {
+  font-size: 1.28rem;
+}
+main[data-template='index'] .nova-marketplace .nova-slider__content h1,
+main[data-template='index'] .nova-marketplace .nova-slider__content h2 {
+  max-width: 72rem;
+  font-size: clamp(6.2rem,5.3vw,7.8rem);
+  letter-spacing: -.05em;
+  line-height: .99;
+}
+main[data-template='index'] .nova-marketplace .nova-slider__content p {
+  max-width: 64rem;
+  font-size: 1.9rem;
+  line-height: 1.6;
+}
+main[data-template='index'] .nova-marketplace .nova-slider__actions .button {
+  min-height: 5.4rem;
+  padding-inline: 2.7rem;
+  font-size: 1.42rem;
+}
+main[data-template='index'] .nova-brand-story__content h2 {
+  max-width: 62rem;
+  font-size: clamp(4.5rem,4.25vw,6rem);
+  letter-spacing: -.04em;
+  line-height: 1.04;
+}
+main[data-template='index'] .nova-brand-story__content p {
+  font-size: 1.75rem;
+  line-height: 1.72;
+}
+main[data-template='index'] .nova-brand-story__content > a { font-size: 1.45rem; }
+main[data-template='index'] .nova-trust__item strong { font-size: 1.58rem; }
+main[data-template='index'] .nova-trust__item > span:last-child { font-size: 1.3rem; line-height: 1.5; }
+main[data-template='index'] .nova-commerce__heading h2,
+main[data-template='index'] .nova-shop__heading h2,
+main[data-template='index'] .nova-regulatory__header h2 {
+  max-width: 80rem;
+  font-size: clamp(4.8rem,4.8vw,6.4rem);
+  letter-spacing: -.045em;
+  line-height: 1.02;
+}
+main[data-template='index'] .nova-commerce__heading p,
+main[data-template='index'] .nova-shop__heading p,
+main[data-template='index'] .nova-regulatory__header p {
+  font-size: 1.72rem;
+  line-height: 1.68;
+}
+main[data-template='index'] .nova-category-card__content strong { font-size: 2.05rem; }
+main[data-template='index'] .nova-category-card small { font-size: 1.32rem; line-height: 1.5; }
+main[data-template='index'] .nova-shop-card__body h3 { font-size: 1.95rem; line-height: 1.25; }
+main[data-template='index'] .nova-shop-card__body > p { font-size: 1.32rem; line-height: 1.55; }
+main[data-template='index'] .nova-shop-card__footer strong { font-size: 1.9rem; }
+main[data-template='index'] .nova-shop-card__footer a { font-size: 1.3rem; }
+main[data-template='index'] .nova-regulatory__feature-copy h3 { font-size: 2.9rem; }
+main[data-template='index'] .nova-regulatory__feature-copy p,
+main[data-template='index'] .nova-regulatory__note { font-size: 1.4rem; line-height: 1.6; }
+main[data-template='index'] .nova-regulatory__cards article strong { font-size: 2.1rem; }
+main[data-template='index'] .nova-regulatory__cards article p { font-size: 1.35rem; line-height: 1.58; }
+
+@media screen and (max-width: 749px) {
+  main[data-template='index'] .nova-marketplace .nova-slider__track,
+  main[data-template='index'] .nova-marketplace .nova-slider__slide,
+  main[data-template='index'] .nova-marketplace .nova-slider__content { min-height: 68rem; }
+  main[data-template='index'] .nova-marketplace .nova-slider__content h1,
+  main[data-template='index'] .nova-marketplace .nova-slider__content h2 {
+    max-width: 36rem;
+    font-size: 4.6rem;
+    line-height: 1.01;
+  }
+  main[data-template='index'] .nova-marketplace .nova-slider__content p {
+    max-width: 35rem;
+    font-size: 1.7rem;
+    line-height: 1.55;
+  }
+  main[data-template='index'] .nova-marketplace .nova-slider__actions .button { font-size: 1.35rem; }
+  main[data-template='index'] .nova-brand-story__content h2 { font-size: 3.9rem; }
+  main[data-template='index'] .nova-brand-story__content p { font-size: 1.62rem; }
+  main[data-template='index'] .nova-trust__item strong { font-size: 1.4rem; }
+  main[data-template='index'] .nova-trust__item > span:last-child { font-size: 1.14rem; }
+  main[data-template='index'] .nova-commerce__heading h2,
+  main[data-template='index'] .nova-shop__heading h2,
+  main[data-template='index'] .nova-regulatory__header h2 { font-size: 3.9rem; }
+  main[data-template='index'] .nova-commerce__heading p,
+  main[data-template='index'] .nova-shop__heading p,
+  main[data-template='index'] .nova-regulatory__header p { font-size: 1.58rem; }
+  main[data-template='index'] .nova-category-card__content strong { font-size: 1.95rem; }
+  main[data-template='index'] .nova-category-card small { font-size: 1.28rem; }
+  main[data-template='index'] .nova-shop-card__body h3 { font-size: 1.85rem; }
+  main[data-template='index'] .nova-shop-card__body > p { font-size: 1.3rem; }
+}
