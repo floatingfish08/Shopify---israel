@@ -977,11 +977,6 @@ main[data-template='index'] .nova-category-card--wide > img {
   object-fit: contain;
   background: linear-gradient(135deg,#fbfcfc 0%,#eef5f5 100%);
 }
-main[data-template='index'] .nova-category-card__surgical-fallback {
-  padding: 1.2rem;
-  object-fit: contain;
-  background: linear-gradient(135deg,#fbfcfc 0%,#eef5f5 100%);
-}
 main[data-template='index'] .nova-category-card__content { min-height: 10.5rem; padding: 1.6rem 1.7rem 1.8rem; }
 main[data-template='index'] .nova-category-card__content strong { font-size: 1.72rem; }
 main[data-template='index'] .nova-category-card small { font-size: 1.15rem; }
