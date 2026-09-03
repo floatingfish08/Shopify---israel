@@ -1,0 +1,23 @@
+<section class="nova-brand-story" aria-labelledby="NovaBrandStory-{{ section.id }}">
+  <div class="page-width nova-brand-story__inner">
+    <div class="nova-brand-story__media">
+      <img src="{{ 'nova-flow-psi-v2.webp' | asset_url }}" alt="NOVA dental implant system components" width="1672" height="941" loading="lazy">
+    </div>
+    <div class="nova-brand-story__content">
+      <span class="nova-kicker">Designed by NOVA · Manufactured in Israel</span>
+      <h2 id="NovaBrandStory-{{ section.id }}">Every component belongs to one connected system.</h2>
+      <p>NOVA develops professional implant, healing, restorative and surgical components around a consistent internal-hex workflow. Clear catalog references make it easier to identify the right component before ordering.</p>
+      <a href="{{ routes.collections_url }}/implant-systems">Explore the implant system <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NOVA brand story",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "presets": [{ "name": "NOVA brand story" }]
+}
+{% endschema %}

@@ -348,19 +348,16 @@
   <nav class="nova-category-nav" aria-label="Product catalog categories">
     <div class="nova-category-nav__inner page-width">
       <a class="nova-category-nav__all{% if request.page_type == 'collection' and collection.handle == 'all' %} is-active{% endif %}" href="{{ routes.all_products_collection_url }}"{% if request.page_type == 'collection' and collection.handle == 'all' %} aria-current="page"{% endif %}>
-        <span>Shop all</span>
-        <small>50+ products</small>
+        <span>Categories</span>
       </a>
-      <a class="{% if collection.handle == 'implant-systems' %}is-active{% endif %}" href="{{ routes.collections_url }}/implant-systems"{% if collection.handle == 'implant-systems' %} aria-current="page"{% endif %}><span>Implant systems</span></a>
-      <a class="{% if collection.handle == 'healing-abutments' %}is-active{% endif %}" href="{{ routes.collections_url }}/healing-abutments"{% if collection.handle == 'healing-abutments' %} aria-current="page"{% endif %}><span>Healing</span></a>
-      <a class="{% if collection.handle == 'restorative-components' %}is-active{% endif %}" href="{{ routes.collections_url }}/restorative-components"{% if collection.handle == 'restorative-components' %} aria-current="page"{% endif %}><span>Restorative</span></a>
-      <a class="{% if collection.handle == 'impression-components' %}is-active{% endif %}" href="{{ routes.collections_url }}/impression-components"{% if collection.handle == 'impression-components' %} aria-current="page"{% endif %}><span>Impression</span></a>
+      <a class="{% if collection.handle == 'implant-systems' %}is-active{% endif %}" href="{{ routes.collections_url }}/implant-systems"{% if collection.handle == 'implant-systems' %} aria-current="page"{% endif %}><span>Implant system</span></a>
+      <a class="{% if collection.handle == 'restorative-components' or collection.handle == 'healing-abutments' or collection.handle == 'impression-components' %}is-active{% endif %}" href="{{ routes.collections_url }}/restorative-components"><span>Prosthetics</span></a>
       <a class="{% if collection.handle == 'multi-unit-overdenture' %}is-active{% endif %}" href="{{ routes.collections_url }}/multi-unit-overdenture"{% if collection.handle == 'multi-unit-overdenture' %} aria-current="page"{% endif %}><span>Multi-unit</span></a>
       <a class="{% if collection.handle == 'digital-cad-cam-casting' %}is-active{% endif %}" href="{{ routes.collections_url }}/digital-cad-cam-casting"{% if collection.handle == 'digital-cad-cam-casting' %} aria-current="page"{% endif %}><span>Digital &amp; CAD/CAM</span></a>
-      <a class="{% if collection.handle == 'surgical-instruments' %}is-active{% endif %}" href="{{ routes.collections_url }}/surgical-instruments"{% if collection.handle == 'surgical-instruments' %} aria-current="page"{% endif %}><span>Surgical tools</span></a>
+      <a class="{% if collection.handle == 'surgical-instruments' %}is-active{% endif %}" href="{{ routes.collections_url }}/surgical-instruments"{% if collection.handle == 'surgical-instruments' %} aria-current="page"{% endif %}><span>Instruments &amp; tools</span></a>
       <a class="nova-category-nav__offer{% if collection.handle == 'special-offers' %} is-active{% endif %}" href="{{ routes.collections_url }}/special-offers"{% if collection.handle == 'special-offers' %} aria-current="page"{% endif %}><span>Special offers</span></a>
       <a class="nova-category-nav__document" href="https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709" target="_blank" rel="noopener">
-        PDF catalog <span aria-hidden="true">↗</span>
+        Resources <span aria-hidden="true">↗</span>
       </a>
     </div>
   </nav>
