@@ -1188,14 +1188,6 @@ main[data-template='collection'] .product-grid .card > .card__content { min-heig
     background: #edf7f6 !important;
     color: var(--nova-retail-teal-dark) !important;
   }
-  .nova-category-nav__offer {
-    margin-left: auto;
-    border: 0 !important;
-    background: var(--nova-retail-teal) !important;
-    color: #fff !important;
-  }
-  .nova-category-nav__offer:hover,
-  .nova-category-nav__offer.is-active { background: var(--nova-retail-teal-dark) !important; color: #fff !important; }
   .nova-category-nav__document { padding-right: 0 !important; }
 }
 
