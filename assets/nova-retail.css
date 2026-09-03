@@ -10,6 +10,54 @@
   --nova-retail-radius: 1.2rem;
 }
 
+/* Catalog-expanded products use their matching clinical family visual until an
+   exact photographed SKU image is supplied. Original product photography is
+   preserved for every established product. */
+.card__media .nova-representative-product-image {
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: clamp(1.2rem, 5%, 2.4rem);
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #f5f9fa;
+}
+
+.nova-product-family-visual {
+  position: sticky;
+  top: 10rem;
+}
+
+.nova-product-family-visual__media {
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  border: 1px solid rgba(9, 104, 117, .14);
+  border-radius: 1.6rem;
+  background: #f5f9fa;
+}
+
+.nova-product-family-visual__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: clamp(2rem, 7%, 5rem);
+  object-fit: contain;
+  object-position: center;
+}
+
+.nova-product-family-visual > p {
+  max-width: 56rem;
+  margin: 1.2rem 0 0;
+  color: #62747a;
+  font-size: 1.25rem;
+  line-height: 1.55;
+}
+
+@media screen and (max-width: 749px) {
+  .nova-product-family-visual { position: static; }
+  .nova-product-family-visual__media { border-radius: 1.2rem; }
+}
+
 body {
   background: #fff;
   color: var(--nova-retail-ink);
