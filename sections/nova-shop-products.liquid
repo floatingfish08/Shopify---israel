@@ -24,7 +24,7 @@
             <p>Internal hex · {{ product_counts[forloop.index0] }}</p>
             <div class="nova-shop-card__footer">
               <strong>{%- if card_product != blank -%}{{ card_product.price | money }}{%- else -%}$25.00{%- endif -%}</strong>
-              <a href="/products/{{ handle }}">Choose options <span aria-hidden="true">→</span></a>
+              <a class="nova-choose-options" href="/products/{{ handle }}">Choose options <span aria-hidden="true">→</span></a>
             </div>
           </div>
         </article>

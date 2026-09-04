@@ -1,6 +1,6 @@
 /* 2026 light retail system: Surcam proportions with NOVA clinical identity. */
 :root {
-  --nova-retail-ink: #173138;
+  --nova-retail-ink: #000000;
   --nova-retail-muted: #62767b;
   --nova-retail-teal: #078d91;
   --nova-retail-teal-dark: #056d72;
@@ -951,6 +951,85 @@ main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-sli
   }
 }
 
+/* True-black typography and a restrained premium button system. */
+:root { --nova-friendly-ink: #000000; }
+
+body,
+.nova-header-support strong,
+.nova-category-nav a,
+.card__heading,
+.product__title,
+.product__title h1,
+.product__title h2 {
+  color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5,
+main[data-template='index'] .nova-marketplace .nova-slider__content h1,
+main[data-template='index'] .nova-marketplace .nova-slider__content h2 {
+  color: #000000 !important;
+}
+
+.button:not(.button--tertiary),
+.shopify-challenge__button,
+.customer button,
+main[data-template='product'] .product-form__submit,
+main[data-template='product'] .shopify-payment-button__button {
+  min-height: 5.1rem;
+  padding-inline: 2.5rem;
+  border-radius: 999px !important;
+  font-family: Inter, var(--font-body-family), "Segoe UI", sans-serif;
+  font-size: 1.34rem;
+  font-weight: 650;
+  letter-spacing: .01em;
+  box-shadow: 0 .7rem 1.8rem rgba(0,0,0,.08);
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.button:not(.button--tertiary):hover,
+.shopify-challenge__button:hover,
+.customer button:hover,
+main[data-template='product'] .product-form__submit:hover,
+main[data-template='product'] .shopify-payment-button__button:hover {
+  box-shadow: 0 1rem 2.4rem rgba(0,0,0,.13);
+  transform: translateY(-.2rem);
+}
+
+.button--secondary,
+.nova-marketplace .button--secondary,
+.nova-commerce__footer .button--secondary {
+  border: 1px solid #aebabc !important;
+  background: rgba(255,255,255,.7) !important;
+  color: #000000 !important;
+}
+
+.quick-add__submit--choose-options,
+main[data-template='collection'] .quick-add__submit--choose-options,
+main[data-template='search'] .quick-add__submit--choose-options,
+.nova-shop-card__footer .nova-choose-options {
+  border: 1px solid #98a7aa !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+  font-family: Inter, var(--font-body-family), "Segoe UI", sans-serif;
+  font-weight: 650;
+  letter-spacing: .015em;
+  text-decoration: none;
+}
+
+.quick-add__submit--choose-options:hover,
+main[data-template='collection'] .quick-add__submit--choose-options:hover,
+main[data-template='search'] .quick-add__submit--choose-options:hover,
+.nova-shop-card__footer .nova-choose-options:hover {
+  border-color: #000000 !important;
+  background: transparent !important;
+  color: var(--nova-retail-teal-dark) !important;
+  box-shadow: 0 .6rem 1.6rem rgba(0,0,0,.07) !important;
+  transform: translateY(-.15rem);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .nova-marketplace .nova-slider__slide.is-active > img,
   .nova-category-card,
@@ -1709,4 +1788,22 @@ main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-sli
     font-size: 1.2rem;
     font-weight: 650;
   }
+}
+
+/* Final color lock: all primary display text is true black. */
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5,
+.card__heading,
+.card__heading a,
+.product__title,
+.product__title h1,
+.product__title h2,
+.nova-header-support strong,
+.nova-category-nav a,
+main[data-template='index'] .nova-marketplace .nova-slider__content h1,
+main[data-template='index'] .nova-marketplace .nova-slider__content h2,
+main[data-template='index'] .nova-commerce__heading h2,
+main[data-template='index'] .nova-shop__heading h2,
+main[data-template='index'] .nova-regulatory__header h2 {
+  color: #000000 !important;
 }
