@@ -32,18 +32,17 @@
     </div>
     <div class="nova-shop__assist">
       <div>
-        <span class="nova-kicker">Find the exact component</span>
-        <h3>Search the full catalog by product name or catalog number.</h3>
-        <p>Browse every available configuration, or ask NOVA to confirm platform compatibility before ordering.</p>
+        <span class="nova-kicker">Continue your workflow</span>
+        <h3>Every component, clearly organized.</h3>
+        <p>Browse the complete product collection or ask NOVA to confirm platform compatibility before ordering.</p>
       </div>
-      <form action="{{ routes.search_url }}" method="get" role="search" class="nova-shop__assist-search">
-        <label class="visually-hidden" for="NovaProductSearch-{{ section.id }}">Search NOVA products</label>
-        <input id="NovaProductSearch-{{ section.id }}" type="search" name="q" placeholder="Product, SKU or catalog number" autocomplete="off">
-        <input type="hidden" name="type" value="product">
-        <button type="submit">Search catalog <span aria-hidden="true">→</span></button>
-      </form>
+      <div class="nova-shop__assist-benefits" aria-label="Ordering benefits">
+        <span><i aria-hidden="true">01</i><strong>50+ products</strong><small>Organized by workflow</small></span>
+        <span><i aria-hidden="true">02</i><strong>Live configurations</strong><small>Options shown per product</small></span>
+        <span><i aria-hidden="true">03</i><strong>Expert guidance</strong><small>Compatibility support</small></span>
+      </div>
       <div class="nova-shop__assist-links">
-        <a href="{{ routes.all_products_collection_url }}">Browse all 50+ products <span aria-hidden="true">→</span></a>
+        <a class="nova-shop__assist-primary" href="{{ routes.all_products_collection_url }}">Browse all products <span aria-hidden="true">→</span></a>
         <a href="/pages/contact">Ask a product specialist <span aria-hidden="true">→</span></a>
       </div>
     </div>
