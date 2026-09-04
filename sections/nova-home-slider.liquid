@@ -1,61 +1,28 @@
-<section class="nova-marketplace" aria-label="NOVA Implants USA highlights">
-  <div class="nova-marketplace__grid page-width">
-    <div class="nova-slider" data-nova-hero-slider data-autoplay-delay="5000">
-      <div class="nova-slider__track">
-        <article class="nova-slider__slide nova-slider__slide--psi is-active" data-nova-hero-slide aria-hidden="false">
-          <img src="{{ 'nova-hero-psi-flagship-v3.jpg' | asset_url }}" width="1920" height="1080" loading="eager" fetchpriority="high" alt="NOVA PSI flagship internal-hex dental implant">
-          <span class="nova-slider__overlay" aria-hidden="true"></span>
-          <div class="page-width nova-slider__content">
-            <span class="nova-slider__eyebrow">One Implant System</span>
-            <h1>Meet PSI. NOVA’s flagship internal-hex implant.</h1>
-            <p>Ti-6Al-4V, Novitex® surface, Internal Hex, immediate-placement capable. The clinical performance you expect, direct from the manufacturer.</p>
-            <div class="nova-slider__actions">
-              <a class="button button--primary" href="/products/psi-implant-system">Order PSI</a>
-              <a class="button button--secondary" href="https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709" target="_blank" rel="noopener">Browse catalog</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="nova-slider__slide" data-nova-hero-slide aria-hidden="true" inert>
-          <img src="{{ 'nova-hero-workflow-v1.png' | asset_url }}" width="1672" height="941" loading="lazy" alt="Dental professional organizing titanium restorative components into a connected workflow">
-          <span class="nova-slider__overlay" aria-hidden="true"></span>
-          <div class="page-width nova-slider__content">
-            <span class="nova-slider__eyebrow">Connected clinical workflow</span>
-            <h2>One internal-hex ecosystem, clearly organized.</h2>
-            <p>Move confidently from implant planning to healing, restorative and surgical components using catalog references built for professional selection.</p>
-            <div class="nova-slider__actions">
-              <a class="button button--primary" href="{{ routes.collections_url }}/implant-systems">Explore implant systems</a>
-              <a class="button button--secondary" href="{{ routes.collections_url }}/restorative-components">Shop restorative</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="nova-slider__slide" data-nova-hero-slide aria-hidden="true" inert>
-          <img src="{{ 'nova-hero-fulfillment-v1.png' | asset_url }}" width="1672" height="941" loading="lazy" alt="Professional dental components being prepared for careful fulfillment">
-          <span class="nova-slider__overlay" aria-hidden="true"></span>
-          <div class="page-width nova-slider__content">
-            <span class="nova-slider__eyebrow">Professional U.S. fulfillment</span>
-            <h2>Clear ordering, careful handling, faster dispatch.</h2>
-            <p>Free U.S. shipping with same-day dispatch on eligible in-stock orders, supported by clear product references before checkout.</p>
-            <div class="nova-slider__actions">
-              <a class="button button--primary" href="{{ routes.all_products_collection_url }}">Shop in-stock products</a>
-              <a class="button button--secondary" href="/pages/shipping-delivery">Shipping details</a>
-            </div>
-          </div>
-        </article>
+<section class="nova-hero-surcam" aria-label="NOVA PSI flagship implant">
+  <div class="page-width nova-hero-surcam__inner">
+    <div class="nova-hero-surcam__copy">
+      <span class="nova-hero-surcam__eyebrow">One Implant System</span>
+      <h1>Meet PSI. NOVA’s flagship internal-hex implant.</h1>
+      <p>Ti-6Al-4V, Novitex® surface, Internal Hex, immediate-placement capable. The clinical performance you expect, direct from the manufacturer.</p>
+      <div class="nova-hero-surcam__actions">
+        <a class="button button--primary" href="/products/psi-implant-system">Order PSI</a>
+        <a class="button button--secondary" href="{{ routes.collections_url }}/implant-systems">Shop implant systems</a>
       </div>
-
-      <div class="nova-slider__controls" aria-label="Hero slideshow controls">
-        <button type="button" data-nova-hero-prev aria-label="Show previous slide"><span aria-hidden="true">←</span></button>
-        <div class="nova-slider__dots" aria-label="Choose a hero slide">
-          <button type="button" class="is-active" data-nova-hero-dot data-slide-index="0" aria-label="Show slide 1" aria-current="true"></button>
-          <button type="button" data-nova-hero-dot data-slide-index="1" aria-label="Show slide 2" aria-current="false"></button>
-          <button type="button" data-nova-hero-dot data-slide-index="2" aria-label="Show slide 3" aria-current="false"></button>
-        </div>
-        <button type="button" data-nova-hero-next aria-label="Show next slide"><span aria-hidden="true">→</span></button>
-        <button type="button" class="nova-slider__pause" data-nova-hero-pause aria-label="Pause automatic slides" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button>
-      </div>
-      <p class="visually-hidden" data-nova-hero-status aria-live="polite"></p>
+      <ul class="nova-hero-surcam__proof" role="list">
+        <li>FDA 510(k) K150363</li>
+        <li>ISO 13485:2016</li>
+        <li>Free U.S. shipping</li>
+      </ul>
+    </div>
+    <div class="nova-hero-surcam__media">
+      <img
+        src="{{ 'nova-hero-psi-fixture-v5.jpg' | asset_url }}"
+        width="1400"
+        height="1050"
+        loading="eager"
+        fetchpriority="high"
+        alt="NOVA PSI titanium internal-hex dental implant"
+      >
     </div>
   </div>
 </section>
