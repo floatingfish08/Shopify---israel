@@ -13,14 +13,15 @@
 body {
   background: #fff;
   color: var(--nova-retail-ink);
-  font-family: "Work Sans", var(--font-body-family), Arial, sans-serif;
+  font-family: Inter, var(--font-body-family), "Segoe UI", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 h1, h2, h3, h4, h5, h6,
 .h0, .h1, .h2, .h3, .h4, .h5 {
   color: var(--nova-retail-ink);
-  font-family: "Work Sans", var(--font-heading-family), Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: -.035em;
+  font-family: Inter, var(--font-heading-family), "Segoe UI", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  letter-spacing: -.02em;
 }
 .page-width { max-width: 138rem; }
 
@@ -921,33 +922,29 @@ main[data-template='product'] .nova-product-assurance {
   .nova-delivery__faq h2 { font-size: 2.8rem; }
 }
 
-/* PSI hero uses the supplied catalog product image rather than generated
-   product artwork. */
+/* PSI hero uses the AI-generated flagship product scene. */
 main[data-template='index'] .nova-marketplace .nova-slider__slide--psi {
-  background: #f2f5f5;
+  background: #f7f9f9;
 }
 main[data-template='index'] .nova-marketplace .nova-slider__slide--psi > img {
-  inset: 4rem 3vw 4rem auto;
-  width: 48%;
-  height: calc(100% - 8rem);
-  object-fit: contain;
-  object-position: center;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% center;
   opacity: 1;
 }
 main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-slider__overlay {
-  background: linear-gradient(90deg,#f2f5f5 0%,#f2f5f5 45%,rgba(242,245,245,.9) 55%,rgba(242,245,245,.08) 76%);
+  background: linear-gradient(90deg,rgba(247,249,249,.97) 0%,rgba(247,249,249,.9) 38%,rgba(247,249,249,.35) 58%,rgba(247,249,249,.04) 78%);
 }
 
 @media screen and (max-width: 749px) {
   main[data-template='index'] .nova-marketplace .nova-slider__slide--psi > img {
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-position: 82% center;
-    opacity: .38;
+    object-position: 78% center;
+    opacity: .42;
   }
   main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-slider__overlay {
-    background: linear-gradient(90deg,rgba(242,245,245,.99),rgba(242,245,245,.93) 72%,rgba(242,245,245,.62));
+    background: linear-gradient(90deg,rgba(247,249,249,.98),rgba(247,249,249,.94) 68%,rgba(247,249,249,.7));
   }
 }
 
@@ -1612,28 +1609,25 @@ main[data-template='index'] .nova-regulatory__cards article p { font-size: 1.35r
   main[data-template='index'] .nova-shop-card__body > p { font-size: 1.3rem; }
 }
 
-/* Final PSI hero placement. The image is the supplied NOVA catalog asset. */
+/* PSI hero uses the AI-generated flagship product scene with left copy space. */
 main[data-template='index'] .nova-marketplace .nova-slider__slide--psi > img {
-  inset: 4rem 3vw 4rem auto;
-  width: 48%;
-  height: calc(100% - 8rem);
-  object-fit: contain;
-  object-position: center;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% center;
   opacity: 1;
 }
 main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-slider__overlay {
-  background: linear-gradient(90deg,#f2f5f5 0%,#f2f5f5 45%,rgba(242,245,245,.9) 55%,rgba(242,245,245,.08) 76%);
+  background: linear-gradient(90deg,rgba(247,249,249,.97) 0%,rgba(247,249,249,.9) 38%,rgba(247,249,249,.35) 58%,rgba(247,249,249,.04) 78%);
 }
 
 @media screen and (max-width: 749px) {
   main[data-template='index'] .nova-marketplace .nova-slider__slide--psi > img {
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-position: 82% center;
-    opacity: .38;
+    object-position: 78% center;
+    opacity: .42;
   }
   main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-slider__overlay {
-    background: linear-gradient(90deg,rgba(242,245,245,.99),rgba(242,245,245,.93) 72%,rgba(242,245,245,.62));
+    background: linear-gradient(90deg,rgba(247,249,249,.98),rgba(247,249,249,.94) 68%,rgba(247,249,249,.7));
   }
 }
