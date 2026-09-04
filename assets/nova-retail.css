@@ -13,14 +13,15 @@
 body {
   background: #fff;
   color: var(--nova-retail-ink);
-  font-family: "Work Sans", var(--font-body-family), Arial, sans-serif;
+  font-family: Inter, var(--font-body-family), "Segoe UI", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 h1, h2, h3, h4, h5, h6,
 .h0, .h1, .h2, .h3, .h4, .h5 {
   color: var(--nova-retail-ink);
-  font-family: "Work Sans", var(--font-heading-family), Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: -.035em;
+  font-family: Inter, var(--font-heading-family), "Segoe UI", Arial, Helvetica, sans-serif;
+  font-weight: 650;
+  letter-spacing: -.03em;
 }
 .page-width { max-width: 138rem; }
 
@@ -921,21 +922,20 @@ main[data-template='product'] .nova-product-assurance {
   .nova-delivery__faq h2 { font-size: 2.8rem; }
 }
 
-/* PSI hero uses the supplied catalog product image rather than generated
-   product artwork. */
+/* Homepage campaign hero. */
 main[data-template='index'] .nova-marketplace .nova-slider__slide--psi {
-  background: #f2f5f5;
+  background: #f7fafa;
 }
 main[data-template='index'] .nova-marketplace .nova-slider__slide--psi > img {
-  inset: 4rem 3vw 4rem auto;
-  width: 48%;
-  height: calc(100% - 8rem);
-  object-fit: contain;
-  object-position: center;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
   opacity: 1;
 }
 main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-slider__overlay {
-  background: linear-gradient(90deg,#f2f5f5 0%,#f2f5f5 45%,rgba(242,245,245,.9) 55%,rgba(242,245,245,.08) 76%);
+  background: linear-gradient(90deg,rgba(248,251,251,.98) 0%,rgba(248,251,251,.91) 36%,rgba(248,251,251,.45) 53%,rgba(248,251,251,.03) 72%);
 }
 
 @media screen and (max-width: 749px) {
@@ -943,11 +943,11 @@ main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-sli
     inset: 0;
     width: 100%;
     height: 100%;
-    object-position: 82% center;
-    opacity: .38;
+    object-position: 70% center;
+    opacity: .46;
   }
   main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-slider__overlay {
-    background: linear-gradient(90deg,rgba(242,245,245,.99),rgba(242,245,245,.93) 72%,rgba(242,245,245,.62));
+    background: linear-gradient(90deg,rgba(248,251,251,.99),rgba(248,251,251,.94) 72%,rgba(248,251,251,.7));
   }
 }
 
@@ -1612,17 +1612,17 @@ main[data-template='index'] .nova-regulatory__cards article p { font-size: 1.35r
   main[data-template='index'] .nova-shop-card__body > p { font-size: 1.3rem; }
 }
 
-/* Final PSI hero placement. The image is the supplied NOVA catalog asset. */
+/* Final campaign hero placement. */
 main[data-template='index'] .nova-marketplace .nova-slider__slide--psi > img {
-  inset: 4rem 3vw 4rem auto;
-  width: 48%;
-  height: calc(100% - 8rem);
-  object-fit: contain;
-  object-position: center;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
   opacity: 1;
 }
 main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-slider__overlay {
-  background: linear-gradient(90deg,#f2f5f5 0%,#f2f5f5 45%,rgba(242,245,245,.9) 55%,rgba(242,245,245,.08) 76%);
+  background: linear-gradient(90deg,rgba(248,251,251,.98) 0%,rgba(248,251,251,.91) 36%,rgba(248,251,251,.45) 53%,rgba(248,251,251,.03) 72%);
 }
 
 @media screen and (max-width: 749px) {
@@ -1630,10 +1630,83 @@ main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-sli
     inset: 0;
     width: 100%;
     height: 100%;
-    object-position: 82% center;
-    opacity: .38;
+    object-position: 70% center;
+    opacity: .46;
   }
   main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-slider__overlay {
-    background: linear-gradient(90deg,rgba(242,245,245,.99),rgba(242,245,245,.93) 72%,rgba(242,245,245,.62));
+    background: linear-gradient(90deg,rgba(248,251,251,.99),rgba(248,251,251,.94) 72%,rgba(248,251,251,.7));
+  }
+}
+
+/* SURCAM-inspired navigation rhythm: clean white rows, larger readable type,
+   restrained active states, and clear product discovery. */
+@media screen and (min-width: 990px) {
+  .header {
+    min-height: 9.4rem;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+  }
+  .nova-header-logo { width: 13.6rem; height: 6.4rem; }
+  .nova-header-search {
+    min-height: 5.2rem;
+    border-color: #cedbdd;
+    border-radius: .8rem;
+  }
+  .nova-header-search input { font-size: 1.48rem; }
+  .nova-header-search__category { font-size: 1.18rem; }
+  .nova-header-support > span { font-size: 1rem; }
+  .nova-header-support strong { font-size: 1.28rem; }
+  .nova-category-nav__inner {
+    min-height: 5.9rem;
+    justify-content: flex-start;
+    gap: .15rem;
+  }
+  .nova-category-nav a {
+    position: relative;
+    min-height: 5.9rem;
+    padding: 0 1.05rem;
+    border: 0 !important;
+    border-radius: 0;
+    background: transparent !important;
+    color: #263f45 !important;
+    font-family: Inter, var(--font-body-family), "Segoe UI", sans-serif;
+    font-size: 1.28rem;
+    font-weight: 650;
+    letter-spacing: -.01em;
+    text-transform: none;
+  }
+  .nova-category-nav a:hover,
+  .nova-category-nav a.is-active {
+    background: transparent !important;
+    color: var(--nova-retail-teal-dark) !important;
+  }
+  .nova-category-nav a::after {
+    content: '';
+    position: absolute;
+    right: 1.05rem;
+    bottom: .65rem;
+    left: 1.05rem;
+    height: .2rem;
+    background: var(--nova-retail-teal);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .2s ease;
+  }
+  .nova-category-nav a:hover::after,
+  .nova-category-nav a.is-active::after { transform: scaleX(1); }
+  .nova-category-nav__offer { color: #8a5310 !important; }
+  .nova-category-nav__document {
+    margin-left: auto;
+    padding-right: .2rem !important;
+    color: var(--nova-retail-teal-dark) !important;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .nova-category-nav a {
+    min-height: 4.4rem;
+    font-family: Inter, var(--font-body-family), "Segoe UI", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 650;
   }
 }

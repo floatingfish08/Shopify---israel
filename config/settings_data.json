@@ -61,10 +61,10 @@
           }
         }
       },
-      "type_header_font": "work_sans_n6",
-      "heading_scale": 105,
-      "type_body_font": "work_sans_n4",
-      "body_scale": 100,
+      "type_header_font": "inter_n6",
+      "heading_scale": 110,
+      "type_body_font": "inter_n4",
+      "body_scale": 105,
       "page_width": 1400,
       "spacing_sections": 36,
       "spacing_grid_horizontal": 20,
