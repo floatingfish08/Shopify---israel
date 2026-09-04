@@ -2892,3 +2892,200 @@ main[data-template='index'] .nova-shop {
   .nova-shop__assist-links a { width: 100%; }
   .nova-footer-services a { min-height: 9.5rem; border-bottom-color: rgba(255,255,255,.14); }
 }
+
+/* Refined featured-product gallery. */
+main[data-template='index'] .nova-shop {
+  padding: clamp(9rem,11vw,13rem) 0;
+  background-image: linear-gradient(rgba(242,249,249,.68),rgba(232,244,244,.84)),var(--nova-section-bg);
+}
+main[data-template='index'] .nova-shop__heading {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0,1.2fr) minmax(34rem,.62fr);
+  gap: 5rem 9rem;
+  align-items: end;
+  margin-bottom: 5.5rem;
+  padding: 0 0 3.5rem;
+  border-bottom: 1px solid rgba(14,80,84,.22);
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+main[data-template='index'] .nova-shop__heading::after {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 9rem;
+  height: 2px;
+  background: #0a969a;
+  content: '';
+}
+main[data-template='index'] .nova-shop__heading h2 {
+  max-width: 72rem;
+  margin-top: 1.2rem;
+  font-size: clamp(5rem,5.1vw,7rem);
+  letter-spacing: -.055em;
+  line-height: .98;
+}
+main[data-template='index'] .nova-shop__eyebrow {
+  display: block;
+  margin-bottom: 1.2rem;
+  color: #08777c;
+  font-size: 1.05rem;
+  font-weight: 750;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+main[data-template='index'] .nova-shop__heading p {
+  margin-bottom: 1.8rem;
+  color: #50666a;
+  font-size: 1.48rem;
+}
+main[data-template='index'] .nova-shop__heading a {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid #87a4a6;
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+main[data-template='index'] .nova-shop__heading a span { color: #07888d; transition: transform .2s ease; }
+main[data-template='index'] .nova-shop__heading a:hover span { transform: translateX(.35rem); }
+main[data-template='index'] .nova-shop__status {
+  display: inline-flex;
+  margin-top: 1.8rem;
+  border-color: rgba(16,95,99,.2);
+  background: rgba(255,255,255,.62);
+  color: #496064;
+}
+main[data-template='index'] .nova-shop__grid {
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 2.2rem;
+}
+main[data-template='index'] .nova-shop-card {
+  min-height: 53rem;
+  border: 1px solid rgba(17,77,80,.11) !important;
+  border-radius: 2rem !important;
+  background: rgba(255,255,255,.94);
+  box-shadow: 0 1.5rem 4rem rgba(19,65,68,.075) !important;
+}
+main[data-template='index'] .nova-shop-card:hover {
+  border-color: rgba(9,133,138,.28) !important;
+  box-shadow: 0 2.5rem 5.5rem rgba(19,65,68,.14) !important;
+}
+main[data-template='index'] .nova-shop-card__media {
+  margin: 1rem 1rem 0;
+  aspect-ratio: 1.08;
+  border-radius: 1.45rem;
+  background: linear-gradient(145deg,#fff,#f1f6f5);
+}
+main[data-template='index'] .nova-shop-card__media::after {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(16,70,74,.07);
+  border-radius: inherit;
+  content: '';
+  pointer-events: none;
+}
+main[data-template='index'] .nova-shop-card__media img {
+  padding: 2.2rem;
+  transition: transform .5s cubic-bezier(.22,1,.36,1);
+}
+main[data-template='index'] .nova-shop-card:hover .nova-shop-card__media img { transform: scale(1.06) translateY(-.25rem); }
+main[data-template='index'] .nova-shop-card__badge {
+  top: 1.2rem;
+  left: 1.2rem;
+  padding: .6rem .9rem;
+  border: 1px solid #d2eadb;
+  background: rgba(239,250,243,.92);
+  color: #177242;
+}
+.nova-shop-card__index {
+  position: absolute;
+  z-index: 1;
+  top: 1.5rem;
+  right: 1.6rem;
+  color: #819194;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+main[data-template='index'] .nova-shop-card__body {
+  min-height: 21rem;
+  padding: 2.2rem 2.2rem 2.4rem;
+}
+main[data-template='index'] .nova-shop-card__type {
+  color: #08777c;
+  font-size: 1rem;
+  letter-spacing: .1em;
+}
+main[data-template='index'] .nova-shop-card__body h3 {
+  min-height: 5rem;
+  margin: 1rem 0 .8rem;
+  font-size: 1.9rem;
+  letter-spacing: -.025em;
+  line-height: 1.24;
+}
+main[data-template='index'] .nova-shop-card__body > p { color: #697b7e; font-size: 1.22rem; }
+main[data-template='index'] .nova-shop-card__footer {
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid #e2e9e9;
+}
+main[data-template='index'] .nova-shop-card__footer strong { color: #000; font-size: 1.8rem; }
+main[data-template='index'] .nova-shop-card__footer .nova-choose-options {
+  margin: 0;
+  padding: .4rem 0 !important;
+  color: #08777c !important;
+  font-size: 1.16rem;
+}
+main[data-template='index'] .nova-shop__assist {
+  margin-top: 5.5rem;
+  border: 1px solid rgba(16,94,98,.18);
+  background: rgba(255,255,255,.72);
+  color: #000;
+  box-shadow: 0 1.8rem 5rem rgba(23,70,73,.09);
+  backdrop-filter: blur(16px);
+}
+main[data-template='index'] .nova-shop__assist .nova-kicker { color: #08777c; }
+main[data-template='index'] .nova-shop__assist h3 { color: #000 !important; }
+main[data-template='index'] .nova-shop__assist p { color: #5b6e72; }
+main[data-template='index'] .nova-shop__assist-benefits {
+  border-top-color: rgba(15,76,80,.18);
+  border-bottom-color: rgba(15,76,80,.18);
+}
+main[data-template='index'] .nova-shop__assist-benefits > span { border-right-color: rgba(15,76,80,.18); }
+main[data-template='index'] .nova-shop__assist-benefits i { color: #08777c; }
+main[data-template='index'] .nova-shop__assist-benefits strong { color: #000; }
+main[data-template='index'] .nova-shop__assist-benefits small { color: #667a7d; }
+main[data-template='index'] .nova-shop__assist-links a {
+  border-color: #9ab5b7;
+  color: #000;
+}
+main[data-template='index'] .nova-shop__assist-links .nova-shop__assist-primary {
+  border-color: #087f84;
+  background: #087f84;
+  color: #fff;
+}
+
+@media screen and (max-width: 989px) {
+  main[data-template='index'] .nova-shop__heading { grid-template-columns: 1fr; gap: 2.5rem; }
+  main[data-template='index'] .nova-shop__grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+
+@media screen and (max-width: 749px) {
+  main[data-template='index'] .nova-shop { padding: 7rem 0; }
+  main[data-template='index'] .nova-shop__heading { margin-bottom: 3.5rem; padding: 0 0 2.5rem; }
+  main[data-template='index'] .nova-shop__heading h2 { font-size: 4.2rem; }
+  main[data-template='index'] .nova-shop__grid { gap: 1.2rem; }
+  main[data-template='index'] .nova-shop-card { min-height: 45rem; border-radius: 1.5rem !important; }
+  main[data-template='index'] .nova-shop-card__media { margin: .65rem .65rem 0; aspect-ratio: 1; border-radius: 1.1rem; }
+  main[data-template='index'] .nova-shop-card__media img { padding: 1rem; }
+  main[data-template='index'] .nova-shop-card__body { min-height: 20rem; padding: 1.5rem 1.35rem 1.7rem; }
+  main[data-template='index'] .nova-shop-card__body h3 { min-height: 6rem; font-size: 1.62rem; }
+  main[data-template='index'] .nova-shop-card__footer { align-items: flex-start; }
+  main[data-template='index'] .nova-shop__assist { padding: 3rem 2rem; }
+  main[data-template='index'] .nova-shop__assist-benefits > span { border-right: 0; border-bottom-color: rgba(15,76,80,.18); }
+}
