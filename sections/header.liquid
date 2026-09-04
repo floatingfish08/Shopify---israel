@@ -348,6 +348,12 @@
   <nav class="nova-category-nav" aria-label="Product catalog categories">
     <div class="nova-category-nav__inner page-width">
       <a class="nova-category-nav__all{% if request.page_type == 'collection' and collection.handle == 'all' %} is-active{% endif %}" href="{{ routes.all_products_collection_url }}"{% if request.page_type == 'collection' and collection.handle == 'all' %} aria-current="page"{% endif %}>
+        <svg class="nova-category-nav__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none">
+          <rect x="2.25" y="2.25" width="6" height="6" rx="1.25" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="11.75" y="2.25" width="6" height="6" rx="1.25" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="2.25" y="11.75" width="6" height="6" rx="1.25" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="11.75" y="11.75" width="6" height="6" rx="1.25" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
         <span>Categories</span>
       </a>
       <a class="{% if collection.handle == 'implant-systems' %}is-active{% endif %}" href="{{ routes.collections_url }}/implant-systems"{% if collection.handle == 'implant-systems' %} aria-current="page"{% endif %}><span>Internal Hexagon</span></a>
@@ -355,7 +361,10 @@
       <a class="{% if collection.handle == 'surgical-instruments' %}is-active{% endif %}" href="{{ routes.collections_url }}/surgical-instruments"{% if collection.handle == 'surgical-instruments' %} aria-current="page"{% endif %}><span>Instruments &amp; Tools</span></a>
       <a href="{{ routes.search_url }}?q=compatible&amp;options%5Bprefix%5D=last"><span>Compatible Brands</span></a>
       <a class="nova-category-nav__document" href="https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709" target="_blank" rel="noopener">
-        Resources
+        <span>Resources</span>
+        <svg class="nova-category-nav__arrow" aria-hidden="true" viewBox="0 0 20 20" fill="none">
+          <path d="M4 10h11M11 6l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </a>
     </div>
   </nav>
