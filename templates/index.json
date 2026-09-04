@@ -1,7 +1,6 @@
 {
   "sections": {
     "nova_slider": { "type": "nova-home-slider", "settings": {} },
-    "nova_story": { "type": "nova-brand-story", "settings": {} },
     "nova_trust": {
       "type": "nova-trust-bar",
       "blocks": {
@@ -17,5 +16,5 @@
     "nova_shop": { "type": "nova-shop-products", "settings": { "color_scheme": "scheme-1" } },
     "nova_regulatory": { "type": "nova-regulatory-focus", "settings": { "color_scheme": "scheme-3" } }
   },
-  "order": ["nova_slider", "nova_story", "nova_trust", "nova_commerce", "nova_shop", "nova_regulatory"]
+  "order": ["nova_slider", "nova_trust", "nova_commerce", "nova_shop", "nova_regulatory"]
 }

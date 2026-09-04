@@ -921,6 +921,36 @@ main[data-template='product'] .nova-product-assurance {
   .nova-delivery__faq h2 { font-size: 2.8rem; }
 }
 
+/* PSI hero uses the supplied catalog product image rather than generated
+   product artwork. */
+main[data-template='index'] .nova-marketplace .nova-slider__slide--psi {
+  background: #f2f5f5;
+}
+main[data-template='index'] .nova-marketplace .nova-slider__slide--psi > img {
+  inset: 4rem 3vw 4rem auto;
+  width: 48%;
+  height: calc(100% - 8rem);
+  object-fit: contain;
+  object-position: center;
+  opacity: 1;
+}
+main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-slider__overlay {
+  background: linear-gradient(90deg,#f2f5f5 0%,#f2f5f5 45%,rgba(242,245,245,.9) 55%,rgba(242,245,245,.08) 76%);
+}
+
+@media screen and (max-width: 749px) {
+  main[data-template='index'] .nova-marketplace .nova-slider__slide--psi > img {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-position: 82% center;
+    opacity: .38;
+  }
+  main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-slider__overlay {
+    background: linear-gradient(90deg,rgba(242,245,245,.99),rgba(242,245,245,.93) 72%,rgba(242,245,245,.62));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .nova-marketplace .nova-slider__slide.is-active > img,
   .nova-category-card,
@@ -1580,4 +1610,30 @@ main[data-template='index'] .nova-regulatory__cards article p { font-size: 1.35r
   main[data-template='index'] .nova-category-card small { font-size: 1.28rem; }
   main[data-template='index'] .nova-shop-card__body h3 { font-size: 1.85rem; }
   main[data-template='index'] .nova-shop-card__body > p { font-size: 1.3rem; }
+}
+
+/* Final PSI hero placement. The image is the supplied NOVA catalog asset. */
+main[data-template='index'] .nova-marketplace .nova-slider__slide--psi > img {
+  inset: 4rem 3vw 4rem auto;
+  width: 48%;
+  height: calc(100% - 8rem);
+  object-fit: contain;
+  object-position: center;
+  opacity: 1;
+}
+main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-slider__overlay {
+  background: linear-gradient(90deg,#f2f5f5 0%,#f2f5f5 45%,rgba(242,245,245,.9) 55%,rgba(242,245,245,.08) 76%);
+}
+
+@media screen and (max-width: 749px) {
+  main[data-template='index'] .nova-marketplace .nova-slider__slide--psi > img {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-position: 82% center;
+    opacity: .38;
+  }
+  main[data-template='index'] .nova-marketplace .nova-slider__slide--psi .nova-slider__overlay {
+    background: linear-gradient(90deg,rgba(242,245,245,.99),rgba(242,245,245,.93) 72%,rgba(242,245,245,.62));
+  }
 }
