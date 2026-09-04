@@ -688,3 +688,52 @@ a.nova-category-card > span:not(.nova-category-card__content):not(.nova-category
 @media screen and (max-width: 989px) {
   .nova-hero__visual { object-position: 70% 35% !important; }
 }
+
+
+/* Beat retail main[data-template] specificity */
+main[data-template='index'] .nova-commerce__heading {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: .6rem !important;
+  margin-bottom: 3.5rem !important;
+}
+main[data-template='index'] .nova-category-card,
+main[data-template='index'] .nova-category-card--wide {
+  display: block !important;
+  grid-template-rows: none !important;
+  min-height: 28rem !important;
+  border: 0 !important;
+  border-radius: 1rem !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+main[data-template='index'] .nova-category-card--wide { min-height: 36rem !important; grid-column: span 2 !important; }
+main[data-template='index'] .nova-category-card > img,
+main[data-template='index'] .nova-category-card--wide > img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+main[data-template='index'] .nova-category-card::after {
+  display: none !important;
+  content: none !important;
+}
+main[data-template='index'] .nova-category-card__content {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  min-height: 0 !important;
+  padding: 2rem 1.8rem 1.6rem !important;
+  background: linear-gradient(180deg, transparent, rgba(8, 24, 28, .72)) !important;
+  color: #fff !important;
+}
+main[data-template='index'] .nova-trust,
+main[data-template='index'] .nova-commerce,
+main[data-template='index'] .nova-shop,
+main[data-template='index'] .nova-regulatory {
+  padding-top: inherit;
+}
+
