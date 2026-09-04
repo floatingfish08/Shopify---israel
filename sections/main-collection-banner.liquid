@@ -60,13 +60,11 @@
       <span class="nova-collection-hero__kicker">{{ hero_kicker }}</span>
       <h1>{{ hero_title | escape }}</h1>
       <p>{{ hero_text | escape }}</p>
-      <form action="{{ routes.search_url }}" method="get" role="search">
-        <input type="hidden" name="options[prefix]" value="last">
-        <input type="hidden" name="type" value="product">
-        <label class="visually-hidden" for="NovaCatalogSearch-{{ section.id }}">Search products</label>
-        <input id="NovaCatalogSearch-{{ section.id }}" type="search" name="q" placeholder="Search product or catalog number">
-        <button class="button button--primary" type="submit">Search catalog</button>
-      </form>
+      <div class="nova-page-benefits" aria-label="Ordering benefits">
+        <span>Free U.S. shipping</span>
+        <span>Same-day eligible dispatch</span>
+        <span>Clear catalog references</span>
+      </div>
       <a class="nova-scroll-cue nova-scroll-cue--collection" href="#ProductGridContainer"><span>Browse products</span><i aria-hidden="true">↓</i></a>
     </div>
     <aside class="nova-collection-hero__summary">
@@ -74,7 +72,7 @@
         <img src="{{ hero_art | asset_url }}" alt="{{ hero_title | escape }} product overview" width="900" height="650" loading="eager">
         <span class="nova-collection-hero__count">
           <strong data-nova-count="{{ collection.all_products_count }}">{{ collection.all_products_count }}</strong>
-          <small>products</small>
+          <small>{% if collection.all_products_count == 1 %}product{% else %}products{% endif %}</small>
         </span>
       </div>
       <div class="nova-collection-hero__summary-copy">

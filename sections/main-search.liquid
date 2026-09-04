@@ -66,6 +66,7 @@
 {% paginate search.results by 24 %}
   <div class="template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %} section-{{ section.id }}-padding">
     <div class="template-search__header page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      <span class="nova-page-kicker">Professional product catalog</span>
       <h1 class="h2 center">
         {%- if search.performed -%}
           {{- 'templates.search.title' | t -}}
@@ -73,6 +74,7 @@
           {{- 'general.search.search' | t -}}
         {%- endif -%}
       </h1>
+      <p class="nova-search-intro">Find products by name, catalog number, component type or compatible workflow.</p>
       <div class="template-search__search">
         {%- if settings.predictive_search_enabled -%}
           <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">

@@ -15,7 +15,18 @@
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
+  <div class="nova-contact-shell page-width section-{{ section.id }}-padding">
+    <aside class="nova-contact-intro">
+      <span class="nova-page-kicker">Professional support</span>
+      <h2>How can we help?</h2>
+      <p>Include the product name or catalog number when possible so the NOVA team can respond with relevant guidance.</p>
+      <div class="nova-contact-intro__points">
+        <span><strong>Product support</strong><small>Selection and compatibility questions</small></span>
+        <span><strong>Order support</strong><small>Shipping and existing-order questions</small></span>
+        <span><strong>Documentation</strong><small>Catalog, IFU and quality resources</small></span>
+      </div>
+    </aside>
+    <div class="contact nova-contact-form">
     {%- if section.settings.heading != blank -%}
       <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         {{ section.settings.heading }}
@@ -132,6 +143,7 @@
         </button>
       </div>
     {%- endform -%}
+    </div>
   </div>
 </div>
 

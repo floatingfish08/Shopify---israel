@@ -1,140 +1,79 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 
-<div class="page-width">
-  <h1 class="title title--primary inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ section.settings.title }}
-  </h1>
+<section class="nova-directory">
+  <header class="nova-directory__hero page-width">
+    <div class="nova-directory__hero-inner">
+      <nav class="nova-standard-page__breadcrumb" aria-label="Breadcrumb"><a href="{{ routes.root_url }}">Home</a><span>→</span><span>Catalog</span></nav>
+      <span class="nova-page-kicker">Connected clinical catalog</span>
+      <h1>{{ section.settings.title }}</h1>
+      <p>Browse NOVA products by clinical workflow, then select the exact configuration and catalog reference on each product page.</p>
+      <div class="nova-page-benefits" aria-label="Catalog benefits">
+        <span>Professional-use products</span>
+        <span>Clear catalog references</span>
+        <span>Free U.S. shipping</span>
+      </div>
+    </div>
+  </header>
+
   {%- liquid
     case section.settings.sort
       when 'products_high', 'products_low'
-        assign collections = collections | sort: 'all_products_count'
+        assign sorted_collections = collections | sort: 'all_products_count'
       when 'date', 'date_reversed'
-        assign collections = collections | sort: 'published_at'
+        assign sorted_collections = collections | sort: 'published_at'
+      else
+        assign sorted_collections = collections
     endcase
-
     if section.settings.sort == 'products_high' or section.settings.sort == 'date_reversed' or section.settings.sort == 'alphabetical_reversed'
-      assign collections = collections | reverse
-    endif
-
-    assign moduloResult = 28 | modulo: section.settings.columns_desktop
-    assign paginate_by = 30
-    if moduloResult == 0
-      assign paginate_by = 28
+      assign sorted_collections = sorted_collections | reverse
     endif
   -%}
-  {%- paginate collections by paginate_by -%}
-    <ul
-      class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-      role="list"
-    >
-      {%- for collection in collections -%}
-        <li
-          class="collection-list__item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {% if settings.animations_reveal_on_scroll %}
-            data-cascade
-            style="--animation-order: {{ forloop.index }};"
-          {% endif %}
-        >
-          {% render 'card-collection',
-            card_collection: collection,
-            media_aspect_ratio: section.settings.image_ratio,
-            columns: 3
-          %}
-        </li>
-      {%- endfor -%}
-    </ul>
-    {% render 'pagination', paginate: paginate %}
-  {%- endpaginate -%}
-</div>
+
+  <div class="nova-directory__grid page-width">
+    {%- for collection in sorted_collections -%}
+      {%- unless collection.handle == 'frontpage' -%}
+        {%- assign directory_image = collection.featured_image | default: collection.products.first.featured_image -%}
+        <a class="nova-directory-card{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" href="{{ collection.url }}"{% if settings.animations_reveal_on_scroll %} data-cascade style="--animation-order: {{ forloop.index }};"{% endif %}>
+          <span class="nova-directory-card__media">
+            {%- if directory_image != blank -%}
+              {{ directory_image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '360, 540, 720, 1000', sizes: '(min-width: 990px) 31vw, (min-width: 750px) 48vw, 100vw', alt: collection.title }}
+            {%- else -%}
+              {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+            <small>{{ collection.all_products_count }} {% if collection.all_products_count == 1 %}product{% else %}products{% endif %}</small>
+          </span>
+          <span class="nova-directory-card__body">
+            <span class="nova-directory-card__index">0{{ forloop.index }}</span>
+            <strong>{{ collection.title | escape }}</strong>
+            <span class="nova-directory-card__action">Explore collection <i aria-hidden="true">→</i></span>
+          </span>
+        </a>
+      {%- endunless -%}
+    {%- endfor -%}
+  </div>
+</section>
+
 {% schema %}
 {
   "name": "t:sections.main-list-collections.name",
   "class": "section",
   "settings": [
+    { "type": "inline_richtext", "id": "title", "label": "t:sections.main-list-collections.settings.title.label", "default": "Product categories" },
     {
-      "type": "inline_richtext",
-      "id": "title",
-      "label": "t:sections.main-list-collections.settings.title.label",
-      "default": "t:sections.main-list-collections.settings.title.default"
-    },
-    {
-      "type": "select",
-      "id": "sort",
+      "type": "select", "id": "sort", "default": "alphabetical", "label": "t:sections.main-list-collections.settings.sort.label",
       "options": [
-        {
-          "value": "alphabetical",
-          "label": "t:sections.main-list-collections.settings.sort.options__1.label"
-        },
-        {
-          "value": "alphabetical_reversed",
-          "label": "t:sections.main-list-collections.settings.sort.options__2.label"
-        },
-        {
-          "value": "date_reversed",
-          "label": "t:sections.main-list-collections.settings.sort.options__3.label"
-        },
-        {
-          "value": "date",
-          "label": "t:sections.main-list-collections.settings.sort.options__4.label"
-        },
-        {
-          "value": "products_high",
-          "label": "t:sections.main-list-collections.settings.sort.options__5.label"
-        },
-        {
-          "value": "products_low",
-          "label": "t:sections.main-list-collections.settings.sort.options__6.label"
-        }
-      ],
-      "default": "alphabetical",
-      "label": "t:sections.main-list-collections.settings.sort.label"
+        { "value": "alphabetical", "label": "Alphabetical" },
+        { "value": "alphabetical_reversed", "label": "Alphabetical, reversed" },
+        { "value": "date_reversed", "label": "Newest" },
+        { "value": "date", "label": "Oldest" },
+        { "value": "products_high", "label": "Most products" },
+        { "value": "products_low", "label": "Fewest products" }
+      ]
     },
-    {
-      "type": "select",
-      "id": "image_ratio",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.main-list-collections.settings.image_ratio.options__1.label"
-        },
-        {
-          "value": "portrait",
-          "label": "t:sections.main-list-collections.settings.image_ratio.options__2.label"
-        },
-        {
-          "value": "square",
-          "label": "t:sections.main-list-collections.settings.image_ratio.options__3.label"
-        }
-      ],
-      "default": "adapt",
-      "label": "t:sections.main-list-collections.settings.image_ratio.label"
-    },
-    {
-      "type": "range",
-      "id": "columns_desktop",
-      "min": 1,
-      "max": 6,
-      "step": 1,
-      "default": 3,
-      "label": "t:sections.main-list-collections.settings.columns_desktop.label"
-    },
-    {
-      "type": "select",
-      "id": "columns_mobile",
-      "options": [
-        {
-          "value": "1",
-          "label": "t:sections.main-list-collections.settings.columns_mobile.options__1.label"
-        },
-        {
-          "value": "2",
-          "label": "t:sections.main-list-collections.settings.columns_mobile.options__2.label"
-        }
-      ],
-      "default": "2",
-      "label": "t:sections.main-list-collections.settings.columns_mobile.label"
-    }
+    { "type": "select", "id": "image_ratio", "options": [{ "value": "adapt", "label": "Adapt" }, { "value": "portrait", "label": "Portrait" }, { "value": "square", "label": "Square" }], "default": "square", "label": "Image ratio" },
+    { "type": "range", "id": "columns_desktop", "min": 1, "max": 6, "step": 1, "default": 3, "label": "Desktop columns" },
+    { "type": "select", "id": "columns_mobile", "options": [{ "value": "1", "label": "1 column" }, { "value": "2", "label": "2 columns" }], "default": "1", "label": "Mobile columns" }
   ]
 }
 {% endschema %}
