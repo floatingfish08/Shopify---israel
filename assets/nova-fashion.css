@@ -653,3 +653,38 @@ button.shopify-payment-button__button {
   .button { animation: none !important; transition: none !important; transform: none !important; }
   .nova-reveal { opacity: 1; transform: none; }
 }
+
+
+/* —— Hard overrides vs leftover retail CSS —— */
+.utility-bar,
+.utility-bar.gradient,
+.announcement-bar,
+.announcement-bar.color-scheme-1,
+.announcement-bar.gradient {
+  background: var(--nova-ink) !important;
+  color: #d7ece9 !important;
+}
+.announcement-bar__message,
+.announcement-bar__link,
+.utility-bar * {
+  color: #d7ece9 !important;
+}
+.nova-commerce__heading {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: .6rem !important;
+  align-items: start !important;
+}
+.nova-commerce__heading > div { display: contents; }
+.nova-category-card::before,
+.nova-category-card::after,
+.nova-category-card [data-nova-depth]::after,
+a.nova-category-card > span:not(.nova-category-card__content):not(.nova-category-card__shade) {
+  display: none !important;
+}
+.nova-hero__visual {
+  object-position: 78% 42% !important;
+}
+@media screen and (max-width: 989px) {
+  .nova-hero__visual { object-position: 70% 35% !important; }
+}
