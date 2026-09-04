@@ -14,7 +14,7 @@
     },
     "nova_commerce": { "type": "nova-commerce-showcase", "settings": { "color_scheme": "scheme-1" } },
     "nova_shop": { "type": "nova-shop-products", "settings": { "color_scheme": "scheme-1" } },
-    "nova_regulatory": { "type": "nova-regulatory-focus", "settings": { "color_scheme": "scheme-3" } }
+    "nova_regulatory": { "type": "nova-regulatory-focus", "settings": { "color_scheme": "scheme-1" } }
   },
   "order": ["nova_slider", "nova_trust", "nova_commerce", "nova_shop", "nova_regulatory"]
 }

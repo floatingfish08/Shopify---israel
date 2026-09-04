@@ -1,28 +1,22 @@
-<section class="nova-hero-surcam" aria-label="NOVA PSI flagship implant">
-  <div class="page-width nova-hero-surcam__inner">
-    <div class="nova-hero-surcam__copy">
-      <span class="nova-hero-surcam__eyebrow">One Implant System</span>
-      <h1>Meet PSI. NOVA’s flagship internal-hex implant.</h1>
-      <p>Ti-6Al-4V, Novitex® surface, Internal Hex, immediate-placement capable. The clinical performance you expect, direct from the manufacturer.</p>
-      <div class="nova-hero-surcam__actions">
-        <a class="button button--primary" href="/products/psi-implant-system">Order PSI</a>
-        <a class="button button--secondary" href="{{ routes.collections_url }}/implant-systems">Shop implant systems</a>
-      </div>
-      <ul class="nova-hero-surcam__proof" role="list">
-        <li>FDA 510(k) K150363</li>
-        <li>ISO 13485:2016</li>
-        <li>Free U.S. shipping</li>
-      </ul>
-    </div>
-    <div class="nova-hero-surcam__media">
-      <img
-        src="{{ 'nova-hero-psi-fixture-v6.jpg' | asset_url }}"
-        width="1536"
-        height="1024"
-        loading="eager"
-        fetchpriority="high"
-        alt="NOVA PSI titanium internal-hex dental implant"
-      >
+<section class="nova-hero" data-nova-hero aria-label="NOVA PSI flagship implant">
+  <div class="nova-hero__stage" aria-hidden="true">
+    <img
+      class="nova-hero__visual"
+      src="{{ 'nova-hero-editorial-v1.jpg' | asset_url }}"
+      width="1920"
+      height="1080"
+      loading="eager"
+      fetchpriority="high"
+      alt=""
+    >
+  </div>
+  <div class="page-width nova-hero__content">
+    <p class="nova-hero__brand">NOVA</p>
+    <h1>The flagship internal-hex implant.</h1>
+    <p class="nova-hero__lede">PSI — Ti-6Al-4V, Novitex® surface, immediate-placement capable. Direct from the manufacturer.</p>
+    <div class="nova-hero__actions">
+      <a class="button button--primary" href="/products/psi-implant-system">Order PSI</a>
+      <a class="button button--secondary" href="{{ routes.collections_url }}/implant-systems">Explore systems</a>
     </div>
   </div>
 </section>
@@ -31,7 +25,7 @@
 {
   "name": "NOVA homepage slider",
   "tag": "section",
-  "class": "section",
+  "class": "section section--flush",
   "disabled_on": { "groups": ["header", "footer"] },
   "presets": [{ "name": "NOVA homepage slider" }]
 }

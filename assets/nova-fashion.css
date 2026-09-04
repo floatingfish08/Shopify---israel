@@ -1,0 +1,656 @@
+/* NOVA Fashion 2026 — modern medical retail. Loads last. Keeps teal identity. */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@500;600;700;800&display=swap");
+
+:root {
+  --nova-ink: #0e2a2f;
+  --nova-muted: #5a7075;
+  --nova-teal: #00a192;
+  --nova-teal-deep: #007a70;
+  --nova-mint: #e8f5f3;
+  --nova-fog: #f3f7f7;
+  --nova-line: #d5e3e2;
+  --nova-paper: #ffffff;
+  --nova-ft-display: "Syne", system-ui, sans-serif;
+  --nova-ft-body: "DM Sans", system-ui, sans-serif;
+  --nova-ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+/* —— Typography & shell —— */
+body {
+  background:
+    radial-gradient(120% 80% at 100% -10%, rgba(0, 161, 146, .07), transparent 55%),
+    radial-gradient(90% 60% at -10% 40%, rgba(14, 42, 47, .04), transparent 50%),
+    var(--nova-paper);
+  color: var(--nova-ink);
+  font-family: var(--nova-ft-body) !important;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -.01em;
+}
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5 {
+  font-family: var(--nova-ft-display) !important;
+  font-weight: 700 !important;
+  letter-spacing: -.04em !important;
+  color: var(--nova-ink) !important;
+}
+.page-width { max-width: 136rem; }
+
+.nova-kicker {
+  display: inline-block;
+  margin: 0 0 1rem;
+  color: var(--nova-teal);
+  font-family: var(--nova-ft-body);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+/* —— Buttons —— */
+.button,
+button.shopify-payment-button__button {
+  border-radius: .55rem !important;
+  font-family: var(--nova-ft-body) !important;
+  font-weight: 600 !important;
+  letter-spacing: -.01em;
+  transition: transform .35s var(--nova-ease), background .25s ease, color .25s ease, border-color .25s ease;
+}
+.button:hover { transform: translateY(-1px); }
+.button--primary,
+.shopify-payment-button__button--unbranded {
+  background: var(--nova-teal) !important;
+  color: #fff !important;
+  border: 0 !important;
+}
+.button--primary:hover { background: var(--nova-teal-deep) !important; }
+.button--secondary {
+  background: transparent !important;
+  color: var(--nova-ink) !important;
+  border: 1.5px solid var(--nova-ink) !important;
+}
+.button--secondary:hover {
+  background: var(--nova-ink) !important;
+  color: #fff !important;
+}
+
+/* —— Announcement + header —— */
+.utility-bar,
+.utility-bar.gradient,
+.announcement-bar {
+  min-height: 3rem !important;
+  background: var(--nova-ink) !important;
+  color: #d7ece9 !important;
+}
+.announcement-bar__message {
+  color: #d7ece9 !important;
+  font-size: 1.05rem !important;
+  font-weight: 500 !important;
+  letter-spacing: .02em;
+}
+.announcement-bar a { color: #fff !important; }
+
+.header-wrapper,
+.header-wrapper.gradient,
+.header {
+  background: rgba(255, 255, 255, .92) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: none !important;
+  border-bottom: 1px solid transparent;
+}
+.header {
+  min-height: 7.2rem !important;
+  align-items: center;
+  gap: 1.6rem !important;
+}
+.nova-header-logo,
+.header__heading-logo {
+  max-width: 14rem !important;
+}
+.nova-header-search {
+  min-height: 4.4rem !important;
+  border: 1px solid var(--nova-line) !important;
+  border-radius: 999px !important;
+  background: var(--nova-fog) !important;
+  box-shadow: none !important;
+}
+.nova-header-search input {
+  font-family: var(--nova-ft-body) !important;
+  font-size: 1.3rem !important;
+}
+.nova-header-account,
+.nova-header-cart {
+  font-family: var(--nova-ft-body) !important;
+}
+.nova-header-icon-label {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase;
+}
+
+.nova-category-nav {
+  border-top: 1px solid var(--nova-line) !important;
+  border-bottom: 1px solid var(--nova-line) !important;
+  background: #fff !important;
+}
+.nova-category-nav__inner {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  min-height: 4.4rem;
+  padding: 0;
+}
+.nova-category-nav a {
+  color: var(--nova-ink) !important;
+  font-family: var(--nova-ft-body) !important;
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .04em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  opacity: .78;
+  transition: opacity .25s ease, color .25s ease;
+}
+.nova-category-nav a:hover,
+.nova-category-nav a[aria-current="page"] {
+  opacity: 1;
+  color: var(--nova-teal) !important;
+}
+
+/* —— Full-bleed fashion hero —— */
+.section--flush,
+.section:has(.nova-hero) {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.nova-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: min(88vh, 72rem);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #eef4f4;
+}
+.nova-hero__stage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.nova-hero__visual {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% center;
+  transform: scale(1.04);
+  animation: nova-hero-drift 18s var(--nova-ease) infinite alternate;
+}
+.nova-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(247, 251, 251, .97) 0%, rgba(247, 251, 251, .88) 34%, rgba(247, 251, 251, .28) 58%, rgba(247, 251, 251, 0) 78%),
+    linear-gradient(180deg, rgba(14, 42, 47, .04) 0%, transparent 30%, rgba(14, 42, 47, .06) 100%);
+  pointer-events: none;
+}
+.nova-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 56rem;
+  padding: 8rem 0 7rem;
+  animation: nova-hero-rise .9s var(--nova-ease) both;
+}
+.nova-hero__brand {
+  margin: 0 0 1.4rem;
+  color: var(--nova-teal);
+  font-family: var(--nova-ft-display);
+  font-size: clamp(4.8rem, 8vw, 8.4rem);
+  font-weight: 800;
+  line-height: .9;
+  letter-spacing: -.06em;
+}
+.nova-hero h1 {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(3.4rem, 4.6vw, 5.4rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.02;
+  color: var(--nova-ink) !important;
+}
+.nova-hero__lede {
+  max-width: 34rem;
+  margin: 1.8rem 0 0;
+  color: var(--nova-muted);
+  font-size: 1.6rem;
+  line-height: 1.55;
+  font-weight: 400;
+}
+.nova-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.8rem;
+}
+.nova-hero__actions .button {
+  min-height: 4.8rem;
+  padding: 0 2.2rem;
+  font-size: 1.3rem;
+}
+
+@keyframes nova-hero-drift {
+  from { transform: scale(1.04) translate3d(0, 0, 0); }
+  to { transform: scale(1.08) translate3d(-1.2%, 0, 0); }
+}
+@keyframes nova-hero-rise {
+  from { opacity: 0; transform: translateY(1.6rem); }
+  to { opacity: 1; transform: none; }
+}
+
+@media screen and (max-width: 989px) {
+  .nova-hero {
+    min-height: 0;
+    display: grid;
+    grid-template-rows: minmax(28rem, 42vw) auto;
+  }
+  .nova-hero__stage {
+    position: relative;
+    min-height: 28rem;
+  }
+  .nova-hero::after {
+    background:
+      linear-gradient(180deg, transparent 35%, rgba(247, 251, 251, .85) 72%, #f7fbfb 100%);
+  }
+  .nova-hero__content {
+    max-width: none;
+    padding: 2.4rem 0 3.5rem;
+    margin-top: -4rem;
+  }
+  .nova-hero__brand { font-size: 5.6rem; }
+  .nova-hero h1 { max-width: none; font-size: 3.4rem !important; }
+  .nova-hero__visual {
+    object-position: 72% center;
+    animation: none;
+    transform: none;
+  }
+}
+
+/* —— Trust rail —— */
+.nova-trust {
+  padding: 0 !important;
+  background: #fff !important;
+  border-bottom: 1px solid var(--nova-line);
+}
+.nova-trust__rail,
+.nova-trust__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  padding: 2rem 0 !important;
+}
+.nova-trust__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  padding: .8rem 1.8rem;
+  background: transparent !important;
+  border: 0 !important;
+  border-right: 1px solid var(--nova-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.nova-trust__item:last-child { border-right: 0 !important; }
+.nova-trust__number { display: none !important; }
+.nova-trust__icon {
+  flex: 0 0 2.8rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: grid;
+  place-items: center;
+  color: var(--nova-teal);
+}
+.nova-trust__icon svg {
+  width: 2rem;
+  height: 2rem;
+  stroke: currentColor;
+  stroke-width: 1.6;
+}
+.nova-trust__item strong {
+  display: block;
+  font-family: var(--nova-ft-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  color: var(--nova-ink);
+}
+.nova-trust__item em,
+.nova-trust__item span:last-child {
+  font-style: normal;
+  color: var(--nova-muted);
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+@media screen and (max-width: 989px) {
+  .nova-trust__rail,
+  .nova-trust__grid { grid-template-columns: 1fr 1fr; }
+  .nova-trust__item {
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--nova-line) !important;
+    padding: 1.4rem 0;
+  }
+}
+
+/* —— Commerce —— */
+.nova-commerce {
+  padding: 7rem 0 6rem !important;
+  background: transparent !important;
+}
+.nova-commerce__heading {
+  display: grid;
+  gap: .6rem;
+  max-width: 64rem;
+  margin-bottom: 3.5rem;
+}
+.nova-commerce__heading h2 {
+  margin: 0;
+  font-size: clamp(3.2rem, 4vw, 4.6rem) !important;
+  line-height: 1.05;
+}
+.nova-commerce__heading p {
+  margin: .4rem 0 0;
+  max-width: 48rem;
+  color: var(--nova-muted);
+  font-size: 1.55rem;
+  line-height: 1.5;
+}
+.nova-commerce__categories {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+.nova-category-card {
+  position: relative;
+  display: block;
+  min-height: 28rem;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 1rem !important;
+  background: var(--nova-fog);
+  text-decoration: none;
+  box-shadow: none !important;
+  transition: transform .45s var(--nova-ease);
+}
+.nova-category-card--wide {
+  grid-column: span 2;
+  min-height: 36rem;
+}
+.nova-category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s var(--nova-ease);
+}
+.nova-category-card:hover { transform: translateY(-3px); }
+.nova-category-card:hover img { transform: scale(1.05); }
+.nova-category-card__shade { display: none !important; }
+.nova-category-card__content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2rem 1.8rem 1.6rem;
+  background: linear-gradient(180deg, transparent, rgba(8, 24, 28, .72));
+  color: #fff;
+}
+.nova-category-card__number { display: none !important; }
+.nova-category-card__content strong {
+  display: block;
+  font-family: var(--nova-ft-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -.03em;
+  color: #fff;
+}
+.nova-category-card__content small {
+  display: block;
+  margin-top: .35rem;
+  color: rgba(255, 255, 255, .78);
+  font-size: 1.2rem;
+}
+.nova-commerce__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.nova-commerce__footer p { display: none; }
+@media screen and (max-width: 989px) {
+  .nova-commerce { padding: 4.5rem 0 !important; }
+  .nova-commerce__categories { grid-template-columns: 1fr 1fr; }
+  .nova-category-card--wide { grid-column: span 2; min-height: 28rem; }
+  .nova-category-card { min-height: 22rem; }
+}
+
+/* —— Shop —— */
+.nova-shop {
+  padding: 6.5rem 0 7rem !important;
+  background: var(--nova-fog) !important;
+}
+.nova-shop__heading {
+  display: grid;
+  gap: .5rem;
+  margin-bottom: 3rem;
+}
+.nova-shop__heading h2 {
+  margin: 0;
+  font-size: clamp(3.2rem, 4vw, 4.4rem) !important;
+}
+.nova-shop__heading p { margin: .6rem 0 0; }
+.nova-shop__heading a {
+  color: var(--nova-teal);
+  font-weight: 600;
+  text-decoration: none;
+}
+.nova-shop__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+.nova-shop-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--nova-line);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: border-color .3s ease, transform .4s var(--nova-ease);
+}
+.nova-shop-card:hover {
+  border-color: rgba(0, 161, 146, .45);
+  transform: translateY(-2px);
+}
+.nova-shop-card__media {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  background: linear-gradient(180deg, #fbfcfc, #eef5f4);
+  text-decoration: none;
+}
+.nova-shop-card__badge { display: none !important; }
+.nova-shop-card__media img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+  transition: transform .5s var(--nova-ease);
+}
+.nova-shop-card:hover .nova-shop-card__media img { transform: scale(1.06); }
+.nova-shop-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  padding: 1.5rem 1.6rem 1.7rem;
+}
+.nova-shop-card__type {
+  color: var(--nova-teal);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.nova-shop-card__body h3 {
+  margin: 0;
+  font-size: 1.55rem !important;
+  line-height: 1.25;
+}
+.nova-shop-card__body h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+.nova-shop-card__body > p {
+  margin: 0;
+  color: var(--nova-muted);
+  font-size: 1.2rem;
+}
+.nova-shop-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: .9rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--nova-line);
+}
+.nova-shop-card__footer strong {
+  font-family: var(--nova-ft-display);
+  font-size: 1.5rem;
+}
+.nova-shop-card__footer a {
+  color: var(--nova-teal);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.nova-shop__shipping { display: none !important; }
+@media screen and (max-width: 989px) {
+  .nova-shop__grid { grid-template-columns: 1fr 1fr; }
+}
+@media screen and (max-width: 749px) {
+  .nova-shop__grid { grid-template-columns: 1fr; }
+}
+
+/* —— Regulatory —— */
+.nova-regulatory {
+  padding: 7rem 0 !important;
+  background: var(--nova-ink) !important;
+  color: #dceceb !important;
+}
+.nova-regulatory .nova-kicker { color: #6fd4c8; }
+.nova-regulatory h2 {
+  color: #fff !important;
+  font-size: clamp(3.2rem, 4vw, 4.6rem) !important;
+  margin: 0 0 1rem;
+}
+.nova-regulatory__header {
+  display: grid;
+  gap: .8rem;
+  max-width: 58rem;
+  margin-bottom: 3.5rem;
+}
+.nova-regulatory__header p {
+  margin: 0;
+  color: #a9c4c1;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+.nova-regulatory__link {
+  color: #7fe0d4;
+  font-weight: 600;
+  text-decoration: none;
+}
+.nova-regulatory__watermark,
+.nova-regulatory__showcase,
+.nova-regulatory__feature,
+.nova-regulatory__cards { display: none !important; }
+.nova-regulatory__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+.nova-regulatory__grid article {
+  padding: 2.2rem 2rem;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, .03);
+}
+.nova-regulatory__grid span {
+  display: block;
+  margin-bottom: 1.2rem;
+  color: #6fd4c8;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+}
+.nova-regulatory__grid strong {
+  display: block;
+  margin-bottom: .7rem;
+  font-family: var(--nova-ft-display);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -.03em;
+  color: #fff;
+}
+.nova-regulatory__grid p {
+  margin: 0;
+  color: #a9c4c1;
+  font-size: 1.35rem;
+  line-height: 1.45;
+}
+.nova-regulatory__note {
+  margin: 2.5rem 0 0;
+  max-width: 72rem;
+  color: #7f9895;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+@media screen and (max-width: 989px) {
+  .nova-regulatory__grid { grid-template-columns: 1fr; }
+}
+
+/* —— Footer polish —— */
+.footer {
+  background: #fff !important;
+  color: var(--nova-ink) !important;
+  border-top: 1px solid var(--nova-line);
+}
+.nova-footer-hero h2,
+.footer h2 {
+  font-family: var(--nova-ft-display) !important;
+}
+
+/* —— Motion hooks —— */
+.nova-reveal {
+  opacity: 0;
+  transform: translateY(1.4rem);
+  transition: opacity .7s var(--nova-ease), transform .7s var(--nova-ease);
+  transition-delay: calc(var(--nova-reveal-order, 0) * 60ms);
+}
+.nova-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.nova-reveal--scale {
+  transform: translateY(1rem) scale(.98);
+}
+.nova-reveal--scale.is-visible { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .nova-hero__visual,
+  .nova-hero__content,
+  .nova-category-card,
+  .nova-category-card img,
+  .nova-shop-card,
+  .button { animation: none !important; transition: none !important; transform: none !important; }
+  .nova-reveal { opacity: 1; transform: none; }
+}

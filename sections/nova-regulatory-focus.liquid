@@ -1,39 +1,30 @@
-<section id="NovaRegulatory" class="nova-regulatory color-{{ section.settings.color_scheme }} gradient" aria-labelledby="NovaRegulatoryHeading-{{ section.id }}">
-  <span class="nova-regulatory__watermark" aria-hidden="true">510(k)</span>
+<section id="NovaRegulatory" class="nova-regulatory color-{{ section.settings.color_scheme }}" aria-labelledby="NovaRegulatoryHeading-{{ section.id }}">
   <div class="page-width">
     <header class="nova-regulatory__header">
-      <div>
-        <span class="nova-regulatory__label">U.S. market clearance</span>
-        <h2 id="NovaRegulatoryHeading-{{ section.id }}">Clearance you can verify.<br>Quality you can trace.</h2>
-      </div>
-      <div>
-        <p>Regulatory and quality documentation presented clearly for licensed dental professionals, purchasing teams and clinical partners.</p>
-        <a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K150363" target="_blank" rel="noopener">View official FDA record <span aria-hidden="true">↗</span></a>
-      </div>
+      <span class="nova-kicker">U.S. market clearance</span>
+      <h2 id="NovaRegulatoryHeading-{{ section.id }}">Clearance you can verify.</h2>
+      <p>Regulatory documentation for licensed dental professionals and purchasing teams.</p>
+      <a class="nova-regulatory__link" href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K150363" target="_blank" rel="noopener">View FDA record K150363 <span aria-hidden="true">↗</span></a>
     </header>
 
-    <div class="nova-regulatory__showcase">
-      <article class="nova-regulatory__feature">
-        <div class="nova-regulatory__feature-copy">
-          <span>FDA 510(k) clearance</span>
-          <strong><span data-nova-count="510">510</span><small>(k)</small></strong>
-          <h3>NOVA Dental Implants System</h3>
-          <p>Record K150363 identifies a Class II endosseous dental implant and abutment system with a substantially equivalent decision dated June 29, 2015.</p>
-          <div class="nova-regulatory__chips"><span>K150363</span><span>Class II</span><span>DZE / NHA</span></div>
-        </div>
-        <div class="nova-regulatory__feature-media" data-nova-depth>
-          <img src="{{ 'nova-slide-psi.webp' | asset_url }}" alt="NOVA PSI dental implant system" width="1600" height="1000" loading="lazy">
-          <span>Internal-hex implant system</span>
-        </div>
+    <div class="nova-regulatory__grid">
+      <article>
+        <span>01</span>
+        <strong>FDA 510(k)</strong>
+        <p>Class II endosseous implant system · decision dated June 29, 2015.</p>
       </article>
-
-      <div class="nova-regulatory__cards">
-        <article><span>01 / Quality system</span><strong>ISO 13485:2016</strong><p>Certified medical-device quality management system · Registration IL-99180.</p><i aria-hidden="true">↗</i></article>
-        <article><span>02 / Conformity</span><strong>CE-marked lines</strong><p>Confirm current marking and applicability on the exact product label and IFU.</p><i aria-hidden="true">↗</i></article>
-        <article><span>03 / Clinical access</span><strong>Professional use</strong><p>Intended for appropriately trained and licensed dental professionals.</p><i aria-hidden="true">↗</i></article>
-      </div>
+      <article>
+        <span>02</span>
+        <strong>ISO 13485:2016</strong>
+        <p>Certified medical-device quality management · IL-99180.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <strong>Professional use</strong>
+        <p>Intended for trained and licensed dental professionals.</p>
+      </article>
     </div>
-    <p class="nova-regulatory__note">“FDA cleared” refers to the NOVA Dental Implants System covered by K150363; it does not mean FDA approval of every NOVA product. Always verify the label and applicable Instructions for Use for the exact item ordered.</p>
+    <p class="nova-regulatory__note">“FDA cleared” refers to the NOVA Dental Implants System covered by K150363. Always verify the label and IFU for the exact item ordered.</p>
   </div>
 </section>
 
@@ -43,7 +34,7 @@
   "tag": "section",
   "class": "section",
   "disabled_on": { "groups": ["header", "footer"] },
-  "settings": [{ "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-3" }],
+  "settings": [{ "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }],
   "presets": [{ "name": "NOVA regulatory focus" }]
 }
 {% endschema %}

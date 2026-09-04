@@ -1,66 +1,50 @@
 {%- assign catalog_link = routes.all_products_collection_url -%}
 
-<section id="NovaCatalog" class="nova-commerce color-{{ section.settings.color_scheme }} gradient" aria-labelledby="NovaCommerceHeading-{{ section.id }}">
+<section id="NovaCatalog" class="nova-commerce color-{{ section.settings.color_scheme }}" aria-labelledby="NovaCommerceHeading-{{ section.id }}">
   <div class="page-width">
     <header class="nova-commerce__heading">
-      <div>
-        <span class="nova-kicker">Shop by category</span>
-        <h2 id="NovaCommerceHeading-{{ section.id }}" class="h1">Everything for one connected workflow.</h2>
-      </div>
-      <div>
-        <p>Browse by clinical workflow — implants, healing, restorative, impression, multi-unit, digital, and surgical.</p>
-        <a href="{{ catalog_link }}" class="nova-commerce__text-link">View full catalog <span aria-hidden="true">→</span></a>
-      </div>
+      <span class="nova-kicker">Shop by category</span>
+      <h2 id="NovaCommerceHeading-{{ section.id }}">One connected clinical workflow.</h2>
+      <p>Implants, healing, restorative, impression, multi-unit, digital, and surgical — browse by use.</p>
     </header>
 
     <div class="nova-commerce__categories" aria-label="Product categories">
-      <a class="nova-category-card nova-category-card--wide" href="{{ routes.collections_url }}/implant-systems" data-nova-depth>
-        <img src="{{ 'nova-category-implants-premium-v2.webp' | asset_url }}" alt="Illustrative premium presentation of the NOVA PSI dental implant system" width="1672" height="941" loading="lazy">
-        <span class="nova-category-card__shade" aria-hidden="true"></span>
+      <a class="nova-category-card nova-category-card--wide" href="{{ routes.collections_url }}/implant-systems">
+        <img src="{{ 'nova-category-implants-premium-v2.webp' | asset_url }}" alt="NOVA PSI dental implant system" width="1672" height="941" loading="lazy">
         <span class="nova-category-card__content">
-          <span class="nova-category-card__number">01</span>
           <strong>PSI implant system</strong>
           <small>Multiple diameters and lengths</small>
         </span>
       </a>
-      <a class="nova-category-card" href="{{ routes.collections_url }}/healing-abutments" data-nova-depth>
-        <img src="{{ 'nova-category-healing-premium-v1.webp' | asset_url }}" alt="Illustrative premium presentation of titanium healing abutments" width="1672" height="941" loading="lazy">
-        <span class="nova-category-card__shade" aria-hidden="true"></span>
-        <span class="nova-category-card__content"><span class="nova-category-card__number">02</span><strong>Healing</strong><small>Standard, slim and concave</small></span>
+      <a class="nova-category-card" href="{{ routes.collections_url }}/healing-abutments">
+        <img src="{{ 'nova-category-healing-premium-v1.webp' | asset_url }}" alt="Titanium healing abutments" width="1672" height="941" loading="lazy">
+        <span class="nova-category-card__content"><strong>Healing</strong><small>Standard, slim and concave</small></span>
       </a>
-      <a class="nova-category-card" href="{{ routes.collections_url }}/restorative-components" data-nova-depth>
-        <img src="{{ 'nova-category-restorative-premium-v1.webp' | asset_url }}" alt="Illustrative premium presentation of restorative abutments" width="1672" height="941" loading="lazy">
-        <span class="nova-category-card__shade" aria-hidden="true"></span>
-        <span class="nova-category-card__content"><span class="nova-category-card__number">03</span><strong>Restorative</strong><small>Temporary, PEEK and titanium</small></span>
+      <a class="nova-category-card" href="{{ routes.collections_url }}/restorative-components">
+        <img src="{{ 'nova-category-restorative-premium-v1.webp' | asset_url }}" alt="Restorative abutments" width="1672" height="941" loading="lazy">
+        <span class="nova-category-card__content"><strong>Restorative</strong><small>Temporary, PEEK and titanium</small></span>
       </a>
-      <a class="nova-category-card" href="{{ routes.collections_url }}/impression-components" data-nova-depth>
-        <img src="{{ 'nova-category-impression-premium-v1.webp' | asset_url }}" alt="Illustrative premium presentation of impression components" width="1672" height="941" loading="lazy">
-        <span class="nova-category-card__shade" aria-hidden="true"></span>
-        <span class="nova-category-card__content"><span class="nova-category-card__number">04</span><strong>Impression</strong><small>Open tray, closed tray and transfer</small></span>
+      <a class="nova-category-card" href="{{ routes.collections_url }}/impression-components">
+        <img src="{{ 'nova-category-impression-premium-v1.webp' | asset_url }}" alt="Impression components" width="1672" height="941" loading="lazy">
+        <span class="nova-category-card__content"><strong>Impression</strong><small>Open tray, closed tray and transfer</small></span>
       </a>
-      <a class="nova-category-card" href="{{ routes.collections_url }}/multi-unit-overdenture" data-nova-depth>
-        <img src="{{ 'nova-category-multi-unit-premium-v1.webp' | asset_url }}" alt="Illustrative premium presentation of multi-unit and overdenture components" width="1672" height="941" loading="lazy">
-        <span class="nova-category-card__shade" aria-hidden="true"></span>
-        <span class="nova-category-card__content"><span class="nova-category-card__number">05</span><strong>Multi-unit</strong><small>Full-arch and overdenture workflows</small></span>
+      <a class="nova-category-card" href="{{ routes.collections_url }}/multi-unit-overdenture">
+        <img src="{{ 'nova-category-multi-unit-premium-v1.webp' | asset_url }}" alt="Multi-unit and overdenture components" width="1672" height="941" loading="lazy">
+        <span class="nova-category-card__content"><strong>Multi-unit</strong><small>Full-arch and overdenture</small></span>
       </a>
-      <a class="nova-category-card" href="{{ routes.collections_url }}/digital-cad-cam-casting" data-nova-depth>
-        <img src="{{ 'nova-category-digital-premium-v1.webp' | asset_url }}" alt="Illustrative premium presentation of digital and CAD CAM components" width="1672" height="941" loading="lazy">
-        <span class="nova-category-card__shade" aria-hidden="true"></span>
-        <span class="nova-category-card__content"><span class="nova-category-card__number">06</span><strong>Digital &amp; CAD/CAM</strong><small>Ti-base, scan body and casting</small></span>
+      <a class="nova-category-card" href="{{ routes.collections_url }}/digital-cad-cam-casting">
+        <img src="{{ 'nova-category-digital-premium-v1.webp' | asset_url }}" alt="Digital and CAD/CAM components" width="1672" height="941" loading="lazy">
+        <span class="nova-category-card__content"><strong>Digital &amp; CAD/CAM</strong><small>Ti-base, scan body and casting</small></span>
       </a>
-      <a class="nova-category-card" href="{{ routes.collections_url }}/surgical-instruments" data-nova-depth>
-        <img src="{{ 'nova-category-surgical-premium-v1.webp' | asset_url }}" alt="Illustrative premium presentation of a dental surgical instrument kit" width="1672" height="941" loading="lazy">
-        <span class="nova-category-card__shade" aria-hidden="true"></span>
-        <span class="nova-category-card__content"><span class="nova-category-card__number">07</span><strong>Surgical</strong><small>Kits, drivers and hand tools</small></span>
+      <a class="nova-category-card" href="{{ routes.collections_url }}/surgical-instruments">
+        <img src="{{ 'nova-category-surgical-premium-v1.webp' | asset_url }}" alt="Surgical instrument kit" width="1672" height="941" loading="lazy">
+        <span class="nova-category-card__content"><strong>Surgical</strong><small>Kits, drivers and hand tools</small></span>
       </a>
     </div>
 
     <div class="nova-commerce__footer">
-      <p><strong>Not sure which component fits?</strong> Search by catalog number or ask the NOVA team to confirm compatibility.</p>
-      <div>
-        <a class="button button--primary" href="{{ catalog_link }}">Shop all products</a>
-        <a class="button button--secondary" href="/pages/contact">Ask a product specialist</a>
-      </div>
+      <a class="button button--primary" href="{{ catalog_link }}">Shop all products</a>
+      <a class="button button--secondary" href="/pages/contact">Ask a specialist</a>
     </div>
   </div>
 </section>
