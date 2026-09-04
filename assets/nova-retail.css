@@ -2508,3 +2508,124 @@ main[data-template='index'] .nova-regulatory::after {
   main[data-template='index'] .nova-shop::before,
   main[data-template='index'] .nova-regulatory::after { animation: none; }
 }
+
+/* Borderless hero assurances and a continuous black footer. */
+main[data-template='index'] .nova-marketplace .nova-hero-assurance {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+main[data-template='index'] .nova-hero-assurance article {
+  border-top: 1px solid rgba(0,0,0,.13);
+  border-right-color: rgba(0,0,0,.13);
+  background: transparent;
+}
+main[data-template='index'] .nova-hero-assurance article:hover { background: rgba(5,126,132,.045); }
+main[data-template='index'] .nova-hero-assurance__icon {
+  background: transparent;
+  color: #000;
+}
+main[data-template='index'] .nova-hero-assurance strong { color: #000; }
+main[data-template='index'] .nova-hero-assurance small { color: #596a6e; }
+
+.footer::after {
+  position: absolute;
+  top: 8rem;
+  left: -20rem;
+  width: 55rem;
+  height: 55rem;
+  border-radius: 50%;
+  background: radial-gradient(circle,rgba(18,146,148,.13),transparent 68%);
+  content: '';
+  pointer-events: none;
+  animation: nova-footer-glow 13s ease-in-out infinite alternate;
+}
+.footer .nova-footer-hero {
+  padding-top: clamp(7rem,9vw,11rem);
+  padding-bottom: clamp(6rem,8vw,9rem);
+  border-bottom: 1px solid rgba(255,255,255,.16);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.footer .nova-footer-hero__logo { width: 15rem; }
+.footer .nova-footer-hero__logo img { filter: grayscale(1) brightness(0) invert(1); }
+.footer .nova-footer-hero__intro > span { color: #74d3cf; }
+.footer .nova-footer-hero h2 {
+  color: #fff !important;
+  font-size: clamp(4.5rem,5vw,7rem) !important;
+}
+.footer .nova-footer-hero p { color: rgba(255,255,255,.68) !important; font-size: 1.6rem; }
+.footer .nova-footer-hero__actions .button--primary {
+  background: #10a0a4 !important;
+  color: #fff !important;
+}
+.footer .nova-footer-hero__actions .button--secondary {
+  border: 1px solid rgba(255,255,255,.45) !important;
+  background: transparent !important;
+  color: #fff !important;
+}
+.footer .nova-footer-hero__actions .button--secondary:hover { border-color: #fff !important; }
+.footer .nova-footer-hero__proof { border-top-color: rgba(255,255,255,.2); }
+.footer .nova-footer-hero__proof article { border-bottom-color: rgba(255,255,255,.2); }
+.footer .nova-footer-hero__proof article > span {
+  border-color: rgba(112,211,207,.48);
+  color: #77d8d4;
+}
+.footer .nova-footer-hero__proof strong { color: #fff; }
+.footer .nova-footer-hero__proof small { color: rgba(255,255,255,.58); }
+.footer .nova-footer-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 0;
+  color: #fff;
+  text-decoration: none;
+}
+.footer .nova-footer-contact span,
+.footer .nova-footer-contact small,
+.footer .nova-footer-contact strong { display: block; }
+.footer .nova-footer-contact small {
+  color: rgba(255,255,255,.54);
+  font-size: 1.05rem;
+}
+.footer .nova-footer-contact strong {
+  margin-top: .35rem;
+  color: #fff;
+  font-size: 1.45rem;
+}
+.footer .nova-footer-contact i {
+  display: grid;
+  width: 4rem;
+  height: 4rem;
+  flex: 0 0 4rem;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  color: #77d8d4;
+  font-size: 1.7rem;
+  font-style: normal;
+  transition: border-color .2s ease, transform .2s ease;
+}
+.footer .nova-footer-contact:hover i { border-color: #77d8d4; transform: translateX(.35rem); }
+
+@keyframes nova-footer-glow {
+  from { transform: translate3d(0,0,0) scale(1); opacity: .75; }
+  to { transform: translate3d(5rem,-2rem,0) scale(1.12); opacity: 1; }
+}
+
+@media screen and (max-width: 749px) {
+  main[data-template='index'] .nova-hero-assurance article:nth-child(-n+2) { border-bottom-color: rgba(0,0,0,.13); }
+  .footer .nova-footer-hero {
+    margin-inline: auto;
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+    border-radius: 0;
+  }
+  .footer .nova-footer-hero h2 { font-size: 4rem !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer::after { animation: none; }
+}
