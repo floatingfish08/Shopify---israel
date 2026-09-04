@@ -73,47 +73,11 @@
   {%- endif -%}
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
-  {%- liquid
-    assign nova_catalog_visual = blank
-    if product.tags contains 'expanded-catalog'
-      case product.type
-        when 'Dental Implants'
-          assign nova_catalog_visual = 'nova-category-implants-premium-v2.webp'
-        when 'Healing Abutments'
-          assign nova_catalog_visual = 'nova-category-healing-premium-v1.webp'
-        when 'Restorative Components'
-          assign nova_catalog_visual = 'nova-category-restorative-premium-v1.webp'
-        when 'Impression Components'
-          assign nova_catalog_visual = 'nova-category-impression-premium-v1.webp'
-        when 'Multi-Unit Solutions', 'Overdenture Components'
-          assign nova_catalog_visual = 'nova-category-multi-unit-premium-v1.webp'
-        when 'Digital & Casting Components', 'Digital & Zirconia Components', 'CAD/CAM & Casting Components'
-          assign nova_catalog_visual = 'nova-category-digital-premium-v1.webp'
-        when 'Surgical Instruments'
-          assign nova_catalog_visual = 'nova-category-surgical-premium-v1.webp'
-      endcase
-    endif
-  -%}
   <product-component view-event-payload="{{ product | standard_event_data: 'view', context: 'page' | escape }}">
     <div class="page-width">
       <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
         <div class="grid__item product__media-wrapper">
-          {%- if nova_catalog_visual != blank -%}
-            <div class="nova-product-family-visual">
-              <div class="nova-product-family-visual__media">
-                <img
-                  src="{{ nova_catalog_visual | asset_url }}"
-                  alt="{{ product.type | escape }} product family"
-                  width="1672"
-                  height="941"
-                  fetchpriority="high"
-                >
-              </div>
-              <p>Product-family image. Confirm the catalog number and selected configuration before ordering.</p>
-            </div>
-          {%- else -%}
-            {% render 'product-media-gallery', variant_images: variant_images %}
-          {%- endif -%}
+          {% render 'product-media-gallery', variant_images: variant_images %}
         </div>
         <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           <section
