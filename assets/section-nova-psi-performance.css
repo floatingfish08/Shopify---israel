@@ -1,0 +1,144 @@
+.nova-psi-performance {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(8rem,9vw,13rem) 0;
+  background:
+    linear-gradient(115deg,rgba(237,248,247,.96),rgba(250,252,252,.9)),
+    url('nova-bg-products-v1.jpg') center/cover fixed no-repeat;
+  color: #07171a;
+}
+.nova-psi-performance__orb {
+  position: absolute;
+  width: 42rem;
+  height: 42rem;
+  border: 1px solid rgba(8,127,132,.13);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate3d(0,var(--nova-depth-offset,0),0);
+}
+.nova-psi-performance__orb--one { top: -22rem; right: -9rem; }
+.nova-psi-performance__orb--two { bottom: 10rem; left: -28rem; width: 56rem; height: 56rem; }
+.nova-psi-performance > .page-width { position: relative; z-index: 1; }
+.nova-psi-performance__header {
+  display: grid;
+  grid-template-columns: minmax(0,1.1fr) minmax(34rem,.65fr);
+  gap: 4rem 8rem;
+  align-items: end;
+  margin-bottom: 6rem;
+}
+.nova-psi-performance__header h2 {
+  max-width: 78rem;
+  margin: 1.4rem 0 0;
+  color: #000;
+  font-size: clamp(4.5rem,5.4vw,7rem);
+  letter-spacing: -.055em;
+  line-height: .98;
+}
+.nova-psi-performance__header p { margin: 0 0 1.8rem; color: #5f7377; font-size: 1.48rem; line-height: 1.65; }
+.nova-psi-performance__header a { display: inline-flex; gap: .7rem; color: #006d73; font-size: 1.3rem; font-weight: 750; text-decoration: none; }
+.nova-psi-performance__header a span { transition: transform .2s ease; }
+.nova-psi-performance__header a:hover span { transform: translateX(.35rem); }
+
+.nova-psi-performance__feature-grid { display: grid; grid-template-columns: minmax(0,1.08fr) minmax(34rem,.72fr); gap: 2rem; }
+.nova-psi-performance__visual {
+  position: relative;
+  min-height: 58rem;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid rgba(19,83,87,.15);
+  border-radius: 2.4rem;
+  background: #fff;
+  box-shadow: 0 2.5rem 7rem rgba(19,65,68,.12);
+  transform: translate3d(0,var(--nova-depth-offset,0),0);
+}
+.nova-psi-performance__visual::after { position: absolute; inset: 0; background: linear-gradient(180deg,transparent 62%,rgba(1,22,25,.66)); content: ''; }
+.nova-psi-performance__visual img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.22,1,.36,1); }
+.nova-psi-performance__visual:hover img { transform: scale(1.035); }
+.nova-psi-performance__visual-label,
+.nova-psi-performance__visual figcaption { position: absolute; z-index: 2; color: #fff; }
+.nova-psi-performance__visual-label { top: 2rem; left: 2rem; padding: .75rem 1rem; border: 1px solid rgba(255,255,255,.5); border-radius: 999px; background: rgba(2,37,40,.52); font-size: 1.05rem; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; backdrop-filter: blur(10px); }
+.nova-psi-performance__visual figcaption { right: 2.5rem; bottom: 2.3rem; left: 2.5rem; font-size: 2.3rem; font-weight: 750; }
+.nova-psi-performance__features { display: grid; overflow: hidden; border: 1px solid rgba(19,83,87,.14); border-radius: 2.4rem; background: rgba(255,255,255,.86); box-shadow: 0 2rem 6rem rgba(19,65,68,.075); backdrop-filter: blur(14px); }
+.nova-psi-performance__features article { display: grid; grid-template-columns: 5rem 1fr; gap: 1.5rem; align-items: start; padding: 2.6rem; border-bottom: 1px solid #dfe8e8; }
+.nova-psi-performance__features article:last-child { border-bottom: 0; }
+.nova-psi-performance__features article > span { display: grid; width: 4.2rem; height: 4.2rem; place-items: center; border-radius: 50%; background: #e7f5f4; color: #087f84; font-size: 1.05rem; font-weight: 800; }
+.nova-psi-performance__features strong { display: block; color: #000; font-size: 1.72rem; line-height: 1.25; }
+.nova-psi-performance__features p { margin: .7rem 0 0; color: #62777a; font-size: 1.22rem; line-height: 1.55; }
+
+.nova-psi-performance__metrics { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); overflow: hidden; margin: 2rem 0; border-radius: 2rem; background: #062f33; color: #fff; box-shadow: 0 2rem 5rem rgba(5,43,47,.16); }
+.nova-psi-performance__metrics article { min-height: 17rem; padding: 3rem 2.5rem; border-right: 1px solid rgba(255,255,255,.14); }
+.nova-psi-performance__metrics article:last-child { border-right: 0; }
+.nova-psi-performance__metrics strong,
+.nova-psi-performance__metrics span,
+.nova-psi-performance__metrics small { display: block; }
+.nova-psi-performance__metrics strong { color: #fff; font-size: clamp(3.6rem,3.7vw,5rem); letter-spacing: -.045em; line-height: 1; }
+.nova-psi-performance__metrics span { margin-top: 1rem; font-size: 1.3rem; font-weight: 750; }
+.nova-psi-performance__metrics small { margin-top: .45rem; color: rgba(255,255,255,.62); font-size: 1.05rem; line-height: 1.4; }
+
+.nova-psi-performance__evidence { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(35rem,.8fr); gap: 2rem; }
+.nova-psi-performance__surface,
+.nova-psi-performance__test { padding: clamp(3rem,4vw,5rem); border: 1px solid rgba(19,83,87,.14); border-radius: 2.2rem; background: rgba(255,255,255,.9); box-shadow: 0 1.8rem 5rem rgba(19,65,68,.07); }
+.nova-psi-performance__surface h3,
+.nova-psi-performance__test h3 { margin: 1.3rem 0 2.5rem; color: #000; font-size: clamp(3rem,3.2vw,4.3rem); letter-spacing: -.045em; line-height: 1.03; }
+.nova-psi-performance__surface-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.2rem; }
+.nova-psi-performance__surface-grid article { padding: 2rem; border: 1px solid #dce7e7; border-radius: 1.3rem; background: #f7fafa; }
+.nova-psi-performance__surface-grid article > span { color: #087f84; font-size: 1rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.nova-psi-performance__surface-grid strong { display: block; min-height: 4.5rem; margin: .9rem 0 .7rem; color: #000; font-size: 1.55rem; line-height: 1.3; }
+.nova-psi-performance__surface-grid p { margin: 0; color: #63777a; font-size: 1.12rem; line-height: 1.55; }
+.nova-psi-performance__test { background: linear-gradient(145deg,#fff,#eaf6f5); }
+.nova-psi-performance__test-label { color: #087f84; font-size: 1rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+.nova-psi-performance__test > p { color: #63777a; font-size: 1.18rem; line-height: 1.55; }
+.nova-psi-performance__bars { display: grid; height: 22rem; grid-template-columns: repeat(4,1fr); gap: 1rem; align-items: end; margin: 2.5rem 0 1.8rem; padding-top: 2rem; border-bottom: 1px solid #9cbabc; }
+.nova-psi-performance__bars > span { position: relative; display: block; height: var(--bar-value); border-radius: .7rem .7rem 0 0; background: #789598; }
+.nova-psi-performance__bars > span:first-child { background: linear-gradient(180deg,#12a4a7,#087f84); }
+.nova-psi-performance__bars i { position: absolute; top: .8rem; left: 50%; color: #fff; font-size: 1.1rem; font-style: normal; font-weight: 800; transform: translateX(-50%); }
+.nova-psi-performance__bars small { position: absolute; right: -.4rem; bottom: -3.2rem; left: -.4rem; color: #445d61; font-size: .92rem; line-height: 1.2; text-align: center; }
+.nova-psi-performance__test-note { display: block; margin-top: 4.5rem; color: #6c7f82; font-size: .98rem; line-height: 1.5; }
+
+.nova-psi-performance__details { margin-top: 2rem; border: 1px solid rgba(19,83,87,.15); border-radius: 1.6rem; background: rgba(255,255,255,.86); }
+.nova-psi-performance__details summary { display: flex; min-height: 7rem; align-items: center; justify-content: space-between; padding: 1.8rem 2.4rem; color: #0a2427; font-size: 1.4rem; font-weight: 750; cursor: pointer; list-style: none; }
+.nova-psi-performance__details summary::-webkit-details-marker { display: none; }
+.nova-psi-performance__details summary i { color: #087f84; font-size: 2.2rem; font-style: normal; transition: transform .25s ease; }
+.nova-psi-performance__details[open] summary i { transform: rotate(45deg); }
+.nova-psi-performance__details > div { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.2rem 3rem; padding: 0 2.4rem 2.4rem; border-top: 1px solid #dfe8e8; }
+.nova-psi-performance__details p { margin: 1.8rem 0 0; color: #607477; font-size: 1.15rem; line-height: 1.6; }
+.nova-psi-performance__details strong { color: #0a2427; }
+.nova-psi-performance__disclaimer { margin: 2rem 0 0; padding: 1.8rem 2rem; border-left: .3rem solid #087f84; background: rgba(255,255,255,.62); color: #687b7e; font-size: 1.02rem; line-height: 1.55; }
+.nova-psi-performance__disclaimer strong { color: #2a484c; }
+
+@media screen and (max-width: 989px) {
+  .nova-psi-performance { background-attachment: scroll; }
+  .nova-psi-performance__header,
+  .nova-psi-performance__feature-grid,
+  .nova-psi-performance__evidence { grid-template-columns: 1fr; }
+  .nova-psi-performance__metrics { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .nova-psi-performance__metrics article:nth-child(2) { border-right: 0; }
+  .nova-psi-performance__metrics article:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.14); }
+}
+
+@media screen and (max-width: 749px) {
+  .nova-psi-performance { padding: 7rem 0; }
+  .nova-psi-performance__header { gap: 2rem; margin-bottom: 3.5rem; }
+  .nova-psi-performance__header h2 { font-size: 4.4rem; }
+  .nova-psi-performance__header p { font-size: 1.35rem; }
+  .nova-psi-performance__visual { min-height: 36rem; border-radius: 1.6rem; }
+  .nova-psi-performance__visual figcaption { font-size: 1.8rem; }
+  .nova-psi-performance__features { border-radius: 1.6rem; }
+  .nova-psi-performance__features article { grid-template-columns: 4rem 1fr; gap: 1rem; padding: 2rem 1.5rem; }
+  .nova-psi-performance__features article > span { width: 3.6rem; height: 3.6rem; }
+  .nova-psi-performance__features strong { font-size: 1.5rem; }
+  .nova-psi-performance__metrics { border-radius: 1.5rem; }
+  .nova-psi-performance__metrics article { min-height: 14.5rem; padding: 2.2rem 1.6rem; }
+  .nova-psi-performance__metrics strong { font-size: 3.3rem; }
+  .nova-psi-performance__surface,
+  .nova-psi-performance__test { padding: 2.5rem 1.8rem; border-radius: 1.6rem; }
+  .nova-psi-performance__surface-grid { grid-template-columns: 1fr; }
+  .nova-psi-performance__surface-grid strong { min-height: 0; }
+  .nova-psi-performance__details > div { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nova-psi-performance__visual img,
+  .nova-psi-performance__header a span,
+  .nova-psi-performance__details summary i { transition: none; }
+}

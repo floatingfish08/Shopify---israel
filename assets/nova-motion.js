@@ -10,6 +10,13 @@
     { selector: '.nova-featured__heading', effect: 'right' },
     { selector: '.nova-product-card', effect: 'rise' },
     { selector: '.nova-commerce__assist', effect: 'scale' },
+    { selector: '.nova-psi-performance__header > *', effect: 'left' },
+    { selector: '.nova-psi-performance__visual', effect: 'scale' },
+    { selector: '.nova-psi-performance__features article', effect: 'right' },
+    { selector: '.nova-psi-performance__metrics article', effect: 'rise' },
+    { selector: '.nova-psi-performance__surface', effect: 'left' },
+    { selector: '.nova-psi-performance__test', effect: 'right' },
+    { selector: '.nova-psi-performance__details', effect: 'rise' },
     { selector: '.nova-shop__heading', effect: 'left' },
     { selector: '.nova-shop-card', effect: 'rise' },
     { selector: '.nova-shop__shipping span', effect: 'rise' },
@@ -236,6 +243,17 @@
         const heroShift = Math.min(window.scrollY * 0.075, 34);
         collectionHero.style.setProperty('--nova-collection-shift', `${heroShift.toFixed(2)}px`);
       }
+
+      // Keep reveal effects progressive during normal scrolling, while ensuring
+      // content passed by anchor links or large programmatic jumps is never hidden.
+      elements.forEach((element) => {
+        if (element.classList.contains('is-visible')) return;
+        if (element.getBoundingClientRect().top <= window.innerHeight * 0.93) {
+          element.classList.add('is-visible');
+          animateCounters(element);
+          observer.unobserve(element);
+        }
+      });
 
       depthElements.forEach((element) => {
         const rect = element.getBoundingClientRect();

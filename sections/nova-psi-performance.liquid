@@ -1,0 +1,101 @@
+{{ 'section-nova-psi-performance.css' | asset_url | stylesheet_tag }}
+
+<section class="nova-psi-performance" aria-labelledby="NovaPsiPerformance-{{ section.id }}">
+  <span class="nova-psi-performance__orb nova-psi-performance__orb--one" aria-hidden="true" data-nova-depth></span>
+  <span class="nova-psi-performance__orb nova-psi-performance__orb--two" aria-hidden="true" data-nova-depth></span>
+
+  <div class="page-width">
+    <header class="nova-psi-performance__header">
+      <div>
+        <span class="nova-kicker">Inside the PSI system</span>
+        <h2 id="NovaPsiPerformance-{{ section.id }}">Engineered for stability.<br>Clearly documented.</h2>
+      </div>
+      <div>
+        <p>The supplied NOVA OEM brochure describes the PSI implant’s tapered geometry, internal-hex connection, material and surface options. Clinical figures below are identified as manufacturer-reported.</p>
+        <a href="/products/psi-implant-system">Explore PSI configurations <span aria-hidden="true">→</span></a>
+      </div>
+    </header>
+
+    <div class="nova-psi-performance__feature-grid">
+      <figure class="nova-psi-performance__visual" data-nova-depth>
+        <span class="nova-psi-performance__visual-label">PSI · Internal hex</span>
+        <img src="{{ 'nova-category-implants-premium-v2.webp' | asset_url }}" width="1672" height="941" loading="lazy" alt="NOVA PSI dental implants displayed on a clinical glass surface">
+        <figcaption>PSI tapered implant family</figcaption>
+      </figure>
+
+      <div class="nova-psi-performance__features">
+        <article>
+          <span>01</span>
+          <div><strong>Tapered Grade 5 titanium-alloy body</strong><p>Designed to support primary stability and reliable function.</p></div>
+        </article>
+        <article>
+          <span>02</span>
+          <div><strong>Apical cutting threads</strong><p>Designed for immediate cutting impact and intimate bone contact at placement.</p></div>
+        </article>
+        <article>
+          <span>03</span>
+          <div><strong>Internal-hex connection</strong><p>The brochure describes a proprietary “Perfect Fit” implant-to-abutment connection.</p></div>
+        </article>
+        <article>
+          <span>04</span>
+          <div><strong>Coronal microgrooves</strong><p>Designed for crestal bone-level maintenance, with surface configuration dependent on the labeled product.</p></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="nova-psi-performance__metrics" aria-label="Manufacturer-reported PSI clinical history">
+      <article><strong>100,000+</strong><span>Implants sold</span><small>Reported in the 2020 OEM brochure</small></article>
+      <article><strong>98.3%</strong><span>Cumulative survival</span><small>Manufacturer-reported brochure figure</small></article>
+      <article><strong>98.7%</strong><span>Prospective survival</span><small>Separate manufacturer-reported mean</small></article>
+      <article><strong>3–120</strong><span>Months of follow-up</span><small>Range stated in the OEM brochure</small></article>
+    </div>
+
+    <div class="nova-psi-performance__evidence">
+      <div class="nova-psi-performance__surface">
+        <span class="nova-kicker">Surface and material</span>
+        <h3>Three documented areas of performance.</h3>
+        <div class="nova-psi-performance__surface-grid">
+          <article><span>Primary</span><strong>Placement stability</strong><p>The brochure states that PSI supports immediate placement and/or loading, with a stepped finishing drill for apical engagement in dense bone.</p></article>
+          <article><span>Secondary</span><strong>Novitex microtexture</strong><p>Described as supporting bone-to-implant contact and osteoconductive capacity. Confirm the surface name and treatment on the current product label.</p></article>
+          <article><span>Optional</span><strong>HA-coated surface</strong><p>The brochure describes high crystallinity, in-vivo bone contact, reverse-torque performance and early BIC findings for HA-coated configurations.</p></article>
+        </div>
+      </div>
+
+      <aside class="nova-psi-performance__test">
+        <span class="nova-psi-performance__test-label">Brochure comparison</span>
+        <h3>Primary-stability chart</h3>
+        <p>The OEM brochure plots a PSI 4.2 × 10 mm result against three unnamed competitors.</p>
+        <div class="nova-psi-performance__bars" aria-label="Values printed in the OEM brochure comparison chart">
+          <span style="--bar-value:100%"><i>119.9</i><small>PSI</small></span>
+          <span style="--bar-value:77%"><i>92.0</i><small>Competitor 1</small></span>
+          <span style="--bar-value:74%"><i>88.4</i><small>Competitor 2</small></span>
+          <span style="--bar-value:42%"><i>50.3</i><small>Competitor 3</small></span>
+        </div>
+        <small class="nova-psi-performance__test-note">The brochure does not identify the chart’s units, test protocol or competitor products. Values are reproduced for transparency, not as a verified comparative claim.</small>
+      </aside>
+    </div>
+
+    <details class="nova-psi-performance__details">
+      <summary><span>Additional statements from the OEM brochure</span><i aria-hidden="true">+</i></summary>
+      <div>
+        <p><strong>Material:</strong> The brochure states that PSI uses Grade 5 titanium alloy and compares its minimum tensile and yield requirements with commercially pure titanium.</p>
+        <p><strong>Bone contact:</strong> It reports greater than 98% BIC for Novitex compared with 45–69% for TPS-coated, sandblasted and acid-etched surfaces, without providing study citations in the brochure.</p>
+        <p><strong>HA performance:</strong> It reports higher reverse-torque values and higher BIC at 3 and 6 weeks than a hydrophilic sandblasted, acid-etched surface.</p>
+        <p><strong>Crystallinity discrepancy:</strong> Page 3 states up to 98% crystalline HA content, while page 5 states up to 97%. Current labeling should control.</p>
+        <p><strong>Clinical use:</strong> The brochure discusses immediate and delayed placement and loading and notes that individual results vary according to patient selection and clinical experience.</p>
+      </div>
+    </details>
+
+    <p class="nova-psi-performance__disclaimer"><strong>Source note:</strong> Content is summarized from the NOVA “New PSI Implant — High Level of Performance” OEM brochure created in June 2020. These are manufacturer-provided statements, not independent verification. Confirm the exact product label, current Instructions for Use, surface treatment and clinical indication before ordering or use.</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NOVA PSI performance",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "presets": [{ "name": "NOVA PSI performance" }]
+}
+{% endschema %}
