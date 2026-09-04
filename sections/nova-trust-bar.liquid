@@ -1,7 +1,8 @@
-<section class="nova-trust color-{{ section.settings.color_scheme }}" aria-label="Quality and service standards">
-  <div class="nova-trust__rail page-width">
+<section class="nova-trust color-{{ section.settings.color_scheme }} gradient" aria-label="Quality and service standards">
+  <div class="nova-trust__grid page-width">
     {%- for block in section.blocks -%}
       <div class="nova-trust__item" {{ block.shopify_attributes }}>
+        <span class="nova-trust__number">0{{ forloop.index }}</span>
         <span class="nova-trust__icon" aria-hidden="true">
           {%- case block.settings.icon -%}
             {%- when 'certificate' -%}
@@ -14,10 +15,7 @@
               <svg viewBox="0 0 24 24" fill="none"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
           {%- endcase -%}
         </span>
-        <span>
-          <strong>{{ block.settings.heading | escape }}</strong>
-          <em>{{ block.settings.text | escape }}</em>
-        </span>
+        <span><strong>{{ block.settings.heading | escape }}</strong>{{ block.settings.text | escape }}</span>
       </div>
     {%- endfor -%}
   </div>

@@ -234,10 +234,9 @@
       <input type="hidden" name="options[prefix]" value="last">
       <span class="nova-header-search__category">Products</span>
       <label class="visually-hidden" for="NovaHeaderSearch">Search the NOVA catalog</label>
-      <input id="NovaHeaderSearch" type="search" name="q" value="{{ search.terms | escape }}" placeholder="What are you looking for?" autocomplete="off">
+      <input id="NovaHeaderSearch" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search product, SKU or catalog number" autocomplete="off">
       <button type="submit" aria-label="Search">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        <span class="nova-header-search__submit-text">Submit</span>
       </button>
     </form>
 
@@ -314,7 +313,7 @@
       {%- if shop.customer_accounts_enabled -%}
         <shopify-account
           menu="{{ settings.customer_account_menu | default: 'customer-account-main-menu' }}"
-          class="header__icon header__icon--account link focus-inset nova-header-account"
+          class="header__icon header__icon--account link focus-inset"
         >
           <span slot="signed-out-avatar" class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
           <span slot="signed-out-avatar" class="visually-hidden">{{ 'customer.log_in' | t }}</span>
@@ -328,13 +327,12 @@
         {%- endcase -%}
       {%- endfor -%}
 
-      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset nova-header-cart" id="cart-icon-bubble">
+      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         {% if cart == empty %}
           <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
         {% else %}
           <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
         {% endif %}
-        <span class="nova-header-icon-label small-hide medium-hide" aria-hidden="true">Cart</span>
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
           <div class="cart-count-bubble">
@@ -354,10 +352,16 @@
       </a>
       <a class="{% if collection.handle == 'implant-systems' %}is-active{% endif %}" href="{{ routes.collections_url }}/implant-systems"{% if collection.handle == 'implant-systems' %} aria-current="page"{% endif %}><span>Internal Hexagon</span></a>
       <a href="{{ routes.search_url }}?q=conical+connection&amp;options%5Bprefix%5D=last"><span>Conical Connection</span></a>
+      <a class="{% if collection.handle == 'healing-abutments' %}is-active{% endif %}" href="{{ routes.collections_url }}/healing-abutments"{% if collection.handle == 'healing-abutments' %} aria-current="page"{% endif %}><span>Healing</span></a>
+      <a class="{% if collection.handle == 'restorative-components' %}is-active{% endif %}" href="{{ routes.collections_url }}/restorative-components"{% if collection.handle == 'restorative-components' %} aria-current="page"{% endif %}><span>Restorative</span></a>
+      <a class="{% if collection.handle == 'impression-components' %}is-active{% endif %}" href="{{ routes.collections_url }}/impression-components"{% if collection.handle == 'impression-components' %} aria-current="page"{% endif %}><span>Impression</span></a>
+      <a class="{% if collection.handle == 'multi-unit-overdenture' %}is-active{% endif %}" href="{{ routes.collections_url }}/multi-unit-overdenture"{% if collection.handle == 'multi-unit-overdenture' %} aria-current="page"{% endif %}><span>Multi-unit</span></a>
+      <a class="{% if collection.handle == 'digital-cad-cam-casting' %}is-active{% endif %}" href="{{ routes.collections_url }}/digital-cad-cam-casting"{% if collection.handle == 'digital-cad-cam-casting' %} aria-current="page"{% endif %}><span>Digital &amp; CAD/CAM</span></a>
       <a class="{% if collection.handle == 'surgical-instruments' %}is-active{% endif %}" href="{{ routes.collections_url }}/surgical-instruments"{% if collection.handle == 'surgical-instruments' %} aria-current="page"{% endif %}><span>Instruments &amp; Tools</span></a>
       <a class="{% if collection.handle == 'digital-cad-cam-casting' %}is-active{% endif %}" href="{{ routes.collections_url }}/digital-cad-cam-casting"{% if collection.handle == 'digital-cad-cam-casting' %} aria-current="page"{% endif %}><span>Compatible Brands</span></a>
+      <a class="nova-category-nav__offer{% if collection.handle == 'special-offers' %} is-active{% endif %}" href="{{ routes.collections_url }}/special-offers"{% if collection.handle == 'special-offers' %} aria-current="page"{% endif %}><span>Special Offers</span></a>
       <a class="nova-category-nav__document" href="https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709" target="_blank" rel="noopener">
-        <span>Resources</span>
+        Resources <span aria-hidden="true">↗</span>
       </a>
     </div>
   </nav>

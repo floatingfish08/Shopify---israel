@@ -4,18 +4,18 @@
 {%- assign product_images = 'nova-shop-plastic-2.webp||nova-shop-chrome-cobalt.webp||nova-shop-ball-3.webp||nova-shop-flat-locator.webp||nova-shop-pop-clicq-18.webp||nova-shop-pop-clicq-30.webp||nova-shop-healing-slim-4.webp||nova-shop-surgical-driver.webp' | split: '||' -%}
 {%- assign product_counts = '2 options||2 options||6 heights||8 heights||4 heights||4 heights||3 heights||2 tools' | split: '||' -%}
 
-<section class="nova-shop color-{{ section.settings.color_scheme }}" aria-labelledby="NovaShopHeading-{{ section.id }}">
+<section class="nova-shop color-{{ section.settings.color_scheme }} gradient" aria-labelledby="NovaShopHeading-{{ section.id }}">
   <div class="page-width">
     <header class="nova-shop__heading">
-      <span class="nova-kicker">Popular components</span>
-      <h2 id="NovaShopHeading-{{ section.id }}">Configure and order.</h2>
-      <p><a href="{{ routes.all_products_collection_url }}">View full catalog <span aria-hidden="true">→</span></a></p>
+      <div><span class="nova-kicker">Popular components</span><h2 id="NovaShopHeading-{{ section.id }}" class="h1">Shop dental implant components.</h2></div>
+      <div><p>Shop eight highlighted families with real NOVA imagery, then browse the expanded catalog for the complete restorative and surgical workflow.</p><a href="{{ routes.all_products_collection_url }}">View 50+ products <span aria-hidden="true">→</span></a><span class="nova-shop__status"><i></i> Live inventory · ready to configure</span></div>
     </header>
     <div class="nova-shop__grid">
       {%- for handle in product_handles -%}
         {%- assign card_product = all_products[handle] -%}
         <article class="nova-shop-card">
           <a class="nova-shop-card__media" href="/products/{{ handle }}" aria-label="Shop {{ product_titles[forloop.index0] | escape }}">
+            <span class="nova-shop-card__badge">In stock</span>
             <img src="{{ product_images[forloop.index0] | asset_url }}" alt="{{ product_titles[forloop.index0] | escape }}" width="1200" height="1200" loading="lazy">
           </a>
           <div class="nova-shop-card__body">
@@ -30,6 +30,7 @@
         </article>
       {%- endfor -%}
     </div>
+    <div class="nova-shop__shipping"><span>Free U.S. shipping</span><span>Same-day dispatch on eligible in-stock orders</span><span>Live inventory by configuration</span></div>
   </div>
 </section>
 
