@@ -1,20 +1,9 @@
 {
   "sections": {
     "nova_slider": { "type": "nova-home-slider", "settings": {} },
-    "nova_trust": {
-      "type": "nova-trust-bar",
-      "blocks": {
-        "quality": { "type": "trust_item", "settings": { "icon": "shield", "heading": "FDA 510(k) cleared", "text": "K150363 implant system" } },
-        "conformity": { "type": "trust_item", "settings": { "icon": "certificate", "heading": "ISO 13485:2016", "text": "Certified quality system" } },
-        "sterility": { "type": "trust_item", "settings": { "icon": "certificate", "heading": "CE marked", "text": "Applicable product lines" } },
-        "delivery": { "type": "trust_item", "settings": { "icon": "shipping", "heading": "Free U.S. shipping", "text": "Same-day eligible dispatch" } }
-      },
-      "block_order": ["quality", "conformity", "sterility", "delivery"],
-      "settings": { "color_scheme": "scheme-1" }
-    },
     "nova_commerce": { "type": "nova-commerce-showcase", "settings": { "color_scheme": "scheme-1" } },
     "nova_shop": { "type": "nova-shop-products", "settings": { "color_scheme": "scheme-1" } },
     "nova_regulatory": { "type": "nova-regulatory-focus", "settings": { "color_scheme": "scheme-3" } }
   },
-  "order": ["nova_slider", "nova_trust", "nova_commerce", "nova_shop", "nova_regulatory"]
+  "order": ["nova_slider", "nova_commerce", "nova_shop", "nova_regulatory"]
 }

@@ -1807,3 +1807,84 @@ main[data-template='index'] .nova-shop__heading h2,
 main[data-template='index'] .nova-regulatory__header h2 {
   color: #000000 !important;
 }
+
+/* Certification rail attached to the homepage hero. */
+.nova-hero-assurance {
+  position: relative;
+  z-index: 4;
+  border-top: 1px solid #dbe4e5;
+  border-bottom: 1px solid #dbe4e5;
+  background: rgba(255,255,255,.98);
+  box-shadow: 0 1.2rem 3rem rgba(16,35,40,.055);
+}
+.nova-hero-assurance__grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  padding: 0;
+}
+.nova-hero-assurance article {
+  display: grid;
+  min-width: 0;
+  min-height: 10.2rem;
+  grid-template-columns: 4.6rem minmax(0,1fr);
+  gap: 1.35rem;
+  align-items: center;
+  padding: 2rem 2.2rem;
+  border-right: 1px solid #dbe4e5;
+  transition: background-color .22s ease;
+}
+.nova-hero-assurance article:last-child { border-right: 0; }
+.nova-hero-assurance article:hover { background: #f5faf9; }
+.nova-hero-assurance__icon {
+  display: grid;
+  width: 4.6rem;
+  height: 4.6rem;
+  place-items: center;
+  border: 1px solid #c9dddc;
+  border-radius: 50%;
+  background: #eaf6f5;
+  color: var(--nova-retail-teal-dark);
+}
+.nova-hero-assurance__icon svg {
+  width: 2.35rem;
+  height: 2.35rem;
+  stroke: currentColor;
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.nova-hero-assurance article > span:last-child,
+.nova-hero-assurance strong,
+.nova-hero-assurance small { display: block; }
+.nova-hero-assurance strong {
+  color: #000;
+  font-size: 1.42rem;
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.25;
+}
+.nova-hero-assurance small {
+  margin-top: .45rem;
+  color: #65767b;
+  font-size: 1.12rem;
+  line-height: 1.35;
+}
+
+@media screen and (max-width: 989px) {
+  .nova-hero-assurance__grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .nova-hero-assurance article:nth-child(2) { border-right: 0; }
+  .nova-hero-assurance article:nth-child(-n+2) { border-bottom: 1px solid #dbe4e5; }
+}
+
+@media screen and (max-width: 749px) {
+  .nova-hero-assurance article {
+    min-height: 9rem;
+    grid-template-columns: 3.8rem minmax(0,1fr);
+    gap: 1rem;
+    padding: 1.4rem 1.1rem;
+  }
+  .nova-hero-assurance__icon { width: 3.8rem; height: 3.8rem; }
+  .nova-hero-assurance__icon svg { width: 2rem; height: 2rem; }
+  .nova-hero-assurance strong { font-size: 1.18rem; }
+  .nova-hero-assurance small { font-size: 1rem; }
+}
