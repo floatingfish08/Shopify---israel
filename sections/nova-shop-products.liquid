@@ -4,7 +4,7 @@
 {%- assign product_images = 'nova-shop-plastic-2.webp||nova-shop-chrome-cobalt.webp||nova-shop-ball-3.webp||nova-shop-flat-locator.webp||nova-shop-pop-clicq-18.webp||nova-shop-pop-clicq-30.webp||nova-shop-healing-slim-4.webp||nova-shop-surgical-driver.webp' | split: '||' -%}
 {%- assign product_counts = '2 options||2 options||6 heights||8 heights||4 heights||4 heights||3 heights||2 tools' | split: '||' -%}
 
-<section class="nova-shop color-{{ section.settings.color_scheme }} gradient" aria-labelledby="NovaShopHeading-{{ section.id }}">
+<section class="nova-shop color-{{ section.settings.color_scheme }} gradient" style="--nova-section-bg: url('{{ 'nova-bg-products-v1.jpg' | asset_url }}');" aria-labelledby="NovaShopHeading-{{ section.id }}">
   <div class="page-width">
     <header class="nova-shop__heading">
       <div><span class="nova-kicker">Popular components</span><h2 id="NovaShopHeading-{{ section.id }}" class="h1">Shop dental implant components.</h2></div>
@@ -30,7 +30,23 @@
         </article>
       {%- endfor -%}
     </div>
-    <div class="nova-shop__shipping"><span>Free U.S. shipping</span><span>Same-day dispatch on eligible in-stock orders</span><span>Live inventory by configuration</span></div>
+    <div class="nova-shop__assist">
+      <div>
+        <span class="nova-kicker">Find the exact component</span>
+        <h3>Search the full catalog by product name or catalog number.</h3>
+        <p>Browse every available configuration, or ask NOVA to confirm platform compatibility before ordering.</p>
+      </div>
+      <form action="{{ routes.search_url }}" method="get" role="search" class="nova-shop__assist-search">
+        <label class="visually-hidden" for="NovaProductSearch-{{ section.id }}">Search NOVA products</label>
+        <input id="NovaProductSearch-{{ section.id }}" type="search" name="q" placeholder="Product, SKU or catalog number" autocomplete="off">
+        <input type="hidden" name="type" value="product">
+        <button type="submit">Search catalog <span aria-hidden="true">→</span></button>
+      </form>
+      <div class="nova-shop__assist-links">
+        <a href="{{ routes.all_products_collection_url }}">Browse all 50+ products <span aria-hidden="true">→</span></a>
+        <a href="/pages/contact">Ask a product specialist <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
   </div>
 </section>
 

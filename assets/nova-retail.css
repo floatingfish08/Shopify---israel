@@ -2629,3 +2629,184 @@ main[data-template='index'] .nova-hero-assurance small { color: #596a6e; }
 @media (prefers-reduced-motion: reduce) {
   .footer::after { animation: none; }
 }
+
+/* Editorial imagery, product discovery panel and compact Surcam-style footer. */
+main[data-template='index'] .nova-commerce {
+  background-image: linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.92)),var(--nova-section-bg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+main[data-template='index'] .nova-shop {
+  background-image: linear-gradient(rgba(238,247,248,.78),rgba(229,241,241,.88)),var(--nova-section-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.nova-shop__assist {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(38rem,.72fr);
+  gap: 2.5rem 6rem;
+  align-items: center;
+  margin-top: 5rem;
+  padding: clamp(3rem,5vw,5.5rem);
+  border-radius: 2.4rem;
+  background: #062f34;
+  color: #fff;
+  box-shadow: 0 2rem 5rem rgba(6,47,52,.18);
+}
+.nova-shop__assist .nova-kicker { color: #75d8d3; }
+.nova-shop__assist h3 {
+  max-width: 64rem;
+  margin: 1rem 0 1.2rem;
+  color: #fff !important;
+  font-size: clamp(2.7rem,3vw,4rem);
+  line-height: 1.08;
+}
+.nova-shop__assist p {
+  max-width: 65rem;
+  margin: 0;
+  color: rgba(255,255,255,.65);
+  font-size: 1.4rem;
+  line-height: 1.65;
+}
+.nova-shop__assist-search {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .8rem;
+  padding: .7rem;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 999px;
+  background: #fff;
+}
+.nova-shop__assist-search input {
+  min-width: 0;
+  padding: 0 1.4rem;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #000;
+  font: inherit;
+  font-size: 1.3rem;
+}
+.nova-shop__assist-search button {
+  min-height: 4.4rem;
+  padding: 0 1.8rem;
+  border: 0;
+  border-radius: 999px;
+  background: #0b969a;
+  color: #fff;
+  font: inherit;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.nova-shop__assist-search button span { display: inline-block; margin-left: .6rem; transition: transform .2s ease; }
+.nova-shop__assist-search button:hover span { transform: translateX(.3rem); }
+.nova-shop__assist-links {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: 1 / -1;
+  gap: 1rem 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,.17);
+}
+.nova-shop__assist-links a {
+  color: #fff;
+  font-size: 1.22rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.nova-shop__assist-links a span { display: inline-block; margin-left: .55rem; color: #75d8d3; transition: transform .2s ease; }
+.nova-shop__assist-links a:hover span { transform: translateX(.3rem); }
+
+.footer .nova-footer-hero { display: none !important; }
+.nova-footer-services {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(255,255,255,.14);
+  border-bottom: 1px solid rgba(255,255,255,.14);
+  background: #0b807b;
+}
+.nova-footer-services__grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); padding: 0; }
+.nova-footer-services a {
+  display: grid;
+  min-height: 13rem;
+  grid-template-columns: 5rem 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 2.4rem 3rem;
+  border-right: 1px solid rgba(255,255,255,.22);
+  color: #fff;
+  text-decoration: none;
+  transition: background .2s ease;
+}
+.nova-footer-services a:last-child { border-right: 0; }
+.nova-footer-services a:hover { background: rgba(0,0,0,.08); }
+.nova-footer-services__icon {
+  display: grid;
+  width: 5rem;
+  height: 5rem;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.48);
+  border-radius: 50%;
+}
+.nova-footer-services__icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.nova-footer-services strong,
+.nova-footer-services small { display: block; }
+.nova-footer-services strong { color: #fff; font-size: 1.5rem; }
+.nova-footer-services small { margin-top: .35rem; color: rgba(255,255,255,.74); font-size: 1.12rem; }
+.footer__content-top { padding-top: 6rem !important; }
+.footer .footer__blocks-wrapper { grid-template-columns: 1.1fr .9fr .9fr !important; }
+.footer-block--newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-top: 4rem;
+  padding: 2.5rem 0;
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,.15);
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  border-radius: 0;
+  background: transparent;
+}
+.footer-block__newsletter { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 3rem; }
+.footer-block__newsletter .footer-block__heading { max-width: 34rem; margin: 0; font-size: 1.65rem; }
+.footer .newsletter-form { max-width: 44rem; margin: 0; }
+.footer .newsletter-form__field-wrapper { max-width: 44rem; }
+
+@media screen and (max-width: 989px) {
+  main[data-template='index'] .nova-shop { background-attachment: scroll; }
+  .nova-shop__assist { grid-template-columns: 1fr; }
+  .nova-footer-services__grid { grid-template-columns: 1fr; }
+  .nova-footer-services a { min-height: 10rem; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.22); }
+  .nova-footer-services a:last-child { border-bottom: 0; }
+  .footer .footer__blocks-wrapper { grid-template-columns: repeat(2,minmax(0,1fr)) !important; }
+}
+
+@media screen and (max-width: 749px) {
+  .nova-shop__assist {
+    gap: 2.5rem;
+    margin-top: 3.5rem;
+    padding: 2.8rem 2rem;
+    border-radius: 1.8rem;
+  }
+  .nova-shop__assist-search { grid-template-columns: 1fr; border-radius: 1.4rem; }
+  .nova-shop__assist-search input { min-height: 4.4rem; }
+  .nova-shop__assist-search button { width: 100%; }
+  .nova-shop__assist-links { flex-direction: column; }
+  .nova-footer-services a { padding: 2rem 2.2rem; }
+  .footer .footer__blocks-wrapper { grid-template-columns: 1fr !important; }
+  .footer-block--newsletter,
+  .footer-block__newsletter { align-items: stretch; flex-direction: column; }
+  .footer .newsletter-form { width: 100%; max-width: none; }
+}
