@@ -3089,3 +3089,114 @@ main[data-template='index'] .nova-shop__assist-links .nova-shop__assist-primary 
   main[data-template='index'] .nova-shop__assist { padding: 3rem 2rem; }
   main[data-template='index'] .nova-shop__assist-benefits > span { border-right: 0; border-bottom-color: rgba(15,76,80,.18); }
 }
+
+/* Simple hero-to-catalog transition and linked shipping assurance. */
+main[data-template='index'] .nova-marketplace { padding-bottom: 0; }
+.nova-hero-assurance__item {
+  display: grid;
+  min-width: 0;
+  min-height: 11.8rem;
+  grid-template-columns: 5.4rem minmax(0,1fr);
+  gap: 1.5rem;
+  align-items: center;
+  padding: 2.4rem 2.2rem;
+  border-top: 1px solid rgba(0,0,0,.13);
+  border-right: 1px solid rgba(0,0,0,.13);
+  color: #000;
+  text-decoration: none;
+  transition: background-color .22s ease;
+}
+.nova-hero-assurance__item:last-child { border-right: 0; }
+.nova-hero-assurance__item:hover { background: rgba(5,126,132,.045); }
+.nova-hero-assurance__item--link small i {
+  display: inline-block;
+  margin-left: .4rem;
+  color: #087f84;
+  font-style: normal;
+  transition: transform .2s ease;
+}
+.nova-hero-assurance__item--link:hover small i { transform: translateX(.3rem); }
+
+/* GDT-inspired clarity without unverified carrier claims. */
+.nova-delivery__service {
+  margin-bottom: 7rem;
+  padding-bottom: 6rem;
+  border-bottom: 1px solid var(--nova-retail-line);
+}
+.nova-delivery__service > header {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(34rem,.65fr);
+  gap: 3rem 7rem;
+  align-items: end;
+  margin-bottom: 3rem;
+}
+.nova-delivery__service h2 {
+  max-width: 72rem;
+  margin: .9rem 0 0;
+  font-size: clamp(3.3rem,4vw,5rem);
+  letter-spacing: -.045em;
+  line-height: 1.03;
+}
+.nova-delivery__service header p {
+  margin: 0;
+  color: var(--nova-retail-muted);
+  font-size: 1.4rem;
+  line-height: 1.65;
+}
+.nova-delivery__table {
+  overflow: hidden;
+  border: 1px solid #d3e0e0;
+  border-radius: 1.5rem;
+  background: #fff;
+}
+.nova-delivery__table-row {
+  display: grid;
+  grid-template-columns: 1.25fr .8fr 1fr;
+  border-top: 1px solid #dbe5e5;
+}
+.nova-delivery__table-row:first-child { border-top: 0; }
+.nova-delivery__table-row > span {
+  min-width: 0;
+  padding: 2rem 2.2rem;
+  border-right: 1px solid #dbe5e5;
+}
+.nova-delivery__table-row > span:last-child { border-right: 0; }
+.nova-delivery__table-row--head { background: #073b40; color: #fff; }
+.nova-delivery__table-row--head > span {
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  border-right-color: rgba(255,255,255,.17);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.nova-delivery__table strong,
+.nova-delivery__table small { display: block; }
+.nova-delivery__table strong { color: #000; font-size: 1.35rem; }
+.nova-delivery__table small { margin-top: .5rem; color: #697b7e; font-size: 1.12rem; line-height: 1.45; }
+
+@media screen and (max-width: 989px) {
+  .nova-hero-assurance__item:nth-child(2) { border-right: 0; }
+  .nova-hero-assurance__item:nth-child(-n+2) { border-bottom: 1px solid rgba(0,0,0,.13); }
+  .nova-delivery__service > header { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+@media screen and (max-width: 749px) {
+  .nova-hero-assurance__item {
+    min-height: 10rem;
+    grid-template-columns: 3.8rem minmax(0,1fr);
+    gap: .9rem;
+    padding: 1.5rem 1rem;
+  }
+  .nova-delivery__service { margin-bottom: 5rem; padding-bottom: 4.5rem; }
+  .nova-delivery__table { border-radius: 1.2rem; }
+  .nova-delivery__table-row { grid-template-columns: 1fr; }
+  .nova-delivery__table-row--head { display: none; }
+  .nova-delivery__table-row > span {
+    padding: 1.6rem 1.8rem;
+    border-right: 0;
+    border-bottom: 1px solid #dbe5e5;
+  }
+  .nova-delivery__table-row > span:last-child { border-bottom: 0; }
+}

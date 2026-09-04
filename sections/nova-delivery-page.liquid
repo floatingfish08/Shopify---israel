@@ -16,6 +16,25 @@
   </div>
 
   <div class="page-width nova-delivery__content">
+    <section class="nova-delivery__service" aria-labelledby="NovaDeliveryService-{{ section.id }}">
+      <header>
+        <span class="nova-kicker">Simple shipping information</span>
+        <h2 id="NovaDeliveryService-{{ section.id }}">Know what to expect before checkout.</h2>
+        <p>Available services and final delivery estimates are confirmed during checkout. Processing depends on inventory and order details.</p>
+      </header>
+      <div class="nova-delivery__table" role="table" aria-label="NOVA shipping service summary">
+        <div class="nova-delivery__table-row nova-delivery__table-row--head" role="row">
+          <span role="columnheader">Service</span><span role="columnheader">Shipping cost</span><span role="columnheader">Processing</span>
+        </div>
+        <div class="nova-delivery__table-row" role="row">
+          <span role="cell"><strong>Standard U.S. shipping</strong><small>Eligible domestic orders</small></span><span role="cell"><strong>Free</strong><small>No shipping charge</small></span><span role="cell"><strong>Same-day eligible</strong><small>For qualifying in-stock orders</small></span>
+        </div>
+        <div class="nova-delivery__table-row" role="row">
+          <span role="cell"><strong>Carrier delivery</strong><small>Tracking provided after dispatch</small></span><span role="cell"><strong>Confirmed at checkout</strong><small>Based on the available service</small></span><span role="cell"><strong>Timing shown at checkout</strong><small>Varies by destination and carrier</small></span>
+        </div>
+      </div>
+    </section>
+
     <header class="nova-delivery__section-heading">
       <div><span class="nova-kicker">From cart to clinic</span><h2>What happens after you order</h2></div>
       <p>Accurate account and delivery details help the NOVA team process your order without unnecessary delays.</p>
