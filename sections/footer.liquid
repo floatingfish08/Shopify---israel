@@ -44,7 +44,10 @@
   -%}
   <div class="nova-footer-hero page-width">
     <div class="nova-footer-hero__intro">
-      <span>NOVA Implants USA</span>
+      <a class="nova-footer-hero__logo" href="{{ routes.root_url }}" aria-label="NOVA Implants USA home">
+        <img src="{{ 'nova-logo.svg' | asset_url }}" alt="NOVA Implants USA" width="180" height="80" loading="lazy">
+      </a>
+      <span>Professional dental systems</span>
       <h2>Order every component with confidence.</h2>
       <p>Explore a connected professional catalog for implant, restorative, digital and surgical workflows—with clear references and support when you need it.</p>
       <div class="nova-footer-hero__actions">
@@ -53,9 +56,9 @@
       </div>
     </div>
     <div class="nova-footer-hero__proof" aria-label="Ordering benefits">
-      <article><span aria-hidden="true">✓</span><div><strong>Free U.S. shipping</strong><small>On every eligible order</small></div></article>
-      <article><span aria-hidden="true">✓</span><div><strong>Same-day dispatch</strong><small>For eligible in-stock orders</small></div></article>
-      <article><span aria-hidden="true">✓</span><div><strong>Professional support</strong><small>Compatibility help before ordering</small></div></article>
+      <article><span aria-hidden="true">01</span><div><strong>Free U.S. shipping</strong><small>On every eligible order</small></div></article>
+      <article><span aria-hidden="true">02</span><div><strong>Same-day dispatch</strong><small>For eligible in-stock orders</small></div></article>
+      <article><span aria-hidden="true">03</span><div><strong>Professional support</strong><small>Compatibility help before ordering</small></div></article>
     </div>
   </div>
   {%- if section.blocks.size > 0
