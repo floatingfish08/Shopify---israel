@@ -1,5 +1,4 @@
-/* NOVA Fashion 2026 — modern medical retail. Loads last. Keeps teal identity. */
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@500;600;700;800&display=swap");
+/* NOVA Fashion 2026 - modern medical retail. Loads last. Keeps teal identity. */
 
 :root {
   --nova-ink: #0e2a2f;
@@ -15,7 +14,7 @@
   --nova-ease: cubic-bezier(.22, 1, .36, 1);
 }
 
-/* —— Typography & shell —— */
+/* -- Typography & shell -- */
 body {
   background:
     radial-gradient(120% 80% at 100% -10%, rgba(0, 161, 146, .07), transparent 55%),
@@ -46,7 +45,7 @@ h1, h2, h3, h4, h5, h6,
   text-transform: uppercase;
 }
 
-/* —— Buttons —— */
+/* -- Buttons -- */
 .button,
 button.shopify-payment-button__button {
   border-radius: .55rem !important;
@@ -73,7 +72,7 @@ button.shopify-payment-button__button {
   color: #fff !important;
 }
 
-/* —— Announcement + header —— */
+/* -- Announcement + header -- */
 .utility-bar,
 .utility-bar.gradient,
 .announcement-bar {
@@ -158,7 +157,7 @@ button.shopify-payment-button__button {
   color: var(--nova-teal) !important;
 }
 
-/* —— Full-bleed fashion hero —— */
+/* -- Full-bleed fashion hero -- */
 .section--flush,
 .section:has(.nova-hero) {
   margin: 0 !important;
@@ -277,7 +276,7 @@ button.shopify-payment-button__button {
   }
 }
 
-/* —— Trust rail —— */
+/* -- Trust rail -- */
 .nova-trust {
   padding: 0 !important;
   background: #fff !important;
@@ -342,7 +341,7 @@ button.shopify-payment-button__button {
   }
 }
 
-/* —— Commerce —— */
+/* -- Commerce -- */
 .nova-commerce {
   padding: 7rem 0 6rem !important;
   background: transparent !important;
@@ -433,7 +432,7 @@ button.shopify-payment-button__button {
   .nova-category-card { min-height: 22rem; }
 }
 
-/* —— Shop —— */
+/* -- Shop -- */
 .nova-shop {
   padding: 6.5rem 0 7rem !important;
   background: var(--nova-fog) !important;
@@ -540,7 +539,7 @@ button.shopify-payment-button__button {
   .nova-shop__grid { grid-template-columns: 1fr; }
 }
 
-/* —— Regulatory —— */
+/* -- Regulatory -- */
 .nova-regulatory {
   padding: 7rem 0 !important;
   background: var(--nova-ink) !important;
@@ -618,7 +617,7 @@ button.shopify-payment-button__button {
   .nova-regulatory__grid { grid-template-columns: 1fr; }
 }
 
-/* —— Footer polish —— */
+/* -- Footer polish -- */
 .footer {
   background: #fff !important;
   color: var(--nova-ink) !important;
@@ -629,7 +628,7 @@ button.shopify-payment-button__button {
   font-family: var(--nova-ft-display) !important;
 }
 
-/* —— Motion hooks —— */
+/* -- Motion hooks -- */
 .nova-reveal {
   opacity: 0;
   transform: translateY(1.4rem);
