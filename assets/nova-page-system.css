@@ -663,7 +663,7 @@ main[data-template='search'] .active-facets { width: 100%; margin-top: .7rem; }
 /* Surcam-style filter drawer: one calm trigger, controls revealed only when needed. */
 main[data-template='collection'] .facets__form,
 main[data-template='search'] .facets__form { align-items: flex-start; flex-wrap: wrap; gap: .8rem 1.2rem; }
-.nova-facets-shell { position: relative; flex: 1 1 30rem; }
+.nova-facets-shell { position: relative; flex: 1 1 30rem; align-self: flex-start; }
 .nova-facets-shell > summary { list-style: none; }
 .nova-facets-shell > summary::-webkit-details-marker { display: none; }
 .nova-facets-shell__trigger {
@@ -689,17 +689,23 @@ main[data-template='search'] .facets__form { align-items: flex-start; flex-wrap:
 .nova-facets-shell__count { display: grid; min-width: 2rem; height: 2rem; place-items: center; border-radius: .3rem; background: #087f84; color: #fff; font-size: .92rem; font-weight: 750; }
 main[data-template='collection'] .nova-facets-shell__panel,
 main[data-template='search'] .nova-facets-shell__panel {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + .8rem);
+  left: 0;
   display: flex;
-  width: 100%;
+  width: min(52rem,calc(100vw - 4rem));
   align-items: center;
   gap: .8rem;
-  margin-top: 1rem;
+  margin: 0;
   padding: 1.2rem;
   border: 1px solid #d7e0e1;
   border-radius: .45rem;
   background: #fff;
   box-shadow: 0 1rem 2.6rem rgba(18,52,56,.07);
 }
+main[data-template='collection'] .facets-container,
+main[data-template='search'] .facets-container { position: relative; z-index: 12; overflow: visible; }
 .nova-facets-shell__label { margin: 0 .5rem 0 .2rem; color: #687b7e; font-size: 1.05rem; font-weight: 650; white-space: nowrap; }
 main[data-template='collection'] .nova-facets-shell .facets__summary,
 main[data-template='search'] .nova-facets-shell .facets__summary {
@@ -724,5 +730,5 @@ main[data-template='collection'] .product-count,
 main[data-template='search'] .product-count { margin-top: .2rem; }
 main[data-template='collection'] .active-facets,
 main[data-template='search'] .active-facets { order: 5; }
-@media(max-width:989px) and (min-width:750px){.nova-facets-shell{flex-basis:20rem}.nova-facets-shell__label{display:none}main[data-template='collection'] .nova-facets-shell__panel,main[data-template='search'] .nova-facets-shell__panel{flex-wrap:wrap}}
+@media(max-width:989px) and (min-width:750px){.nova-facets-shell{flex-basis:20rem}.nova-facets-shell__label{display:none}main[data-template='collection'] .nova-facets-shell__panel,main[data-template='search'] .nova-facets-shell__panel{flex-wrap:wrap;width:min(42rem,calc(100vw - 4rem))}}
 @media(max-width:749px){.mobile-facets__open{border-radius:.35rem}.mobile-facets__sort .select__select{border-radius:.35rem}}
