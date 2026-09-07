@@ -564,3 +564,98 @@ main[data-template='product'] .nova-product-assurance { border-radius: .45rem !i
 .nova-product-service > a span { margin-top: .6rem; color: #9ddadc; font-size: 1.05rem; font-weight: 700; }
 @media(max-width:989px){.nova-product-service{grid-template-columns:repeat(2,minmax(0,1fr))}.nova-product-service>:nth-child(2){border-right:1px solid #d9e3e4}.nova-product-service>:first-child{border-radius:.7rem 0 0 0}.nova-product-service>:nth-child(2){border-radius:0 .7rem 0 0}.nova-product-service>:nth-child(3){border-radius:0 0 0 .7rem}.nova-product-service>:last-child{border-radius:0 0 .7rem 0}}
 @media(max-width:749px){.nova-product-breadcrumb{padding-top:1.5rem}.nova-product-service{grid-template-columns:1fr}.nova-product-service>div,.nova-product-service>a{min-height:8.5rem;border-right:1px solid #d9e3e4;border-bottom:0;border-radius:0!important}.nova-product-service>:first-child{border-radius:.7rem .7rem 0 0!important}.nova-product-service>:last-child{border-bottom:1px solid #d9e3e4;border-radius:0 0 .7rem .7rem!important}}
+
+/* Compact collection toolbar — filters read as controls, not another content card. */
+main[data-template='collection'] .facets-container,
+main[data-template='search'] .facets-container {
+  min-height: 0;
+  margin-bottom: 3.2rem;
+  padding: 1rem 0;
+  border: 0;
+  border-top: 1px solid #dce5e6;
+  border-bottom: 1px solid #dce5e6;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+main[data-template='collection'] .facets__form,
+main[data-template='search'] .facets__form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 1rem;
+}
+main[data-template='collection'] .facets__wrapper,
+main[data-template='search'] .facets__wrapper { display: flex; flex: 1 1 auto; align-items: center; gap: .7rem; }
+main[data-template='collection'] .facets__heading,
+main[data-template='search'] .facets__heading {
+  min-height: 3.8rem;
+  margin-right: .7rem;
+  color: #172f33;
+  font-size: 1.15rem;
+  font-weight: 750;
+}
+main[data-template='collection'] .facets__heading > .svg-wrapper,
+main[data-template='search'] .facets__heading > .svg-wrapper { width: 1.7rem; height: 1.7rem; color: #087f84; }
+main[data-template='collection'] .facets__summary,
+main[data-template='search'] .facets__summary {
+  min-width: 0;
+  min-height: 3.9rem;
+  padding: 0 3.5rem 0 1.35rem;
+  border: 1px solid #ccd9da;
+  border-radius: 999px;
+  background: #fff;
+  color: #213b40;
+  font-size: 1.15rem;
+  font-weight: 650;
+  box-shadow: 0 .2rem .5rem rgba(21,61,65,.025);
+}
+main[data-template='collection'] .facets__summary:hover,
+main[data-template='search'] .facets__summary:hover,
+main[data-template='collection'] .facets__disclosure[open] .facets__summary,
+main[data-template='search'] .facets__disclosure[open] .facets__summary {
+  border-color: #087f84;
+  background: #eef8f7;
+  color: #00666c;
+}
+main[data-template='collection'] .facets__summary .svg-wrapper,
+main[data-template='search'] .facets__summary .svg-wrapper { right: 1.2rem; width: 1rem; }
+.nova-facet-count { display: inline-grid; min-width: 1.8rem; height: 1.8rem; place-items: center; margin-left: .5rem; border-radius: 50%; background: #087f84; color: #fff; font-size: .9rem; }
+main[data-template='collection'] .facet-filters,
+main[data-template='search'] .facet-filters { margin-left: auto; padding: 0; }
+main[data-template='collection'] .facet-filters__field,
+main[data-template='search'] .facet-filters__field { gap: .8rem; padding: 0; border: 0; background: transparent; }
+main[data-template='collection'] .facet-filters__label,
+main[data-template='search'] .facet-filters__label { color: #708185; font-size: 1rem; font-weight: 600; }
+main[data-template='collection'] .facet-filters__field .select,
+main[data-template='search'] .facet-filters__field .select { min-width: 17rem; }
+main[data-template='collection'] .facet-filters__sort,
+main[data-template='search'] .facet-filters__sort {
+  min-height: 3.9rem;
+  padding: 0 3.3rem 0 1.2rem;
+  border: 1px solid #ccd9da;
+  border-radius: 999px;
+  background: #fff;
+  color: #203a3e;
+  font-size: 1.1rem;
+  font-weight: 650;
+}
+main[data-template='collection'] .product-count,
+main[data-template='search'] .product-count { min-width: auto; margin-left: .5rem; }
+main[data-template='collection'] .product-count__text,
+main[data-template='search'] .product-count__text {
+  min-height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #687a7e;
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+main[data-template='collection'] .facets__display,
+main[data-template='search'] .facets__display { margin-top: .8rem; overflow: hidden; border: 1px solid #d6e1e2; border-radius: .8rem; box-shadow: 0 1.4rem 4rem rgba(14,49,53,.12); }
+main[data-template='collection'] .active-facets,
+main[data-template='search'] .active-facets { width: 100%; margin-top: .7rem; }
+@media(max-width:989px) and (min-width:750px){main[data-template='collection'] .facet-filters__label,main[data-template='search'] .facet-filters__label{display:none}main[data-template='collection'] .facets__heading,main[data-template='search'] .facets__heading{font-size:0;margin-right:0}main[data-template='collection'] .facets__heading>.svg-wrapper,main[data-template='search'] .facets__heading>.svg-wrapper{margin-right:0}}
+@media(max-width:749px){main[data-template='collection'] .facets-container,main[data-template='search'] .facets-container{margin-bottom:2rem;padding:.8rem 0;border-radius:0}.mobile-facets__open{min-height:4.4rem;border:1px solid #cbd9da;border-radius:999px;background:#fff;padding:0 1.5rem}.mobile-facets__open-label{font-weight:700}.mobile-facets__sort .select__select{border-radius:999px}}
