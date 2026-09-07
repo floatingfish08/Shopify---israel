@@ -81,7 +81,7 @@
                       id="verticalTitle"
                       tabindex="-1"
                     >
-                      {{ 'products.facets.filter_by_label' | t }}
+                      Filter By
                     </h2>
                   {%- endunless -%}
                   <facet-remove class="active-facets__button-wrapper">
@@ -148,9 +148,6 @@
                     id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
                     class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
                     data-index="{{ forloop.index }}"
-                    {% if filter_type == 'vertical' %}
-                      open
-                    {% endif %}
                   >
                     <summary
                       class="facets__summary caption-large focus-offset"
@@ -319,9 +316,6 @@
                     id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
                     class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
                     data-index="{{ forloop.index }}"
-                    {% if filter_type == 'vertical' %}
-                      open
-                    {% endif %}
                   >
                     <summary class="facets__summary caption-large focus-offset">
                       <div>

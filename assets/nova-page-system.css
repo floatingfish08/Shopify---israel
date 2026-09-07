@@ -881,3 +881,64 @@ main[data-template='search'] .active-facets { order: 5; }
   }
 }
 @media(max-width:749px){.nova-collection-results{display:none}}
+
+/* Reference-matched filter card. Shopify supplies whichever filter groups are enabled. */
+@media(min-width:750px){
+  main[data-template='collection'] .facets-vertical { grid-template-columns: 30rem minmax(0,1fr); gap: 4rem; }
+  main[data-template='collection'] .facets-vertical .facets-container {
+    padding: 2.7rem 3rem 3rem;
+    border: 1px solid #d6dadd;
+    border-radius: 2rem;
+    background: #f7f8f8;
+  }
+  main[data-template='collection'] .active-facets-vertical-filter {
+    min-height: 3.5rem;
+    padding: 0 0 1.1rem;
+    border: 0;
+  }
+  main[data-template='collection'] .facets__heading--vertical {
+    color: #050505;
+    font-size: 1.55rem;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+  main[data-template='collection'] .facets__disclosure-vertical {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid #d0d4d6;
+  }
+  main[data-template='collection'] .facets-vertical .facets__summary {
+    position: relative;
+    min-height: 5rem;
+    padding: 0 3rem 0 0;
+    color: #050505;
+    font-size: 1.45rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  main[data-template='collection'] .facets-vertical .facets__summary > div { width: 100%; }
+  main[data-template='collection'] .facets-vertical .facets__summary .icon-caret { display: none; }
+  main[data-template='collection'] .facets-vertical .facets__summary::after {
+    position: absolute;
+    top: 50%;
+    right: .1rem;
+    color: #343434;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+    content: '+';
+    transform: translateY(-52%);
+  }
+  main[data-template='collection'] .facets-vertical .facets__disclosure-vertical[open] .facets__summary::after { content: '−'; }
+  main[data-template='collection'] .facets-vertical .facets__summary:hover { color: #087f84; }
+  main[data-template='collection'] .facets__display-vertical { padding: 0 0 1.5rem; }
+  main[data-template='collection'] .facets__header-vertical { padding: .3rem 0 1rem; }
+  main[data-template='collection'] .facets-vertical .facet-checkbox { padding: .65rem 0; color: #283b3e; font-size: 1.08rem; }
+  main[data-template='collection'] .facets-vertical .facets__price { padding: .4rem 0 1.5rem; }
+  main[data-template='collection'] .facets-vertical .facets__price .field__input { border-radius: .4rem; background: #fff; }
+  main[data-template='collection'] .facets-vertical .active-facets { padding: 1rem 0 0; }
+}
+@media(min-width:750px) and (max-width:1050px){main[data-template='collection'] .facets-vertical{grid-template-columns:25rem minmax(0,1fr);gap:2.5rem}main[data-template='collection'] .facets-vertical .facets-container{padding:2.2rem}}
