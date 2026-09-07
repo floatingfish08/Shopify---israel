@@ -128,6 +128,13 @@
             data-cascade
           {% endif %}
         >
+          {%- if section.settings.filter_type == 'vertical' -%}
+            <div class="nova-collection-results">
+              <span id="ProductCountDesktop">
+                {{ 'products.facets.product_count_simple' | t: count: collection.products_count }}
+              </span>
+            </div>
+          {%- endif -%}
           {%- if collection.products.size == 0 -%}
             <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
               <div class="loading-overlay gradient"></div>
