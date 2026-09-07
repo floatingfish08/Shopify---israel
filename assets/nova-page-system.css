@@ -942,3 +942,21 @@ main[data-template='search'] .active-facets { order: 5; }
   main[data-template='collection'] .facets-vertical .active-facets { padding: 1rem 0 0; }
 }
 @media(min-width:750px) and (max-width:1050px){main[data-template='collection'] .facets-vertical{grid-template-columns:25rem minmax(0,1fr);gap:2.5rem}main[data-template='collection'] .facets-vertical .facets-container{padding:2.2rem}}
+
+/* Keep the filter card clear of the returning sticky header. */
+@media(min-width:750px){
+  main[data-template='collection'] .facets-vertical > .facets-wrapper {
+    top: calc(var(--header-height, 12rem) + 1.6rem);
+    margin-top: 1.8rem;
+  }
+  main[data-template='collection'] .facets-vertical .facets-container {
+    max-height: calc(100vh - var(--header-height, 12rem) - 3.5rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-color: #aebfc1 transparent;
+    scrollbar-width: thin;
+  }
+  main[data-template='collection'] .facets-vertical .facets-container::-webkit-scrollbar { width: .5rem; }
+  main[data-template='collection'] .facets-vertical .facets-container::-webkit-scrollbar-thumb { border-radius: 1rem; background: #aebfc1; }
+}
