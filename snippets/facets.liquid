@@ -26,6 +26,15 @@
     assign terms = results.terms | escape
     assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
   endif
+  assign nova_active_filter_count = 0
+  for nova_filter in results.filters
+    assign nova_active_filter_count = nova_active_filter_count | plus: nova_filter.active_values.size
+    if nova_filter.type == 'price_range'
+      if nova_filter.min_value.value != null or nova_filter.max_value.value != null
+        assign nova_active_filter_count = nova_active_filter_count | plus: 1
+      endif
+    endif
+  endfor
 -%}
 
 <div
@@ -47,17 +56,20 @@
 
         {% if enable_filtering %}
           {% comment %} Heading is the first tabbable element on filter type horizontal {% endcomment %}
-          <div
-            id="FacetsWrapperDesktop"
-            {% if filter_type == 'horizontal' %}
-              class="facets__wrapper"
-            {% endif %}
-          >
-            {%- if filter_type == 'horizontal' and results.filters != empty -%}
-              <h2 class="facets__heading caption-large text-body" id="verticalTitle" tabindex="-1">
+          {%- if filter_type == 'horizontal' -%}
+            <details id="FacetsWrapperDesktop" class="nova-facets-shell">
+              <summary class="nova-facets-shell__trigger">
                 <span class="svg-wrapper" aria-hidden="true">{{- 'icon-filter.svg' | inline_asset_content -}}</span>
-                <span>Filters</span>
-              </h2>
+                <strong>Filters &amp; search</strong>
+                {%- if nova_active_filter_count > 0 -%}<span class="nova-facets-shell__count">{{ nova_active_filter_count }}</span>{%- endif -%}
+                <span class="svg-wrapper nova-facets-shell__caret" aria-hidden="true">{{- 'icon-caret.svg' | inline_asset_content -}}</span>
+              </summary>
+              <div class="facets__wrapper nova-facets-shell__panel">
+          {%- else -%}
+            <div id="FacetsWrapperDesktop">
+          {%- endif -%}
+            {%- if filter_type == 'horizontal' and results.filters != empty -%}
+              <span class="nova-facets-shell__label">Filter by</span>
             {%- endif -%}
             {% comment %} Pills are right below the title for filter type vertical {% endcomment %}
             {%- if filter_type == 'vertical' -%}
@@ -146,9 +158,6 @@
                       <div>
                         <span class="facets__summary-label">
                           {{- filter.label | escape }}
-                          {%- if filter_type == 'horizontal' and filter.active_values.size > 0 -%}
-                            <span class="nova-facet-count">{{ filter.active_values.size }}</span>
-                          {%- endif -%}
                           {%- if filter_type == 'vertical' -%}
                             <span class="facets__selected{% if filter.active_values.size == 0 %} hidden{% endif %}">
                               ({{ filter.active_values.size }})</span
@@ -343,7 +352,12 @@
                   </details>
               {% endcase %}
             {%- endfor -%}
-          </div>
+          {%- if filter_type == 'horizontal' -%}
+              </div>
+            </details>
+          {%- else -%}
+            </div>
+          {%- endif -%}
           {% comment %} Pills after filtes on filter type horizontal {% endcomment %}
           {%- if filter_type == 'horizontal' -%}
             <div class="active-facets active-facets-desktop">

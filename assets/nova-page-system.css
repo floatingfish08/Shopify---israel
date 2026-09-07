@@ -659,3 +659,70 @@ main[data-template='collection'] .active-facets,
 main[data-template='search'] .active-facets { width: 100%; margin-top: .7rem; }
 @media(max-width:989px) and (min-width:750px){main[data-template='collection'] .facet-filters__label,main[data-template='search'] .facet-filters__label{display:none}main[data-template='collection'] .facets__heading,main[data-template='search'] .facets__heading{font-size:0;margin-right:0}main[data-template='collection'] .facets__heading>.svg-wrapper,main[data-template='search'] .facets__heading>.svg-wrapper{margin-right:0}}
 @media(max-width:749px){main[data-template='collection'] .facets-container,main[data-template='search'] .facets-container{margin-bottom:2rem;padding:.8rem 0;border-radius:0}.mobile-facets__open{min-height:4.4rem;border:1px solid #cbd9da;border-radius:999px;background:#fff;padding:0 1.5rem}.mobile-facets__open-label{font-weight:700}.mobile-facets__sort .select__select{border-radius:999px}}
+
+/* Surcam-style filter drawer: one calm trigger, controls revealed only when needed. */
+main[data-template='collection'] .facets__form,
+main[data-template='search'] .facets__form { align-items: flex-start; flex-wrap: wrap; gap: .8rem 1.2rem; }
+.nova-facets-shell { position: relative; flex: 1 1 30rem; }
+.nova-facets-shell > summary { list-style: none; }
+.nova-facets-shell > summary::-webkit-details-marker { display: none; }
+.nova-facets-shell__trigger {
+  display: inline-flex;
+  width: max-content;
+  min-height: 4.4rem;
+  align-items: center;
+  gap: .9rem;
+  padding: 0 1.4rem;
+  border: 1px solid #cbd7d8;
+  border-radius: .35rem;
+  background: #fff;
+  color: #10272b;
+  font-size: 1.18rem;
+  cursor: pointer;
+  transition: border-color .18s ease, background .18s ease;
+}
+.nova-facets-shell__trigger:hover,
+.nova-facets-shell[open] .nova-facets-shell__trigger { border-color: #087f84; background: #f4f9f9; }
+.nova-facets-shell__trigger > .svg-wrapper:first-child { width: 1.65rem; color: #087f84; }
+.nova-facets-shell__caret { width: 1rem; margin-left: .4rem; transition: transform .18s ease; }
+.nova-facets-shell[open] .nova-facets-shell__caret { transform: rotate(180deg); }
+.nova-facets-shell__count { display: grid; min-width: 2rem; height: 2rem; place-items: center; border-radius: .3rem; background: #087f84; color: #fff; font-size: .92rem; font-weight: 750; }
+main[data-template='collection'] .nova-facets-shell__panel,
+main[data-template='search'] .nova-facets-shell__panel {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: .8rem;
+  margin-top: 1rem;
+  padding: 1.2rem;
+  border: 1px solid #d7e0e1;
+  border-radius: .45rem;
+  background: #fff;
+  box-shadow: 0 1rem 2.6rem rgba(18,52,56,.07);
+}
+.nova-facets-shell__label { margin: 0 .5rem 0 .2rem; color: #687b7e; font-size: 1.05rem; font-weight: 650; white-space: nowrap; }
+main[data-template='collection'] .nova-facets-shell .facets__summary,
+main[data-template='search'] .nova-facets-shell .facets__summary {
+  min-width: 13rem;
+  min-height: 4rem;
+  border-color: #d3ddde;
+  border-radius: .3rem;
+  background: #f7f9f9;
+  box-shadow: none;
+}
+main[data-template='collection'] .nova-facets-shell .facets__summary:hover,
+main[data-template='search'] .nova-facets-shell .facets__summary:hover,
+main[data-template='collection'] .nova-facets-shell .facets__disclosure[open] .facets__summary,
+main[data-template='search'] .nova-facets-shell .facets__disclosure[open] .facets__summary { border-color: #879fa2; background: #fff; color: #10272b; }
+main[data-template='collection'] .facet-filters__sort,
+main[data-template='search'] .facet-filters__sort { min-height: 4.4rem; border-radius: .35rem; background: #fff; }
+main[data-template='collection'] .product-count__text,
+main[data-template='search'] .product-count__text { white-space: nowrap; }
+main[data-template='collection'] .facet-filters,
+main[data-template='search'] .facet-filters,
+main[data-template='collection'] .product-count,
+main[data-template='search'] .product-count { margin-top: .2rem; }
+main[data-template='collection'] .active-facets,
+main[data-template='search'] .active-facets { order: 5; }
+@media(max-width:989px) and (min-width:750px){.nova-facets-shell{flex-basis:20rem}.nova-facets-shell__label{display:none}main[data-template='collection'] .nova-facets-shell__panel,main[data-template='search'] .nova-facets-shell__panel{flex-wrap:wrap}}
+@media(max-width:749px){.mobile-facets__open{border-radius:.35rem}.mobile-facets__sort .select__select{border-radius:.35rem}}
