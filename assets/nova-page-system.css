@@ -732,3 +732,92 @@ main[data-template='collection'] .active-facets,
 main[data-template='search'] .active-facets { order: 5; }
 @media(max-width:989px) and (min-width:750px){.nova-facets-shell{flex-basis:20rem}.nova-facets-shell__label{display:none}main[data-template='collection'] .nova-facets-shell__panel,main[data-template='search'] .nova-facets-shell__panel{flex-wrap:wrap;width:min(42rem,calc(100vw - 4rem))}}
 @media(max-width:749px){.mobile-facets__open{border-radius:.35rem}.mobile-facets__sort .select__select{border-radius:.35rem}}
+
+/* Collection sidebar — a separate, calmer alternative to the toolbar treatment. */
+@media(min-width:750px){
+  main[data-template='collection'] .facets-vertical-sort {
+    margin-bottom: 2.4rem;
+    padding: 0;
+    border-top: 1px solid #dce5e6;
+    border-bottom: 1px solid #dce5e6;
+  }
+  main[data-template='collection'] .facets-vertical-form {
+    min-height: 6.4rem;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.5rem;
+  }
+  main[data-template='collection'] .facets-vertical-form .facet-filters__field { display: flex; align-items: center; gap: 1rem; }
+  main[data-template='collection'] .facets-vertical-form .facet-filters__sort {
+    width: 20rem;
+    min-height: 4.2rem;
+    border: 1px solid #ccd8d9;
+    border-radius: .35rem;
+    background: #fff;
+  }
+  main[data-template='collection'] .facets-vertical-form .product-count-vertical { min-width: 9rem; margin: 0; }
+  main[data-template='collection'] .facets-vertical {
+    display: grid;
+    grid-template-columns: 24rem minmax(0,1fr);
+    gap: 3rem;
+    align-items: start;
+  }
+  main[data-template='collection'] .facets-vertical > .facets-wrapper {
+    position: sticky;
+    top: 2rem;
+    padding: 0;
+  }
+  main[data-template='collection'] .facets-vertical .facets-container {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #d9e3e4;
+    border-radius: .6rem;
+    background: #fff;
+  }
+  main[data-template='collection'] .facets__form-vertical { width: 100%; }
+  main[data-template='collection'] .active-facets-vertical-filter {
+    min-height: 6rem;
+    align-items: center;
+    padding: 0 1.6rem;
+    border-bottom: 1px solid #dfe7e8;
+  }
+  main[data-template='collection'] .facets__heading--vertical {
+    margin: 0;
+    color: #07171a;
+    font-size: 1.45rem;
+    font-weight: 750;
+  }
+  main[data-template='collection'] .facets__disclosure-vertical {
+    margin: 0 1.6rem;
+    border-top: 0;
+    border-bottom: 1px solid #e2e9e9;
+  }
+  main[data-template='collection'] .facets__disclosure-vertical:last-of-type { border-bottom: 0; }
+  main[data-template='collection'] .facets-vertical .facets__summary {
+    min-height: 5.4rem;
+    margin: 0;
+    padding: 0 2rem 0 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #193236;
+    font-size: 1.18rem;
+    font-weight: 700;
+    box-shadow: none;
+  }
+  main[data-template='collection'] .facets-vertical .facets__summary:hover { color: #087f84; background: transparent; }
+  main[data-template='collection'] .facets__display-vertical { padding-bottom: 1.4rem; }
+  main[data-template='collection'] .facets-vertical .facets__item { margin: .15rem 0; }
+  main[data-template='collection'] .facets-vertical .facet-checkbox {
+    min-height: 3.7rem;
+    align-items: center;
+    padding: .6rem .2rem;
+    color: #536a6e;
+    font-size: 1.08rem;
+  }
+  main[data-template='collection'] .facets-vertical .facet-checkbox:hover { color: #07171a; }
+  main[data-template='collection'] .facets-vertical .active-facets { padding: 0 1.6rem 1rem; }
+  main[data-template='collection'] .facets-vertical .product-grid-container { min-width: 0; }
+  main[data-template='collection'] .facets-vertical #product-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+@media(min-width:750px) and (max-width:1050px){main[data-template='collection'] .facets-vertical{grid-template-columns:21rem minmax(0,1fr);gap:2rem}main[data-template='collection'] .facets-vertical #product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
