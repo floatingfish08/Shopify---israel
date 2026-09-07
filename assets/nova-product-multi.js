@@ -1,0 +1,11 @@
+(() => {
+  const init = (root) => {
+    if (!root || root.dataset.multiReady) return; root.dataset.multiReady = 'true';
+    const rows = [...root.querySelectorAll('[data-multi-row]')]; const count = root.querySelector('[data-multi-count]'); const total = root.querySelector('[data-multi-total]'); const add = root.querySelector('[data-multi-add]'); const status = root.querySelector('[data-multi-status]'); const currency = window.Shopify?.currency?.active || 'USD';
+    const update = () => { let qty = 0; let amount = 0; rows.forEach(row => { const value = Math.max(0,Number(row.querySelector('[data-multi-quantity]').value)||0); qty += value; amount += value * Number(row.dataset.price); }); count.textContent = qty; total.textContent = new Intl.NumberFormat(document.documentElement.lang||'en-US',{style:'currency',currency}).format(amount/100); add.disabled = qty === 0; };
+    rows.forEach(row => { const input=row.querySelector('[data-multi-quantity]'); row.querySelector('[data-multi-minus]').addEventListener('click',()=>{input.value=Math.max(0,Number(input.value||0)-1);update()}); row.querySelector('[data-multi-plus]').addEventListener('click',()=>{input.value=Math.min(999,Number(input.value||0)+1);update()}); input.addEventListener('input',update); });
+    add.addEventListener('click',async()=>{const items=rows.map(row=>({id:Number(row.dataset.variantId),quantity:Math.max(0,Number(row.querySelector('[data-multi-quantity]').value)||0)})).filter(item=>item.quantity);if(!items.length)return;add.disabled=true;status.textContent='Adding selected configurations…';try{const response=await fetch(`${window.Shopify?.routes?.root||'/'}cart/add.js`,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({items})});if(!response.ok)throw new Error((await response.json()).description||'Could not add items.');status.textContent='Selected configurations added to cart.';document.dispatchEvent(new CustomEvent('cart:refresh'));}catch(error){status.textContent=error.message}finally{update()}}); update();
+  };
+  document.querySelectorAll('[data-product-multi]').forEach(init);
+  document.addEventListener('shopify:section:load',event=>event.target.querySelectorAll('[data-product-multi]').forEach(init));
+})();

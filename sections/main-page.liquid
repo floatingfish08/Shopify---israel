@@ -14,6 +14,7 @@
   }
 {%- endstyle -%}
 
+{% unless page.handle == 'quick-order' %}
 <div class="nova-standard-page section-{{ section.id }}-padding">
   <div class="nova-standard-page__hero page-width">
     <nav class="nova-standard-page__breadcrumb" aria-label="Breadcrumb"><a href="{{ routes.root_url }}">Home</a><span>→</span><span>{{ page.title | escape }}</span></nav>
@@ -33,6 +34,7 @@
     </div>
   {%- endif -%}
 </div>
+{% endunless %}
 
 {% schema %}
 {

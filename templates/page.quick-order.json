@@ -1,13 +1,6 @@
 {
   "sections": {
     "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
-    },
-    "quick_order": {
       "type": "nova-quick-order",
       "settings": {
         "heading": "Quick order",
@@ -15,8 +8,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "quick_order"
-  ]
+  "order": ["main"]
 }
