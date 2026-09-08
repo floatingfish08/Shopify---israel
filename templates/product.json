@@ -17,7 +17,7 @@
         "clinical_assurance": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class='nova-product-assurance'><strong>Professional ordering</strong><div><span>✓ Free U.S. shipping</span><span>✓ Same-day eligible dispatch</span><span>✓ FDA 510(k) cleared implant system</span></div><small>Confirm compatibility and review the current label and applicable Instructions for Use before clinical use.</small></div>"
+            "custom_liquid": "<div class='nova-product-assurance'><strong>Professional ordering</strong><div><span>✓ Pay by bank transfer at checkout</span><span>✓ Free U.S. shipping</span><span>✓ Same-day eligible dispatch after payment confirmation</span><span>✓ FDA 510(k) cleared implant system</span></div><small>Bank instructions are emailed after the order is placed. Orders remain pending until payment is confirmed. Confirm compatibility and review the current label and applicable Instructions for Use before clinical use.</small></div>"
           }
         },
         "description": { "type": "description" },
