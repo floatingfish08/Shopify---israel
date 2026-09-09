@@ -360,8 +360,8 @@
       <a href="{{ routes.search_url }}?q=conical+connection&amp;options%5Bprefix%5D=last"><span>Conical Connection</span></a>
       <a class="{% if collection.handle == 'surgical-instruments' %}is-active{% endif %}" href="{{ routes.collections_url }}/surgical-instruments"{% if collection.handle == 'surgical-instruments' %} aria-current="page"{% endif %}><span>Instruments &amp; Tools</span></a>
       <a href="{{ routes.search_url }}?q=compatible&amp;options%5Bprefix%5D=last"><span>Compatible Brands</span></a>
-      <a class="nova-category-nav__document" href="https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709" target="_blank" rel="noopener">
-        <span>Resources</span>
+      <a class="nova-category-nav__document{% if page.handle == 'quick-order' %} is-active{% endif %}" href="/pages/quick-order"{% if page.handle == 'quick-order' %} aria-current="page"{% endif %}>
+        <span>Quick Order</span>
         <svg class="nova-category-nav__arrow" aria-hidden="true" viewBox="0 0 20 20" fill="none">
           <path d="M4 10h11M11 6l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
