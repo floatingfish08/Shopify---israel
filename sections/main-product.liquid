@@ -82,7 +82,7 @@
       <span>{{ product.title | escape }}</span>
     </div>
     <div class="page-width">
-      <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+      <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }}{% if product.variants.size > 1 %} product--multi-variant{% else %} product--single-variant{% endif %} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
         <div class="grid__item product__media-wrapper">
           {% render 'product-media-gallery', variant_images: variant_images %}
         </div>
@@ -487,8 +487,8 @@
                     show_pickup_availability: true
                   -%}
                   {%- if product.variants.size > 1 -%}
-                    <details class="nova-product-multi" data-product-multi>
-                      <summary><span><strong>Order multiple configurations</strong><small>Select several sizes or catalog numbers at once</small></span><i aria-hidden="true">+</i></summary>
+                    <details class="nova-product-multi" data-product-multi open>
+                      <summary><span><strong>Select configuration</strong><small>Choose quantities by configuration or catalog number</small></span><i aria-hidden="true">+</i></summary>
                       <div class="nova-product-multi__body">
                         <div class="nova-product-multi__rows">
                           {%- for variant in product.variants -%}
@@ -696,12 +696,22 @@
                   {% render 'icon-with-text', block: block %}
               {%- endcase -%}
             {%- endfor -%}
+            <div class="nova-product-actions">
+              <a class="nova-product-quick-order" href="{{ routes.all_products_collection_url }}?view=quick-order">Bulk Quick Order</a>
+              <a class="nova-product-question" href="/pages/contact">ⓘ Ask a question</a>
+            </div>
             <a href="{{ product.url }}" class="link product__view-details animate-arrow">
               {{ 'products.product.view_full_details' | t }}
               {{- 'icon-arrow.svg' | inline_asset_content -}}
             </a>
           </section>
         </div>
+      </div>
+
+      <div class="nova-product-service" aria-label="Order information">
+        <div><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"></path></svg><span><strong>FDA 510(k), CE &amp; ISO 13485</strong><small>Documented professional systems</small></span></div>
+        <div><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"></path></svg><span><strong>Precision fit</strong><small>Clear catalog references and compatibility support</small></span></div>
+        <div><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z"></path><circle cx="7" cy="19" r="2"></circle><circle cx="18" cy="19" r="2"></circle></svg><span><strong>Fast shipping</strong><small>Free U.S. delivery and same-day eligible dispatch</small></span></div>
       </div>
 
       <section class="nova-product-tabs" data-product-tabs aria-label="Product information">
@@ -737,13 +747,6 @@
           <p>Payment by bank transfer is available at checkout. Orders are released for fulfillment after payment confirmation.</p>
         </div>
       </section>
-
-      <div class="nova-product-service" aria-label="Order information">
-        <div><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z"></path><circle cx="7" cy="19" r="2"></circle><circle cx="18" cy="19" r="2"></circle></svg><span><strong>Free U.S. shipping</strong><small>On every online order</small></span></div>
-        <div><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span><strong>Same-day eligible dispatch</strong><small>For qualifying in-stock orders</small></span></div>
-        <div><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"></path></svg><span><strong>Compatibility support</strong><small>Confirm the right component before ordering</small></span></div>
-        <a href="{{ routes.all_products_collection_url }}?view=quick-order"><strong>Ordering several items?</strong><span>Open Quick Order →</span></a>
-      </div>
 
       {% render 'product-media-modal', variant_images: variant_images %}
 
