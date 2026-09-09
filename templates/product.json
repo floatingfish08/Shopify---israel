@@ -3,10 +3,15 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": { "type": "text", "settings": { "text": "{{ product.vendor }}", "text_style": "uppercase" } },
         "title": { "type": "title" },
         "sku": { "type": "sku", "settings": { "text_style": "body" } },
         "price": { "type": "price" },
+        "documents": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<a class='nova-product-document' href='https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709' target='_blank' rel='noopener'><span aria-hidden='true'>PDF</span> View catalog &amp; product documents</a>"
+          }
+        },
         "inventory": {
           "type": "inventory",
           "settings": { "text_style": "body", "inventory_threshold": 10, "show_inventory_quantity": false }
@@ -17,7 +22,7 @@
         "clinical_assurance": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class='nova-product-assurance'><strong>Professional ordering</strong><div><span>✓ Pay by bank transfer at checkout</span><span>✓ Free U.S. shipping</span><span>✓ Same-day eligible dispatch after payment confirmation</span><span>✓ FDA 510(k) cleared implant system</span></div><small>Bank instructions are emailed after the order is placed. Orders remain pending until payment is confirmed. Confirm compatibility and review the current label and applicable Instructions for Use before clinical use.</small></div>"
+            "custom_liquid": "<div class='nova-product-shipping'><span aria-hidden='true'>▰</span><strong>Free U.S. shipping on this order</strong></div><div class='nova-product-shipping__track'><i></i></div><div class='nova-product-assurance'><strong>Secure professional ordering</strong><small>Bank-transfer instructions are emailed after checkout. Orders remain pending until payment is confirmed.</small></div>"
           }
         },
         "description": { "type": "description" },
@@ -41,21 +46,21 @@
         },
         "share": { "type": "share", "settings": { "share_label": "Share" } }
       },
-      "block_order": ["vendor", "title", "sku", "price", "inventory", "variant_picker", "quantity_selector", "buy_buttons", "clinical_assurance", "description", "specifications", "shipping", "share"],
+      "block_order": ["sku", "title", "price", "documents", "inventory", "variant_picker", "quantity_selector", "buy_buttons", "clinical_assurance", "share", "description", "specifications", "shipping"],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_position": "left",
-        "gallery_layout": "stacked",
-        "media_size": "large",
+        "gallery_layout": "thumbnail_slider",
+        "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 48,
-        "padding_bottom": 24
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "disclosures": { "type": "disclosures", "settings": { "padding_top": 28, "padding_bottom": 8 } },

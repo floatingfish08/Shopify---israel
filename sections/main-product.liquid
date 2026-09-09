@@ -42,6 +42,7 @@
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'nova-product-multi.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'nova-product-tabs.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
@@ -199,11 +200,7 @@
                     {%- endif -%}
                   </p>
                 {%- when 'description' -%}
-                  {%- if product.description != blank -%}
-                    <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                      {{ product.description }}
-                    </div>
-                  {%- endif -%}
+                  {%- comment -%}Product details are presented in the full-width tabbed panel below.{%- endcomment -%}
                 {%- when 'sku' -%}
                   <p
                     class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -211,29 +208,13 @@
                     role="status"
                     {{ block.shopify_attributes }}
                   >
-                    <span class="visually-hidden">{{ 'products.product.sku' | t }}:</span>
+                    <span class="nova-product-sku__label">SKU :</span>
                     {{- product.selected_or_first_available_variant.sku -}}
                   </p>
                 {%- when 'custom_liquid' -%}
                   {{ block.settings.custom_liquid }}
                 {%- when 'collapsible_tab' -%}
-                  <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
-                    <details id="Details-{{ block.id }}-{{ section.id }}">
-                      <summary>
-                        <div class="summary__title">
-                          {% render 'icon-accordion', icon: block.settings.icon %}
-                          <h2 class="h4 accordion__title inline-richtext">
-                            {{ block.settings.heading | default: block.settings.page.title | escape }}
-                          </h2>
-                        </div>
-                        {{- 'icon-caret.svg' | inline_asset_content -}}
-                      </summary>
-                      <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                        {{ block.settings.content }}
-                        {{ block.settings.page.content }}
-                      </div>
-                    </details>
-                  </div>
+                  {%- comment -%}Specifications and delivery are presented in the full-width tabbed panel below.{%- endcomment -%}
                 {%- when 'quantity_selector' -%}
                   <div
                     id="Quantity-Form-{{ section.id }}"
@@ -722,6 +703,40 @@
           </section>
         </div>
       </div>
+
+      <section class="nova-product-tabs" data-product-tabs aria-label="Product information">
+        <div class="nova-product-tabs__list" role="tablist" aria-label="Product information sections">
+          <button type="button" role="tab" id="NovaProductTab-details-{{ section.id }}" aria-controls="NovaProductPanel-details-{{ section.id }}" aria-selected="true" data-product-tab="details">Product details</button>
+          <button type="button" role="tab" id="NovaProductTab-specifications-{{ section.id }}" aria-controls="NovaProductPanel-specifications-{{ section.id }}" aria-selected="false" tabindex="-1" data-product-tab="specifications">Specifications &amp; compatibility</button>
+          <button type="button" role="tab" id="NovaProductTab-shipping-{{ section.id }}" aria-controls="NovaProductPanel-shipping-{{ section.id }}" aria-selected="false" tabindex="-1" data-product-tab="shipping">Shipping &amp; ordering</button>
+        </div>
+        <div class="nova-product-tabs__panel rte" role="tabpanel" id="NovaProductPanel-details-{{ section.id }}" aria-labelledby="NovaProductTab-details-{{ section.id }}" data-product-panel="details">
+          <h2>Product details</h2>
+          {%- if product.description != blank -%}
+            {{ product.description }}
+          {%- else -%}
+            <p>Professional NOVA dental component. Confirm the selected catalog number, dimensions and platform compatibility before ordering.</p>
+          {%- endif -%}
+        </div>
+        <div class="nova-product-tabs__panel rte" role="tabpanel" id="NovaProductPanel-specifications-{{ section.id }}" aria-labelledby="NovaProductTab-specifications-{{ section.id }}" data-product-panel="specifications" hidden>
+          {%- for info_block in section.blocks -%}
+            {%- if info_block.type == 'collapsible_tab' and info_block.settings.icon != 'truck' -%}
+              <h2>{{ info_block.settings.heading | default: info_block.settings.page.title | escape }}</h2>
+              {{ info_block.settings.content }}{{ info_block.settings.page.content }}
+            {%- endif -%}
+          {%- endfor -%}
+          <p><strong>Catalog number:</strong> {{ product.selected_or_first_available_variant.sku | default: 'Confirm with NOVA' | escape }}</p>
+        </div>
+        <div class="nova-product-tabs__panel rte" role="tabpanel" id="NovaProductPanel-shipping-{{ section.id }}" aria-labelledby="NovaProductTab-shipping-{{ section.id }}" data-product-panel="shipping" hidden>
+          {%- for info_block in section.blocks -%}
+            {%- if info_block.type == 'collapsible_tab' and info_block.settings.icon == 'truck' -%}
+              <h2>{{ info_block.settings.heading | default: info_block.settings.page.title | escape }}</h2>
+              {{ info_block.settings.content }}{{ info_block.settings.page.content }}
+            {%- endif -%}
+          {%- endfor -%}
+          <p>Payment by bank transfer is available at checkout. Orders are released for fulfillment after payment confirmation.</p>
+        </div>
+      </section>
 
       <div class="nova-product-service" aria-label="Order information">
         <div><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z"></path><circle cx="7" cy="19" r="2"></circle><circle cx="18" cy="19" r="2"></circle></svg><span><strong>Free U.S. shipping</strong><small>On every online order</small></span></div>
