@@ -1,0 +1,62 @@
+{{ 'section-nova-platform-catalog.css' | asset_url | stylesheet_tag }}
+
+<section class="nova-platform-catalog color-{{ section.settings.color_scheme }} gradient" aria-labelledby="NovaPlatformHeading-{{ section.id }}">
+  <div class="page-width">
+    <header class="nova-platform-catalog__header">
+      <span class="nova-platform-catalog__eyebrow">Catalog by platform</span>
+      <h2 id="NovaPlatformHeading-{{ section.id }}">Internal Hex &amp; Conical Connection Systems</h2>
+      <p>Compare NOVA connection families and move directly to the catalog path that fits your restorative workflow.</p>
+    </header>
+
+    <div class="nova-platform-catalog__grid">
+      <article class="nova-platform-card">
+        <a class="nova-platform-card__media" href="{{ routes.collections_url }}/implant-systems" aria-label="View NOVA internal hex systems">
+          <img src="{{ 'nova-new-implant-systems.webp' | asset_url }}" alt="NOVA internal hex implant and restorative components" width="2200" height="2200" loading="lazy">
+          <span class="nova-platform-card__media-label">NOVA / PSI</span>
+        </a>
+        <div class="nova-platform-card__body">
+          <span class="nova-platform-card__kicker">Connected workflow</span>
+          <h3><a href="{{ routes.collections_url }}/implant-systems">Internal Hex Systems</a></h3>
+          <p>Shop implant, healing, restorative, impression, digital and surgical components within one clearly organized internal-hex workflow.</p>
+          <ul aria-label="Internal hex catalog highlights">
+            <li>PSI family</li>
+            <li>Cataloged configurations</li>
+            <li>Restorative components</li>
+          </ul>
+          <a class="nova-platform-card__action" href="{{ routes.collections_url }}/implant-systems">View Internal Hex <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="nova-platform-card">
+        <a class="nova-platform-card__media nova-platform-card__media--detail" href="{{ routes.search_url }}?q=conical+connection&amp;options%5Bprefix%5D=last" aria-label="Explore NOVA conical connection products">
+          <img src="{{ 'nova-new-implant-product.webp' | asset_url }}" alt="NOVA implant connection detail" width="2200" height="2200" loading="lazy">
+          <span class="nova-platform-card__media-label">NOVA / Connection</span>
+        </a>
+        <div class="nova-platform-card__body">
+          <span class="nova-platform-card__kicker">Focused selection</span>
+          <h3><a href="{{ routes.search_url }}?q=conical+connection&amp;options%5Bprefix%5D=last">Conical Connection Systems</a></h3>
+          <p>Explore connection-specific products and related component families through a focused catalog path built for faster professional selection.</p>
+          <ul aria-label="Conical connection catalog highlights">
+            <li>Focused results</li>
+            <li>Component families</li>
+            <li>Ordering support</li>
+          </ul>
+          <a class="nova-platform-card__action" href="{{ routes.search_url }}?q=conical+connection&amp;options%5Bprefix%5D=last">View Conical Connection <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NOVA catalog platforms",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
+  ],
+  "presets": [{ "name": "NOVA catalog platforms" }]
+}
+{% endschema %}

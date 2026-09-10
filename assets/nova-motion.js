@@ -17,6 +17,8 @@
     { selector: '.nova-psi-performance__surface', effect: 'left' },
     { selector: '.nova-psi-performance__test', effect: 'right' },
     { selector: '.nova-psi-performance__details', effect: 'rise' },
+    { selector: '.nova-platform-catalog__header > *', effect: 'left' },
+    { selector: '.nova-platform-card', effect: 'rise' },
     { selector: '.nova-shop__heading', effect: 'left' },
     { selector: '.nova-shop-card', effect: 'rise' },
     { selector: '.nova-shop__shipping span', effect: 'rise' },
