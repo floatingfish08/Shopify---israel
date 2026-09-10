@@ -1,0 +1,82 @@
+{{ 'section-nova-guide-article.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign guide_kind = 'Implant systems'
+  assign guide_read = '6 min read'
+  assign guide_image = 'nova-guide-psi-internal-hex.webp'
+  assign guide_dek = 'A product-identification guide to the PSI connection, catalog matrix and matching restorative workflow.'
+  if page.handle == 'restorative-component-selection'
+    assign guide_kind = 'Restorative workflow'
+    assign guide_read = '5 min read'
+    assign guide_image = 'nova-guide-restorative-selection.webp'
+    assign guide_dek = 'A clear framework for comparing restorative interfaces, geometry and catalog references before ordering.'
+  elsif page.handle == 'surgical-kit-organization'
+    assign guide_kind = 'Instruments'
+    assign guide_read = '4 min read'
+    assign guide_image = 'nova-guide-surgical-kit.webp'
+    assign guide_dek = 'A catalog-focused overview of instrument groups and the details to verify before use.'
+  endif
+%}
+
+<article class="nova-guide">
+  <div class="page-width">
+    <nav class="nova-guide__crumbs" aria-label="Breadcrumb"><a href="{{ routes.root_url }}">Home</a><span>→</span><a href="{{ routes.root_url }}#nova-insights">Implantology guides</a><span>→</span><span>{{ page.title }}</span></nav>
+    <header class="nova-guide__hero">
+      <p class="nova-guide__eyebrow">{{ guide_kind }}</p>
+      <h1>{{ page.title }}</h1>
+      <p class="nova-guide__dek">{{ guide_dek }}</p>
+      <p class="nova-guide__meta">NOVA Implants USA <span>·</span> {{ guide_read }} <span>·</span> Updated September 2026</p>
+    </header>
+    <div class="nova-guide__image"><img src="{{ guide_image | asset_url }}" alt="{{ page.title | escape }}" width="1672" height="941"></div>
+
+    {% case page.handle %}
+      {% when 'restorative-component-selection' %}
+        <div class="nova-guide__layout">
+          <aside class="nova-guide__toc"><strong>In this guide</strong><a href="#endpoint">Define the endpoint</a><a href="#interface">Identify the interface</a><a href="#geometry">Compare geometry</a><a href="#catalog">Catalog-number discipline</a><a href="#review">Order review</a></aside>
+          <div class="nova-guide__content">
+            <p class="nova-guide__intro">Restorative components can appear similar while differing in connection, platform or working dimensions. A repeatable catalog-review process helps keep the selected part aligned with the documented restorative plan.</p>
+            <section id="endpoint"><h2>1. Define the restorative endpoint</h2><p>Begin with the documented restoration type—such as cement-retained, screw-retained, temporary or digital—and identify the corresponding component family. This narrows the catalog without relying on visual similarity.</p></section>
+            <section id="interface"><h2>2. Identify the interface and platform</h2><p>Confirm the implant system, connection and platform before reviewing secondary dimensions. Components should never be assumed compatible because their external form looks alike.</p><div class="nova-guide__note"><strong>Ordering principle</strong><p>System and interface first; geometry and catalog number second.</p></div></section>
+            <section id="geometry"><h2>3. Compare component geometry</h2><p>Review the catalog’s stated cuff or gingival height, angulation, restorative height, material and any platform-specific notes. Match each value to the approved case documentation and current product labeling.</p></section>
+            <section id="catalog"><h2>4. Use the exact catalog reference</h2><p>The catalog number is the most reliable handoff between clinician, laboratory and ordering team. Record the complete reference rather than an abbreviated description such as “straight abutment.”</p></section>
+            <section id="review"><h2>5. Complete a final order review</h2><ul class="nova-guide__checklist"><li>Implant system and connection</li><li>Platform designation</li><li>Restoration type</li><li>Cuff height and angulation</li><li>Material and screw requirements</li><li>Exact catalog number</li></ul></section>
+            <a class="nova-guide__cta" href="{{ routes.collections_url }}/restorative-components">Browse restorative components <span>→</span></a>
+          </div>
+        </div>
+      {% when 'surgical-kit-organization' %}
+        <div class="nova-guide__layout">
+          <aside class="nova-guide__toc"><strong>In this guide</strong><a href="#kit-map">Build a kit map</a><a href="#drills">Drills and guide pins</a><a href="#drivers">Drivers and mounts</a><a href="#torque">Torque instruments</a><a href="#pre-use">Pre-use verification</a></aside>
+          <div class="nova-guide__content">
+            <p class="nova-guide__intro">A well-mapped instrument set makes catalog identification and inventory review clearer. This overview groups instruments by function; it does not provide a surgical sequence or sterilization protocol.</p>
+            <section id="kit-map"><h2>1. Build a catalog-based kit map</h2><p>Use the current NOVA catalog and tray labeling to identify each position. Record catalog numbers alongside the instrument names used by your team so replacements can be ordered consistently.</p></section>
+            <section id="drills"><h2>2. Separate drills and guide pins</h2><p>Catalog listings distinguish drills and guide pins by their intended system, diameter or other marked specification. Verify the physical marking and current IFU rather than identifying an instrument only by color.</p></section>
+            <section id="drivers"><h2>3. Identify drivers and motor mounts</h2><p>Group hand drivers, hex drivers and motor mounts according to their documented connection and size. Similar silhouettes can represent different interfaces.</p></section>
+            <section id="torque"><h2>4. Track ratchets and torque instruments</h2><p>Keep ratchets, torque ratchets and related adapters documented as distinct items. Follow the manufacturer’s current instructions for inspection, use and maintenance.</p></section>
+            <section id="pre-use"><h2>5. Verify before use</h2><ul class="nova-guide__checklist"><li>Tray location and instrument label</li><li>Exact catalog reference</li><li>System and connection compatibility</li><li>Current IFU and facility protocol</li><li>Condition and required processing</li><li>Replacement stock availability</li></ul></section>
+            <div class="nova-guide__note"><strong>Important</strong><p>Consult current product labeling, IFU, formal training and your facility’s validated protocols for clinical sequence and processing requirements.</p></div>
+            <a class="nova-guide__cta" href="{{ routes.collections_url }}/surgical-instruments">Browse instruments and tools <span>→</span></a>
+          </div>
+        </div>
+      {% else %}
+        <div class="nova-guide__layout">
+          <aside class="nova-guide__toc"><strong>In this guide</strong><a href="#system">System overview</a><a href="#connection">Connection first</a><a href="#matrix">Catalog matrix</a><a href="#path">Restorative path</a><a href="#checklist">Verification checklist</a></aside>
+          <div class="nova-guide__content">
+            <p class="nova-guide__intro">The PSI range is best understood as a connected product system. Identification begins with the implant connection and continues through the matching healing, impression, restorative and instrument families.</p>
+            <section id="system"><h2>1. View PSI as one connected system</h2><p>The supplied NOVA catalog describes PSI as a tapered, self-tapping Ti-6Al-4V ELI implant body with apical cutting threads, an internal-hex connection and NOVA Active surface. Always confirm the current labeling and IFU for the exact reference being considered.</p></section>
+            <section id="connection"><h2>2. Start with the connection</h2><p>Confirm manufacturer, implant family, internal connection and platform before comparing diameter or length. This creates a reliable base for restorative and instrument compatibility checks.</p><div class="nova-guide__note"><strong>Do not identify by appearance alone</strong><p>Similar-looking components may use different interfaces, platforms or dimensions.</p></div></section>
+            <section id="matrix"><h2>3. Read the catalog matrix carefully</h2><p>The supplied catalog lists PSI diameters of 3.3, 3.75, 4.2, 5.0 and 6.0 mm and lengths of 6, 8, 10, 11.5, 13 and 16 mm. Not every combination is necessarily available; use the exact matrix and catalog number to verify a specific product.</p></section>
+            <section id="path"><h2>4. Follow the restorative path</h2><p>After implant identification, map the documented workflow through the appropriate healing component, impression or digital component, restorative part, screw and driver. Each handoff should retain the exact system and catalog reference.</p></section>
+            <section id="checklist"><h2>5. Complete the verification checklist</h2><ul class="nova-guide__checklist"><li>Exact catalog number</li><li>Implant family and connection</li><li>Platform, diameter and length</li><li>Restoration type</li><li>Component height or angulation</li><li>Current labeling and IFU</li></ul></section>
+            <a class="nova-guide__cta" href="/products/psi-implant-system">Explore the PSI implant system <span>→</span></a>
+          </div>
+        </div>
+    {% endcase %}
+
+    <div class="nova-guide__disclaimer"><strong>Professional education only.</strong> This guide supports catalog navigation and product identification. It is not surgical instruction, treatment planning, or a substitute for current labeling, IFU, training or clinical judgment.</div>
+    <nav class="nova-guide__more" aria-label="More implantology guides"><span>Continue learning</span><a href="/pages/psi-internal-hex-workflow">PSI workflow</a><a href="/pages/restorative-component-selection">Restorative selection</a><a href="/pages/surgical-kit-organization">Surgical kit organization</a></nav>
+  </div>
+</article>
+
+{% schema %}
+{"name":"NOVA guide article","settings":[]}
+{% endschema %}
