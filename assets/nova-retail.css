@@ -846,6 +846,7 @@ main[data-template='product'] .nova-product-assurance {
   .nova-commerce__footer { align-items: flex-start; flex-direction: column; }
 }
 
+
 @media screen and (max-width: 749px) {
   .header { min-height: 6.8rem; padding: .7rem 1.5rem; }
   .nova-header-logo { width: 10.5rem; height: 5rem; }
@@ -3424,4 +3425,12 @@ main[data-template='index'] .nova-marketplace { padding-bottom: 0; }
   }
   .nova-category-nav__icon,
   .nova-category-nav__arrow { width: 1.65rem; height: 1.65rem; }
+}
+
+/* Final image-fit override for the supplied PSI system artwork. */
+main[data-template='index'] .nova-category-card--psi > img {
+  padding: 1.2rem;
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
 }
