@@ -3,7 +3,7 @@
 
 {% if page.handle == 'quick-order' or template.suffix == 'quick-order' %}
 <section class="nova-quick-order" data-nova-quick-order>
-  <header class="nova-quick-order__hero" style="--quick-hero-image:url('{{ 'nova-hero-workflow-v1.png' | asset_url }}')">
+  <header class="nova-quick-order__hero" style="--quick-hero-image:url('{{ 'nova-new-overdenture-banner.webp' | asset_url }}')">
     <div class="page-width"><h1>{{ section.settings.heading | escape }}</h1></div>
   </header>
 
@@ -44,11 +44,22 @@
               {%- assign selected_variant = product.selected_or_first_available_variant -%}
               {%- assign variant_skus = product.variants | map: 'sku' | join: ' ' -%}
               {%- assign searchable = product.title | append: ' ' | append: product.type | append: ' ' | append: product.vendor | append: ' ' | append: product.tags | append: ' ' | append: variant_skus | downcase -%}
+              {%- assign nova_family_asset = blank -%}
+              {%- if product.tags contains 'expanded-catalog' -%}
+                {%- case product.type -%}
+                  {%- when 'Restorative Components' -%}{%- assign nova_family_asset = 'nova-new-cement-abutments.webp' -%}
+                  {%- when 'Impression Components' -%}{%- assign nova_family_asset = 'nova-new-laboratory.webp' -%}
+                  {%- when 'Multi-Unit Solutions' -%}{%- if product.title contains 'Ball Attachment' -%}{%- assign nova_family_asset = 'nova-new-overdenture-banner.webp' -%}{%- else -%}{%- assign nova_family_asset = 'nova-new-multi-unit.webp' -%}{%- endif -%}
+                  {%- when 'Digital & Zirconia Components', 'Digital & Casting Components' -%}{%- assign nova_family_asset = 'nova-new-cad-cam.webp' -%}
+                  {%- when 'Surgical Instruments' -%}{%- assign nova_family_asset = 'nova-new-instruments.webp' -%}
+                  {%- when 'Dental Implants' -%}{%- assign nova_family_asset = 'nova-new-implant-systems.webp' -%}
+                {%- endcase -%}
+              {%- endif -%}
               {%- if searchable contains 'conical' -%}{%- assign connection = 'conical-connection' -%}{%- else -%}{%- assign connection = 'internal-hexagon' -%}{%- endif -%}
               <article class="nova-quick-row" data-quick-row data-search="{{ searchable | escape }}" data-type="{{ product.type | handleize }}" data-connection="{{ connection }}" data-title="{{ product.title | escape }}">
                 <div class="nova-quick-row__summary">
                   <a class="nova-quick-row__media" href="{{ product.url }}" aria-label="View {{ product.title | escape }}">
-                    {%- if product.featured_image -%}{{ product.featured_image | image_url: width: 240 | image_tag: loading: 'lazy', widths: '100,160,240', alt: product.featured_image.alt | default: product.title }}{%- else -%}{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}{%- endif -%}
+                    {%- if nova_family_asset != blank -%}<img src="{{ nova_family_asset | asset_url }}" alt="{{ product.title | escape }} — NOVA product family" width="240" height="200" loading="lazy">{%- elsif product.featured_image -%}{{ product.featured_image | image_url: width: 240 | image_tag: loading: 'lazy', widths: '100,160,240', alt: product.featured_image.alt | default: product.title }}{%- else -%}{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}{%- endif -%}
                   </a>
                   <div class="nova-quick-row__identity"><h3><a href="{{ product.url }}">{{ product.title | escape }}</a></h3><strong data-quick-price>{{ selected_variant.price | money }}</strong></div>
                   <button class="nova-quick-row__toggle" type="button" aria-expanded="false" data-quick-toggle>Select Options <span aria-hidden="true">⌄</span></button>

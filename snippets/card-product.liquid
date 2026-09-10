@@ -31,6 +31,27 @@
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
+    assign nova_family_asset = blank
+    if card_product.tags contains 'expanded-catalog'
+      case card_product.type
+        when 'Restorative Components'
+          assign nova_family_asset = 'nova-new-cement-abutments.webp'
+        when 'Impression Components'
+          assign nova_family_asset = 'nova-new-laboratory.webp'
+        when 'Multi-Unit Solutions'
+          if card_product.title contains 'Ball Attachment'
+            assign nova_family_asset = 'nova-new-overdenture-banner.webp'
+          else
+            assign nova_family_asset = 'nova-new-multi-unit.webp'
+          endif
+        when 'Digital & Zirconia Components', 'Digital & Casting Components'
+          assign nova_family_asset = 'nova-new-cad-cam.webp'
+        when 'Surgical Instruments'
+          assign nova_family_asset = 'nova-new-instruments.webp'
+        when 'Dental Implants'
+          assign nova_family_asset = 'nova-new-implant-systems.webp'
+      endcase
+    endif
     if card_product.featured_media and media_aspect_ratio == 'portrait'
       assign ratio = 0.8
     elsif card_product.featured_media and media_aspect_ratio == 'adapt'
@@ -63,7 +84,17 @@
             <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
               <div class="media media--transparent media--hover-effect">
                 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-                <img
+                {%- if nova_family_asset != blank -%}
+                  <img
+                    src="{{ nova_family_asset | asset_url }}"
+                    alt="{{ card_product.title | escape }} — NOVA product family"
+                    class="motion-reduce"
+                    loading="lazy"
+                    width="2200"
+                    height="1808"
+                  >
+                {%- else -%}
+                  <img
                   srcset="
                     {%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
                     {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
@@ -82,7 +113,8 @@
                   {% endunless %}
                   width="{{ card_product.featured_media.width }}"
                   height="{{ card_product.featured_media.height }}"
-                >
+                  >
+                {%- endif -%}
                 {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
 
                 {%- if card_product.media[1] != null and show_secondary_image -%}
