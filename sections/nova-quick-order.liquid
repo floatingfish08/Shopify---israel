@@ -52,7 +52,12 @@
                   {%- when 'Multi-Unit Solutions' -%}{%- if product.title contains 'Ball Attachment' -%}{%- assign nova_family_asset = 'nova-new-overdenture-banner.webp' -%}{%- else -%}{%- assign nova_family_asset = 'nova-new-multi-unit.webp' -%}{%- endif -%}
                   {%- when 'Digital & Zirconia Components', 'Digital & Casting Components' -%}{%- assign nova_family_asset = 'nova-new-cad-cam.webp' -%}
                   {%- when 'Surgical Instruments' -%}{%- assign nova_family_asset = 'nova-new-instruments.webp' -%}
-                  {%- when 'Dental Implants' -%}{%- assign nova_family_asset = 'nova-new-implant-systems.webp' -%}
+                  {%- when 'Dental Implants' -%}
+                    {%- if product.handle == 'psi-implant-system' -%}
+                      {%- assign nova_family_asset = 'nova-psi-implant-package.webp' -%}
+                    {%- else -%}
+                      {%- assign nova_family_asset = 'nova-new-implant-systems.webp' -%}
+                    {%- endif -%}
                 {%- endcase -%}
               {%- endif -%}
               {%- if searchable contains 'conical' -%}{%- assign connection = 'conical-connection' -%}{%- else -%}{%- assign connection = 'internal-hexagon' -%}{%- endif -%}

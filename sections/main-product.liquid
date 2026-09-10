@@ -94,7 +94,11 @@
         when 'Surgical Instruments'
           assign nova_family_asset = 'nova-new-instruments.webp'
         when 'Dental Implants'
-          assign nova_family_asset = 'nova-new-implant-systems.webp'
+          if product.handle == 'psi-implant-system'
+            assign nova_family_asset = 'nova-psi-implant-package.webp'
+          else
+            assign nova_family_asset = 'nova-new-implant-systems.webp'
+          endif
       endcase
     endif
   -%}

@@ -49,7 +49,11 @@
         when 'Surgical Instruments'
           assign nova_family_asset = 'nova-new-instruments.webp'
         when 'Dental Implants'
-          assign nova_family_asset = 'nova-new-implant-systems.webp'
+          if card_product.handle == 'psi-implant-system'
+            assign nova_family_asset = 'nova-psi-implant-package.webp'
+          else
+            assign nova_family_asset = 'nova-new-implant-systems.webp'
+          endif
       endcase
     endif
     if card_product.featured_media and media_aspect_ratio == 'portrait'
