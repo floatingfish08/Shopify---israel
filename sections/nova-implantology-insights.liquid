@@ -1,0 +1,109 @@
+{{ 'section-nova-implantology-insights.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign insight_blog = section.settings.blog
+  if insight_blog == blank and blogs.news != blank
+    assign insight_blog = blogs.news
+  endif
+  assign has_articles = false
+  if insight_blog != blank and insight_blog.articles_count > 0
+    assign has_articles = true
+  endif
+-%}
+
+<section class="nova-insights color-{{ section.settings.color_scheme }} gradient" aria-labelledby="NovaInsightsHeading-{{ section.id }}">
+  <div class="page-width">
+    <header class="nova-insights__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <div>
+        <span class="nova-insights__eyebrow">Insights</span>
+        <h2 id="NovaInsightsHeading-{{ section.id }}">Learn more about dental implantology</h2>
+      </div>
+      <p>Practical reference content for dentists and dental laboratories—covering implant-system principles, component selection and professional NOVA workflows.</p>
+    </header>
+
+    <div class="nova-insights__grid">
+      {%- if has_articles -%}
+        {%- for article in insight_blog.articles limit: 3 -%}
+          <article class="nova-insight-card{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"{% if settings.animations_reveal_on_scroll %} data-cascade style="--animation-order: {{ forloop.index }};"{% endif %}>
+            <a class="nova-insight-card__media" href="{{ article.url }}" aria-label="Read {{ article.title | escape }}">
+              {%- if article.image -%}
+                {{ article.image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '360, 540, 720, 1000', sizes: '(min-width: 990px) 33vw, (min-width: 750px) 50vw, 100vw', alt: article.image.alt | default: article.title }}
+              {%- else -%}
+                <img src="{{ 'nova-category-implants-premium-v1.webp' | asset_url }}" alt="NOVA implantology reference" width="1672" height="941" loading="lazy">
+              {%- endif -%}
+              <span class="nova-insight-card__arrow" aria-hidden="true">↗</span>
+            </a>
+            <div class="nova-insight-card__body">
+              <div class="nova-insight-card__tags"><span>Educational</span>{%- if article.tags.first != blank -%}<span>{{ article.tags.first | escape }}</span>{%- endif -%}</div>
+              <h3><a href="{{ article.url }}">{{ article.title | escape }}</a></h3>
+              <p>{{ article.excerpt_or_content | strip_html | truncatewords: 28 }}</p>
+              <div class="nova-insight-card__meta"><time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%B %Y' }}</time><span>{{ article.content | strip_html | size | divided_by: 1100 | plus: 1 }} min read</span></div>
+            </div>
+          </article>
+        {%- endfor -%}
+      {%- else -%}
+        <article class="nova-insight-card{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"{% if settings.animations_reveal_on_scroll %} data-cascade style="--animation-order: 1;"{% endif %}>
+          <a class="nova-insight-card__media" href="/products/psi-implant-system">
+            <img src="{{ 'nova-psi-platform-generated.webp' | asset_url }}" alt="NOVA PSI internal-hex system components" width="1672" height="941" loading="lazy">
+            <span class="nova-insight-card__arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="nova-insight-card__body">
+            <div class="nova-insight-card__tags"><span>Educational</span><span>Implant systems</span></div>
+            <h3><a href="/products/psi-implant-system">Understanding the PSI internal-hex workflow</a></h3>
+            <p>Review the implant geometry, connection approach and cataloged configurations that organize the NOVA PSI product family.</p>
+            <div class="nova-insight-card__meta"><span>Product education</span><span>4 min read</span></div>
+          </div>
+        </article>
+
+        <article class="nova-insight-card{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"{% if settings.animations_reveal_on_scroll %} data-cascade style="--animation-order: 2;"{% endif %}>
+          <a class="nova-insight-card__media" href="{{ routes.collections_url }}/restorative-components">
+            <img src="{{ 'nova-new-cement-abutments.webp' | asset_url }}" alt="NOVA restorative components" width="2200" height="1808" loading="lazy">
+            <span class="nova-insight-card__arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="nova-insight-card__body">
+            <div class="nova-insight-card__tags"><span>Educational</span><span>Restorative</span></div>
+            <h3><a href="{{ routes.collections_url }}/restorative-components">Selecting components by catalog reference</a></h3>
+            <p>Use platform, dimensions and catalog numbers to move from implant planning to a clearly matched restorative component.</p>
+            <div class="nova-insight-card__meta"><span>Ordering guidance</span><span>3 min read</span></div>
+          </div>
+        </article>
+
+        <article class="nova-insight-card{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"{% if settings.animations_reveal_on_scroll %} data-cascade style="--animation-order: 3;"{% endif %}>
+          <a class="nova-insight-card__media" href="{{ routes.collections_url }}/surgical-instruments">
+            <img src="{{ 'nova-category-surgical-premium-v1.webp' | asset_url }}" alt="NOVA surgical kit with drills and drivers" width="1672" height="941" loading="lazy">
+            <span class="nova-insight-card__arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="nova-insight-card__body">
+            <div class="nova-insight-card__tags"><span>Educational</span><span>Instruments</span></div>
+            <h3><a href="{{ routes.collections_url }}/surgical-instruments">Surgical kit planning and instrument identification</a></h3>
+            <p>Navigate drills, guide pins, drivers and torque instruments using their intended workflow and exact catalog reference.</p>
+            <div class="nova-insight-card__meta"><span>Clinical workflow</span><span>4 min read</span></div>
+          </div>
+        </article>
+      {%- endif -%}
+    </div>
+
+    <div class="nova-insights__footer">
+      <p>Professional reference material supports product selection and does not replace current labeling or Instructions for Use.</p>
+      {%- if has_articles -%}
+        <a href="{{ insight_blog.url }}">View all insights <span aria-hidden="true">→</span></a>
+      {%- else -%}
+        <a href="https://cdn.shopify.com/s/files/1/0664/1988/4117/files/nova-implants-catalog-2026.pdf?v=1788246709" target="_blank" rel="noopener">Browse the product catalog <span aria-hidden="true">→</span></a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NOVA insights",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "blog", "id": "blog", "label": "Blog" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
+  ],
+  "presets": [{ "name": "NOVA insights" }]
+}
+{% endschema %}
