@@ -1,0 +1,57 @@
+{{ 'section-nova-home-faq.css' | asset_url | stylesheet_tag }}
+
+<section class="nova-home-faq color-{{ section.settings.color_scheme }} gradient" id="ordering-faq">
+  <div class="page-width nova-home-faq__layout">
+    <header class="nova-home-faq__intro">
+      <p class="nova-home-faq__eyebrow">Frequently asked</p>
+      <h2>Questions about ordering, products and shipping</h2>
+      <p>NOVA products are intended for professional use. Implant placement and clinical use must be performed by appropriately trained and licensed dental professionals.</p>
+      <p>Need help identifying a connection, catalog number or delivery option? Send our team the product details you have and we’ll help you find the right information.</p>
+      <div class="nova-home-faq__actions">
+        <a class="nova-home-faq__primary" href="/pages/contact">Contact NOVA support <span aria-hidden="true">→</span></a>
+        <a class="nova-home-faq__secondary" href="/pages/shipping-delivery">Shipping details</a>
+      </div>
+    </header>
+
+    <div class="nova-home-faq__questions">
+      <details open>
+        <summary><span>Who are NOVA products intended for?</span><i aria-hidden="true"></i></summary>
+        <div><p>NOVA’s implant systems and clinical components are professional dental products. Product selection and clinical use should be handled by appropriately qualified dental professionals; laboratories should order from documented case and system specifications.</p></div>
+      </details>
+      <details>
+        <summary><span>How do I select the correct component?</span><i aria-hidden="true"></i></summary>
+        <div><p>Start with the implant system and connection, then confirm the platform, component type, dimensions and exact catalog number. Do not determine compatibility by appearance alone. Contact NOVA support if any reference is uncertain.</p></div>
+      </details>
+      <details>
+        <summary><span>What is included with a product?</span><i aria-hidden="true"></i></summary>
+        <div><p>Included items vary by product and configuration. Review the individual product page, current packaging and labeling before ordering. Related healing, restorative, impression or instrument components may be listed separately.</p></div>
+      </details>
+      <details>
+        <summary><span>Are NOVA products FDA cleared, ISO certified and CE marked?</span><i aria-hidden="true"></i></summary>
+        <div><p>The NOVA implant system is associated with U.S. FDA 510(k) clearance K150363. NOVA also documents an ISO 13485:2016 quality system and CE marking for applicable product lines. Confirm the current regulatory status and labeling for the exact product being ordered.</p></div>
+      </details>
+      <details>
+        <summary><span>How does U.S. shipping work?</span><i aria-hidden="true"></i></summary>
+        <div><p>Eligible U.S. orders receive free standard shipping. Same-day dispatch is available for qualifying in-stock orders; final service, availability and delivery timing are confirmed during checkout and order processing.</p></div>
+      </details>
+      <details>
+        <summary><span>How can I confirm compatibility?</span><i aria-hidden="true"></i></summary>
+        <div><p>Use the manufacturer, system, connection, platform and complete catalog reference as your verification chain. Check current labeling and IFU, and contact NOVA with the known references before ordering if compatibility is not explicit.</p></div>
+      </details>
+      <details>
+        <summary><span>Where can I find product documents and catalog references?</span><i aria-hidden="true"></i></summary>
+        <div><p>Use the PDF catalog link in the main navigation for dimensional and catalog references. Product pages and NOVA support can provide additional ordering context; always rely on the most current labeling and IFU for use information.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NOVA ordering FAQ",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
+  ],
+  "presets": [{ "name": "NOVA ordering FAQ" }]
+}
+{% endschema %}
