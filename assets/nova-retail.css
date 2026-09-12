@@ -3710,10 +3710,12 @@ main[data-template='index'] .nova-category-card--psi > img {
 .nova-certs__inspection li { display: grid; gap: .45rem; padding: 1.5rem 0; border-top: 1px solid #cadcda; }
 .nova-certs__inspection li strong { color: #000; font-size: 1.35rem; }
 .nova-certs__inspection li span { color: #63777a; font-size: 1.15rem; line-height: 1.55; }
-.nova-certs__notice { display: grid; grid-template-columns: minmax(20rem,.35fr) minmax(0,1fr) auto; gap: 3rem; align-items: center; margin-top: 7rem; padding: 3rem; border-left: .4rem solid #087b80; background: #092f34; color: #fff; }
-.nova-certs__notice strong { font-size: 1.5rem; }
-.nova-certs__notice p { margin: 0; color: rgba(255,255,255,.68); font-size: 1.2rem; line-height: 1.65; }
-.nova-certs__notice a { color: #7cddd8; font-size: 1.2rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.nova-certs__notice { display: grid; grid-template-columns: 8rem minmax(0,1fr) auto; gap: 3rem; align-items: center; margin-top: 7rem; padding: clamp(3rem,4vw,5rem); border-top: 1px solid #cbdcda; border-bottom: 1px solid #cbdcda; background: #f1f7f6; color: #0b2024; }
+.nova-certs__notice-icon { display: grid; width: 7rem; height: 7rem; place-items: center; border-radius: 50%; background: #fff; color: #087b80; box-shadow: 0 1rem 2.5rem rgba(9,56,60,.09); }
+.nova-certs__notice-icon svg { width: 3.8rem; height: 3.8rem; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.nova-certs__notice h2 { margin: .8rem 0 1.1rem; color: #000; font-size: clamp(2.5rem,3vw,3.8rem); font-weight: 650; letter-spacing: -.04em; line-height: 1.08; }
+.nova-certs__notice p { max-width: 85rem; margin: 0; color: #586c6f; font-size: 1.25rem; line-height: 1.7; }
+.nova-certs__notice a { display: inline-flex; gap: .7rem; align-items: center; padding-bottom: .5rem; border-bottom: 1px solid #8bb9b6; color: #076f75; font-size: 1.2rem; font-weight: 750; text-decoration: none; white-space: nowrap; }
 
 @media screen and (max-width: 989px) {
   .nova-certs__intro,
