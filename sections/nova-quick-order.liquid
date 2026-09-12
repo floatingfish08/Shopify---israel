@@ -67,7 +67,12 @@
                     {%- if nova_family_asset != blank -%}<img src="{{ nova_family_asset | asset_url }}" alt="{{ product.title | escape }} — NOVA product family" width="240" height="200" loading="lazy">{%- elsif product.featured_image -%}{{ product.featured_image | image_url: width: 240 | image_tag: loading: 'lazy', widths: '100,160,240', alt: product.featured_image.alt | default: product.title }}{%- else -%}{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}{%- endif -%}
                   </a>
                   <div class="nova-quick-row__identity"><h3><a href="{{ product.url }}">{{ product.title | escape }}</a></h3><strong data-quick-price>{{ selected_variant.price | money }}</strong></div>
-                  <button class="nova-quick-row__toggle" type="button" aria-expanded="false" data-quick-toggle>Select Options <span aria-hidden="true">⌄</span></button>
+                  <button class="nova-quick-row__toggle" type="button" aria-expanded="false" data-quick-toggle>
+                    <span>Select Options</span>
+                    <svg class="nova-category-nav__chevron" aria-hidden="true" viewBox="0 0 20 20" fill="none">
+                      <path d="m5.5 7.75 4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
                 </div>
                 <div class="nova-quick-row__details" data-quick-details hidden>
                   <div class="nova-quick-row__variant">
