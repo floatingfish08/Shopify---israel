@@ -3434,3 +3434,54 @@ main[data-template='index'] .nova-category-card--psi > img {
   object-position: center;
   background: #fff;
 }
+
+/* Desktop category hover directory. */
+.nova-category-nav__menu { min-width: 0; }
+.nova-category-nav__chevron { margin-left: .15rem; font-size: 1.6rem; line-height: 1; transition: transform .2s ease; }
+.nova-category-mega { display: none; }
+@media screen and (min-width: 990px) {
+  .nova-category-nav { z-index: 12; }
+  .nova-category-nav__inner { overflow: visible; }
+  .nova-category-nav__menu { position: relative; height: 100%; }
+  .nova-category-nav__menu > .nova-category-nav__all { width: 100%; height: 100%; }
+  .nova-category-nav__menu:hover .nova-category-nav__chevron,
+  .nova-category-nav__menu:focus-within .nova-category-nav__chevron { transform: rotate(180deg); }
+  .nova-category-mega {
+    position: absolute;
+    top: calc(100% + .45rem);
+    left: -.45rem;
+    display: grid;
+    visibility: hidden;
+    width: min(112rem, calc(100vw - 5rem));
+    grid-template-columns: 1.25fr repeat(3, 1fr) .95fr;
+    gap: 0;
+    padding: 2.5rem;
+    border: 1px solid #d8e3e3;
+    border-radius: 1.5rem;
+    background: #fff;
+    box-shadow: 0 2.4rem 6rem rgba(13, 42, 46, .16);
+    opacity: 0;
+    transform: translateY(.8rem);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+  }
+  .nova-category-nav__menu:hover .nova-category-mega,
+  .nova-category-nav__menu:focus-within .nova-category-mega { visibility: visible; opacity: 1; transform: translateY(0); }
+  .nova-category-mega__intro { padding: .4rem 3rem .4rem .4rem; }
+  .nova-category-mega__intro > span,
+  .nova-category-mega__group > strong { display: block; margin-bottom: 1.4rem; color: #087f84; font-size: 1rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+  .nova-category-mega__intro > strong { display: block; color: #0f1b1d; font-size: 2.15rem; line-height: 1.12; letter-spacing: -.035em; }
+  .nova-category-mega__intro p { margin: 1.2rem 0 1.8rem; color: #68777a; font-size: 1.25rem; line-height: 1.55; }
+  .nova-category-nav .nova-category-mega__intro a { justify-content: flex-start; min-height: 0; padding: 0; color: #006d73 !important; font-size: 1.2rem; }
+  .nova-category-mega__intro a i { font-style: normal; }
+  .nova-category-mega__group { padding: .4rem 2.2rem; border-left: 1px solid #e0e7e8; }
+  .nova-category-nav .nova-category-mega__group a { display: flex; min-height: 0; justify-content: space-between; gap: 1rem; padding: .75rem 0; border-radius: 0; background: transparent !important; box-shadow: none !important; color: #263537 !important; font-size: 1.22rem; font-weight: 600; white-space: normal; transform: none; }
+  .nova-category-nav .nova-category-mega__group a:hover,
+  .nova-category-nav .nova-category-mega__group a:focus-visible { color: #00767d !important; transform: translateX(.3rem); }
+  .nova-category-mega__group a span { color: #7e9092; }
+  .nova-category-mega__utility { padding-left: 2.2rem; border-left: 1px solid #e0e7e8; }
+  .nova-category-nav .nova-category-mega__utility a { position: relative; display: block; min-height: 100%; padding: 2rem; border-radius: 1.1rem; background: #edf7f6 !important; box-shadow: none !important; color: #102224 !important; white-space: normal; transform: none; }
+  .nova-category-mega__utility small { display: block; color: #087f84; font-size: .95rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+  .nova-category-mega__utility strong { display: block; margin-top: 1rem; font-size: 1.75rem; }
+  .nova-category-mega__utility span { display: block; margin-top: .7rem; color: #667679; font-size: 1.16rem; font-weight: 500; line-height: 1.5; }
+  .nova-category-mega__utility i { position: absolute; right: 1.7rem; bottom: 1.5rem; color: #087f84; font-size: 1.7rem; font-style: normal; }
+}

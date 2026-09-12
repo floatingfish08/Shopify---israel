@@ -347,15 +347,46 @@
   </header>
   <nav class="nova-category-nav" aria-label="Product catalog categories">
     <div class="nova-category-nav__inner page-width">
-      <a class="nova-category-nav__all{% if request.page_type == 'collection' and collection.handle == 'all' %} is-active{% endif %}" href="{{ routes.all_products_collection_url }}"{% if request.page_type == 'collection' and collection.handle == 'all' %} aria-current="page"{% endif %}>
-        <svg class="nova-category-nav__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none">
-          <rect x="2.25" y="2.25" width="6" height="6" rx="1.25" stroke="currentColor" stroke-width="1.5"/>
-          <rect x="11.75" y="2.25" width="6" height="6" rx="1.25" stroke="currentColor" stroke-width="1.5"/>
-          <rect x="2.25" y="11.75" width="6" height="6" rx="1.25" stroke="currentColor" stroke-width="1.5"/>
-          <rect x="11.75" y="11.75" width="6" height="6" rx="1.25" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <span>Categories</span>
-      </a>
+      <div class="nova-category-nav__menu">
+        <a class="nova-category-nav__all{% if request.page_type == 'collection' and collection.handle == 'all' %} is-active{% endif %}" href="{{ routes.all_products_collection_url }}"{% if request.page_type == 'collection' and collection.handle == 'all' %} aria-current="page"{% endif %} aria-haspopup="true">
+          <svg class="nova-category-nav__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none">
+            <rect x="2.25" y="2.25" width="6" height="6" rx="1.25" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="11.75" y="2.25" width="6" height="6" rx="1.25" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="2.25" y="11.75" width="6" height="6" rx="1.25" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="11.75" y="11.75" width="6" height="6" rx="1.25" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>Categories</span><span class="nova-category-nav__chevron" aria-hidden="true">⌄</span>
+        </a>
+        <div class="nova-category-mega" aria-label="Browse product categories">
+          <div class="nova-category-mega__intro">
+            <span>Shop the NOVA catalog</span>
+            <strong>Find every component by workflow.</strong>
+            <p>Move from the implant system to healing, restorative, digital and surgical components.</p>
+            <a href="{{ routes.all_products_collection_url }}">View all products <i aria-hidden="true">→</i></a>
+          </div>
+          <div class="nova-category-mega__group">
+            <strong>Implant systems</strong>
+            <a href="/products/psi-implant-system">PSI Implant System <span>→</span></a>
+            <a href="{{ routes.collections_url }}/implant-systems">Internal Hexagon <span>→</span></a>
+            <a href="{{ routes.search_url }}?q=conical+connection&amp;options%5Bprefix%5D=last">Conical Connection <span>→</span></a>
+          </div>
+          <div class="nova-category-mega__group">
+            <strong>Restorative workflow</strong>
+            <a href="{{ routes.collections_url }}/healing-abutments">Healing Abutments <span>→</span></a>
+            <a href="{{ routes.collections_url }}/restorative-components">Restorative Components <span>→</span></a>
+            <a href="{{ routes.collections_url }}/impression-components">Impression Components <span>→</span></a>
+          </div>
+          <div class="nova-category-mega__group">
+            <strong>Digital &amp; full-arch</strong>
+            <a href="{{ routes.collections_url }}/multi-unit-overdenture">Multi-unit &amp; Overdenture <span>→</span></a>
+            <a href="{{ routes.collections_url }}/digital-cad-cam-casting">Digital &amp; CAD/CAM <span>→</span></a>
+            <a href="{{ routes.collections_url }}/surgical-instruments">Instruments &amp; Tools <span>→</span></a>
+          </div>
+          <div class="nova-category-mega__utility">
+            <a href="/pages/quick-order"><small>Ordering</small><strong>Quick Order</strong><span>Build a multi-product order faster.</span><i aria-hidden="true">→</i></a>
+          </div>
+        </div>
+      </div>
       <a class="{% if collection.handle == 'implant-systems' %}is-active{% endif %}" href="{{ routes.collections_url }}/implant-systems"{% if collection.handle == 'implant-systems' %} aria-current="page"{% endif %}><span>Internal Hexagon</span></a>
       <a href="{{ routes.search_url }}?q=conical+connection&amp;options%5Bprefix%5D=last"><span>Conical Connection</span></a>
       <a class="{% if collection.handle == 'surgical-instruments' %}is-active{% endif %}" href="{{ routes.collections_url }}/surgical-instruments"{% if collection.handle == 'surgical-instruments' %} aria-current="page"{% endif %}><span>Instruments &amp; Tools</span></a>
