@@ -110,6 +110,8 @@ main[data-template='collection'] .nova-collection-hero__summary {
   box-shadow: var(--nova-page-shadow);
 }
 main[data-template='collection'] .nova-collection-hero__media { height: 28rem; }
+main[data-template='collection'] .nova-collection-hero--implant-systems .nova-collection-hero__media { background: #fff; }
+main[data-template='collection'] .nova-collection-hero--implant-systems .nova-collection-hero__media img { padding: 1rem; object-fit: contain; }
 main[data-template='collection'] .nova-collection-hero__summary-copy { padding: 2rem 2.2rem 2.2rem; }
 
 main[data-template='collection'] #ProductGridContainer,
