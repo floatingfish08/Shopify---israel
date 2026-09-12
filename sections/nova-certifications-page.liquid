@@ -19,19 +19,26 @@
       </div>
     </section>
 
-    <section class="nova-certs__grid" aria-label="NOVA quality and regulatory documentation">
-      <article>
-        <span class="nova-certs__mark">FDA<small>510(k)</small></span>
-        <div><span>United States</span><h2>FDA 510(k) K150363</h2><p>The NOVA Dental Implants System is documented under U.S. FDA premarket notification K150363.</p><a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K150363" target="_blank" rel="noopener">View official FDA record <i aria-hidden="true">↗</i></a></div>
-      </article>
-      <article>
-        <span class="nova-certs__mark">ISO<small>13485:2016</small></span>
-        <div><span>Quality management</span><h2>ISO 13485:2016</h2><p>NOVA maintains documented medical-device quality-management certification, registration IL-99180, valid through August 21, 2027.</p><a href="{{ 'nova-iso-13485-certificate.pdf' | asset_url }}" target="_blank" rel="noopener">View authentic certificate <i aria-hidden="true">↗</i></a></div>
-      </article>
-      <article>
-        <span class="nova-certs__mark nova-certs__mark--ce">CE</span>
-        <div><span>Product conformity</span><h2>CE marked</h2><p>CE marking applies to relevant NOVA product lines. Confirm applicability using the current product label and documentation.</p><a href="/pages/contact">Request conformity information <i aria-hidden="true">→</i></a></div>
-      </article>
+    <section class="nova-certs__credentials" aria-labelledby="NovaCredentials-{{ section.id }}">
+      <header>
+        <span class="nova-kicker">Verified credentials</span>
+        <h2 id="NovaCredentials-{{ section.id }}">Documentation you can review.</h2>
+        <p>Direct access to NOVA’s U.S. clearance record, certified quality-management documentation and product-conformity support.</p>
+      </header>
+      <div class="nova-certs__grid" aria-label="NOVA quality and regulatory documentation">
+        <article>
+          <div class="nova-certs__card-head"><span class="nova-certs__mark">FDA<small>510(k)</small></span><span class="nova-certs__status">Official record</span></div>
+          <div class="nova-certs__card-copy"><span>United States</span><h3>K150363</h3><p>FDA premarket notification for the NOVA Dental Implants System.</p><a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K150363" target="_blank" rel="noopener">Verify on FDA.gov <i aria-hidden="true">↗</i></a></div>
+        </article>
+        <article>
+          <div class="nova-certs__card-head"><span class="nova-certs__mark">ISO<small>13485:2016</small></span><span class="nova-certs__status">Valid to 2027</span></div>
+          <div class="nova-certs__card-copy"><span>Quality management</span><h3>Registration IL-99180</h3><p>Certified medical-device quality-management system, valid through August 21, 2027.</p><a href="{{ 'nova-iso-13485-certificate.pdf' | asset_url }}" target="_blank" rel="noopener">Open original certificate <i aria-hidden="true">↗</i></a></div>
+        </article>
+        <article>
+          <div class="nova-certs__card-head"><span class="nova-certs__mark nova-certs__mark--ce">CE</span><span class="nova-certs__status nova-certs__status--support">Product specific</span></div>
+          <div class="nova-certs__card-copy"><span>European conformity</span><h3>CE-marked product lines</h3><p>Applicability varies by product. NOVA support can provide current conformity documentation for the item selected.</p><a href="/pages/contact">Request documentation <i aria-hidden="true">→</i></a></div>
+        </article>
+      </div>
     </section>
 
     <section class="nova-certs__document" aria-labelledby="NovaIsoDocument-{{ section.id }}">
