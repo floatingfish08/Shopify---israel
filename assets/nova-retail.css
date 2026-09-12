@@ -694,12 +694,12 @@ main[data-template='product'] .nova-product-assurance {
 .nova-delivery { background: #fff; color: var(--nova-retail-ink); }
 .nova-delivery__hero {
   padding: 6rem 0;
-  background: linear-gradient(135deg,#f7fbfb 0%,#e9f5f4 100%);
+  background: linear-gradient(135deg,#f8fbfb 0%,#e9f5f4 100%);
 }
 .nova-delivery__hero-inner {
   display: grid;
-  grid-template-columns: minmax(0,1.05fr) minmax(42rem,.75fr);
-  gap: clamp(5rem,8vw,10rem);
+  grid-template-columns: minmax(0,.86fr) minmax(44rem,1.14fr);
+  gap: clamp(4rem,6vw,8rem);
   align-items: center;
 }
 .nova-delivery h1,
@@ -713,14 +713,39 @@ main[data-template='product'] .nova-product-assurance {
   letter-spacing: -.05em;
   line-height: 1;
 }
-.nova-delivery__hero-inner > div:first-child > p {
+.nova-delivery__hero-copy > p {
   max-width: 68rem;
   margin-bottom: 2.7rem;
   color: var(--nova-retail-muted);
   font-size: 1.65rem;
   line-height: 1.7;
 }
-.nova-delivery__highlights { display: grid; gap: 1.2rem; }
+.nova-delivery__media {
+  position: relative;
+  overflow: hidden;
+  min-height: 42rem;
+  margin: 0;
+  border-radius: 2rem;
+  box-shadow: 0 2.4rem 6rem rgba(6,52,56,.14);
+}
+.nova-delivery__media img { display: block; width: 100%; height: 100%; min-height: 42rem; object-fit: cover; }
+.nova-delivery__media figcaption {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  display: grid;
+  gap: .35rem;
+  max-width: 28rem;
+  padding: 1.5rem 1.8rem;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 1.2rem;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.09);
+  backdrop-filter: blur(12px);
+}
+.nova-delivery__media figcaption strong { color: #000; font-size: 1.35rem; }
+.nova-delivery__media figcaption span { color: var(--nova-retail-muted); font-size: 1.1rem; }
+.nova-delivery__highlights { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.2rem; }
 .nova-delivery__highlights article {
   display: grid;
   grid-template-columns: 4.2rem 1fr;
@@ -912,7 +937,10 @@ main[data-template='product'] .nova-product-assurance {
   .footer .footer-block--newsletter { margin-top: 2.5rem; padding: 1.7rem; }
   .nova-delivery__hero { padding: 4rem 0; }
   .nova-delivery h1 { font-size: 4rem; }
-  .nova-delivery__hero-inner > div:first-child > p { font-size: 1.5rem; }
+  .nova-delivery__hero-copy > p { font-size: 1.5rem; }
+  .nova-delivery__media,
+  .nova-delivery__media img { min-height: 30rem; }
+  .nova-delivery__highlights { grid-template-columns: 1fr; }
   .nova-delivery__content { padding-top: 4.5rem; padding-bottom: 5rem; }
   .nova-delivery__steps { grid-template-columns: 1fr; }
   .nova-delivery__steps li { min-height: 0; padding: 1.8rem; }

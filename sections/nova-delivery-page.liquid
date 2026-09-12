@@ -1,15 +1,26 @@
 <section class="nova-delivery" aria-labelledby="NovaDeliveryTitle-{{ section.id }}">
   <div class="nova-delivery__hero">
     <div class="page-width nova-delivery__hero-inner">
-      <div>
+      <div class="nova-delivery__hero-copy">
         <span class="nova-kicker">Shipping &amp; delivery</span>
-        <h1 id="NovaDeliveryTitle-{{ section.id }}">Fast, clear delivery for every order.</h1>
-        <p>NOVA keeps fulfillment simple with free U.S. shipping, same-day shipping for eligible in-stock orders, and tracking details as soon as your shipment is on its way.</p>
+        <h1 id="NovaDeliveryTitle-{{ section.id }}">Fast, clear delivery from order to clinic.</h1>
+        <p>NOVA keeps fulfillment simple with free U.S. shipping, same-day dispatch for eligible in-stock orders, and tracking details as soon as your shipment is on its way.</p>
         <a class="button button--primary" href="{{ routes.all_products_collection_url }}">Shop the catalog</a>
       </div>
+      <figure class="nova-delivery__media">
+        <img
+          src="{{ 'nova-delivery-fulfillment-v1.png' | asset_url }}"
+          alt="A medical-device order being prepared for delivery in a clean fulfillment workspace"
+          width="1792"
+          height="1024"
+          loading="eager"
+          fetchpriority="high"
+        >
+        <figcaption><strong>Prepared with care</strong><span>Clear processing and shipment updates</span></figcaption>
+      </figure>
       <div class="nova-delivery__highlights" aria-label="Delivery highlights">
         <article><span>01</span><strong>Free U.S. shipping</strong><p>Available on eligible orders shipped within the United States.</p></article>
-        <article><span>02</span><strong>Same-day shipping</strong><p>Eligible in-stock orders are prepared for carrier pickup the same business day.</p></article>
+        <article><span>02</span><strong>Same-day eligible dispatch</strong><p>Qualifying in-stock orders are prepared for carrier pickup the same business day.</p></article>
         <article><span>03</span><strong>Shipment tracking</strong><p>Tracking information is shared when your carrier scan becomes available.</p></article>
       </div>
     </div>
@@ -70,7 +81,9 @@
       <div>
         <details open><summary>How do I track my order?</summary><p>Use the tracking link sent after dispatch. Carrier updates may take a short time to appear after the first scan.</p></details>
         <details><summary>Which orders qualify for same-day dispatch?</summary><p>Same-day dispatch applies to eligible in-stock orders. Orders that need availability, address or compatibility clarification may require additional processing time.</p></details>
+        <details><summary>What happens if an item is unavailable?</summary><p>The NOVA team will contact you using the details supplied with your order so you can review the available options before fulfillment continues.</p></details>
         <details><summary>Can I change my delivery address?</summary><p>Contact NOVA as quickly as possible. An address cannot always be changed after the shipment has been transferred to the carrier.</p></details>
+        <details><summary>Are delivery dates guaranteed?</summary><p>Delivery estimates depend on inventory, destination and carrier conditions. The final service available for your order is confirmed during checkout and fulfillment.</p></details>
       </div>
     </div>
   </div>
