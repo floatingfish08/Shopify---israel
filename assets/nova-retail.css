@@ -3437,7 +3437,7 @@ main[data-template='index'] .nova-category-card--psi > img {
 
 /* Desktop category hover directory. */
 .nova-category-nav__menu { min-width: 0; }
-.nova-category-nav__chevron { margin-left: .15rem; font-size: 1.6rem; line-height: 1; transition: transform .2s ease; }
+.nova-category-nav__chevron { width: 1.8rem; height: 1.8rem; margin-left: .15rem; padding: .2rem; border-radius: 50%; background: rgba(255,255,255,.16); transition: transform .25s cubic-bezier(.22,1,.36,1), background-color .2s ease; }
 .nova-category-flyout { display: none; }
 @media screen and (min-width: 990px) {
   .nova-category-nav { z-index: 12; }
@@ -3445,7 +3445,7 @@ main[data-template='index'] .nova-category-card--psi > img {
   .nova-category-nav__menu { position: relative; height: 100%; }
   .nova-category-nav__menu > .nova-category-nav__all { width: 100%; height: 100%; }
   .nova-category-nav__menu:hover .nova-category-nav__chevron,
-  .nova-category-nav__menu:focus-within .nova-category-nav__chevron { transform: rotate(180deg); }
+  .nova-category-nav__menu:focus-within .nova-category-nav__chevron { background: rgba(255,255,255,.25); transform: rotate(180deg); }
   .nova-category-flyout {
     position: absolute;
     top: calc(100% + .45rem);
