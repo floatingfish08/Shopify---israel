@@ -51,7 +51,10 @@
     </section>
 
     <section class="nova-delivery-gdt__process" aria-labelledby="NovaDeliveryProcess-{{ section.id }}">
-      <div class="nova-delivery-gdt__process-visual" aria-hidden="true"><span>01</span><i></i><span>02</span><i></i><span>03</span></div>
+      <figure class="nova-delivery-gdt__process-image">
+        <img src="{{ 'nova-delivery-dispatch-v1.webp' | asset_url }}" alt="Prepared parcels ready for carrier collection" width="1536" height="1024" loading="lazy">
+        <figcaption>Orders prepared for carrier handoff</figcaption>
+      </figure>
       <div>
         <span class="nova-kicker">From cart to clinic</span>
         <h2 id="NovaDeliveryProcess-{{ section.id }}">Prepared, dispatched and tracked</h2>
