@@ -3675,13 +3675,13 @@ main[data-template='index'] .nova-category-card--psi > img {
 .nova-certs__credentials > header { display: grid; max-width: 84rem; margin-bottom: 4rem; }
 .nova-certs__credentials > header h2 { margin: 1rem 0 1.5rem; color: #000; font-size: clamp(3.8rem,4.7vw,6.2rem); font-weight: 650; letter-spacing: -.05em; line-height: 1; }
 .nova-certs__credentials > header p { max-width: 68rem; margin: 0; color: #5c7073; font-size: 1.45rem; line-height: 1.7; }
-.nova-certs__grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.8rem; }
-.nova-certs__grid article { display: flex; min-height: 42rem; flex-direction: column; justify-content: space-between; padding: 2.8rem; border: 1px solid #d7e2e1; border-radius: 1.4rem; background: linear-gradient(145deg,#fff 55%,#f1f7f6); box-shadow: 0 1.6rem 4rem rgba(9,56,60,.07); transition: transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease,border-color .3s ease; }
-.nova-certs__grid article:hover { border-color: #b9d2d0; box-shadow: 0 2.4rem 5rem rgba(9,56,60,.12); transform: translateY(-.5rem); }
+.nova-certs__grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: clamp(3rem,5vw,7rem); border-top: 1px solid #d7e2e1; border-bottom: 1px solid #d7e2e1; }
+.nova-certs__grid article { display: flex; min-height: 37rem; flex-direction: column; justify-content: space-between; padding: 4rem 0; }
+.nova-certs__grid article + article { position: relative; }
+.nova-certs__grid article + article::before { position: absolute; top: 4rem; bottom: 4rem; left: calc(clamp(3rem,5vw,7rem) / -2); width: 1px; background: #d7e2e1; content: ''; }
 .nova-certs__card-head { display: flex; gap: 1.5rem; align-items: flex-start; justify-content: space-between; }
-.nova-certs__mark { display: grid; width: 9rem; height: 9rem; place-items: center; align-content: center; border: 1px solid #cfe0df; border-radius: 50%; background: #edf7f6; color: #087b80; font-size: 2.5rem; font-weight: 800; letter-spacing: -.06em; line-height: 1; }
-.nova-certs__mark small { margin-top: .6rem; font-size: 1rem; letter-spacing: .02em; }
-.nova-certs__mark--ce { font-size: 3.2rem; letter-spacing: -.12em; }
+.nova-certs__icon { display: grid; width: 8.4rem; height: 8.4rem; place-items: center; border-radius: 50%; background: #eaf6f4; color: #087b80; }
+.nova-certs__icon svg { width: 4.8rem; height: 4.8rem; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 .nova-certs__status { padding: .7rem 1rem; border-radius: 99rem; background: #e2f3ef; color: #087269; font-size: .9rem; font-weight: 750; letter-spacing: .07em; text-transform: uppercase; }
 .nova-certs__status--support { background: #edf0f0; color: #566568; }
 .nova-certs__card-copy > span { color: #087b80; font-size: 1rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
@@ -3721,7 +3721,8 @@ main[data-template='index'] .nova-category-card--psi > img {
   .nova-certs__inspection { grid-template-columns: 1fr; gap: 4rem; }
   .nova-certs__notice { grid-template-columns: 1fr; }
   .nova-certs__grid { grid-template-columns: 1fr; }
-  .nova-certs__grid article { min-height: 32rem; }
+  .nova-certs__grid article { min-height: 0; padding: 3.5rem 0; }
+  .nova-certs__grid article + article::before { top: 0; right: 0; bottom: auto; left: 0; width: auto; height: 1px; }
 }
 @media screen and (max-width: 749px) {
   .nova-certs__hero { min-height: 62rem; align-items: flex-end; }
@@ -3739,7 +3740,7 @@ main[data-template='index'] .nova-category-card--psi > img {
   .nova-certs__document-copy dl div,
   .nova-certs__document-copy dl div + div { padding: 1.5rem 0; border-right: 0; border-bottom: 1px solid #d5e1e0; }
   .nova-certs__document-copy dl div:last-child { border-bottom: 0; }
-  .nova-certs__grid article { min-height: 30rem; padding: 2.3rem; }
+  .nova-certs__grid article { padding: 3rem 0; }
   .nova-certs__mark { width: 7.5rem; height: 7.5rem; font-size: 2rem; }
   .nova-certs__mark--ce { font-size: 2.6rem; }
   .nova-certs__inspection { margin-inline: -1.5rem; padding: 5rem 1.5rem; }
