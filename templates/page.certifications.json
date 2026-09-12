@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "nova-certifications-page",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

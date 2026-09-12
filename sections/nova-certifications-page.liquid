@@ -1,0 +1,67 @@
+<section class="nova-certs" aria-labelledby="NovaCertsTitle-{{ section.id }}">
+  <div class="nova-certs__hero">
+    <img src="{{ 'nova-certifications-hero-v1.webp' | asset_url }}" alt="A quality technician inspecting a precision medical component" width="1792" height="1024" loading="eager" fetchpriority="high">
+    <div class="nova-certs__hero-shade"></div>
+    <div class="page-width nova-certs__hero-copy">
+      <span class="nova-kicker">Documented quality</span>
+      <h1 id="NovaCertsTitle-{{ section.id }}">Quality Assurance Certifications</h1>
+      <p>Clear regulatory and quality-system references help dental professionals verify the NOVA system before ordering.</p>
+      <a class="button button--primary" href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K150363" target="_blank" rel="noopener">Verify FDA record</a>
+    </div>
+  </div>
+
+  <div class="page-width nova-certs__body">
+    <section class="nova-certs__intro">
+      <div><span class="nova-kicker">Ensuring quality, every step of the way</span><h2>Built around documented controls.</h2></div>
+      <div>
+        <p>NOVA Implants is committed to medical-device quality management and transparent product documentation. Our materials identify the U.S. clearance record, certified quality system and conformity information applicable to the NOVA portfolio.</p>
+        <p>Regulatory status can differ by product and market. Always confirm the current label, catalog number and Instructions for Use for the exact component selected.</p>
+      </div>
+    </section>
+
+    <section class="nova-certs__grid" aria-label="NOVA quality and regulatory documentation">
+      <article>
+        <span class="nova-certs__mark">FDA<small>510(k)</small></span>
+        <div><span>United States</span><h2>FDA 510(k) K150363</h2><p>The NOVA Dental Implants System is documented under U.S. FDA premarket notification K150363.</p><a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K150363" target="_blank" rel="noopener">View official FDA record <i aria-hidden="true">↗</i></a></div>
+      </article>
+      <article>
+        <span class="nova-certs__mark">ISO<small>13485:2016</small></span>
+        <div><span>Quality management</span><h2>ISO 13485:2016</h2><p>NOVA maintains documented medical-device quality-management certification, registration IL-99180.</p><a href="/pages/contact">Request certification details <i aria-hidden="true">→</i></a></div>
+      </article>
+      <article>
+        <span class="nova-certs__mark nova-certs__mark--ce">CE</span>
+        <div><span>Product conformity</span><h2>CE marked</h2><p>CE marking applies to relevant NOVA product lines. Confirm applicability using the current product label and documentation.</p><a href="/pages/contact">Request conformity information <i aria-hidden="true">→</i></a></div>
+      </article>
+    </section>
+
+    <section class="nova-certs__inspection">
+      <figure><img src="{{ 'nova-certifications-inspection-v1.webp' | asset_url }}" alt="Documented dimensional inspection in a medical-device quality laboratory" width="1536" height="1024" loading="lazy"></figure>
+      <div>
+        <span class="nova-kicker">Quality and traceability</span>
+        <h2>Precision supported by process.</h2>
+        <p>Documented inspection, controlled manufacturing processes and traceable product references support consistent identification throughout the professional workflow.</p>
+        <ul>
+          <li><strong>Documented inspection</strong><span>Quality checks support controlled production and release processes.</span></li>
+          <li><strong>Clear references</strong><span>Catalog numbers and product labeling help identify the intended component.</span></li>
+          <li><strong>Professional documentation</strong><span>Current labeling and Instructions for Use remain the authority for product selection and use.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <aside class="nova-certs__notice">
+      <strong>Important regulatory notice</strong>
+      <p>“FDA cleared” refers to the NOVA Dental Implants System covered by K150363 and does not mean FDA approval of every NOVA product. CE status also varies by product line. Verify the documentation for the exact item before ordering or clinical use.</p>
+      <a href="/pages/contact">Contact NOVA support <span aria-hidden="true">→</span></a>
+    </aside>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NOVA certifications page",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [{ "name": "NOVA certifications page" }]
+}
+{% endschema %}

@@ -3656,3 +3656,62 @@ main[data-template='index'] .nova-category-card--psi > img {
   .nova-delivery-gdt__table-wrap { overflow-x: auto; }
   .nova-delivery-gdt__table-wrap table { min-width: 68rem; }
 }
+/* Certifications page: GDT-inspired clarity with NOVA-specific documentation. */
+.nova-certs { background: #fff; color: #0b2024; }
+.nova-certs__hero { position: relative; display: flex; overflow: hidden; min-height: 60rem; align-items: center; }
+.nova-certs__hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% center; }
+.nova-certs__hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg,rgba(255,255,255,.99),rgba(255,255,255,.92) 38%,rgba(255,255,255,.08) 73%); }
+.nova-certs__hero-copy { position: relative; z-index: 1; width: 100%; }
+.nova-certs__hero-copy > * { max-width: 69rem; }
+.nova-certs__hero-copy h1 { margin: 1.3rem 0 2rem; color: #000; font-size: clamp(5rem,6.3vw,8.2rem); font-weight: 680; letter-spacing: -.057em; line-height: .94; }
+.nova-certs__hero-copy p { color: #42575a; font-size: 1.7rem; line-height: 1.7; }
+.nova-certs__hero-copy .button { margin-top: 1.5rem; }
+.nova-certs__body { padding-bottom: 9rem; }
+.nova-certs__intro { display: grid; grid-template-columns: minmax(0,.78fr) minmax(0,1fr); gap: 8rem; padding: 8rem 0; border-bottom: 1px solid #dce5e5; }
+.nova-certs__intro h2,
+.nova-certs__inspection h2 { margin: 1rem 0 0; color: #000; font-size: clamp(3.8rem,4.6vw,6rem); font-weight: 650; letter-spacing: -.05em; line-height: 1; }
+.nova-certs__intro p { margin: 0 0 1.5rem; color: #596d70; font-size: 1.5rem; line-height: 1.75; }
+.nova-certs__grid { padding: 2rem 0 8rem; }
+.nova-certs__grid article { display: grid; grid-template-columns: 15rem minmax(0,1fr); gap: 5rem; align-items: center; padding: 4rem 0; border-bottom: 1px solid #dce5e5; }
+.nova-certs__mark { display: grid; width: 13rem; height: 13rem; place-items: center; align-content: center; border: 1px solid #cfe0df; border-radius: 50%; background: #f1f8f7; color: #087b80; font-size: 3.2rem; font-weight: 800; letter-spacing: -.06em; line-height: 1; }
+.nova-certs__mark small { margin-top: .6rem; font-size: 1rem; letter-spacing: .02em; }
+.nova-certs__mark--ce { font-size: 4rem; letter-spacing: -.12em; }
+.nova-certs__grid article > div > span { color: #087b80; font-size: 1rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.nova-certs__grid h2 { margin: .7rem 0 1rem; color: #000; font-size: clamp(2.7rem,3vw,4rem); letter-spacing: -.04em; }
+.nova-certs__grid p { max-width: 76rem; margin: 0; color: #5f7275; font-size: 1.4rem; line-height: 1.65; }
+.nova-certs__grid a { display: inline-block; margin-top: 1.4rem; color: #087b80; font-size: 1.2rem; font-weight: 700; text-decoration: none; }
+.nova-certs__grid a i { font-style: normal; }
+.nova-certs__inspection { display: grid; grid-template-columns: minmax(0,1.08fr) minmax(35rem,.82fr); gap: 7rem; align-items: center; margin: 0 calc(50% - 50vw); padding: 8rem max(5rem,calc((100vw - var(--page-width)) / 2)); background: #eef6f5; }
+.nova-certs__inspection figure { overflow: hidden; min-height: 50rem; margin: 0; border-radius: 1.4rem; box-shadow: 0 2rem 5rem rgba(9,56,60,.15); }
+.nova-certs__inspection img { display: block; width: 100%; height: 100%; min-height: 50rem; object-fit: cover; }
+.nova-certs__inspection > div > p { margin: 2rem 0; color: #586d70; font-size: 1.45rem; line-height: 1.7; }
+.nova-certs__inspection ul { margin: 2.5rem 0 0; padding: 0; list-style: none; }
+.nova-certs__inspection li { display: grid; gap: .45rem; padding: 1.5rem 0; border-top: 1px solid #cadcda; }
+.nova-certs__inspection li strong { color: #000; font-size: 1.35rem; }
+.nova-certs__inspection li span { color: #63777a; font-size: 1.15rem; line-height: 1.55; }
+.nova-certs__notice { display: grid; grid-template-columns: minmax(20rem,.35fr) minmax(0,1fr) auto; gap: 3rem; align-items: center; margin-top: 7rem; padding: 3rem; border-left: .4rem solid #087b80; background: #092f34; color: #fff; }
+.nova-certs__notice strong { font-size: 1.5rem; }
+.nova-certs__notice p { margin: 0; color: rgba(255,255,255,.68); font-size: 1.2rem; line-height: 1.65; }
+.nova-certs__notice a { color: #7cddd8; font-size: 1.2rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+
+@media screen and (max-width: 989px) {
+  .nova-certs__intro,
+  .nova-certs__inspection { grid-template-columns: 1fr; gap: 4rem; }
+  .nova-certs__notice { grid-template-columns: 1fr; }
+}
+@media screen and (max-width: 749px) {
+  .nova-certs__hero { min-height: 62rem; align-items: flex-end; }
+  .nova-certs__hero > img { object-position: 72% top; }
+  .nova-certs__hero-shade { background: linear-gradient(0deg,rgba(255,255,255,.99),rgba(255,255,255,.9) 48%,rgba(255,255,255,.06)); }
+  .nova-certs__hero-copy { padding-bottom: 5rem; }
+  .nova-certs__hero-copy h1 { font-size: 4.8rem; }
+  .nova-certs__intro { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 0; }
+  .nova-certs__grid { padding-bottom: 5rem; }
+  .nova-certs__grid article { grid-template-columns: 8rem minmax(0,1fr); gap: 2rem; padding: 3rem 0; }
+  .nova-certs__mark { width: 7.5rem; height: 7.5rem; font-size: 2rem; }
+  .nova-certs__mark--ce { font-size: 2.6rem; }
+  .nova-certs__inspection { margin-inline: -1.5rem; padding: 5rem 1.5rem; }
+  .nova-certs__inspection figure,
+  .nova-certs__inspection img { min-height: 34rem; }
+  .nova-certs__notice { margin-top: 5rem; padding: 2.4rem; }
+}
