@@ -357,35 +357,49 @@
           </svg>
           <span>Categories</span><span class="nova-category-nav__chevron" aria-hidden="true">⌄</span>
         </a>
-        <div class="nova-category-mega" aria-label="Browse product categories">
-          <div class="nova-category-mega__intro">
-            <span>Shop the NOVA catalog</span>
-            <strong>Find every component by workflow.</strong>
-            <p>Move from the implant system to healing, restorative, digital and surgical components.</p>
-            <a href="{{ routes.all_products_collection_url }}">View all products <i aria-hidden="true">→</i></a>
-          </div>
-          <div class="nova-category-mega__group">
-            <strong>Implant systems</strong>
-            <a href="/products/psi-implant-system">PSI Implant System <span>→</span></a>
-            <a href="{{ routes.collections_url }}/implant-systems">Internal Hexagon <span>→</span></a>
-            <a href="{{ routes.search_url }}?q=conical+connection&amp;options%5Bprefix%5D=last">Conical Connection <span>→</span></a>
-          </div>
-          <div class="nova-category-mega__group">
-            <strong>Restorative workflow</strong>
-            <a href="{{ routes.collections_url }}/healing-abutments">Healing Abutments <span>→</span></a>
-            <a href="{{ routes.collections_url }}/restorative-components">Restorative Components <span>→</span></a>
-            <a href="{{ routes.collections_url }}/impression-components">Impression Components <span>→</span></a>
-          </div>
-          <div class="nova-category-mega__group">
-            <strong>Digital &amp; full-arch</strong>
-            <a href="{{ routes.collections_url }}/multi-unit-overdenture">Multi-unit &amp; Overdenture <span>→</span></a>
-            <a href="{{ routes.collections_url }}/digital-cad-cam-casting">Digital &amp; CAD/CAM <span>→</span></a>
-            <a href="{{ routes.collections_url }}/surgical-instruments">Instruments &amp; Tools <span>→</span></a>
-          </div>
-          <div class="nova-category-mega__utility">
-            <a href="/pages/quick-order"><small>Ordering</small><strong>Quick Order</strong><span>Build a multi-product order faster.</span><i aria-hidden="true">→</i></a>
-          </div>
-        </div>
+        <ul class="nova-category-flyout" aria-label="Browse product categories">
+          <li>
+            <a href="{{ routes.collections_url }}/implant-systems"><span class="nova-category-flyout__thumb"><img src="{{ 'nova-psi-implant-package.webp' | asset_url }}" alt="" width="120" height="120"></span><strong>Implant Systems</strong><i>›</i></a>
+            <ul class="nova-category-flyout__panel">
+              <li><a href="/products/psi-implant-system"><span><img src="{{ 'nova-psi-implant-package.webp' | asset_url }}" alt="" width="260" height="260"></span><strong>PSI Implant System</strong></a></li>
+              <li><a href="{{ routes.collections_url }}/implant-systems"><span><img src="{{ 'nova-new-implant-systems.webp' | asset_url }}" alt="" width="260" height="260"></span><strong>Internal Hexagon</strong></a></li>
+              <li><a href="{{ routes.search_url }}?q=conical+connection&amp;options%5Bprefix%5D=last"><span><img src="{{ 'nova-psi-platform-generated.webp' | asset_url }}" alt="" width="260" height="260"></span><strong>Conical Connection</strong></a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="{{ routes.collections_url }}/restorative-components"><span class="nova-category-flyout__thumb"><img src="{{ 'nova-new-cement-abutments.webp' | asset_url }}" alt="" width="120" height="120"></span><strong>Restorative</strong><i>›</i></a>
+            <ul class="nova-category-flyout__panel">
+              <li><a href="{{ routes.collections_url }}/healing-abutments"><span><img src="{{ 'nova-category-healing-premium-v1.webp' | asset_url }}" alt="" width="260" height="260"></span><strong>Healing Abutments</strong></a></li>
+              <li><a href="{{ routes.collections_url }}/restorative-components"><span><img src="{{ 'nova-new-cement-abutments.webp' | asset_url }}" alt="" width="260" height="260"></span><strong>Restorative Components</strong></a></li>
+              <li><a href="{{ routes.collections_url }}/impression-components"><span><img src="{{ 'nova-new-laboratory.webp' | asset_url }}" alt="" width="260" height="260"></span><strong>Impression Components</strong></a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="{{ routes.collections_url }}/multi-unit-overdenture"><span class="nova-category-flyout__thumb"><img src="{{ 'nova-new-multi-unit.webp' | asset_url }}" alt="" width="120" height="120"></span><strong>Multi-unit &amp; Overdenture</strong><i>›</i></a>
+            <ul class="nova-category-flyout__panel">
+              <li><a href="{{ routes.collections_url }}/multi-unit-overdenture"><span><img src="{{ 'nova-new-multi-unit.webp' | asset_url }}" alt="" width="260" height="260"></span><strong>Multi-unit Components</strong></a></li>
+              <li><a href="{{ routes.search_url }}?q=overdenture&amp;options%5Bprefix%5D=last"><span><img src="{{ 'nova-new-overdenture-banner.webp' | asset_url }}" alt="" width="260" height="260"></span><strong>Overdenture</strong></a></li>
+              <li><a href="{{ routes.search_url }}?q=pop-clicq&amp;options%5Bprefix%5D=last"><span><img src="{{ 'nova-new-multi-unit-promo.webp' | asset_url }}" alt="" width="260" height="260"></span><strong>Pop-Clicq</strong></a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="{{ routes.collections_url }}/digital-cad-cam-casting"><span class="nova-category-flyout__thumb"><img src="{{ 'nova-new-cad-cam.webp' | asset_url }}" alt="" width="120" height="120"></span><strong>Digital &amp; CAD/CAM</strong><i>›</i></a>
+            <ul class="nova-category-flyout__panel">
+              <li><a href="{{ routes.collections_url }}/digital-cad-cam-casting"><span><img src="{{ 'nova-new-cad-cam.webp' | asset_url }}" alt="" width="260" height="260"></span><strong>All Digital Components</strong></a></li>
+              <li><a href="{{ routes.search_url }}?q=ti-base&amp;options%5Bprefix%5D=last"><span><img src="{{ 'nova-new-cad-cam-promo.webp' | asset_url }}" alt="" width="260" height="260"></span><strong>Ti-Bases</strong></a></li>
+              <li><a href="{{ routes.search_url }}?q=scan+body&amp;options%5Bprefix%5D=last"><span><img src="{{ 'nova-category-digital-premium-v1.webp' | asset_url }}" alt="" width="260" height="260"></span><strong>Scan Bodies</strong></a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="{{ routes.collections_url }}/surgical-instruments"><span class="nova-category-flyout__thumb"><img src="{{ 'nova-new-instruments.webp' | asset_url }}" alt="" width="120" height="120"></span><strong>Instruments &amp; Tools</strong><i>›</i></a>
+            <ul class="nova-category-flyout__panel">
+              <li><a href="{{ routes.collections_url }}/surgical-instruments"><span><img src="{{ 'nova-category-surgical-premium-v1.webp' | asset_url }}" alt="" width="260" height="260"></span><strong>Surgical Instruments</strong></a></li>
+              <li><a href="/products/nova-surgical-hand-tools"><span><img src="{{ 'nova-shop-surgical-driver.webp' | asset_url }}" alt="" width="260" height="260"></span><strong>Surgical Hand Tools</strong></a></li>
+              <li><a href="/pages/quick-order"><span><img src="{{ 'nova-new-instruments-promo.webp' | asset_url }}" alt="" width="260" height="260"></span><strong>Quick Order</strong></a></li>
+            </ul>
+          </li>
+          <li class="nova-category-flyout__all"><a href="{{ routes.all_products_collection_url }}"><span class="nova-category-flyout__thumb nova-category-flyout__grid-icon">+</span><strong>View All Products</strong><i>→</i></a></li>
+        </ul>
       </div>
       <a class="{% if collection.handle == 'implant-systems' %}is-active{% endif %}" href="{{ routes.collections_url }}/implant-systems"{% if collection.handle == 'implant-systems' %} aria-current="page"{% endif %}><span>Internal Hexagon</span></a>
       <a href="{{ routes.search_url }}?q=conical+connection&amp;options%5Bprefix%5D=last"><span>Conical Connection</span></a>
