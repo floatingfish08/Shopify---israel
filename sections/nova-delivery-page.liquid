@@ -25,15 +25,17 @@
     <section class="nova-delivery-gdt__methods" aria-labelledby="NovaDeliveryOptions-{{ section.id }}">
       <header>
         <span class="nova-kicker">Available at checkout</span>
-        <h2 id="NovaDeliveryOptions-{{ section.id }}">Select your shipping method</h2>
-        <p>The exact carrier and estimated arrival depend on destination, inventory and the services available for the order.</p>
+        <h2 id="NovaDeliveryOptions-{{ section.id }}">Select Your Preferred Shipping Method</h2>
+        <p>Choose from the services available for your delivery address. Final rates and arrival estimates are confirmed at checkout.</p>
       </header>
       <div class="nova-delivery-gdt__table-wrap">
         <table>
-          <thead><tr><th>Shipping service</th><th>Shipping cost</th><th>Processing and delivery</th></tr></thead>
+          <thead><tr><th>Shipping company</th><th>Shipping cost</th><th>Estimated delivery time</th></tr></thead>
           <tbody>
-            <tr><td><strong>Standard U.S. shipping</strong><small>Eligible domestic orders</small></td><td><strong>Free</strong><small>No shipping charge on qualifying orders</small></td><td><strong>Same-day dispatch eligible</strong><small>For qualifying in-stock orders</small></td></tr>
-            <tr><td><strong>Other available services</strong><small>Shown for the delivery address</small></td><td><strong>Calculated at checkout</strong><small>Confirmed before the order is placed</small></td><td><strong>Estimate shown at checkout</strong><small>Timing varies by service and destination</small></td></tr>
+            <tr><td><div class="nova-delivery-gdt__carrier-wrap"><span class="nova-delivery-gdt__carrier nova-delivery-gdt__carrier--standard" aria-hidden="true">N</span><span><strong>Standard U.S. shipping</strong><small>Eligible domestic orders</small></span></div></td><td><strong>Free shipping</strong><small>On qualifying U.S. orders</small></td><td><strong>Shown at checkout</strong><small>Based on destination and availability</small></td></tr>
+            <tr><td><div class="nova-delivery-gdt__carrier-wrap"><span class="nova-delivery-gdt__carrier nova-delivery-gdt__carrier--ups" aria-hidden="true">UPS</span><span><strong>UPS Express Shipping</strong><small>When offered for your address</small></span></div></td><td><strong>Calculated at checkout</strong><small>Confirmed before payment</small></td><td><strong>Shown at checkout</strong><small>Carrier estimate after dispatch</small></td></tr>
+            <tr><td><div class="nova-delivery-gdt__carrier-wrap"><span class="nova-delivery-gdt__carrier nova-delivery-gdt__carrier--dhl" aria-hidden="true">DHL</span><span><strong>DHL Express Shipping</strong><small>When offered for your address</small></span></div></td><td><strong>Calculated at checkout</strong><small>Confirmed before payment</small></td><td><strong>Shown at checkout</strong><small>Carrier estimate after dispatch</small></td></tr>
+            <tr><td><div class="nova-delivery-gdt__carrier-wrap"><span class="nova-delivery-gdt__carrier nova-delivery-gdt__carrier--fedex" aria-hidden="true">FedEx</span><span><strong>FedEx Express Shipping</strong><small>When offered for your address</small></span></div></td><td><strong>Calculated at checkout</strong><small>Confirmed before payment</small></td><td><strong>Shown at checkout</strong><small>Carrier estimate after dispatch</small></td></tr>
           </tbody>
         </table>
       </div>
