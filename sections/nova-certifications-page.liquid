@@ -31,7 +31,7 @@
             <span class="nova-certs__icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M32 5 52 13v15c0 14-8.2 25.4-20 31C20.2 53.4 12 42 12 28V13L32 5Z"/><path d="m22 32 7 7 14-16"/></svg></span>
             <span class="nova-certs__status">Official record</span>
           </div>
-          <div class="nova-certs__card-copy"><span>United States</span><h3>K150363</h3><p>FDA premarket notification for the NOVA Dental Implants System.</p><a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K150363" target="_blank" rel="noopener">Verify on FDA.gov <i aria-hidden="true">↗</i></a></div>
+          <div class="nova-certs__card-copy"><span>United States</span><h3>K150363</h3><p>FDA premarket notification for the NOVA Dental Implants System.</p><a href="{{ 'nova-fda-k150363-clearance.pdf' | asset_url }}" target="_blank" rel="noopener">Open FDA documentation <i aria-hidden="true">↗</i></a></div>
         </article>
         <article>
           <div class="nova-certs__card-head">
@@ -47,6 +47,27 @@
           </div>
           <div class="nova-certs__card-copy"><span>European conformity</span><h3>CE-marked product lines</h3><p>Applicability varies by product. NOVA support can provide current conformity documentation for the item selected.</p><a href="/pages/contact">Request documentation <i aria-hidden="true">→</i></a></div>
         </article>
+      </div>
+    </section>
+
+    <section class="nova-certs__document nova-certs__document--fda" aria-labelledby="NovaFdaDocument-{{ section.id }}">
+      <a class="nova-certs__document-preview" href="{{ 'nova-fda-k150363-clearance.pdf' | asset_url }}" target="_blank" rel="noopener" aria-label="Open official FDA K150363 clearance documentation PDF">
+        <img src="{{ 'nova-fda-k150363-clearance-preview.webp' | asset_url }}" alt="First page of the official FDA K150363 clearance documentation for the NOVA Dental Implants System" width="1275" height="1651" loading="lazy">
+      </a>
+      <div class="nova-certs__document-copy">
+        <span class="nova-kicker">Official FDA documentation</span>
+        <h2 id="NovaFdaDocument-{{ section.id }}">FDA 510(k) K150363</h2>
+        <p>The FDA determined the NOVA Dental Implants System substantially equivalent for its stated indications. The official 12-page document includes the clearance letter, indications for use and 510(k) summary.</p>
+        <dl>
+          <div><dt>Decision</dt><dd>Substantially equivalent</dd></div>
+          <div><dt>Decision date</dt><dd>June 29, 2015</dd></div>
+          <div><dt>Regulatory class</dt><dd>Class II</dd></div>
+        </dl>
+        <div class="nova-certs__document-actions">
+          <a class="button button--primary" href="{{ 'nova-fda-k150363-clearance.pdf' | asset_url }}" target="_blank" rel="noopener">Open FDA document PDF</a>
+          <a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K150363" target="_blank" rel="noopener">Verify on FDA.gov <span aria-hidden="true">↗</span></a>
+        </div>
+        <small>This PDF is the official document published by the U.S. Food and Drug Administration—not a NOVA-generated certificate.</small>
       </div>
     </section>
 

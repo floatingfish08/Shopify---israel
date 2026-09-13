@@ -3690,6 +3690,8 @@ main[data-template='index'] .nova-category-card--psi > img {
 .nova-certs__grid a { display: inline-flex; gap: .7rem; align-items: center; margin-top: 2rem; padding-bottom: .5rem; border-bottom: 1px solid #8bb9b6; color: #076f75; font-size: 1.2rem; font-weight: 750; text-decoration: none; }
 .nova-certs__grid a i { font-style: normal; }
 .nova-certs__document { display: grid; grid-template-columns: minmax(28rem,.72fr) minmax(0,1fr); gap: clamp(4rem,7vw,10rem); align-items: center; padding: 0 0 9rem; }
+.nova-certs__document--fda { margin-bottom: 9rem; padding: 8rem max(5rem,calc((100vw - var(--page-width)) / 2)); background: #eef6f5; }
+.nova-certs__document--fda .nova-certs__document-preview { background: #fff; }
 .nova-certs__document-preview { display: block; overflow: hidden; max-width: 48rem; padding: 1.4rem; border: 1px solid #d6e2e1; border-radius: 1.2rem; background: #f4f8f7; box-shadow: 0 2.4rem 6rem rgba(9,56,60,.12); }
 .nova-certs__document-preview img { display: block; width: 100%; height: auto; border: 1px solid #e3e7e7; background: #fff; transition: transform .45s cubic-bezier(.22,1,.36,1); }
 .nova-certs__document-preview:hover img { transform: scale(1.015); }
@@ -3702,6 +3704,8 @@ main[data-template='index'] .nova-category-card--psi > img {
 .nova-certs__document-copy dt { color: #718083; font-size: 1rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .nova-certs__document-copy dd { margin: .6rem 0 0; color: #000; font-size: 1.35rem; font-weight: 700; }
 .nova-certs__document-copy > small { display: block; max-width: 56rem; margin-top: 1.5rem; color: #738386; font-size: 1.05rem; line-height: 1.55; }
+.nova-certs__document-actions { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; align-items: center; }
+.nova-certs__document-actions > a:not(.button) { color: #076f75; font-size: 1.15rem; font-weight: 750; text-decoration: none; }
 .nova-certs__inspection { display: grid; grid-template-columns: minmax(0,1.08fr) minmax(35rem,.82fr); gap: 7rem; align-items: center; margin: 0 calc(50% - 50vw); padding: 8rem max(5rem,calc((100vw - var(--page-width)) / 2)); background: #eef6f5; }
 .nova-certs__inspection figure { overflow: hidden; min-height: 50rem; margin: 0; border-radius: 1.4rem; box-shadow: 0 2rem 5rem rgba(9,56,60,.15); }
 .nova-certs__inspection img { display: block; width: 100%; height: 100%; min-height: 50rem; object-fit: cover; }
@@ -3737,6 +3741,7 @@ main[data-template='index'] .nova-category-card--psi > img {
   .nova-certs__credentials > header { margin-bottom: 3rem; }
   .nova-certs__grid { gap: 1.2rem; }
   .nova-certs__document { gap: 3.5rem; padding-bottom: 6rem; }
+  .nova-certs__document--fda { margin: 0 -1.5rem 6rem; padding: 5rem 1.5rem; }
   .nova-certs__document-preview { max-width: 38rem; margin-inline: auto; }
   .nova-certs__document-copy dl { grid-template-columns: 1fr; }
   .nova-certs__document-copy dl div,
