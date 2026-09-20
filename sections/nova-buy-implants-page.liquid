@@ -1,0 +1,74 @@
+{{ 'section-nova-buy-implants.css' | asset_url | stylesheet_tag }}
+
+<section class="nova-buy" aria-labelledby="NovaBuyTitle-{{ section.id }}">
+  <header class="nova-buy__hero">
+    <img src="{{ 'nova-buy-implants-hero-v1.webp' | asset_url }}" alt="Professional dental implant components in a modern laboratory" width="1536" height="1024" loading="eager" fetchpriority="high">
+    <div class="nova-buy__hero-shade"></div>
+    <div class="page-width nova-buy__hero-copy">
+      <span class="nova-buy__eyebrow">For licensed dental professionals and laboratories</span>
+      <h1 id="NovaBuyTitle-{{ section.id }}">Buy dental implant components online with confidence.</h1>
+      <p>Navigate the NOVA internal-hex workflow, verify documentation and order the components your practice or laboratory needs—all from one professional catalog.</p>
+      <div class="nova-buy__actions"><a class="button button--primary" href="{{ routes.collections_url }}/implant-systems">Shop implant systems</a><a href="/pages/quick-order">Use Quick Order <span aria-hidden="true">→</span></a></div>
+    </div>
+  </header>
+
+  <nav class="nova-buy__anchor page-width" aria-label="Page sections">
+    <a href="#choose-system">Choose a system</a><a href="#order-workflow">How to order</a><a href="#quality-documents">Documentation</a><a href="#professional-faq">FAQs</a>
+  </nav>
+
+  <div class="page-width nova-buy__body">
+    <section class="nova-buy__intro">
+      <div><span class="nova-kicker">Professional online ordering</span><h2>A clearer route from platform to component.</h2></div>
+      <div><p>Dental implant procurement starts with the correct connection and platform—not with a generic part name. NOVA organizes implant, healing, restorative, impression, digital, multi-unit and surgical components around a connected internal-hex workflow.</p><p>Use the catalog number, dimensions, product label and current Instructions for Use to confirm the exact item. If compatibility is not explicit, contact NOVA before ordering.</p></div>
+    </section>
+
+    <section id="choose-system" class="nova-buy__systems">
+      <header><span class="nova-kicker">Choose by workflow</span><h2>Start with the clinical system.</h2><p>Keep components within the intended platform family and verify the complete reference before checkout.</p></header>
+      <div class="nova-buy__system-grid">
+        <a href="{{ routes.collections_url }}/implant-systems"><span>01</span><h3>Implant systems</h3><p>Explore the PSI internal-hex implant family and available configurations.</p><b>Shop implants →</b></a>
+        <a href="{{ routes.collections_url }}/healing-abutments"><span>02</span><h3>Healing components</h3><p>Find healing components by height, diameter and intended platform.</p><b>Shop healing →</b></a>
+        <a href="{{ routes.collections_url }}/restorative-components"><span>03</span><h3>Restorative components</h3><p>Review straight, angled, temporary and laboratory restorative options.</p><b>Shop restorative →</b></a>
+        <a href="{{ routes.collections_url }}/digital-cad-cam-casting"><span>04</span><h3>Digital &amp; CAD/CAM</h3><p>Source Ti-bases, scan and casting components for digital workflows.</p><b>Shop digital →</b></a>
+        <a href="{{ routes.collections_url }}/multi-unit-overdenture"><span>05</span><h3>Multi-unit solutions</h3><p>Organize full-arch and overdenture components within the system.</p><b>Shop multi-unit →</b></a>
+        <a href="{{ routes.collections_url }}/surgical-instruments"><span>06</span><h3>Instruments &amp; tools</h3><p>Browse supporting drivers, tools and surgical-system components.</p><b>Shop instruments →</b></a>
+      </div>
+    </section>
+
+    <section id="order-workflow" class="nova-buy__workflow">
+      <figure><img src="{{ 'nova-buy-implants-workflow-v1.webp' | asset_url }}" alt="Dental laboratory professional checking component compatibility before ordering" width="1536" height="1024" loading="lazy"></figure>
+      <div><span class="nova-kicker">Order with fewer assumptions</span><h2>Four checks before checkout.</h2>
+        <ol><li><b>1</b><div><strong>Identify the connection</strong><p>Confirm the implant system, connection type and platform.</p></div></li><li><b>2</b><div><strong>Match the component</strong><p>Check category, dimensions and restorative purpose.</p></div></li><li><b>3</b><div><strong>Verify the reference</strong><p>Compare the catalog number, label and applicable documentation.</p></div></li><li><b>4</b><div><strong>Order or ask</strong><p>Add the confirmed item to cart, or contact support when compatibility is unclear.</p></div></li></ol>
+        <div class="nova-buy__actions"><a class="button button--primary" href="/pages/quick-order">Open Quick Order</a><a href="/pages/contact">Ask product support <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+
+    <section id="quality-documents" class="nova-buy__proof">
+      <header><span class="nova-kicker">Documentation before purchase</span><h2>Verify the system—not just the claim.</h2></header>
+      <div class="nova-buy__proof-grid">
+        <a href="/pages/certifications"><span aria-hidden="true">✓</span><div><small>U.S. clearance</small><strong>FDA 510(k) K150363</strong><p>Review the official FDA determination and 510(k) summary.</p></div></a>
+        <a href="/pages/certifications"><span aria-hidden="true">◎</span><div><small>Quality system</small><strong>ISO 13485:2016</strong><p>Open the authentic NOVA certificate and validity details.</p></div></a>
+        <a href="/pages/certifications"><span aria-hidden="true">○</span><div><small>Product conformity</small><strong>CE-marked lines</strong><p>Confirm current applicability for the exact selected product.</p></div></a>
+      </div>
+    </section>
+
+    <section class="nova-buy__professional">
+      <div><span class="nova-kicker">Professional use</span><h2>Built for clinics and dental laboratories.</h2><p>NOVA products are intended for appropriately trained and licensed dental professionals. Selection and clinical use require professional judgment, current labeling and the applicable Instructions for Use.</p></div>
+      <ul><li><strong>Clear catalog references</strong><span>Identify products by full catalog number and dimensions.</span></li><li><strong>Connected workflow</strong><span>Move from implant planning through restorative components.</span></li><li><strong>Direct assistance</strong><span>Get ordering and compatibility guidance from NOVA support.</span></li><li><strong>Tracked delivery</strong><span>Review available shipping methods and dispatch details.</span></li></ul>
+    </section>
+
+    <section id="professional-faq" class="nova-buy__faq">
+      <header><span class="nova-kicker">Buying online</span><h2>Frequently asked questions.</h2></header>
+      <div>
+        <details><summary>Who should purchase NOVA implant components?</summary><p>NOVA medical-device products are intended for appropriately licensed and trained dental professionals and professional dental laboratories.</p></details>
+        <details><summary>How do I confirm compatibility before ordering?</summary><p>Confirm the system, connection, platform, dimensions and full catalog reference. Use the current label and IFU as the authority, and contact NOVA when compatibility is not explicit.</p></details>
+        <details><summary>Where can I review FDA and ISO documentation?</summary><p>Visit the Certifications page to review the official FDA K150363 documentation and the authentic ISO 13485:2016 certificate.</p></details>
+        <details><summary>Can I order several items more quickly?</summary><p>Yes. Quick Order lets professional buyers search the catalog, choose configurations and prepare multiple items efficiently.</p></details>
+        <details><summary>Where can I review shipping options?</summary><p>The Shipping &amp; Delivery page lists available carriers, estimated delivery times and current shipping terms.</p></details>
+      </div>
+    </section>
+
+    <section class="nova-buy__cta"><span>Ready to build your order?</span><h2>Find the components for your next case.</h2><div><a class="button button--primary" href="{{ routes.all_products_collection_url }}">Shop all products</a><a class="button button--secondary" href="/pages/contact">Contact NOVA</a></div></section>
+  </div>
+</section>
+
+{% schema %}{"name":"NOVA buy implants guide","tag":"section","class":"section","settings":[],"presets":[{"name":"NOVA buy implants guide"}]}{% endschema %}
