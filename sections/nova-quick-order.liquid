@@ -64,7 +64,7 @@
               <article class="nova-quick-row" data-quick-row data-search="{{ searchable | escape }}" data-type="{{ product.type | handleize }}" data-connection="{{ connection }}" data-title="{{ product.title | escape }}">
                 <div class="nova-quick-row__summary">
                   <a class="nova-quick-row__media" href="{{ product.url }}" aria-label="View {{ product.title | escape }}">
-                    {%- if nova_family_asset != blank -%}<img src="{{ nova_family_asset | asset_url }}" alt="{{ product.title | escape }} — NOVA product family" width="240" height="200" loading="lazy">{%- elsif product.featured_image -%}{{ product.featured_image | image_url: width: 240 | image_tag: loading: 'lazy', widths: '100,160,240', alt: product.featured_image.alt | default: product.title }}{%- else -%}{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}{%- endif -%}
+                    {%- if product.featured_image -%}{{ product.featured_image | image_url: width: 240 | image_tag: loading: 'lazy', widths: '100,160,240', alt: product.featured_image.alt | default: product.title }}{%- elsif nova_family_asset != blank -%}<img src="{{ nova_family_asset | asset_url }}" alt="{{ product.title | escape }} — NOVA product family placeholder" width="240" height="200" loading="lazy">{%- else -%}{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}{%- endif -%}
                   </a>
                   <div class="nova-quick-row__identity"><h3><a href="{{ product.url }}">{{ product.title | escape }}</a></h3><strong data-quick-price>{{ selected_variant.price | money }}</strong></div>
                   <button class="nova-quick-row__toggle" type="button" aria-expanded="false" data-quick-toggle>
